@@ -1,0 +1,323 @@
+{
+  "ok": true,
+  "passed": [
+    "body_fixed holds its relative angles through aircraft heading, pitch and roll changes",
+    "auto selects an existing object and clears unused geographic coordinates",
+    "auto follows object motion without moving the paused aircraft",
+    "missing auto target is rejected without replacing the active command",
+    "geo uses the exact supplied ellipsoid height and independent WGS84 pointing",
+    "geo retains its world point while aircraft attitude changes its relative angles",
+    "deleting an unrelated object leaves geographic pointing unchanged",
+    "aircraft reset preserves geo mode and its exact world point",
+    "geo points beyond elevation travel report clamp, pointing error and out-of-FOV state",
+    "missing/extra fields, bad types, NaN and geographic/render bounds reject atomically",
+    "protect parks at 180/+30 degrees, clears point and target, and disables capture",
+    "protected camera refuses enable and JPEG capture without changing settings or pose",
+    "aircraft reset preserves the protected pose and disabled capture",
+    "leaving protect stays disabled until an explicit enable command",
+    "legacy manual, cancel-tracking and track commands exit protection without enabling capture",
+    "deleting auto target falls back to body_fixed and holds the last angles with missing status",
+    "finally restores startup pose, sensor mode/settings, view and pre-existing targets while paused"
+  ],
+  "geometry": [
+    {
+      "case": "geo uses the exact supplied ellipsoid height and independent WGS84 pointing",
+      "expected_deg": [
+        20.45837520747732,
+        -54.645775761564856
+      ],
+      "actual_deg": [
+        20.45837520748054,
+        -54.645775761565076
+      ],
+      "errors_deg": [
+        3.211653165635653e-12,
+        2.2026824808563106e-13
+      ]
+    },
+    {
+      "case": "geo retains its world point while aircraft attitude changes its relative angles",
+      "expected_deg": [
+        23.95101481591438,
+        -62.20483870569877
+      ],
+      "actual_deg": [
+        23.951014815918178,
+        -62.204838705699416
+      ],
+      "errors_deg": [
+        3.808509063674137e-12,
+        6.465938895416912e-13
+      ]
+    },
+    {
+      "case": "aircraft reset preserves geo mode and its exact world point",
+      "expected_deg": [
+        62.97042180122667,
+        -88.93857100832018
+      ],
+      "actual_deg": [
+        62.97042180125371,
+        -88.9385710083207
+      ],
+      "errors_deg": [
+        2.702904566831421e-11,
+        5.115907697472721e-13
+      ]
+    }
+  ],
+  "atomicity": {
+    "missing_auto_target": {
+      "rejected": true,
+      "state_unchanged": true,
+      "changes": {},
+      "frame_sequence_before": 0,
+      "frame_sequence_after": 0
+    },
+    "invalid_inputs": {
+      "bad_fields_rejected": true,
+      "nan_rejected": true,
+      "outside_render_bounds_rejected": true,
+      "antipode_rejected": true,
+      "state_unchanged": true,
+      "changes": {},
+      "frame_sequence_before": 0,
+      "frame_sequence_after": 0
+    },
+    "protected_camera": {
+      "enable_rejected": true,
+      "frame_rejected": true,
+      "state_unchanged": true,
+      "changes": {},
+      "frame_sequence_before": 0,
+      "frame_sequence_after": 0
+    }
+  },
+  "invalid_fields": [
+    {
+      "body": {},
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "unknown"
+      },
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "body_fixed",
+        "azimuth_deg": 0
+      },
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "body_fixed",
+        "azimuth_deg": 181,
+        "elevation_deg": 0
+      },
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "auto",
+        "target_id": ""
+      },
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "auto",
+        "target_id": 7
+      },
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "geo",
+        "latitude_deg": 91,
+        "longitude_deg": 126.4904,
+        "ellipsoid_height_m": 350
+      },
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "geo",
+        "latitude_deg": 33.5099,
+        "longitude_deg": 181,
+        "ellipsoid_height_m": 350
+      },
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "geo",
+        "latitude_deg": 33.5099,
+        "longitude_deg": 126.4904,
+        "ellipsoid_height_m": 20001
+      },
+      "rejected": true
+    },
+    {
+      "body": {
+        "mode": "protect",
+        "target_id": "gimbal-check-c5d284f548"
+      },
+      "rejected": true
+    }
+  ],
+  "restored": {
+    "aircraft": {
+      "latitude_deg": 33.43524497839071,
+      "longitude_deg": 126.52,
+      "ellipsoid_height_m": 2600.02663739305,
+      "heading_deg": 0,
+      "pitch_deg": 2.052953529274606,
+      "roll_deg": 0,
+      "simulation_time_s": 0,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 19,
+      "vertical_speed_mps": -2.993178621624182e-14,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 0,
+      "roll_rate_deg_s": 0,
+      "pitch_rate_deg_s": 0,
+      "yaw_rate_deg_s": 0,
+      "angle_of_attack_deg": 2.0529535292746965,
+      "sideslip_deg": 0,
+      "ground_speed_mps": 18.999999999999996,
+      "air_density_kg_m3": 0.9472615976888947,
+      "dynamic_pressure_pa": 170.98071838284548,
+      "lift_coefficient": 0.3583088836624584,
+      "drag_coefficient": 0.11545448269766516,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 0.9993553975238665
+    },
+    "controls": {
+      "elevator_deg": -0.5973560576663506,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.3907286267055525
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 2168.5805132782807,
+      "terrain_height_m": 426.5054624453187,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "terrain",
+      "available": true
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "actuators": {
+      "elevator_deg": -0.597363207177688,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.39072762156199,
+      "thrust_n": 6.123483285119507
+    },
+    "airframe": {
+      "id": "thor-development",
+      "profile": "aircraft/thor.json",
+      "fingerprint": "sha1:0fa4369e8814b26210c5242491f7422bf0dd83c2",
+      "error": ""
+    },
+    "visual": {
+      "source": "builtin",
+      "config": "aircraft/visual.json",
+      "mesh": "",
+      "triangle_count": 0,
+      "span_m": 1.27,
+      "fingerprint": "sha1:31eec5e362e4e61ee3884fef27312c28760f59b0",
+      "error": "",
+      "show_builtin_gear": true
+    },
+    "eoir": {
+      "enabled": false,
+      "mode": "ccd",
+      "fov_deg": 30,
+      "azimuth_deg": 0,
+      "elevation_deg": -45,
+      "gimbal_mode": "body_fixed",
+      "point_latitude_deg": 0,
+      "point_longitude_deg": 0,
+      "point_ellipsoid_height_m": 0,
+      "target_id": "",
+      "tracking_status": "manual",
+      "limited": false,
+      "target_in_fov": false,
+      "error_deg": 0,
+      "frame_sequence": 0,
+      "error": ""
+    },
+    "targets": [],
+    "disturbance": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 0,
+      "gust_north_mps": 0,
+      "gust_up_mps": 0,
+      "gust_start_s": 0,
+      "gust_duration_s": 0,
+      "effective_wind_east_mps": 0,
+      "effective_wind_north_mps": 0,
+      "effective_wind_up_mps": 0
+    },
+    "navigation": {
+      "mode": "manual",
+      "stall_recovery": false,
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "environment": {
+      "wind_east_mps": 0,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 49,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_nonlinear_6dof_v2",
+    "fault": ""
+  },
+  "restore_errors": [],
+  "api_requests": 57
+}

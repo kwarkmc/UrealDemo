@@ -1,0 +1,109 @@
+{
+  "ok": true,
+  "rates": [
+    {
+      "requested": 0.25,
+      "measured": 0.2414001207012307,
+      "native": 0.2399474991991449,
+      "simulation_seconds": 0.4000000000000002,
+      "distance_m": 7.599999999999998
+    },
+    {
+      "requested": 1,
+      "measured": 0.993296770260063,
+      "native": 0.9979555840088177,
+      "simulation_seconds": 1.6300000000000012,
+      "distance_m": 30.96999999999972
+    },
+    {
+      "requested": 5,
+      "measured": 4.929230769230691,
+      "native": 4.992179270280303,
+      "simulation_seconds": 8.009999999999874,
+      "distance_m": 152.1899999999983
+    },
+    {
+      "requested": 20,
+      "measured": 19.60748792267483,
+      "native": 20.003222033452683,
+      "simulation_seconds": 32.470000000002024,
+      "distance_m": 624.910000000103
+    }
+  ],
+  "passed": [
+    "Start on the migrated country map",
+    "0.25x real-time playback measured 0.241x",
+    "0.25x native effective-rate telemetry agrees",
+    "0.25x changes position and travelled distance",
+    "0.25x trimmed trajectory travels 19 metres per simulation second",
+    "1x real-time playback measured 0.993x",
+    "1x native effective-rate telemetry agrees",
+    "1x changes position and travelled distance",
+    "1x trimmed trajectory travels 19 metres per simulation second",
+    "5x real-time playback measured 4.929x",
+    "5x native effective-rate telemetry agrees",
+    "5x changes position and travelled distance",
+    "5x trimmed trajectory travels 19 metres per simulation second",
+    "20x real-time playback measured 19.607x",
+    "20x native effective-rate telemetry agrees",
+    "20x changes position and travelled distance",
+    "20x trimmed trajectory travels 19 metres per simulation second",
+    "Explicit .5 s step is identical at .25x and 20x",
+    "Rejected request with HTTP 400: factor must be a finite number in [0.25, 20].",
+    "Rejected request with HTTP 400: factor must be a finite number in [0.25, 20].",
+    "Rejected request with HTTP 400: factor must be a finite number in [0.25, 20].",
+    "Invalid factor preserves the current setting",
+    "Rejected request with HTTP 409: Active manifest path contains an invalid or traversing segment",
+    "Invalid manifest path preserves the loaded map and aircraft",
+    "Imported local PNG/DEM map loads without an Unreal rebuild and pauses flight",
+    "Custom map overview is available",
+    "Alternative JPEG filename renders through the same loader",
+    "Rejected request with HTTP 409: Tile image is missing or exceeds 20 MB",
+    "Missing replacement image preserves the previous valid map"
+  ],
+  "final_state": {
+    "aircraft": {
+      "latitude_deg": 33.43,
+      "longitude_deg": 126.52,
+      "ellipsoid_height_m": 2599.9999999990687,
+      "heading_deg": 0,
+      "pitch_deg": 1.227578832134544,
+      "roll_deg": 0,
+      "simulation_time_s": 0,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 19.000000000000004,
+      "vertical_speed_mps": 0,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 0,
+      "roll_rate_deg_s": 0,
+      "pitch_rate_deg_s": 0,
+      "yaw_rate_deg_s": 0
+    },
+    "controls": {
+      "elevator_deg": 0,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.5
+    },
+    "navigation": {
+      "mode": "manual",
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 49,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless \u00a9 EOX IT Services GmbH (Copernicus Sentinel data 2016 & 2017); Copernicus DEM GLO-30; modified Copernicus Sentinel data 2025. https://cloudless.eox.at",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_local_6dof",
+    "fault": ""
+  }
+}

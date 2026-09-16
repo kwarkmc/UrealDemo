@@ -1,0 +1,194 @@
+{
+  "state_before_resume": {
+    "aircraft": {
+      "latitude_deg": 33.43438118184825,
+      "longitude_deg": 126.5237277116322,
+      "ellipsoid_height_m": 2622.1499438341707,
+      "heading_deg": 74.01407396597426,
+      "pitch_deg": 1.9771629240808866,
+      "roll_deg": 15.903791559438002,
+      "simulation_time_s": 0,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 20.008717985413988,
+      "vertical_speed_mps": -0.00013405282804201946,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 0,
+      "roll_rate_deg_s": 0,
+      "pitch_rate_deg_s": 0,
+      "yaw_rate_deg_s": 0,
+      "angle_of_attack_deg": 1.801916996062514,
+      "sideslip_deg": 0.8928987359087848,
+      "ground_speed_mps": 20.008717984964928,
+      "air_density_kg_m3": 0.9451280078736871,
+      "dynamic_pressure_pa": 189.19042973488675,
+      "lift_coefficient": 0.33400677150483365,
+      "drag_coefficient": 0.11521852240257749,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 1.0302199086279855
+    },
+    "controls": {
+      "elevator_deg": -0.619728495680157,
+      "aileron_deg": 0.022603699753559844,
+      "rudder_deg": 0,
+      "throttle": 0.43153321345932977
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 2176.5192390969237,
+      "terrain_height_m": 437.853346997872,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "terrain",
+      "available": true
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "actuators": {
+      "elevator_deg": -0.3171352024841868,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.4302738433499866,
+      "thrust_n": 6.74325167298099
+    },
+    "airframe": {
+      "id": "thor-development",
+      "profile": "aircraft/thor.json",
+      "fingerprint": "sha1:0fa4369e8814b26210c5242491f7422bf0dd83c2",
+      "error": ""
+    },
+    "visual": {
+      "source": "builtin",
+      "config": "aircraft/visual.json",
+      "mesh": "",
+      "triangle_count": 0,
+      "span_m": 1.27,
+      "fingerprint": "sha1:31eec5e362e4e61ee3884fef27312c28760f59b0",
+      "error": "",
+      "show_builtin_gear": true
+    },
+    "eoir": {
+      "enabled": true,
+      "mode": "ccd",
+      "fov_deg": 1,
+      "azimuth_deg": -96.02751098500605,
+      "elevation_deg": -31.88900541475714,
+      "gimbal_mode": "auto",
+      "point_latitude_deg": 0,
+      "point_longitude_deg": 0,
+      "point_ellipsoid_height_m": 0,
+      "target_id": "demo_tank",
+      "tracking_status": "tracking",
+      "limited": false,
+      "target_in_fov": true,
+      "error_deg": 0,
+      "frame_sequence": 1265,
+      "error": ""
+    },
+    "targets": [
+      {
+        "id": "demo_tank",
+        "kind": "tank",
+        "latitude_deg": 33.509,
+        "longitude_deg": 126.49,
+        "ellipsoid_height_m": 49.54163753427565,
+        "heading_deg": 60,
+        "hit": false,
+        "hit_count": 0,
+        "last_hit_shot_id": ""
+      },
+      {
+        "id": "demo_missile",
+        "kind": "missile",
+        "latitude_deg": 33.5092,
+        "longitude_deg": 126.4902,
+        "ellipsoid_height_m": 49.5417032931,
+        "heading_deg": 60,
+        "hit": false,
+        "hit_count": 0,
+        "last_hit_shot_id": ""
+      }
+    ],
+    "wargame": {
+      "time_s": 0,
+      "error": "",
+      "weapons": [
+        {
+          "id": "training-marker",
+          "label": "Sim projectile",
+          "mesh": "models/example.stl",
+          "animation_duration_s": 5,
+          "triangle_count": 144
+        }
+      ],
+      "shots": []
+    },
+    "disturbance": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 0,
+      "gust_north_mps": 0,
+      "gust_up_mps": 0,
+      "gust_start_s": 0,
+      "gust_duration_s": 1,
+      "effective_wind_east_mps": 0,
+      "effective_wind_north_mps": 0,
+      "effective_wind_up_mps": 0
+    },
+    "navigation": {
+      "mode": "manual",
+      "stall_recovery": false,
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "environment": {
+      "wind_east_mps": 0,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 50,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.\nJeju detail: modified Copernicus Sentinel-2 data 2025-04-06.",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_nonlinear_6dof_v2",
+    "fault": ""
+  },
+  "settings_change": {
+    "fov_deg": 1
+  },
+  "archived_session": "artifacts/render-quality-before.json",
+  "note": "Pose and input settings restored, not internal rates/clocks/event IDs."
+}

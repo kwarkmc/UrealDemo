@@ -1,0 +1,1210 @@
+{
+  "ok": true,
+  "passed": [
+    "nominal profile provides 0.3 s engine lag and 120 deg/s servo rate",
+    "engine output follows independent first-order step solution after 0.3 s",
+    "engine output loss gives zero thrust without replacing spool telemetry",
+    "all surfaces obey 120 deg/s rate limit during 0.05 s command step",
+    "surface jams retain captured angles while requested commands change",
+    "delayed one-cosine gust reaches its peak and returns to steady wind after 1.2 s",
+    "reset and repeated explicit inputs replay gust and aircraft state exactly",
+    "negative mass profile reload is rejected",
+    "invalid profile preserves active identity, fingerprint and complete physical state",
+    "corrected profile loads with new identity and fingerprint",
+    "loaded 0.6 s engine constant changes response to the independent analytic solution",
+    "original profile bytes and active identity are restored",
+    "invalid runway index and climb height are rejected without state changes",
+    "automatic landing rejects a grounded aircraft without state changes",
+    "takeoff arm preserves paused physical state without teleporting",
+    "manual flight controls cancel automatic operation",
+    "automatic takeoff reaches airborne completion through physical time steps",
+    "landing arm preserves airborne physical state without teleporting",
+    "takeoff_to_landing touchdown observation is inside runway length and width",
+    "takeoff_to_landing completes landed, parked and paused",
+    "explicit landing preparation initializes paused airborne 18 m/s test state",
+    "prepared landing is 600 m before the selected runway threshold on its centerline",
+    "prepared_landing touchdown observation is inside runway length and width",
+    "prepared_landing completes landed, parked and paused",
+    "early engine failure rejects takeoff and stops on the ground",
+    "finally restores original selector and temporary-file bytes",
+    "finally restores original profile, paused ground start, parking brake and 1x"
+  ],
+  "operations": {
+    "takeoff": [
+      {
+        "aircraft": {
+          "simulation_time_s": 0,
+          "latitude_deg": 33.50688117159682,
+          "longitude_deg": 126.48561935198394,
+          "ellipsoid_height_m": 50.272186098620296,
+          "heading_deg": 60.00000000064381,
+          "pitch_deg": -0.0042226801877666255,
+          "roll_deg": -8.735763262693239e-06,
+          "speed_mps": 0,
+          "ground_speed_mps": 0,
+          "vertical_speed_mps": 0,
+          "running": false,
+          "distance_travelled_m": 0
+        },
+        "automation": {
+          "phase": "takeoff_roll",
+          "kind": "takeoff",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Accelerating on runway",
+          "cross_track_m": 2.5742439251542885e-08,
+          "along_track_m": 29.99998673267494,
+          "target_height_m": 50
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 0,
+          "parking_brake": true,
+          "on_ground": true,
+          "wheels_on_ground": 3,
+          "height_agl_m": 0.18000000000000124,
+          "terrain_height_m": 50.092186097986996,
+          "normal_force_n": 19.211227297825523,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 0,
+          "aileron_deg": 0,
+          "rudder_deg": 0,
+          "throttle": 0
+        },
+        "actuators": {
+          "elevator_deg": 0,
+          "aileron_deg": 0,
+          "rudder_deg": 0,
+          "throttle": 0,
+          "thrust_n": 0
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 3,
+          "latitude_deg": 33.506998488763415,
+          "longitude_deg": 126.48586189263713,
+          "ellipsoid_height_m": 50.307385503314435,
+          "heading_deg": 59.99752383172489,
+          "pitch_deg": 4.445386210913025,
+          "roll_deg": -6.416373836709682e-06,
+          "speed_mps": 17.520595755989167,
+          "ground_speed_mps": 17.513773376327634,
+          "vertical_speed_mps": 0.48889443382267744,
+          "running": false,
+          "distance_travelled_m": 26.02301384031673
+        },
+        "automation": {
+          "phase": "rotate",
+          "kind": "takeoff",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Rotating for liftoff",
+          "cross_track_m": 0.00014203983533719004,
+          "along_track_m": 55.84777445249859,
+          "target_height_m": 50
+        },
+        "ground": {
+          "steering_deg": -5.405983776242595e-06,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": false,
+          "wheels_on_ground": 0,
+          "height_agl_m": 0.2170641757312511,
+          "terrain_height_m": 50.09032132662833,
+          "normal_force_n": 0,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": -1.178861103534128,
+          "aileron_deg": 2.172932459385552e-06,
+          "rudder_deg": -1.717232136428951e-05,
+          "throttle": 1
+        },
+        "actuators": {
+          "elevator_deg": -1.5726818138933618,
+          "aileron_deg": 2.967147509855491e-06,
+          "rudder_deg": -1.9249268612502224e-05,
+          "throttle": 0.9999546000702374,
+          "thrust_n": 15.67128849230076
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 4,
+          "latitude_deg": 33.50708448794141,
+          "longitude_deg": 126.48603968506785,
+          "ellipsoid_height_m": 51.70683259237558,
+          "heading_deg": 59.99751128447667,
+          "pitch_deg": 4.585074919523789,
+          "roll_deg": -4.2236478558845885e-05,
+          "speed_mps": 19.944607694737343,
+          "ground_speed_mps": 19.906855986852058,
+          "vertical_speed_mps": 1.2265646398410328,
+          "running": false,
+          "distance_travelled_m": 45.152940426778244
+        },
+        "automation": {
+          "phase": "climb",
+          "kind": "takeoff",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Climbing along runway departure",
+          "cross_track_m": 0.00012161375751187819,
+          "along_track_m": 74.8992872332635,
+          "target_height_m": 50
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": false,
+          "wheels_on_ground": 0,
+          "height_agl_m": 1.6178107720261559,
+          "terrain_height_m": 50.08902181778103,
+          "normal_force_n": 0,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": -0.5622915078512111,
+          "aileron_deg": -9.851469202085302e-07,
+          "rudder_deg": 0,
+          "throttle": 0.3940947100108489
+        },
+        "actuators": {
+          "elevator_deg": -0.6359294511240389,
+          "aileron_deg": -6.019352289442391e-07,
+          "rudder_deg": -9.695876031647154e-08,
+          "throttle": 0.5644718782643003,
+          "thrust_n": 8.846403276158116
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 33,
+          "latitude_deg": 33.50954360501272,
+          "longitude_deg": 126.49112398205888,
+          "ellipsoid_height_m": 98.09081598650664,
+          "heading_deg": 59.99758176534891,
+          "pitch_deg": 2.7415480179195963,
+          "roll_deg": -5.9005296634925144e-08,
+          "speed_mps": 19.2979260368425,
+          "ground_speed_mps": 19.290329148290603,
+          "vertical_speed_mps": 0.5414339055263757,
+          "running": false,
+          "distance_travelled_m": 592.749410132507
+        },
+        "automation": {
+          "phase": "hold",
+          "kind": "takeoff",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": true,
+          "message": "Takeoff complete; flying departure hold",
+          "cross_track_m": -3.4715942203350377e-07,
+          "along_track_m": 620.3964148580822,
+          "target_height_m": 50
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": false,
+          "wheels_on_ground": 0,
+          "height_agl_m": 48.01480918761047,
+          "terrain_height_m": 50.076006789691746,
+          "normal_force_n": 0,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 2.8770847656322536,
+          "aileron_deg": -2.973730401052896e-08,
+          "rudder_deg": 0,
+          "throttle": 0.465480411733631
+        },
+        "actuators": {
+          "elevator_deg": 0.7194999835819331,
+          "aileron_deg": -7.747147399944351e-09,
+          "rudder_deg": -3.58787549712133e-165,
+          "throttle": 0.5391834562822975,
+          "thrust_n": 8.450083126856166
+        },
+        "fault": ""
+      }
+    ],
+    "takeoff_to_landing": [
+      {
+        "aircraft": {
+          "simulation_time_s": 33,
+          "latitude_deg": 33.50954360501272,
+          "longitude_deg": 126.49112398205888,
+          "ellipsoid_height_m": 98.09081598650664,
+          "heading_deg": 59.99758176534891,
+          "pitch_deg": 2.7415480179195963,
+          "roll_deg": -5.9005296634925144e-08,
+          "speed_mps": 19.2979260368425,
+          "ground_speed_mps": 19.290329148290603,
+          "vertical_speed_mps": 0.5414339055263757,
+          "running": false,
+          "distance_travelled_m": 592.749410132507
+        },
+        "automation": {
+          "phase": "join",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Joining runway approach pattern",
+          "cross_track_m": -3.459752084826271e-07,
+          "along_track_m": 620.5893195549875,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": false,
+          "wheels_on_ground": 0,
+          "height_agl_m": 48.01480918761047,
+          "terrain_height_m": 50.076006789691746,
+          "normal_force_n": 0,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 2.8770847656322536,
+          "aileron_deg": -2.973730401052896e-08,
+          "rudder_deg": 0,
+          "throttle": 0.465480411733631
+        },
+        "actuators": {
+          "elevator_deg": 0.7194999835819331,
+          "aileron_deg": -7.747147399944351e-09,
+          "rudder_deg": -3.58787549712133e-165,
+          "throttle": 0.5391834562822975,
+          "thrust_n": 8.450083126856166
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 195,
+          "latitude_deg": 33.5020685303337,
+          "longitude_deg": 126.4757648456528,
+          "ellipsoid_height_m": 114.28806827403605,
+          "heading_deg": 45.3537205293494,
+          "pitch_deg": -0.06825298773800365,
+          "roll_deg": 10.42681645393516,
+          "speed_mps": 17.883268220138383,
+          "ground_speed_mps": 17.871008287770405,
+          "vertical_speed_mps": -0.6620762885445493,
+          "running": false,
+          "distance_travelled_m": 3511.4055939264736
+        },
+        "automation": {
+          "phase": "final",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Tracking runway final approach",
+          "cross_track_m": 4.392850695631587,
+          "along_track_m": -1030.0742863727874,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": false,
+          "wheels_on_ground": 0,
+          "height_agl_m": 62.37487935426931,
+          "terrain_height_m": 51.88475866429508,
+          "normal_force_n": 0,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "terrain",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": -1.5206097804839591,
+          "aileron_deg": -0.0794413255642285,
+          "rudder_deg": 0,
+          "throttle": 0.4578825250450473
+        },
+        "actuators": {
+          "elevator_deg": -1.7374711441573436,
+          "aileron_deg": -0.05940916848044451,
+          "rudder_deg": -2e-323,
+          "throttle": 0.4124588165966959,
+          "thrust_n": 6.464054573703419
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 255,
+          "latitude_deg": 33.50697689262673,
+          "longitude_deg": 126.48581724228875,
+          "ellipsoid_height_m": 52.74459316395223,
+          "heading_deg": 59.99758285940618,
+          "pitch_deg": -1.078760968341802,
+          "roll_deg": 2.909449169260484e-07,
+          "speed_mps": 17.803023165523886,
+          "ground_speed_mps": 17.768811395350813,
+          "vertical_speed_mps": -1.1031660929485385,
+          "running": false,
+          "distance_travelled_m": 4595.596636289491
+        },
+        "automation": {
+          "phase": "flare",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Flare and touchdown",
+          "cross_track_m": -1.4288329098664372e-06,
+          "along_track_m": 51.054218555647026,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": false,
+          "wheels_on_ground": 0,
+          "height_agl_m": 2.6539365179222165,
+          "terrain_height_m": 50.09065664000809,
+          "normal_force_n": 0,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 0.34470272302720206,
+          "aileron_deg": -3.9639860835722005e-08,
+          "rudder_deg": 0,
+          "throttle": 0.06020420979143873
+        },
+        "actuators": {
+          "elevator_deg": -0.8736280454057822,
+          "aileron_deg": -3.782327386148892e-08,
+          "rudder_deg": -2e-323,
+          "throttle": 0.18462706085515562,
+          "thrust_n": 2.893475297721999
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 259,
+          "latitude_deg": 33.507257507025535,
+          "longitude_deg": 126.48639738110535,
+          "ellipsoid_height_m": 50.26657936349511,
+          "heading_deg": 59.99758290433738,
+          "pitch_deg": -0.004788965819487125,
+          "roll_deg": -8.55354673429725e-06,
+          "speed_mps": 11.691940948662685,
+          "ground_speed_mps": 11.691940916959318,
+          "vertical_speed_mps": -0.0008610155848395092,
+          "running": false,
+          "distance_travelled_m": 4657.901736546543
+        },
+        "automation": {
+          "phase": "rollout",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Touchdown; braking along runway",
+          "cross_track_m": -4.772975841692356e-07,
+          "along_track_m": 113.35932641216415,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": -2.0375598905079487e-09,
+          "brake": 0.7,
+          "parking_brake": false,
+          "on_ground": true,
+          "wheels_on_ground": 3,
+          "height_agl_m": 0.17999911176427863,
+          "terrain_height_m": 50.08658025227487,
+          "normal_force_n": 14.972265052395196,
+          "impact_speed_mps": 0.5686395189758754,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 2,
+          "aileron_deg": 5.595054475931498e-06,
+          "rudder_deg": 1.2946460765806587e-08,
+          "throttle": 0
+        },
+        "actuators": {
+          "elevator_deg": 1.9997879987235057,
+          "aileron_deg": 5.597186099630198e-06,
+          "rudder_deg": 1.095711799163293e-08,
+          "throttle": 0.022316876581239417,
+          "thrust_n": 0.34975008978118416
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 261.2499999999998,
+          "latitude_deg": 33.507316824051955,
+          "longitude_deg": 126.48652001360952,
+          "ellipsoid_height_m": 50.26579635590315,
+          "heading_deg": 59.99758203979769,
+          "pitch_deg": -0.00422280734052788,
+          "roll_deg": -8.541646995897032e-06,
+          "speed_mps": 0.11519820829806189,
+          "ground_speed_mps": 0.11519820798981086,
+          "vertical_speed_mps": -8.427332431189124e-06,
+          "running": false,
+          "distance_travelled_m": 4671.0591836363565
+        },
+        "automation": {
+          "phase": "complete",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": true,
+          "message": "Landed and parked",
+          "cross_track_m": -2.571072252900442e-07,
+          "along_track_m": 126.633902856848,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 1,
+          "parking_brake": true,
+          "on_ground": true,
+          "wheels_on_ground": 3,
+          "height_agl_m": 0.1800000015225015,
+          "terrain_height_m": 50.08579635433853,
+          "normal_force_n": 19.209399114468447,
+          "impact_speed_mps": 0.5686395189758754,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 0,
+          "aileron_deg": 5.45899454374126e-06,
+          "rudder_deg": 7.503140811819113e-08,
+          "throttle": 0
+        },
+        "actuators": {
+          "elevator_deg": 0.001609466020249071,
+          "aileron_deg": 5.581019762005905e-06,
+          "rudder_deg": 6.541559593713287e-08,
+          "throttle": 1.2343115627602052e-05,
+          "thrust_n": 0.00019344130811577937
+        },
+        "fault": ""
+      }
+    ],
+    "prepared_landing": [
+      {
+        "aircraft": {
+          "simulation_time_s": 261.2499999999998,
+          "latitude_deg": 33.50404084269185,
+          "longitude_deg": 126.4797478508606,
+          "ellipsoid_height_m": 110.16973451338708,
+          "heading_deg": 60,
+          "pitch_deg": 1.5829607720655094,
+          "roll_deg": 0,
+          "speed_mps": 18,
+          "ground_speed_mps": 17.99999999999975,
+          "vertical_speed_mps": -2.9824817393830916e-06,
+          "running": false,
+          "distance_travelled_m": 0
+        },
+        "automation": {
+          "phase": "final",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Tracking runway final approach",
+          "cross_track_m": 5.25383463225907e-10,
+          "along_track_m": -599.9999999992236,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": false,
+          "wheels_on_ground": 0,
+          "height_agl_m": 59.354883601511816,
+          "terrain_height_m": 50.790777595713735,
+          "normal_force_n": 0,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "terrain",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": -0.283308979093769,
+          "aileron_deg": 0,
+          "rudder_deg": 0,
+          "throttle": 0.44589458805426885
+        },
+        "actuators": {
+          "elevator_deg": -0.283308979093769,
+          "aileron_deg": 0,
+          "rudder_deg": 0,
+          "throttle": 0.44589458805426885,
+          "thrust_n": 6.988059983986502
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 297.2499999999998,
+          "latitude_deg": 33.506969850697324,
+          "longitude_deg": 126.48580268400035,
+          "ellipsoid_height_m": 52.84243979398161,
+          "heading_deg": 59.99434268839218,
+          "pitch_deg": -1.9415793608048864,
+          "roll_deg": -4.1088620959250935e-07,
+          "speed_mps": 17.90281960187839,
+          "ground_speed_mps": 17.85233951575375,
+          "vertical_speed_mps": -1.3434744179396516,
+          "running": false,
+          "distance_travelled_m": 652.2062775295565
+        },
+        "automation": {
+          "phase": "flare",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Flare and touchdown",
+          "cross_track_m": -1.8824810594635557e-06,
+          "along_track_m": 49.491401861388695,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": false,
+          "wheels_on_ground": 0,
+          "height_agl_m": 2.7516730372261713,
+          "terrain_height_m": 50.09076675027609,
+          "normal_force_n": 0,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": -1.132394142189875,
+          "aileron_deg": 4.8600350113760766e-09,
+          "rudder_deg": 0,
+          "throttle": 0.053884786125123804
+        },
+        "actuators": {
+          "elevator_deg": -2.2390694824333384,
+          "aileron_deg": 4.4982654291787045e-09,
+          "rudder_deg": 0,
+          "throttle": 0.22332514497779643,
+          "thrust_n": 3.499951672092026
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 301.2499999999998,
+          "latitude_deg": 33.50725242661021,
+          "longitude_deg": 126.48638687782915,
+          "ellipsoid_height_m": 50.2666477188468,
+          "heading_deg": 59.99434292069452,
+          "pitch_deg": -0.010480294267472465,
+          "roll_deg": -2.0024749134844043e-05,
+          "speed_mps": 12.060102452705673,
+          "ground_speed_mps": 12.060102273420718,
+          "vertical_speed_mps": -0.0020795167082032955,
+          "running": false,
+          "distance_travelled_m": 714.949878624428
+        },
+        "automation": {
+          "phase": "rollout",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Touchdown; braking along runway",
+          "cross_track_m": -6.683225340570987e-07,
+          "along_track_m": 112.22873083489215,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": -3.3296217774020205e-08,
+          "brake": 0.7,
+          "parking_brake": false,
+          "on_ground": true,
+          "wheels_on_ground": 3,
+          "height_agl_m": 0.17999906229098436,
+          "terrain_height_m": 50.08664865512401,
+          "normal_force_n": 14.706425214292885,
+          "impact_speed_mps": 0.5693639342820792,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 2,
+          "aileron_deg": 1.3104019261726883e-05,
+          "rudder_deg": -3.204600810390192e-08,
+          "throttle": 0
+        },
+        "actuators": {
+          "elevator_deg": 1.9994913148230393,
+          "aileron_deg": 1.3107817785668632e-05,
+          "rudder_deg": -3.5559471556578046e-08,
+          "throttle": 0.0281456481959474,
+          "thrust_n": 0.44109859852688765
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 303.5699999999995,
+          "latitude_deg": 33.507315514191305,
+          "longitude_deg": 126.4865173055884,
+          "ellipsoid_height_m": 50.26581337116659,
+          "heading_deg": 59.99434105794796,
+          "pitch_deg": -0.009882890702705715,
+          "roll_deg": -2.0013385942995617e-05,
+          "speed_mps": 0.11860222844481982,
+          "ground_speed_mps": 0.11860222668729165,
+          "vertical_speed_mps": -2.0417970450831007e-05,
+          "running": false,
+          "distance_travelled_m": 728.9436926420593
+        },
+        "automation": {
+          "phase": "complete",
+          "kind": "landing",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": true,
+          "message": "Landed and parked",
+          "cross_track_m": -2.617722784360223e-07,
+          "along_track_m": 126.34335492322461,
+          "target_height_m": 60
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 1,
+          "parking_brake": true,
+          "on_ground": true,
+          "wheels_on_ground": 3,
+          "height_agl_m": 0.18000000187036333,
+          "terrain_height_m": 50.08581337053329,
+          "normal_force_n": 19.209342738795172,
+          "impact_speed_mps": 0.5693639342820792,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 0,
+          "aileron_deg": 1.2915630134060551e-05,
+          "rudder_deg": 5.54541609760367e-08,
+          "throttle": 0
+        },
+        "actuators": {
+          "elevator_deg": 0.001609466020249071,
+          "aileron_deg": 1.3045650490871417e-05,
+          "rudder_deg": 4.792249993043245e-08,
+          "throttle": 1.2327280027256551e-05,
+          "thrust_n": 0.00019319313258716467
+        },
+        "fault": ""
+      }
+    ],
+    "rejected_takeoff": [
+      {
+        "aircraft": {
+          "simulation_time_s": 1,
+          "latitude_deg": 33.50689092329912,
+          "longitude_deg": 126.48563951348956,
+          "ellipsoid_height_m": 50.272026975639164,
+          "heading_deg": 59.99871186887441,
+          "pitch_deg": -0.00420111911531249,
+          "roll_deg": -8.653472877013143e-06,
+          "speed_mps": 5.3645864969058294,
+          "ground_speed_mps": 5.364586482318626,
+          "vertical_speed_mps": -0.00039561170623607383,
+          "running": false,
+          "distance_travelled_m": 2.163148911677831
+        },
+        "automation": {
+          "phase": "takeoff_roll",
+          "kind": "takeoff",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Accelerating on runway",
+          "cross_track_m": 5.585799265772332e-05,
+          "along_track_m": 32.10977649493969,
+          "target_height_m": 50
+        },
+        "ground": {
+          "steering_deg": -0.00012048430629887071,
+          "brake": 0,
+          "parking_brake": false,
+          "on_ground": true,
+          "wheels_on_ground": 3,
+          "height_agl_m": 0.1799999326028173,
+          "terrain_height_m": 50.09202704299241,
+          "normal_force_n": 18.307554050194497,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": -0.0007629849848732686,
+          "aileron_deg": 5.479131137318192e-06,
+          "rudder_deg": -7.332249248789025e-05,
+          "throttle": 1
+        },
+        "actuators": {
+          "elevator_deg": -0.0006034638114246807,
+          "aileron_deg": 5.4901602382269315e-06,
+          "rudder_deg": -7.825938340411703e-05,
+          "throttle": 0.9643260066527469,
+          "thrust_n": 0
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 2,
+          "latitude_deg": 33.50690362494654,
+          "longitude_deg": 126.48566577314499,
+          "ellipsoid_height_m": 50.27182097546756,
+          "heading_deg": 59.99789793145919,
+          "pitch_deg": -0.004222822213817263,
+          "roll_deg": -8.57611099470607e-06,
+          "speed_mps": 0.292474772669868,
+          "ground_speed_mps": 0.2924747718755293,
+          "vertical_speed_mps": -2.1555696744472338e-05,
+          "running": false,
+          "distance_travelled_m": 4.980596375867778
+        },
+        "automation": {
+          "phase": "rejected_takeoff",
+          "kind": "takeoff",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Rejected takeoff: acceleration, alignment or runway remaining",
+          "cross_track_m": 9.205717697718134e-05,
+          "along_track_m": 34.977456398395724,
+          "target_height_m": 50
+        },
+        "ground": {
+          "steering_deg": -0.00015974897117390717,
+          "brake": 0.7,
+          "parking_brake": false,
+          "on_ground": true,
+          "wheels_on_ground": 3,
+          "height_agl_m": 0.17999999929837254,
+          "terrain_height_m": 50.091820975765586,
+          "normal_force_n": 19.20527780819847,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 0,
+          "aileron_deg": 5.574276910142571e-06,
+          "rudder_deg": -6.271472621213448e-05,
+          "throttle": 0
+        },
+        "actuators": {
+          "elevator_deg": 0.0026461053068094612,
+          "aileron_deg": 5.630058337172818e-06,
+          "rudder_deg": -5.711087411772723e-05,
+          "throttle": 0.034401359545912905,
+          "thrust_n": 0
+        },
+        "fault": ""
+      },
+      {
+        "aircraft": {
+          "simulation_time_s": 2.0299999999999994,
+          "latitude_deg": 33.50690365357707,
+          "longitude_deg": 126.48566583233531,
+          "ellipsoid_height_m": 50.2718205107376,
+          "heading_deg": 59.997895644970754,
+          "pitch_deg": -0.004222777350609609,
+          "roll_deg": -8.575939280607706e-06,
+          "speed_mps": 0.1410002157540139,
+          "ground_speed_mps": 0.14100021537101176,
+          "vertical_speed_mps": -1.03926302536169e-05,
+          "running": false,
+          "distance_travelled_m": 4.986947043736542
+        },
+        "automation": {
+          "phase": "aborted",
+          "kind": "takeoff",
+          "runway_index": 0,
+          "runway_name": "Jeju development strip (virtual)",
+          "completed": false,
+          "message": "Rejected takeoff stopped",
+          "cross_track_m": 9.210257042653631e-05,
+          "along_track_m": 34.98693377536739,
+          "target_height_m": 50
+        },
+        "ground": {
+          "steering_deg": 0,
+          "brake": 1,
+          "parking_brake": true,
+          "on_ground": true,
+          "wheels_on_ground": 3,
+          "height_agl_m": 0.1800000002481085,
+          "terrain_height_m": 50.091820511966944,
+          "normal_force_n": 19.208929421241876,
+          "impact_speed_mps": 0,
+          "crashed": false,
+          "surface": "Jeju development strip (virtual)",
+          "available": true
+        },
+        "controls": {
+          "elevator_deg": 0,
+          "aileron_deg": 5.57434823195425e-06,
+          "rudder_deg": -6.641258751359764e-05,
+          "throttle": 0
+        },
+        "actuators": {
+          "elevator_deg": 0.0018186398079220374,
+          "aileron_deg": 5.638455467846392e-06,
+          "rudder_deg": -5.945382426451047e-05,
+          "throttle": 0.031127637348450553,
+          "thrust_n": 0
+        },
+        "fault": ""
+      }
+    ]
+  },
+  "profile": {
+    "id": "thor-development",
+    "profile": "aircraft/thor.json",
+    "fingerprint": "sha1:73b5cb1b9150141a4a47410fb0917a6539eb52d1",
+    "error": ""
+  },
+  "runway": {
+    "name": "Jeju development strip (virtual)",
+    "latitude_deg": 33.509,
+    "longitude_deg": 126.49,
+    "heading_deg": 60,
+    "length_m": 1000,
+    "width_m": 40
+  },
+  "engine_response": {
+    "expected": 0.6321205588285577,
+    "state": {
+      "aircraft": {
+        "simulation_time_s": 0.3,
+        "latitude_deg": 33.50688117159681,
+        "longitude_deg": 126.48561935198394,
+        "ellipsoid_height_m": 50.272186098620296,
+        "heading_deg": 60.00000038497711,
+        "pitch_deg": -0.00422273749641767,
+        "roll_deg": -8.739187242467339e-06,
+        "speed_mps": 7.650469913640005e-08,
+        "ground_speed_mps": 6.025793051665815e-09,
+        "vertical_speed_mps": 7.62670230705879e-08,
+        "running": false,
+        "distance_travelled_m": 2.814998217301185e-08
+      },
+      "automation": {
+        "phase": "idle",
+        "kind": "none",
+        "runway_index": -1,
+        "runway_name": "",
+        "completed": false,
+        "message": "Inactive",
+        "cross_track_m": 0,
+        "along_track_m": 0,
+        "target_height_m": 0
+      },
+      "ground": {
+        "steering_deg": 0,
+        "brake": 0,
+        "parking_brake": true,
+        "on_ground": true,
+        "wheels_on_ground": 3,
+        "height_agl_m": 0.17999999929595098,
+        "terrain_height_m": 50.09218609891832,
+        "normal_force_n": 19.21117269555903,
+        "impact_speed_mps": 0,
+        "crashed": false,
+        "surface": "Jeju development strip (virtual)",
+        "available": true
+      },
+      "controls": {
+        "elevator_deg": 0,
+        "aileron_deg": 0,
+        "rudder_deg": 0,
+        "throttle": 1
+      },
+      "actuators": {
+        "elevator_deg": 0,
+        "aileron_deg": 0,
+        "rudder_deg": 0,
+        "throttle": 0.6321205588285559,
+        "thrust_n": 9.906593397961128
+      },
+      "fault": ""
+    }
+  },
+  "jammed": {
+    "aircraft": {
+      "simulation_time_s": 0.25,
+      "latitude_deg": 33.5068811715968,
+      "longitude_deg": 126.48561935198394,
+      "ellipsoid_height_m": 50.27218609675765,
+      "heading_deg": 60.0000006679673,
+      "pitch_deg": -0.004222656910063082,
+      "roll_deg": -8.662193543831907e-06,
+      "speed_mps": 9.718020908420234e-09,
+      "ground_speed_mps": 9.718020897592158e-09,
+      "vertical_speed_mps": -4.587536528207096e-13,
+      "running": false,
+      "distance_travelled_m": 1.1416989055723414e-08
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": true,
+      "on_ground": true,
+      "wheels_on_ground": 3,
+      "height_agl_m": 0.17999999992239912,
+      "terrain_height_m": 50.092186097986996,
+      "normal_force_n": 19.211222039021052,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "Jeju development strip (virtual)",
+      "available": true
+    },
+    "controls": {
+      "elevator_deg": -10,
+      "aileron_deg": -10,
+      "rudder_deg": -10,
+      "throttle": 0
+    },
+    "actuators": {
+      "elevator_deg": 6.0000000000000036,
+      "aileron_deg": 6.0000000000000036,
+      "rudder_deg": 6.0000000000000036,
+      "throttle": 0,
+      "thrust_n": 0
+    },
+    "fault": ""
+  },
+  "gust": {
+    "peak": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 2,
+      "gust_north_mps": 1,
+      "gust_up_mps": 0.5,
+      "gust_start_s": 0.2,
+      "gust_duration_s": 1,
+      "effective_wind_east_mps": 2,
+      "effective_wind_north_mps": 1,
+      "effective_wind_up_mps": 0.5
+    },
+    "end": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 2,
+      "gust_north_mps": 1,
+      "gust_up_mps": 0.5,
+      "gust_start_s": 0.2,
+      "gust_duration_s": 1,
+      "effective_wind_east_mps": 0,
+      "effective_wind_north_mps": 0,
+      "effective_wind_up_mps": 0
+    }
+  },
+  "profile_response": {
+    "profile": {
+      "id": "runtime-check",
+      "profile": "aircraft/runtime-check.json",
+      "fingerprint": "sha1:f90300292f1cfa7743f4e3d1496fdc8321884add",
+      "error": ""
+    },
+    "expected": 0.3934693402873666,
+    "actual_throttle": 0.39346934028737146
+  },
+  "takeoff_to_landing_touchdown": {
+    "along_track_m": 113.35932641216415,
+    "cross_track_m": -4.772975841692356e-07,
+    "impact_speed_mps": 0.5686395189758754
+  },
+  "prepared_approach": {
+    "aircraft": {
+      "simulation_time_s": 261.2499999999998,
+      "latitude_deg": 33.50404084269185,
+      "longitude_deg": 126.4797478508606,
+      "ellipsoid_height_m": 110.16973451338708,
+      "heading_deg": 60,
+      "pitch_deg": 1.5829607720655094,
+      "roll_deg": 0,
+      "speed_mps": 18,
+      "ground_speed_mps": 17.99999999999975,
+      "vertical_speed_mps": -2.9824817393830916e-06,
+      "running": false,
+      "distance_travelled_m": 0
+    },
+    "automation": {
+      "phase": "final",
+      "kind": "landing",
+      "runway_index": 0,
+      "runway_name": "Jeju development strip (virtual)",
+      "completed": false,
+      "message": "Tracking runway final approach",
+      "cross_track_m": 5.25383463225907e-10,
+      "along_track_m": -599.9999999992236,
+      "target_height_m": 60
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 59.354883601511816,
+      "terrain_height_m": 50.790777595713735,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "terrain",
+      "available": true
+    },
+    "controls": {
+      "elevator_deg": -0.283308979093769,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.44589458805426885
+    },
+    "actuators": {
+      "elevator_deg": -0.283308979093769,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.44589458805426885,
+      "thrust_n": 6.988059983986502
+    },
+    "fault": ""
+  },
+  "prepared_landing_touchdown": {
+    "along_track_m": 112.22873083489215,
+    "cross_track_m": -6.683225340570987e-07,
+    "impact_speed_mps": 0.5693639342820792
+  },
+  "restored": {
+    "aircraft": {
+      "simulation_time_s": 0,
+      "latitude_deg": 33.50688117159682,
+      "longitude_deg": 126.48561935198394,
+      "ellipsoid_height_m": 50.272186098620296,
+      "heading_deg": 60.00000000064381,
+      "pitch_deg": -0.0042226801877666255,
+      "roll_deg": -8.735763262693239e-06,
+      "speed_mps": 0,
+      "ground_speed_mps": 0,
+      "vertical_speed_mps": 0,
+      "running": false,
+      "distance_travelled_m": 0
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": true,
+      "on_ground": true,
+      "wheels_on_ground": 3,
+      "height_agl_m": 0.18000000000000124,
+      "terrain_height_m": 50.092186097986996,
+      "normal_force_n": 19.211227297825523,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "Jeju development strip (virtual)",
+      "available": true
+    },
+    "controls": {
+      "elevator_deg": 0,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0
+    },
+    "actuators": {
+      "elevator_deg": 0,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0,
+      "thrust_n": 0
+    },
+    "fault": ""
+  },
+  "api_requests": 366
+}

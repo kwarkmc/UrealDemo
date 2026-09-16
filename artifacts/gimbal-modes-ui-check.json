@@ -1,0 +1,13 @@
+{
+  "http_status": 200,
+  "checks": {
+    "body_fixed": true,
+    "auto": true,
+    "geo": true,
+    "protect": true,
+    "endpoint": true,
+    "mode_field": true,
+    "geo_height": true
+  },
+  "browser_interaction": false
+}

@@ -1,0 +1,53 @@
+{
+  "engine": {
+    "status": "running",
+    "pid": 46784,
+    "managed": true,
+    "ready": true,
+    "message": "Unreal \uc2e4\ud589 \uc911"
+  },
+  "state": {
+    "aircraft": {
+      "latitude_deg": 33.43,
+      "longitude_deg": 126.52,
+      "ellipsoid_height_m": 2599.9999999990687,
+      "heading_deg": 0,
+      "pitch_deg": 1.227578832134544,
+      "roll_deg": 0,
+      "simulation_time_s": 1.0700000000000007,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 19.000000000000004,
+      "vertical_speed_mps": 0,
+      "roll_rate_deg_s": 0,
+      "pitch_rate_deg_s": 0,
+      "yaw_rate_deg_s": 0
+    },
+    "controls": {
+      "elevator_deg": 0,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.5
+    },
+    "navigation": {
+      "mode": "manual",
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "view_mode": "overview",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 49
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_local_6dof",
+    "fault": ""
+  },
+  "web_ui_served": true,
+  "native_captures": [
+    "artifacts/korea-unreal-overview.png",
+    "artifacts/korea-seoul-flight.png"
+  ]
+}

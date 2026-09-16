@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "passed": [
+    "owned engine error cannot launch a duplicate",
+    "initial engine stopped",
+    "repeated start owns one process",
+    "standalone starts with terrain and control API, no manual Play",
+    "standalone controls roundtrip",
+    "graceful stop completes",
+    "Web UI remains available after engine stop",
+    "engine can restart",
+    "repeated stop is harmless"
+  ],
+  "pids": [
+    43764,
+    40100
+  ]
+}

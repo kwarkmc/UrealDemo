@@ -1,0 +1,649 @@
+{
+  "ok": true,
+  "passed": [
+    "ground initialization starts fully down and locked",
+    "down native hinge rotations and visibility match physical gear extension",
+    "gear rejects non-booleans, missing and unknown fields without mutation",
+    "ground retraction is rejected without changing state",
+    "paused retract command changes target without moving gear or aircraft",
+    "ordinary manual flight controls preserve gear command and extension",
+    "1.5 simulated seconds reaches half travel with neither lock set",
+    "half native hinge rotations and visibility match physical gear extension",
+    "3 simulated seconds completes retraction and up lock",
+    "up native hinge rotations and visibility match physical gear extension",
+    "mid-travel reversal preserves current extension",
+    "reverse command returns to up lock after remaining half travel",
+    "default Python command deploys fully in 3 simulated seconds",
+    "explicit gear and flight steps replay identically at .25x and 20x",
+    "landing test approach can start with retracted gear",
+    "automatic landing arms gear deployment without teleporting or instant travel",
+    "active automatic landing rejects both manual gear commands without mutation",
+    "automatic landing deploys and locks before touchdown, then parks and pauses",
+    "impact fixture retracts gear before approaching the surface",
+    "gear-up descent reaches an explicit body strike and paused crash",
+    "finally restores gear down, parked ground start, pause and 1x"
+  ],
+  "landing": [
+    {
+      "aircraft": {
+        "simulation_time_s": 4.5,
+        "latitude_deg": 33.504286024229955,
+        "longitude_deg": 126.4802547655097,
+        "ellipsoid_height_m": 110.32624473702163,
+        "pitch_deg": 2.1067030876582677,
+        "speed_mps": 18.335270955014792,
+        "ground_speed_mps": 18.33429089136253,
+        "running": false
+      },
+      "gear": {
+        "command_down": true,
+        "extension": 0,
+        "down_locked": false,
+        "up_locked": false,
+        "moving": true
+      },
+      "ground": {
+        "steering_deg": 0,
+        "brake": 0,
+        "parking_brake": false,
+        "on_ground": false,
+        "wheels_on_ground": 0,
+        "height_agl_m": 59.75138857574842,
+        "terrain_height_m": 50.55062430910766,
+        "normal_force_n": 0,
+        "impact_speed_mps": 0,
+        "crashed": false,
+        "surface": "terrain",
+        "available": true
+      },
+      "automation": {
+        "phase": "final",
+        "kind": "landing",
+        "runway_index": 0,
+        "runway_name": "Jeju development strip (virtual)",
+        "completed": false,
+        "message": "Tracking runway final approach",
+        "cross_track_m": 0.00537245138461414,
+        "along_track_m": -545.6109871717041,
+        "target_height_m": 60
+      },
+      "fault": ""
+    },
+    {
+      "aircraft": {
+        "simulation_time_s": 5.5,
+        "latitude_deg": 33.504369488819776,
+        "longitude_deg": 126.4804273237667,
+        "ellipsoid_height_m": 109.19248634390533,
+        "pitch_deg": -3.1395723380329192,
+        "speed_mps": 18.740140055430114,
+        "ground_speed_mps": 18.68441251444786,
+        "running": false
+      },
+      "gear": {
+        "command_down": true,
+        "extension": 0.33333333333333354,
+        "down_locked": false,
+        "up_locked": false,
+        "moving": true
+      },
+      "ground": {
+        "steering_deg": 0,
+        "brake": 0,
+        "parking_brake": false,
+        "on_ground": false,
+        "wheels_on_ground": 0,
+        "height_agl_m": 58.69971165367438,
+        "terrain_height_m": 50.468970101326704,
+        "normal_force_n": 0,
+        "impact_speed_mps": 0,
+        "crashed": false,
+        "surface": "terrain",
+        "available": true
+      },
+      "automation": {
+        "phase": "final",
+        "kind": "landing",
+        "runway_index": 0,
+        "runway_name": "Jeju development strip (virtual)",
+        "completed": false,
+        "message": "Tracking runway final approach",
+        "cross_track_m": 0.006864891282559986,
+        "along_track_m": -527.2830121598653,
+        "target_height_m": 60
+      },
+      "fault": ""
+    },
+    {
+      "aircraft": {
+        "simulation_time_s": 6.5,
+        "latitude_deg": 33.50445373677712,
+        "longitude_deg": 126.48060147330936,
+        "ellipsoid_height_m": 107.73462660610676,
+        "pitch_deg": -3.2828514502973474,
+        "speed_mps": 18.699024272791455,
+        "ground_speed_mps": 18.638762055160715,
+        "running": false
+      },
+      "gear": {
+        "command_down": true,
+        "extension": 0.6666666666666662,
+        "down_locked": false,
+        "up_locked": false,
+        "moving": true
+      },
+      "ground": {
+        "steering_deg": 0,
+        "brake": 0,
+        "parking_brake": false,
+        "on_ground": false,
+        "wheels_on_ground": 0,
+        "height_agl_m": 57.26704459426401,
+        "terrain_height_m": 50.441197955049574,
+        "normal_force_n": 0,
+        "impact_speed_mps": 0,
+        "crashed": false,
+        "surface": "terrain",
+        "available": true
+      },
+      "automation": {
+        "phase": "final",
+        "kind": "landing",
+        "runway_index": 0,
+        "runway_name": "Jeju development strip (virtual)",
+        "completed": false,
+        "message": "Tracking runway final approach",
+        "cross_track_m": 0.007040976331258601,
+        "along_track_m": -508.5962291901148,
+        "target_height_m": 60
+      },
+      "fault": ""
+    },
+    {
+      "aircraft": {
+        "simulation_time_s": 7.5,
+        "latitude_deg": 33.504537386892075,
+        "longitude_deg": 126.48077436485792,
+        "ellipsoid_height_m": 106.19216161593795,
+        "pitch_deg": -3.5253095787127444,
+        "speed_mps": 18.527585595288553,
+        "ground_speed_mps": 18.459874526648555,
+        "running": false
+      },
+      "gear": {
+        "command_down": true,
+        "extension": 1,
+        "down_locked": true,
+        "up_locked": false,
+        "moving": false
+      },
+      "ground": {
+        "steering_deg": 0,
+        "brake": 0,
+        "parking_brake": false,
+        "on_ground": false,
+        "wheels_on_ground": 0,
+        "height_agl_m": 55.73590933831855,
+        "terrain_height_m": 50.430573750287294,
+        "normal_force_n": 0,
+        "impact_speed_mps": 0,
+        "crashed": false,
+        "surface": "terrain",
+        "available": true
+      },
+      "automation": {
+        "phase": "final",
+        "kind": "landing",
+        "runway_index": 0,
+        "runway_name": "Jeju development strip (virtual)",
+        "completed": false,
+        "message": "Tracking runway final approach",
+        "cross_track_m": 0.006139721583156794,
+        "along_track_m": -490.04249571599354,
+        "target_height_m": 60
+      },
+      "fault": ""
+    },
+    {
+      "aircraft": {
+        "simulation_time_s": 37.5,
+        "latitude_deg": 33.50697181795894,
+        "longitude_deg": 126.48580675103165,
+        "ellipsoid_height_m": 52.873331853188574,
+        "pitch_deg": -2.3178474930328847,
+        "speed_mps": 17.884760967623496,
+        "ground_speed_mps": 17.82744309986768,
+        "running": false
+      },
+      "gear": {
+        "command_down": true,
+        "extension": 1,
+        "down_locked": true,
+        "up_locked": false,
+        "moving": false
+      },
+      "ground": {
+        "steering_deg": 0,
+        "brake": 0,
+        "parking_brake": false,
+        "on_ground": false,
+        "wheels_on_ground": 0,
+        "height_agl_m": 2.782595895515911,
+        "terrain_height_m": 50.090735950507224,
+        "normal_force_n": 0,
+        "impact_speed_mps": 0,
+        "crashed": false,
+        "surface": "Jeju development strip (virtual)",
+        "available": true
+      },
+      "automation": {
+        "phase": "flare",
+        "kind": "landing",
+        "runway_index": 0,
+        "runway_name": "Jeju development strip (virtual)",
+        "completed": false,
+        "message": "Flare and touchdown",
+        "cross_track_m": -3.141725743432063e-06,
+        "along_track_m": 49.928016700701114,
+        "target_height_m": 60
+      },
+      "fault": ""
+    },
+    {
+      "aircraft": {
+        "simulation_time_s": 41.5,
+        "latitude_deg": 33.50725265134612,
+        "longitude_deg": 126.48638734244888,
+        "ellipsoid_height_m": 50.26664474885911,
+        "pitch_deg": -0.010441494747996372,
+        "speed_mps": 11.601001620809,
+        "ground_speed_mps": 11.601001448352577,
+        "running": false
+      },
+      "gear": {
+        "command_down": true,
+        "extension": 1,
+        "down_locked": true,
+        "up_locked": false,
+        "moving": false
+      },
+      "ground": {
+        "steering_deg": -4.5168094921991434e-08,
+        "brake": 0.7,
+        "parking_brake": false,
+        "on_ground": true,
+        "wheels_on_ground": 3,
+        "height_agl_m": 0.17999912481892708,
+        "terrain_height_m": 50.08664562460035,
+        "normal_force_n": 15.036675850205928,
+        "impact_speed_mps": 0.5915826753130978,
+        "crashed": false,
+        "surface": "Jeju development strip (virtual)",
+        "available": true
+      },
+      "automation": {
+        "phase": "rollout",
+        "kind": "landing",
+        "runway_index": 0,
+        "runway_name": "Jeju development strip (virtual)",
+        "completed": false,
+        "message": "Touchdown; braking along runway",
+        "cross_track_m": -6.778515236732784e-07,
+        "along_track_m": 112.2831707687418,
+        "target_height_m": 60
+      },
+      "fault": ""
+    },
+    {
+      "aircraft": {
+        "simulation_time_s": 43.729999999999954,
+        "latitude_deg": 33.507311072916075,
+        "longitude_deg": 126.4865081236464,
+        "ellipsoid_height_m": 50.26587116997689,
+        "pitch_deg": -0.009882908182320698,
+        "speed_mps": 0.13133318188039517,
+        "ground_speed_mps": 0.1313331799312903,
+        "running": false
+      },
+      "gear": {
+        "command_down": true,
+        "extension": 1,
+        "down_locked": true,
+        "up_locked": false,
+        "moving": false
+      },
+      "ground": {
+        "steering_deg": 0,
+        "brake": 1,
+        "parking_brake": true,
+        "on_ground": true,
+        "wheels_on_ground": 3,
+        "height_agl_m": 0.1800000000980513,
+        "terrain_height_m": 50.08587116934359,
+        "normal_force_n": 19.209098567349127,
+        "impact_speed_mps": 0.5915826753130978,
+        "crashed": false,
+        "surface": "Jeju development strip (virtual)",
+        "available": true
+      },
+      "automation": {
+        "phase": "complete",
+        "kind": "landing",
+        "runway_index": 0,
+        "runway_name": "Jeju development strip (virtual)",
+        "completed": true,
+        "message": "Landed and parked",
+        "cross_track_m": -2.5628788673760855e-07,
+        "along_track_m": 125.35820954292973,
+        "target_height_m": 60
+      },
+      "fault": ""
+    }
+  ],
+  "impact_requested": true,
+  "down_visual": {
+    "NoseGearHinge": {
+      "rotation": {
+        "Pitch": -9.939233379573484e-17,
+        "Yaw": 0,
+        "Roll": 0
+      },
+      "hidden": false
+    },
+    "LeftMainGearHinge": {
+      "rotation": {
+        "Pitch": -9.939233379573484e-17,
+        "Yaw": 0,
+        "Roll": 0
+      },
+      "hidden": false
+    },
+    "RightMainGearHinge": {
+      "rotation": {
+        "Pitch": -9.939233379573484e-17,
+        "Yaw": 0,
+        "Roll": 0
+      },
+      "hidden": false
+    }
+  },
+  "paused_command": {
+    "aircraft": {
+      "simulation_time_s": 0,
+      "latitude_deg": 33.50688117159681,
+      "longitude_deg": 126.48561935198394,
+      "ellipsoid_height_m": 2600.0000000009313,
+      "pitch_deg": 2.0529535292750225,
+      "speed_mps": 19,
+      "ground_speed_mps": 19,
+      "running": false
+    },
+    "gear": {
+      "command_down": false,
+      "extension": 1,
+      "down_locked": false,
+      "up_locked": false,
+      "moving": true
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 2549.9078069763186,
+      "terrain_height_m": 50.09218609891832,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "Jeju development strip (virtual)",
+      "available": true
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "fault": ""
+  },
+  "half": {
+    "aircraft": {
+      "simulation_time_s": 1.5,
+      "latitude_deg": 33.50714043423415,
+      "longitude_deg": 126.48561935198394,
+      "ellipsoid_height_m": 2599.1848172517493,
+      "pitch_deg": -1.8973814817821644,
+      "speed_mps": 19.557369960882333,
+      "ground_speed_mps": 19.520916257394322,
+      "running": false
+    },
+    "gear": {
+      "command_down": false,
+      "extension": 0.5000000000000051,
+      "down_locked": false,
+      "up_locked": false,
+      "moving": true
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 2531.0399346884874,
+      "terrain_height_m": 49.494895266368985,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "development runway shoulder",
+      "available": true
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "fault": ""
+  },
+  "half_visual": {
+    "NoseGearHinge": {
+      "rotation": {
+        "Pitch": -44.99999999999957,
+        "Yaw": 6.589886119219014e-15,
+        "Roll": 7.129873747448744e-16
+      },
+      "hidden": false
+    },
+    "LeftMainGearHinge": {
+      "rotation": {
+        "Pitch": 0,
+        "Yaw": 0,
+        "Roll": -44.99999999999956
+      },
+      "hidden": false
+    },
+    "RightMainGearHinge": {
+      "rotation": {
+        "Pitch": 2.938449372237101e-15,
+        "Yaw": 1.2171455823273007e-15,
+        "Roll": 44.99999999999954
+      },
+      "hidden": false
+    }
+  },
+  "up": {
+    "aircraft": {
+      "simulation_time_s": 3,
+      "latitude_deg": 33.507411716681304,
+      "longitude_deg": 126.48561935198394,
+      "ellipsoid_height_m": 2596.673873526044,
+      "pitch_deg": -4.227786517888938,
+      "speed_mps": 20.760542754437736,
+      "ground_speed_mps": 20.660905263197492,
+      "running": false
+    },
+    "gear": {
+      "command_down": false,
+      "extension": 0,
+      "down_locked": false,
+      "up_locked": true,
+      "moving": false
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 2548.8385543213158,
+      "terrain_height_m": 47.375337954610586,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "terrain",
+      "available": true
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "fault": ""
+  },
+  "up_visual": {
+    "NoseGearHinge": {
+      "rotation": {
+        "Pitch": -90,
+        "Yaw": 0,
+        "Roll": 0
+      },
+      "hidden": true
+    },
+    "LeftMainGearHinge": {
+      "rotation": {
+        "Pitch": -1.4124500153760508e-30,
+        "Yaw": 8.995967132789879e-15,
+        "Roll": -89.99999999999997
+      },
+      "hidden": true
+    },
+    "RightMainGearHinge": {
+      "rotation": {
+        "Pitch": -4.497983566394939e-15,
+        "Yaw": 4.49798356639494e-15,
+        "Roll": 89.99999999999997
+      },
+      "hidden": true
+    }
+  },
+  "impact": {
+    "aircraft": {
+      "simulation_time_s": 5.271999999999994,
+      "latitude_deg": 33.50717314767329,
+      "longitude_deg": 126.48622303547317,
+      "ellipsoid_height_m": 50.3444667160511,
+      "pitch_deg": -31.597851991292448,
+      "speed_mps": 24.737272467036338,
+      "ground_speed_mps": 20.98169977262911,
+      "running": false
+    },
+    "gear": {
+      "command_down": false,
+      "extension": 0,
+      "down_locked": false,
+      "up_locked": true,
+      "moving": false
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 0.2567251669677928,
+      "terrain_height_m": 50.087741549126804,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": true,
+      "surface": "Jeju development strip (virtual)",
+      "available": true
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "fault": "Ground collision: airframe strike. Reset to continue."
+  },
+  "restored": {
+    "aircraft": {
+      "simulation_time_s": 0,
+      "latitude_deg": 33.50688117159682,
+      "longitude_deg": 126.48561935198394,
+      "ellipsoid_height_m": 50.272186098620296,
+      "pitch_deg": -0.0042226801877666255,
+      "speed_mps": 0,
+      "ground_speed_mps": 0,
+      "running": false
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": true,
+      "on_ground": true,
+      "wheels_on_ground": 3,
+      "height_agl_m": 0.18000000000000124,
+      "terrain_height_m": 50.092186097986996,
+      "normal_force_n": 19.211227297825523,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "Jeju development strip (virtual)",
+      "available": true
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "fault": ""
+  },
+  "api_requests": 112,
+  "native_property_requests": 18
+}

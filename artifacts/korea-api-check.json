@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "region": "Jeju",
+      "position_error_m": 3.4924596548080444e-10,
+      "forward_vector_error": 4.961309141293668e-16
+    },
+    {
+      "region": "Seoul",
+      "position_error_m": 5.172751116333529e-12,
+      "forward_vector_error": 2.203098814490545e-16
+    },
+    {
+      "region": "Busan",
+      "position_error_m": 1.4551915228366852e-11,
+      "forward_vector_error": 1.1796119636642288e-16
+    },
+    {
+      "region": "Daegu",
+      "position_error_m": 3.637978807091713e-12,
+      "forward_vector_error": 2.6194324487249787e-16
+    },
+    {
+      "region": "Gangneung",
+      "position_error_m": 1.0427356755826622e-09,
+      "forward_vector_error": 2.8102520310824275e-16
+    },
+    {
+      "region": "Ulleung",
+      "position_error_m": 1.1177689884789288e-09,
+      "forward_vector_error": 1.0061396160665481e-16
+    },
+    {
+      "region": "Dokdo",
+      "position_error_m": 7.275957614183426e-12,
+      "forward_vector_error": 2.706168622523819e-16
+    }
+  ],
+  "views_and_invalid_input": "passed",
+  "surface_display_axes": "passed",
+  "final_state": {
+    "aircraft": {
+      "latitude_deg": 33.43,
+      "longitude_deg": 126.52,
+      "ellipsoid_height_m": 2599.9999999990687,
+      "heading_deg": 0,
+      "pitch_deg": 1.227578832134544,
+      "roll_deg": 0,
+      "simulation_time_s": 18.989999999999938,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 19.000000000000004,
+      "vertical_speed_mps": 0,
+      "roll_rate_deg_s": 0,
+      "pitch_rate_deg_s": 0,
+      "yaw_rate_deg_s": 0
+    },
+    "controls": {
+      "elevator_deg": 0,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.5
+    },
+    "navigation": {
+      "mode": "manual",
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "view_mode": "overview",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 49
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_local_6dof",
+    "fault": ""
+  }
+}

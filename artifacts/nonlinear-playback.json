@@ -1,0 +1,67 @@
+{
+  "requested_factor": 20,
+  "measured_factor": 19.619826756552822,
+  "wall_seconds": 2.077999999994063,
+  "flight": {
+    "aircraft": {
+      "latitude_deg": 33.43813371156049,
+      "longitude_deg": 126.521,
+      "ellipsoid_height_m": 2599.8306098710746,
+      "heading_deg": 1.1254996934439987e-11,
+      "pitch_deg": 2.0532151127506357,
+      "roll_deg": -1.308736698531126e-16,
+      "simulation_time_s": 41.66000000000028,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 18.99996136635314,
+      "vertical_speed_mps": 0.00011020157116030133,
+      "time_scale": 20,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 791.5395288807845,
+      "roll_rate_deg_s": -5.597080355382622e-17,
+      "pitch_rate_deg_s": -3.671977300620071e-05,
+      "yaw_rate_deg_s": -6.403728183487743e-17,
+      "angle_of_attack_deg": 2.0528827918157933,
+      "sideslip_deg": -1.2042100348456716e-17,
+      "ground_speed_mps": 18.999961366033553,
+      "air_density_kg_m3": 0.9472852756821906,
+      "dynamic_pressure_pa": 170.98429691673084,
+      "lift_coefficient": 0.3583019631688482,
+      "drag_coefficient": 0.11545437019695898,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 0.9993568711929525
+    },
+    "controls": {
+      "elevator_deg": -0.5973016098305468,
+      "aileron_deg": -5.924935661823032e-18,
+      "rudder_deg": 0,
+      "throttle": 0.3907442777641792
+    },
+    "navigation": {
+      "mode": "waypoint",
+      "stall_recovery": false,
+      "active_waypoint_index": 0,
+      "waypoint_count": 1,
+      "distance_to_waypoint_m": 872.8254972448173,
+      "loiter_radius_m": 150
+    },
+    "environment": {
+      "wind_east_mps": 0,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 49,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_nonlinear_6dof_v2",
+    "fault": ""
+  }
+}

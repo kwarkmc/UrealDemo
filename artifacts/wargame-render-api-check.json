@@ -1,0 +1,237 @@
+{
+  "ok": true,
+  "passed": [
+    "separate visual catalog/model metadata loaded",
+    "valid paused catalog reload preserves scene and flight",
+    "invalid catalog path rejected atomically with old catalog retained",
+    "invalid ID types/lengths and missing/extra/outcome fields rejected",
+    "unknown visual, target or shot IDs rejected without scene mutation",
+    "fire adds a visual event without changing aircraft, controls, camera or target marks",
+    "paused wall time does not advance animation or simulation",
+    "early adjudication and active-animation reload are rejected atomically",
+    "projectile spectator view preserves paused flight and independent EOIR settings",
+    "explicit step advances event elapsed time and independent game clock",
+    "completion restores aircraft view and no active animation refuses projectile view",
+    "animation completion waits for operator; never automatically marks a hit",
+    "explicit hit records one game mark and adjudication time",
+    "duplicate adjudication rejected without adding another mark",
+    "miss neither marks a normal target nor removes an earlier hit mark",
+    "deleting a pending target cancels its visual event",
+    "running catalog reload rejected with catalog preserved",
+    "game reset clears records/time/marks while preserving flight, target poses and camera",
+    "shot IDs are not reused after game reset",
+    "finally restores catalog/pose/settings, removes own targets and leaves paused with no events"
+  ],
+  "captures": {
+    "normal": "C:\\src\\Projects\\UAVSim\\artifacts\\wargame-normal.jpg",
+    "hit": "C:\\src\\Projects\\UAVSim\\artifacts\\wargame-hit.jpg"
+  },
+  "events_before_reset": [
+    {
+      "id": "shot_1",
+      "weapon_id": "training-marker",
+      "target_id": "game-check-35d506cffd-hit",
+      "phase": "resolved",
+      "outcome": "hit",
+      "elapsed_s": 5,
+      "duration_s": 5,
+      "resolved_time_s": 15.379999999999823
+    },
+    {
+      "id": "shot_2",
+      "weapon_id": "training-marker",
+      "target_id": "game-check-35d506cffd-hit",
+      "phase": "resolved",
+      "outcome": "miss",
+      "elapsed_s": 5,
+      "duration_s": 5,
+      "resolved_time_s": 20.379999999999825
+    },
+    {
+      "id": "shot_3",
+      "weapon_id": "training-marker",
+      "target_id": "game-check-35d506cffd-miss",
+      "phase": "resolved",
+      "outcome": "miss",
+      "elapsed_s": 5,
+      "duration_s": 5,
+      "resolved_time_s": 25.379999999999825
+    },
+    {
+      "id": "shot_4",
+      "weapon_id": "training-marker",
+      "target_id": "game-check-35d506cffd-cancel",
+      "phase": "canceled",
+      "outcome": "canceled",
+      "elapsed_s": 0,
+      "duration_s": 5,
+      "resolved_time_s": 25.379999999999825
+    }
+  ],
+  "restored": {
+    "aircraft": {
+      "latitude_deg": 33.43177229976149,
+      "longitude_deg": 126.52,
+      "ellipsoid_height_m": 2600.003041432239,
+      "heading_deg": 0,
+      "pitch_deg": 2.052953529274606,
+      "roll_deg": 0,
+      "simulation_time_s": 25.389999999999826,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 19,
+      "vertical_speed_mps": -2.993178621624182e-14,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 0,
+      "roll_rate_deg_s": 0,
+      "pitch_rate_deg_s": 0,
+      "yaw_rate_deg_s": 0,
+      "angle_of_attack_deg": 2.0529535292746965,
+      "sideslip_deg": 0,
+      "ground_speed_mps": 18.999999999999996,
+      "air_density_kg_m3": 0.9472638752759033,
+      "dynamic_pressure_pa": 170.98112948730054,
+      "lift_coefficient": 0.3583088950713011,
+      "drag_coefficient": 0.11545448288313101,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 0.9993578318400708
+    },
+    "controls": {
+      "elevator_deg": -0.5973560576663506,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.3907286267055525
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 2148.1276645711887,
+      "terrain_height_m": 446.4459948753938,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "terrain",
+      "available": true
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "actuators": {
+      "elevator_deg": -0.597356873989816,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.390728511939069,
+      "thrust_n": 6.123497239109089
+    },
+    "airframe": {
+      "id": "thor-development",
+      "profile": "aircraft/thor.json",
+      "fingerprint": "sha1:0fa4369e8814b26210c5242491f7422bf0dd83c2",
+      "error": ""
+    },
+    "visual": {
+      "source": "builtin",
+      "config": "aircraft/visual.json",
+      "mesh": "",
+      "triangle_count": 0,
+      "span_m": 1.27,
+      "fingerprint": "sha1:31eec5e362e4e61ee3884fef27312c28760f59b0",
+      "error": "",
+      "show_builtin_gear": true
+    },
+    "eoir": {
+      "enabled": false,
+      "mode": "ccd",
+      "fov_deg": 30,
+      "azimuth_deg": 0,
+      "elevation_deg": -45,
+      "gimbal_mode": "body_fixed",
+      "point_latitude_deg": 0,
+      "point_longitude_deg": 0,
+      "point_ellipsoid_height_m": 0,
+      "target_id": "",
+      "tracking_status": "manual",
+      "limited": false,
+      "target_in_fov": false,
+      "error_deg": 0,
+      "frame_sequence": 13,
+      "error": "EOIR camera is disabled"
+    },
+    "targets": [],
+    "wargame": {
+      "time_s": 0,
+      "error": "",
+      "weapons": [
+        {
+          "id": "training-marker",
+          "label": "Sim projectile",
+          "mesh": "models/example.stl",
+          "animation_duration_s": 5,
+          "triangle_count": 144
+        }
+      ],
+      "shots": []
+    },
+    "disturbance": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 0,
+      "gust_north_mps": 0,
+      "gust_up_mps": 0,
+      "gust_start_s": 0,
+      "gust_duration_s": 0,
+      "effective_wind_east_mps": 0,
+      "effective_wind_north_mps": 0,
+      "effective_wind_up_mps": 0
+    },
+    "navigation": {
+      "mode": "manual",
+      "stall_recovery": false,
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "environment": {
+      "wind_east_mps": 0,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 50,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.\nJeju detail: modified Copernicus Sentinel-2 data 2025-04-06.",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_nonlinear_6dof_v2",
+    "fault": ""
+  },
+  "restore_errors": [],
+  "api_requests": 104
+}

@@ -1,0 +1,37 @@
+{
+  "LeftAileronHinge": {
+    "RelativeRotation": {
+      "pitch": 20,
+      "yaw": 6.960380911687857e-15,
+      "roll": 2.8421128827966746e-15
+    }
+  },
+  "RightAileronHinge": {
+    "RelativeRotation": {
+      "pitch": -20.00000000000001,
+      "yaw": -6.813445224371233e-15,
+      "roll": 2.008799190664851e-15
+    }
+  },
+  "LeftElevatorHinge": {
+    "RelativeRotation": {
+      "pitch": 20,
+      "yaw": 6.960380911687857e-15,
+      "roll": 2.8421128827966746e-15
+    }
+  },
+  "RightElevatorHinge": {
+    "RelativeRotation": {
+      "pitch": 20,
+      "yaw": 6.960380911687857e-15,
+      "roll": 2.8421128827966746e-15
+    }
+  },
+  "RudderHinge": {
+    "RelativeRotation": {
+      "pitch": -5.296037447496092e-16,
+      "yaw": 20.000000000000004,
+      "roll": 7.14021536745366e-16
+    }
+  }
+}

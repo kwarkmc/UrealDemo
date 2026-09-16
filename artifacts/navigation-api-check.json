@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "passed": [
+    "live own nonlinear 6DOF model ready",
+    "very small explicit step advances time",
+    "manual surfaces and throttle change real angular rates and speed",
+    "initial condition below terrain rejected atomically with HTTP 409",
+    "initial condition at 20000m boundary accepted after ENU roundtrip",
+    "invalid route rejected atomically with HTTP 400",
+    "invalid route rejected atomically with HTTP 400",
+    "invalid route rejected atomically with HTTP 409",
+    "manual input cancels navigation",
+    "1 waypoint(s) reached sequentially and final orbit maintained",
+    "1 waypoint final orbit radius/height/speed/direction within development tolerances",
+    "2 waypoint(s) reached sequentially and final orbit maintained",
+    "2 waypoint final orbit radius/height/speed/direction within development tolerances",
+    "explicit navigation cancel"
+  ],
+  "route_1_errors": {
+    "radius_m": 0.796481609333938,
+    "height_m": 0.004514017142355442,
+    "speed_mps": 1.3539427357045497e-09,
+    "turn_rad": 3.656128164301096
+  },
+  "route_2_errors": {
+    "radius_m": 0.872731470729434,
+    "height_m": 0.005838283337652683,
+    "speed_mps": 3.90087961932295e-12,
+    "turn_rad": -3.841797792067982
+  }
+}

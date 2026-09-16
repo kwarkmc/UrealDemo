@@ -1,0 +1,38 @@
+{
+  "object_path": "/Game/Maps/UEDPIE_0_JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+  "passed": [
+    "terrain loaded",
+    "position accepted",
+    "position and attitude roundtrip; paused",
+    "invalid latitude rejected without state change",
+    "reset to paused time zero",
+    "explicit half-second accepted",
+    "explicit simulation time exact",
+    "reset and replay reproduce state",
+    "invalid time step rejected without state change",
+    "demo resumed"
+  ],
+  "ok": true,
+  "position_roundtrip": {
+    "LatitudeDeg": 33.44,
+    "LongitudeDeg": 126.53,
+    "EllipsoidHeightM": 2700,
+    "HeadingDeg": 135,
+    "PitchDeg": 4,
+    "RollDeg": -12,
+    "SimulationTimeS": 222.250000000069,
+    "Running": false,
+    "TerrainLoaded": true
+  },
+  "stepped_state": {
+    "LatitudeDeg": 33.46593123582828,
+    "LongitudeDeg": 126.52037673327156,
+    "EllipsoidHeightM": 2600,
+    "HeadingDeg": 90.50133807073945,
+    "PitchDeg": 0,
+    "RollDeg": 7,
+    "SimulationTimeS": 0.5,
+    "Running": false,
+    "TerrainLoaded": true
+  }
+}

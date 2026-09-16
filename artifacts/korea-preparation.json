@@ -1,0 +1,21 @@
+{
+  "base_tile_count": 48,
+  "detail_tile_count": 1,
+  "maximum_coordinate_error_m": 0.00195092469220981,
+  "maximum_shared_edge_error_m": 0.003850018205412198,
+  "imagery_size": [
+    1024,
+    1024
+  ],
+  "global_height_lattice": [
+    1537,
+    2049
+  ],
+  "finite_elevations": true,
+  "outer_boundary_extrapolated_samples": 2045,
+  "land_tile_count": 35,
+  "ocean_tile_count": 13,
+  "dokdo_positive_height_vertices": 629,
+  "elapsed_seconds": 35.24,
+  "output_bytes": 79227140
+}

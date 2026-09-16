@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "passed": [
+    "runtime discovered and terrain loaded",
+    "external client controls roundtrip",
+    "invalid request rejected with JSON error 400: {'elevator_deg': 25.01, 'aileron_deg': -8.0, 'rudder_deg': 6.0, 'throttle': 0.4}",
+    "invalid request rejected with JSON error 400: {'elevator_deg': 12.5, 'aileron_deg': -25.01, 'rudder_deg': 6.0, 'throttle': 0.4}",
+    "invalid request rejected with JSON error 400: {'elevator_deg': 12.5, 'aileron_deg': -8.0, 'rudder_deg': 25.01, 'throttle': 0.4}",
+    "invalid request rejected with JSON error 400: {'elevator_deg': 12.5, 'aileron_deg': -8.0, 'rudder_deg': 6.0, 'throttle': 1.01}",
+    "invalid request rejected with JSON error 400: {'elevator_deg': 12.5, 'aileron_deg': -8.0, 'rudder_deg': 6.0, 'throttle': True}",
+    "invalid request rejected with JSON error 400: {'elevator_deg': 12.5, 'aileron_deg': -8.0, 'rudder_deg': 6.0, 'throttle': 0.4, 'extra': 0}",
+    "invalid request rejected with JSON error 400: {'elevator_deg': 0}",
+    "invalid request rejected with JSON error 400: {'elevator_deg': '0', 'aileron_deg': -8.0, 'rudder_deg': 6.0, 'throttle': 0.4}",
+    "invalid request rejected with JSON error 400: {'elevator_deg': nan, 'aileron_deg': -8.0, 'rudder_deg': 6.0, 'throttle': 0.4}",
+    "invalid request rejected with JSON error 400: {\"elevator_deg\":0,\"elevator_deg\":1,\"aileron_deg\":0,\"rudder_deg\":0,\"throttle\":0}",
+    "invalid request rejected with JSON error 403: {'elevator_deg': 12.5, 'aileron_deg': -8.0, 'rudder_deg': 6.0, 'throttle': 0.4}",
+    "rejected writes do not change aircraft or controls",
+    "pose roundtrip pauses simulation",
+    "explicit step and reset replay reproduce state",
+    "step while running rejected with conflict"
+  ],
+  "controls_roundtrip": {
+    "elevator_deg": 12.5,
+    "aileron_deg": -8.0,
+    "rudder_deg": 6.0,
+    "throttle": 0.4
+  },
+  "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0"
+}

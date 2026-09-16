@@ -1,0 +1,359 @@
+{
+  "ok": true,
+  "passed": [
+    "main page links to the separately served EO/IR page and its JPEG endpoint",
+    "create tank on sampled ground and normalize 360-degree heading",
+    "create a second independent non-firing marker",
+    "duplicate ID is rejected and existing target poses are preserved",
+    "target creation without loaded ground is rejected without a phantom prop",
+    "target ID type/syntax, kind, geographic and heading bounds are validated",
+    "failed terrain resampling preserves the previous target pose",
+    "disabled EO/IR rejects JPEG capture",
+    "manual gimbal reports exact angles and independent camera settings",
+    "sensor modes, boolean, FOV and gimbal travel limits reject invalid input without changing settings",
+    "selected tank pointing agrees with independent WGS84 and body-frame angles",
+    "disabled capture preserves tracking and updates pointing during a real 0.5-second flight step",
+    "moving selected target east updates its pose and turns gimbal right while paused",
+    "moved target retains geometric pointing accuracy",
+    "aircraft heading and roll changes transform the target into the new body frame",
+    "target outside elevation travel is clamped and lies outside narrow rectangular FOV",
+    "JPEG HTTP response identifies content, disables caching and reports simulation time, sequence and mode",
+    "CCD returns a non-uniform color 640x480 JPEG scene",
+    "IR white display returns non-uniform grayscale JPEG",
+    "IR black display inverts the paused scene luminance within JPEG tolerance",
+    "camera captures advance only image sequence and preserve paused aircraft and chase view",
+    "switching main camera to overview preserves the independent EO/IR sky image within render tolerance",
+    "aircraft reset preserves manual sensor settings and all targets",
+    "deleting selected target clears its ID and holds last angles with missing status",
+    "tracking, removing and moving missing IDs return explicit conflicts",
+    "non-firing missile prop supports selected-ID pointing and a rendered JPEG artifact",
+    "leave a paused 1x CCD tank demonstration while preserving pre-existing targets"
+  ],
+  "images": {
+    "ccd": {
+      "path": "C:\\src\\Projects\\UAVSim\\artifacts\\eoir-ccd.jpg",
+      "bytes": 12269,
+      "size": [
+        640,
+        480
+      ],
+      "mean": [
+        118.865576171875,
+        115.599189453125,
+        88.62365885416666
+      ],
+      "variance": [
+        686.9586261979739,
+        563.6498359315548,
+        496.56286603986905
+      ]
+    },
+    "ir_white": {
+      "path": "C:\\src\\Projects\\UAVSim\\artifacts\\eoir-ir-white.jpg",
+      "bytes": 11821,
+      "size": [
+        640,
+        480
+      ],
+      "mean": [
+        113.53319661458333,
+        113.53319661458333,
+        113.53319661458333
+      ],
+      "variance": [
+        586.8584552764473,
+        586.8584552764473,
+        586.8584552764473
+      ]
+    },
+    "ir_black": {
+      "path": "C:\\src\\Projects\\UAVSim\\artifacts\\eoir-ir-black.jpg",
+      "bytes": 11829,
+      "size": [
+        640,
+        480
+      ],
+      "mean": [
+        141.49703450520835,
+        141.49703450520835,
+        141.49703450520835
+      ],
+      "variance": [
+        586.2499912058407,
+        586.2499912058407,
+        586.2499912058407
+      ]
+    },
+    "missile": {
+      "path": "C:\\src\\Projects\\UAVSim\\artifacts\\eoir-missile.jpg",
+      "bytes": 12307,
+      "size": [
+        640,
+        480
+      ],
+      "mean": [
+        115.71912109375,
+        113.61486328125,
+        86.472197265625
+      ],
+      "variance": [
+        283.4255145921077,
+        293.4006085099544,
+        224.67366060171122
+      ]
+    }
+  },
+  "geometry": [
+    {
+      "case": "selected tank pointing agrees with independent WGS84 and body-frame angles",
+      "expected_deg": [
+        2.7840662859823813e-13,
+        -56.53984941737424
+      ],
+      "actual_deg": [
+        -0.007418622794729345,
+        -56.5366214363657
+      ],
+      "azimuth_error_deg": 0.007418622795000829,
+      "elevation_error_deg": 0.003227981008542713
+    },
+    {
+      "case": "moved target retains geometric pointing accuracy",
+      "expected_deg": [
+        35.17178597392785,
+        -50.93008615713059
+      ],
+      "actual_deg": [
+        35.163191593146145,
+        -50.92949859670413
+      ],
+      "azimuth_error_deg": 0.008594380781687505,
+      "elevation_error_deg": 0.000587560426460243
+    },
+    {
+      "case": "aircraft heading and roll changes transform the target into the new body frame",
+      "expected_deg": [
+        30.626396840620853,
+        -45.01883673783005
+      ],
+      "actual_deg": [
+        30.61893378065396,
+        -45.02020039359399
+      ],
+      "azimuth_error_deg": 0.007463059966880792,
+      "elevation_error_deg": 0.0013636557639387092
+    }
+  ],
+  "disabled_tracking_step": {
+    "distance_m": 9.548327893302542,
+    "before": {
+      "enabled": false,
+      "mode": "ccd",
+      "fov_deg": 30,
+      "azimuth_deg": -0.007418622794729345,
+      "elevation_deg": -56.5366214363657,
+      "target_id": "eoir-check-469f3650-tank",
+      "tracking_status": "tracking",
+      "limited": false,
+      "target_in_fov": true,
+      "error_deg": 0,
+      "frame_sequence": 0,
+      "error": ""
+    },
+    "after": {
+      "enabled": false,
+      "mode": "ccd",
+      "fov_deg": 30,
+      "azimuth_deg": -0.008328646710007456,
+      "elevation_deg": -59.6260010232329,
+      "target_id": "eoir-check-469f3650-tank",
+      "tracking_status": "tracking",
+      "limited": false,
+      "target_in_fov": true,
+      "error_deg": 0,
+      "frame_sequence": 0,
+      "error": ""
+    }
+  },
+  "frame_headers": {
+    "Content-Type": "image/jpeg",
+    "Cache-Control": "no-store",
+    "X-Simulation-Time-S": "0.5",
+    "X-Sensor-Sequence": "1",
+    "X-Sensor-Mode": "ccd"
+  },
+  "ir_inversion_mean_error": 0.444208984375,
+  "overview_sky_comparison": {
+    "mean_error_rgb": [
+      0.25087890625,
+      0.23526041666666667,
+      0.2574641927083333
+    ],
+    "aircraft_mean_rgb": [
+      40.863346354166666,
+      93.25882486979167,
+      147.73109049479166
+    ],
+    "overview_mean_rgb": [
+      40.8632421875,
+      93.24928059895834,
+      147.74180989583334
+    ]
+  },
+  "final": {
+    "aircraft": {
+      "latitude_deg": 33.509,
+      "longitude_deg": 126.49,
+      "ellipsoid_height_m": 200.07486667484045,
+      "heading_deg": 0,
+      "pitch_deg": 0,
+      "roll_deg": 0,
+      "simulation_time_s": 0,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 19,
+      "vertical_speed_mps": 0,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 0,
+      "roll_rate_deg_s": 0,
+      "pitch_rate_deg_s": 0,
+      "yaw_rate_deg_s": 0,
+      "angle_of_attack_deg": 0,
+      "sideslip_deg": 0,
+      "ground_speed_mps": 19,
+      "air_density_kg_m3": 1.2016435383274697,
+      "dynamic_pressure_pa": 216.89665866810827,
+      "lift_coefficient": 0.15644490147711068,
+      "drag_coefficient": 0.11309730032767536,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 0.5475463119109086
+    },
+    "controls": {
+      "elevator_deg": -0.039610092021786815,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.4907684711151793
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 149.9999999999066,
+      "terrain_height_m": 50.07486667484045,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "Jeju development strip (virtual)",
+      "available": true
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "actuators": {
+      "elevator_deg": -0.039610092021786815,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.4907684711151793,
+      "thrust_n": 7.691323479317091
+    },
+    "airframe": {
+      "id": "thor-development",
+      "profile": "aircraft/thor.json",
+      "fingerprint": "sha1:0fa4369e8814b26210c5242491f7422bf0dd83c2",
+      "error": ""
+    },
+    "visual": {
+      "source": "builtin",
+      "config": "aircraft/visual.json",
+      "mesh": "",
+      "triangle_count": 0,
+      "span_m": 1.27,
+      "fingerprint": "sha1:31eec5e362e4e61ee3884fef27312c28760f59b0",
+      "error": "",
+      "show_builtin_gear": true
+    },
+    "eoir": {
+      "enabled": true,
+      "mode": "ccd",
+      "fov_deg": 12,
+      "azimuth_deg": -0.00741862279494948,
+      "elevation_deg": -56.53662143636896,
+      "target_id": "eoir-check-469f3650-tank",
+      "tracking_status": "tracking",
+      "limited": false,
+      "target_in_fov": true,
+      "error_deg": 0,
+      "frame_sequence": 6,
+      "error": ""
+    },
+    "targets": [
+      {
+        "id": "eoir-check-469f3650-tank",
+        "kind": "tank",
+        "latitude_deg": 33.50989831117499,
+        "longitude_deg": 126.49,
+        "ellipsoid_height_m": 47.99748922511935,
+        "heading_deg": 0
+      }
+    ],
+    "disturbance": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 0,
+      "gust_north_mps": 0,
+      "gust_up_mps": 0,
+      "gust_start_s": 18.49000000000009,
+      "gust_duration_s": 1,
+      "effective_wind_east_mps": 0,
+      "effective_wind_north_mps": 0,
+      "effective_wind_up_mps": 0
+    },
+    "navigation": {
+      "mode": "manual",
+      "stall_recovery": false,
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "environment": {
+      "wind_east_mps": 0,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 49,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_nonlinear_6dof_v2",
+    "fault": ""
+  },
+  "api_requests": 76
+}

@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "pages": {
+    "eoir": {
+      "javascript": "node --check passed",
+      "unique_ids": 69,
+      "literal_element_references": 64,
+      "label_targets": 4,
+      "missing_references": []
+    },
+    "index": {
+      "javascript": "node --check passed",
+      "unique_ids": 122,
+      "literal_element_references": 106,
+      "label_targets": 19,
+      "missing_references": []
+    }
+  },
+  "fov_presets": [
+    1,
+    5,
+    30
+  ],
+  "fov_range": [
+    1,
+    90
+  ],
+  "playback_route": "PUT /api/v1/simulation",
+  "projectile_view_route": "PUT /api/v1/view",
+  "browser_interaction": false,
+  "engine_or_api_requests": false
+}
