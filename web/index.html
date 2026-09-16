@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UAVSim · Control desk</title>
+<style>
+  :root{color-scheme:dark;--bg:#111923;--panel:#192431;--line:#324150;--muted:#9cabb9;--text:#eef3f6;--lime:#c6ef8d;--cyan:#80cbd7;--amber:#f0bd80}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  button,input,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:8px;background:#243340;color:var(--text);padding:10px 16px}button:hover{border-color:var(--cyan)}button:disabled,input:disabled,select:disabled{opacity:.4;cursor:not-allowed}
+  main{max-width:1220px;margin:auto;padding:30px 28px}header{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-bottom:24px;border-bottom:1px solid var(--line)}
+  .brand{font:600 12px/1.4 ui-monospace,monospace;letter-spacing:.17em;color:var(--cyan)}h1{font-size:30px;margin:6px 0 0;letter-spacing:-.04em}h2{font-size:17px;margin:0}p{margin:0}.muted{color:var(--muted)}
+  .badge{display:inline-flex;gap:8px;align-items:center;font-size:13px;border:1px solid var(--line);border-radius:30px;padding:8px 13px;white-space:nowrap}.dot{width:7px;height:7px;border-radius:50%;background:var(--amber)}.badge.live .dot{background:var(--lime);box-shadow:0 0 12px #c6ef8d50}
+  .notice{display:flex;gap:12px;align-items:flex-start;margin:22px 0;color:#c3ccd4;font-size:13px}.notice strong{color:var(--amber);white-space:nowrap}.layout{display:grid;grid-template-columns:1.12fr 1fr;gap:22px}
+  .panel{border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}.panel-head{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+  .diagram{background:radial-gradient(ellipse at center,#263644,#172330);padding:12px 22px 0}.diagram svg{display:block;width:100%;height:275px}.diagram text{font:11px ui-monospace,monospace;fill:var(--muted)}.diagram .surface{fill:var(--cyan);stroke:var(--bg);stroke-width:2}
+  .diagram-caption{padding:0 0 18px;text-align:center;font-size:12px;color:var(--muted)}.telemetry{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.metric{padding:17px 20px}.metric span{display:block;color:var(--muted);font-size:11px;margin-bottom:7px}.metric output{font:18px ui-monospace,monospace}.metric small{font-size:11px;color:var(--muted)}
+  .transport{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:18px 20px;border-top:1px solid var(--line)}.transport button:first-child{background:var(--lime);color:#1b2b19;border-color:var(--lime)}.transport select{background:#111923;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px}.motion-hint{padding:0 20px 18px;color:var(--muted);font-size:12px}
+  .control{padding:19px 22px;border-bottom:1px solid var(--line)}.control:last-child{border:0}.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.control label{font-weight:600}.control label small{display:block;font-weight:400;color:var(--muted);font-size:11px;letter-spacing:.07em;margin-top:2px}
+  .readout{font:23px ui-monospace,monospace;color:var(--lime);min-width:104px;text-align:right}.readout small{font-size:12px;color:var(--muted)}input[type=range]{width:100%;accent-color:var(--lime);margin:15px 0 6px;cursor:pointer;height:20px}
+  .scale{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.ack{font-size:11px;color:var(--cyan);margin-top:8px;min-height:17px}.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);margin-top:20px}.status{min-height:23px;margin:15px 0 0;font-size:13px;color:var(--cyan)}.status.error{color:var(--amber)}
+  .python{margin-top:22px;padding:18px 22px}.python summary{cursor:pointer;color:var(--muted);font-size:13px}.python pre{overflow:auto;color:#cce7d1;font-size:12px;margin-bottom:2px}
+  .route{margin-top:22px;padding:20px 22px}.route textarea{width:100%;min-height:155px;background:#111923;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:12px;margin:12px 0;font:13px/1.5 ui-monospace,monospace}.route-options{display:flex;flex-wrap:wrap;align-items:center;gap:14px}.route input[type=number]{width:100px;background:#111923;color:var(--text);border:1px solid var(--line);padding:8px}.route p{font-size:13px;margin-top:8px}
+  .engine{margin:22px 0;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px}.engine-heading{display:flex;align-items:center;gap:12px}.engine p{font-size:13px;color:var(--muted);margin-top:9px}.engine-actions{display:flex;gap:8px;flex-shrink:0}.engine-actions button:first-child{background:var(--lime);color:#1b2b19;border-color:var(--lime)}
+  .terrain{margin:22px 0;padding:20px 22px}.terrain-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0}.terrain select{background:#111923;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px}.terrain button[aria-pressed=true]{border-color:var(--lime);color:var(--lime)}.terrain p{font-size:12px;color:var(--muted);margin-top:8px;overflow-wrap:anywhere}.terrain a{color:var(--cyan)}
+  .aero{margin-top:22px}.aero .badge.warning{color:var(--amber);border-color:var(--amber)}.aero .badge.stalled{color:#ffb0aa;border-color:#f07068;background:#50282c}.aero .metric meter{display:block;width:100%;margin-top:8px}.wind{padding:18px 22px;border-top:1px solid var(--line)}.wind-fields{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:12px 0}.wind-fields label{font-size:12px;color:var(--muted)}.wind-fields input{display:block;width:110px;background:#111923;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px;margin-top:5px}.wind p{font-size:12px;color:var(--muted);margin-top:8px}
+  .ground{margin-top:22px}.ground .badge.grounded{color:var(--lime);border-color:var(--lime)}.ground .badge.crashed{color:#ffb0aa;border-color:#f07068;background:#50282c}.ground-controls{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:18px 22px;border-top:1px solid var(--line)}.ground-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:0 22px 16px}.ground-note{padding:0 22px 18px;color:var(--muted);font-size:12px}
+  @media(max-width:850px){main{padding:22px 16px}.layout{grid-template-columns:1fr}h1{font-size:25px}.diagram svg{height:220px}.metric{padding:14px}.notice{display:block}.notice strong{display:block;margin-bottom:5px}}
+  @media(max-width:600px){.engine{align-items:stretch;flex-direction:column}.engine-actions button{flex:1}}
+  @media(prefers-reduced-motion:no-preference){button,.badge{transition:border-color .15s,background .15s}}
+</style>
+</head>
+<body>
+<main>
+  <header><div><div class="brand">UAVSIM / LOCAL CONTROL</div><h1>조종면 컨트롤 데스크</h1></div><div class="badge" id="connection" role="status"><span class="dot"></span><span id="connection-text">연결 확인 중</span></div></header>
+  <section class="panel engine" aria-label="Unreal 실행 관리">
+    <div><div class="engine-heading"><h2>Unreal Engine</h2><span class="badge" id="engine-badge" role="status"><span class="dot"></span><span id="engine-status">확인 중</span></span></div><p id="engine-detail" aria-live="polite">로컬 API에서 실행 상태를 확인합니다.</p></div>
+    <div class="engine-actions"><button id="engine-start" disabled>Unreal 실행</button><button id="engine-stop" disabled>Unreal 종료</button></div>
+  </section>
+  <section class="panel terrain" aria-labelledby="eoir-title">
+    <div class="row"><h2 id="eoir-title">EO/IR 센서</h2><a href="/eoir" target="_blank" rel="noopener">센서 화면 열기 ↗</a></div>
+    <p>별도 탭에서 CCD·IR 표시, 짐벌 방향, 지상 표적을 조작합니다. IR은 영상 필터이며 표적 추적은 선택한 ID의 위치를 향하는 기하학적 추적입니다.</p>
+  </section>
+  <section class="panel terrain" aria-labelledby="terrain-title">
+    <div class="row"><h2 id="terrain-title">지도</h2><output id="view-state">수신 대기</output></div>
+    <div class="terrain-actions"><button id="view-overview" aria-pressed="false" disabled>지도 전체</button><button id="view-aircraft" aria-pressed="false" disabled>기체 추적</button><button id="view-projectile" type="button" aria-pressed="false" disabled>탄체 따라보기</button><label for="region">지역</label><select id="region" disabled><option value="jeju">제주</option><option value="seoul">서울</option><option value="busan">부산</option><option value="daegu">대구</option><option value="gangneung">강릉</option><option value="ulleung">울릉도</option><option value="dokdo">독도</option></select><button id="region-move" disabled>이동</button><button id="terrain-reload" disabled>지도 다시 읽기</button></div>
+    <p id="terrain-state" class="mono">지형 수신 대기</p>
+    <p id="terrain-manifest" class="mono">지도 파일 수신 대기</p>
+    <p>지역 이동은 기체 초기 조건을 해당 위치·타원체고 2600 m·속도 19 m/s로 설정하고 일시정지합니다. 기체 추적 화면에서 비행 재생을 누르세요.</p>
+    <p>지도 교체: 프로젝트의 <code>maps/active.json</code>에서 <code>maps/&lt;name&gt;/terrain.json</code>을 지정한 뒤 지도 다시 읽기를 누르세요. 다시 읽으면 비행이 일시정지하며, 실패하면 기존 지도를 유지합니다.</p>
+    <p id="terrain-attribution">지도 출처 수신 대기</p>
+    <p id="terrain-error" role="status" aria-live="polite" style="color:var(--amber)"></p>
+  </section>
+  <section class="panel terrain" aria-labelledby="airframe-title">
+    <div class="row"><h2 id="airframe-title">기체 데이터</h2><button id="airframe-reload" disabled>기체 파일 다시 읽기</button></div>
+    <p id="airframe-state" class="mono">기체 데이터 수신 대기</p><p id="airframe-fingerprint" class="mono"></p>
+    <p><code>aircraft/active.json</code>에서 기체 데이터 파일을 선택합니다. 일시정지한 뒤 다시 읽으면 타원체고 2600 m·TAS 19 m/s 공중 트림으로 초기화하고 돌풍·고장·자동항법을 해제합니다. 일정 바람은 유지합니다. 입력 명령과 실제 작동기 출력은 조종 입력 패널에서 비교하세요.</p>
+    <p id="airframe-error" role="status" aria-live="polite" style="color:var(--amber)"></p>
+  </section>
+  <section class="panel terrain" aria-labelledby="visual-title">
+    <div class="row"><h2 id="visual-title">기체 형상 · STL</h2><button id="visual-reload" disabled>기체 모델 다시 읽기</button></div>
+    <p id="visual-state" class="mono">형상 수신 대기</p><p id="visual-path" class="mono"></p>
+    <p><code>aircraft/visual.json</code>에서 STL 원본 파일을 선택합니다. 일시정지 중 형상만 다시 읽으며 위치·시간·비행역학은 유지합니다. 일체형 STL의 조종면은 자동 분리되지 않으며, 기본 랜딩기어 표시 여부는 설정에서 선택합니다.</p>
+    <p id="visual-error" role="status" aria-live="polite" style="color:var(--amber)"></p>
+  </section>
+  <div class="notice"><strong>비행역학 개발 중</strong><span>비선형 공력·실속 개발 모델. 실제 기체의 전 비행영역을 검증한 모델은 아닙니다. 수동 입력은 자동항법을 해제합니다.</span></div>
+  <div class="layout">
+    <section class="panel" aria-label="기체 상태">
+      <div class="panel-head"><h2>기체 상태</h2><span class="mono muted" id="run-state">—</span></div>
+      <div class="diagram">
+        <svg viewBox="0 0 480 285" role="img" aria-label="고정익 기체 조종면 위치 도식. 각도는 오른쪽 적용값으로 확인합니다.">
+          <defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff08"/></pattern></defs>
+          <rect width="480" height="285" fill="url(#grid)"/>
+          <path d="M240 8V275 M25 137H455" stroke="#627782" stroke-dasharray="3 7" opacity=".4"/>
+          <text x="248" y="19">NOSE</text>
+          <path d="M230 121L51 127L51 151L230 154 M250 121L429 127L429 151L250 154" fill="#70838f" stroke="#91a2ac"/>
+          <path d="M231 222L165 232L165 249L232 246 M249 222L315 232L315 249L248 246" fill="#70838f" stroke="#91a2ac"/>
+          <path d="M240 37Q226 51 227 102L232 235Q240 259 248 235L253 102Q254 51 240 37Z" fill="#b8c7ce" stroke="#dce7eb"/>
+          <path class="surface" id="left-aileron" d="M51 151L168 151L168 161L51 161Z"/>
+          <path class="surface" id="right-aileron" d="M312 151L429 151L429 161L312 161Z"/>
+          <path class="surface" id="elevator-mark" d="M165 241L232 238L232 250L165 259Z M248 238L315 241L315 259L248 250Z"/>
+          <path class="surface" id="rudder-mark" d="M237 200L243 200L243 248L237 248Z"/>
+          <text x="42" y="183">LEFT AILERON</text><text x="332" y="183">RIGHT AILERON</text>
+          <text x="154" y="278">ELEVATOR</text><text x="258" y="211">RUDDER</text>
+        </svg>
+        <div class="diagram-caption">조종면 위치 도식 · 실제 3D 움직임은 Unreal 화면에서 확인</div>
+      </div>
+      <div class="telemetry">
+        <div class="metric"><span>위도 · 경도</span><output id="lat" style="font-size:14px">—</output><br><output id="lon" style="font-size:14px">—</output></div>
+        <div class="metric"><span>WGS84 타원체고</span><output id="height">—</output> <small>m</small></div>
+        <div class="metric"><span>시뮬레이션 시간</span><output id="sim-time">—</output> <small>s</small></div>
+        <div class="metric"><span>진대기속도 TAS</span><output id="speed">—</output> <small>m/s</small></div>
+        <div class="metric"><span>누적 이동거리</span><output id="distance">—</output> <small>m</small></div>
+        <div class="metric"><span>실제 진행 배속</span><output id="effective-time-scale">—</output> <small>×</small></div>
+      </div>
+      <div class="transport"><button id="toggle" disabled>비행 재생</button><button id="step" disabled>+0.1초</button><button id="reset" disabled>초기화</button><label for="time-scale">재생 배속</label><select id="time-scale" disabled><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="5">5×</option><option value="10">10×</option><option value="20">20×</option></select></div>
+      <p class="motion-hint">추적 카메라는 기체를 화면 중앙에 유지합니다. 지면·좌표·이동거리 변화로 이동을 확인하세요. 실제 진행 배속은 처리 성능에 따라 설정값보다 낮을 수 있습니다. +0.1초 수동 진행은 배속의 영향을 받지 않습니다.</p>
+    </section>
+    <section class="panel" aria-label="조종면 입력">
+      <div class="panel-head"><h2>조종 입력</h2><button id="neutral" disabled>중립 · 스로틀 0</button></div>
+      <div id="controls"></div>
+      <p class="motion-hint">현재 추진 추력 <output id="thrust" class="mono">—</output> N · 작동기 지연·고장이 있으면 명령과 실제 출력이 다를 수 있습니다.</p>
+    </section>
+  </div>
+  <section class="panel ground" aria-labelledby="ground-title">
+    <div class="panel-head"><h2 id="ground-title">지상 · 활주 · 이착륙</h2><output id="ground-state" class="badge" role="status" aria-live="polite">수신 대기</output></div>
+    <div class="telemetry">
+      <div class="metric"><span>무게중심 AGL · 지면 법선 거리</span><output id="height-agl">—</output> <small>m</small></div>
+      <div class="metric"><span>접촉 바퀴 수</span><output id="wheels-on-ground">—</output></div>
+      <div class="metric"><span>지면 법선 반력</span><output id="ground-normal-force">—</output> <small>N</small></div>
+      <div class="metric"><span>지면 타원체고</span><output id="terrain-height">—</output> <small>m</small></div>
+      <div class="metric"><span>충격 속도</span><output id="impact-speed">—</output> <small>m/s</small></div>
+      <div class="metric"><span>지면</span><output id="ground-surface" style="font-size:13px">—</output></div>
+    </div>
+    <div class="wind">
+      <div class="row"><h2>랜딩기어</h2><output id="gear-state" class="badge" role="status" aria-live="polite">수신 대기</output></div>
+      <div class="terrain-actions"><button id="gear-down" disabled>랜딩기어 전개</button><button id="gear-up" disabled>랜딩기어 수납</button><label for="gear-extension">전개율</label><meter id="gear-extension" min="0" max="1" value="0"></meter><output id="gear-percent" for="gear-extension">—</output></div>
+      <p id="gear-command">기어 명령 수신 대기</p>
+      <p>전개·수납은 시뮬레이션 시간으로 3초가 걸립니다. 정지 중 명령한 뒤 +0.1초 또는 비행 재생으로 진행하세요. 지상 수납과 자동 이착륙 운항 중 수동 명령은 거부됩니다. 자동 착륙은 기어를 전개하고 자동 이륙은 안전 상승 후 수납합니다.</p>
+    </div>
+    <div class="ground-controls">
+      <div><div class="row"><label for="steering-deg">앞바퀴 조향</label><output id="steering-out" for="steering-deg">0.0°</output></div><input id="steering-deg" type="range" min="-30" max="30" step="0.5" value="0" disabled><div class="scale"><span>왼쪽 −30°</span><span>오른쪽 +30°</span></div></div>
+      <div><div class="row"><label for="ground-brake">브레이크</label><output id="brake-out" for="ground-brake">0%</output></div><input id="ground-brake" type="range" min="0" max="1" step="0.01" value="0" disabled><div class="scale"><span>0%</span><span>100%</span></div></div>
+    </div>
+    <div class="ground-actions"><label><input id="parking-brake" type="checkbox" disabled> 주차 브레이크</label><button id="ground-reset" disabled>지상 시작</button><span id="ground-applied" class="ack">지상 입력 수신 대기</span></div>
+    <p class="ground-note">지상 시작은 가상 시험 활주로에 무추력·지상속도 0·주차 브레이크 상태로 배치하고 일시정지합니다. 수동 이륙 예제: 주차·일반 브레이크 해제 → 스로틀 100%·비행 재생 → TAS 11m/s 이상에서 엘리베이터 −6° → 이륙 후 당김을 줄이세요. 조향은 저속에서 사용하고 착지 후 추력을 줄이고 브레이크를 적용합니다. AGL은 무게중심의 지면 법선 방향 거리이며 수직 고도·바퀴 간격과 다릅니다. 반력은 접촉 계산 간격의 충격량/시간으로, 착륙장치의 최대 충격 하중이 아닙니다. 상세 안내: docs/ground-operations.md.</p>
+    <div class="wind">
+      <div class="row"><h2>자동 이륙 · 착륙</h2><output id="operation-state" class="badge" role="status" aria-live="polite">수신 대기</output></div>
+      <div class="terrain-actions"><button id="auto-takeoff" disabled>자동 이륙</button><button id="prepare-landing" disabled>착륙 시험 위치</button><button id="auto-land" disabled>자동 착륙</button><button id="operation-cancel" disabled>자동 이착륙 해제</button></div>
+      <p id="operation-detail" class="mono">—</p><p id="operation-message" role="status" aria-live="polite"></p>
+      <p>첫 설정 활주로(인덱스 0)를 사용합니다. 지상 시작 후 자동 이륙은 활주로 위 50 m·TAS 19 m/s를 목표로 재생합니다. 자동 착륙은 현재 위치에서 TAS 18 m/s로 진입하며 준비 조건을 벗어나면 거부됩니다.</p>
+      <p><strong>착륙 시험 위치</strong>는 기체를 활주로 시작점 600 m 뒤·60 m 위, TAS 18 m/s의 초기 조건으로 바꾸고 정지합니다. 이후 자동 착륙을 누르세요. 자동 이륙·착륙 버튼은 준비 성공 후 재생하며, 외부 API는 준비와 시간 진행을 별도로 제어할 수 있습니다. 이륙 완료 후에는 고도를 유지하고, 착륙 완료 후에는 주차 브레이크·일시정지 상태가 됩니다. 개발용 제어기로 임의 조건의 성공을 보장하지 않습니다.</p>
+    </div>
+  </section>
+  <section class="panel aero" aria-labelledby="aero-title">
+    <div class="panel-head"><h2 id="aero-title">공력 · 실속 상태</h2><output id="stall-state" class="badge" role="status" aria-live="polite">수신 대기</output></div>
+    <div class="telemetry">
+      <div class="metric"><span>받음각 α</span><output id="aoa">—</output> <small>°</small></div>
+      <div class="metric"><span>옆미끄럼각 β</span><output id="sideslip">—</output> <small>°</small></div>
+      <div class="metric"><span>수평 지상속도</span><output id="ground-speed">—</output> <small>m/s</small></div>
+      <div class="metric"><span>공기 밀도 ρ</span><output id="air-density">—</output> <small>kg/m³</small></div>
+      <div class="metric"><span>동압 q</span><output id="dynamic-pressure">—</output> <small>Pa</small></div>
+      <div class="metric"><span>하중계수 n</span><output id="load-factor">—</output> <small>g</small></div>
+      <div class="metric"><span>양력계수 CL</span><output id="lift-coefficient">—</output></div>
+      <div class="metric"><span>항력계수 CD</span><output id="drag-coefficient">—</output></div>
+      <div class="metric"><span>유동 박리 비율</span><output id="flow-separation">—</output> <small>%</small><meter id="separation-meter" min="0" max="1" value="0" aria-label="유동 박리 비율"></meter></div>
+    </div>
+    <div class="wind">
+      <div class="row"><h2>바람 · 실속 시험</h2><button id="stall-prepare" disabled>실속 시험 준비</button></div>
+      <div class="wind-fields"><label for="wind_east_mps">동쪽 방향 (m/s)<input id="wind_east_mps" type="number" min="-30" max="30" step="0.1" value="0" required disabled></label><label for="wind_north_mps">북쪽 방향 (m/s)<input id="wind_north_mps" type="number" min="-30" max="30" step="0.1" value="0" required disabled></label><label for="wind_up_mps">위쪽 방향 (m/s)<input id="wind_up_mps" type="number" min="-30" max="30" step="0.1" value="0" required disabled></label><button id="wind-apply" disabled>바람 적용</button></div>
+      <p id="wind-applied" class="mono">적용 바람 수신 대기</p>
+      <p>바람은 ENU 속도 성분입니다. 양수는 각각 동쪽·북쪽·위쪽으로 부는 바람이며, 각 성분의 범위는 ±30 m/s입니다.</p>
+      <p>실속 시험 준비는 현재 위치·고도·방위에서 TAS 9 m/s, 받음각·피치 18°, 옆미끄럼·롤 0°, 조종면 중립·스로틀 0, 배속 1로 설정하고 정지합니다. <strong>비행 재생</strong>을 눌러 변화를 확인하세요. 유동 박리 비율은 0~1의 연속값입니다.</p>
+      <p>이 개발 모델에서 회복을 살펴보려면 엘리베이터 양수(후연 아래)로 받음각을 줄이고 스로틀을 올리세요. 받음각이 줄면 기수 하강 입력을 풀고 자세를 회복합니다. 자동항법 중에는 실속 회복 제어가 고도 유지보다 우선합니다.</p>
+    </div>
+    <div class="wind">
+      <h2>돌풍</h2>
+      <div class="wind-fields">
+        <label for="gust-east">동쪽 최대 (m/s)<input id="gust-east" type="number" min="-15" max="15" step="0.1" value="0" required disabled></label>
+        <label for="gust-north">북쪽 최대 (m/s)<input id="gust-north" type="number" min="-15" max="15" step="0.1" value="0" required disabled></label>
+        <label for="gust-up">위쪽 최대 (m/s)<input id="gust-up" type="number" min="-15" max="15" step="0.1" value="0" required disabled></label>
+        <label for="gust-delay">지연 (s)<input id="gust-delay" type="number" min="0" max="600" step="0.1" value="0" required disabled></label>
+        <label for="gust-duration">지속 (s)<input id="gust-duration" type="number" min="0.1" max="120" step="0.1" value="5" required disabled></label>
+        <button id="gust-apply" disabled>돌풍 적용</button><button id="gust-clear" disabled>돌풍 해제</button>
+      </div>
+      <p id="gust-applied" class="mono">돌풍 수신 대기</p><p id="effective-wind" class="mono">유효 바람 수신 대기</p>
+      <p>현재 시뮬레이션 시간에서 지연 후 시작하는 ENU 돌풍입니다. 세 방향의 최대 성분은 ±15 m/s이며 일정 바람에 더해집니다. 일시정지 중에는 시간이 진행되지 않습니다.</p>
+    </div>
+    <div class="wind">
+      <h2>추진 · 조종면 고장</h2>
+      <div class="wind-fields"><label for="engine-power-fraction">엔진 출력 비율<input id="engine-power-fraction" type="number" min="0" max="1" step="0.05" value="1" required disabled></label><button id="failures-apply" disabled>고장 적용</button><button id="failures-clear" disabled>고장 해제</button></div>
+      <div class="route-options"><label><input id="elevator_jammed" type="checkbox" disabled> 엘리베이터 고착</label><label><input id="aileron_jammed" type="checkbox" disabled> 에일러론 고착</label><label><input id="rudder_jammed" type="checkbox" disabled> 러더 고착</label></div>
+      <p id="failures-applied" class="mono">고장 설정 수신 대기</p>
+      <p>엔진 출력 비율 1은 정상, 0은 추력 상실입니다. 조종면 고착과 작동기 응답은 조종 입력 패널의 실제 출력에서 확인하세요. 고장 해제는 비행 상태를 초기화하지 않습니다.</p>
+    </div>
+  </section>
+  <section class="panel route" aria-labelledby="route-title">
+    <div class="row"><h2 id="route-title">항로점 자동항법</h2><output id="navigation-state">수신 대기</output></div>
+    <p class="muted">항로점 1~64개를 순서대로 통과한 뒤 마지막 지점을 선회합니다. 고도는 WGS84 타원체고(m), 속도는 대기속도(m/s)입니다.</p>
+    <label for="waypoints">항로점 JSON 배열</label>
+    <textarea id="waypoints" spellcheck="false">[
+  {"latitude_deg":33.433,"longitude_deg":126.52,"ellipsoid_height_m":2600,"speed_mps":19},
+  {"latitude_deg":33.433,"longitude_deg":126.524,"ellipsoid_height_m":2620,"speed_mps":20}
+]</textarea>
+    <div class="route-options"><label for="loiter-radius">마지막 선회 반경(m)</label><input id="loiter-radius" type="number" min="100" max="5000" value="150" step="10"><label><input id="clockwise" type="checkbox" checked> 시계 방향</label><button id="route-apply" disabled>항로 적용</button><button id="route-cancel" disabled>자동항법 해제</button></div>
+    <p class="muted">속도 범위 16~24 m/s. 반경은 최대 뱅크각 30° 조건도 만족해야 합니다. 일시정지 상태에서 항로를 적용했다면 비행 재생을 누르세요.</p>
+    <p id="navigation-detail" class="mono">—</p>
+  </section>
+  <p class="status" id="message" role="status" aria-live="polite">위의 Unreal 실행 버튼으로 시뮬레이션을 시작하세요.</p>
+  <details class="panel python"><summary>외부 Python에서 같은 API 사용하기</summary><pre>from uavsim_client import UAVSimClient
+
+sim = UAVSimClient("http://127.0.0.1:8765")
+sim.set_view("overview")
+sim.set_time_scale(5)
+sim.set_wind(wind_east_mps=3, wind_north_mps=0, wind_up_mps=0)
+sim.set_controls(elevator_deg=10, aileron_deg=5, rudder_deg=0, throttle=0.3)
+print(sim.get_state())</pre></details>
+  <div class="footer"><span class="mono">HTTP / api/v1 · 동일 PC 로컬 제어</span><span id="last-seen">수신 대기</span></div>
+</main>
+<script>
+const specs = [
+  {key:'elevator_deg',name:'엘리베이터',en:'ELEVATOR',min:-25,max:25,step:.5,unit:'°',hint:'양수: 양쪽 후연 아래'},
+  {key:'aileron_deg',name:'에일러론',en:'AILERON',min:-25,max:25,step:.5,unit:'°',hint:'양수: 오른쪽 후연 위 · 왼쪽 후연 아래'},
+  {key:'rudder_deg',name:'러더',en:'RUDDER',min:-25,max:25,step:.5,unit:'°',hint:'양수: 후연 오른쪽'},
+  {key:'throttle',name:'스로틀',en:'THROTTLE',min:0,max:1,step:.01,unit:'%',hint:'개발용 추진 모델 · 0–100% 명령'}
+];
+const el = id => document.getElementById(id);
+const regions={jeju:[33.43,126.52],seoul:[37.5665,126.978],busan:[35.1796,129.0756],daegu:[35.8714,128.6014],gangneung:[37.7519,128.8761],ulleung:[37.5,130.87],dokdo:[37.241,131.869]};
+const windFields=['wind_east_mps','wind_north_mps','wind_up_mps'];
+const gustInputs={east_mps:'gust-east',north_mps:'gust-north',up_mps:'gust-up',delay_s:'gust-delay',duration_s:'gust-duration'};
+const jamFields=['elevator_jammed','aileron_jammed','rudder_jammed'];
+const operationPhases={idle:'대기',takeoff_roll:'이륙 활주',rotate:'기수 들기',climb:'상승',hold:'고도 유지',join:'접근 경로 진입',final:'최종 접근',flare:'플레어',rollout:'착륙 감속',rejected_takeoff:'이륙 중단 · 제동',go_around:'복행',complete:'착륙 · 주차 완료',aborted:'중단'};
+let aircraft=null,windDirty=false,gustDirty=false,failuresDirty=false,onGround=false,automaticActive=false,hasActiveProjectile=false;
+let desired = {elevator_deg:0,aileron_deg:0,rudder_deg:0,throttle:0};
+let desiredGround={steering_deg:0,brake:0,parking_brake:false},groundDirty=false;
+let connected = false, running = false, dirty = false, busy = false, polling = false, timer;
+let engine = null, engineBusy = false, enginePolling = false, generation = 0, engineRevision = 0;
+const format = (s,v) => (s.key==='throttle' ? Math.round(v*100) : v.toFixed(1)) + s.unit;
+for (const s of specs) {
+  const box = document.createElement('div'); box.className='control';
+  box.innerHTML=`<div class="row"><label for="${s.key}">${s.name}<small>${s.en}</small></label><output class="readout" id="${s.key}-out" for="${s.key}">0${s.unit}</output></div>
+    <input type="range" id="${s.key}" min="${s.min}" max="${s.max}" step="${s.step}" value="0" disabled aria-describedby="${s.key}-hint">
+    <div class="scale"><span>${s.min}${s.unit}</span><span>${s.key==='throttle'?'100%':'+'+s.max+'°'}</span></div>
+    <div class="ack" id="${s.key}-ack">명령 — · 실제 —</div><div class="muted" style="font-size:11px" id="${s.key}-hint">${s.hint}</div>`;
+  el('controls').append(box);
+  el(s.key).addEventListener('input',()=>{desired[s.key]=Number(el(s.key).value);el(s.key+'-out').textContent=format(s,desired[s.key]);dirty=true;clearTimeout(timer);timer=setTimeout(flush,70);});
+}
+function enable(value) {
+  value=Boolean(value&&engine?.ready&&!engineBusy);
+  connected=value;el('connection').classList.toggle('live',value);el('connection-text').textContent=value?'Unreal 연결됨':'연결 대기';
+  for(const s of specs) el(s.key).disabled=!value;
+  for(const id of ['steering-deg','ground-brake','parking-brake'])el(id).disabled=!value;
+  for(const id of ['neutral','toggle','reset','route-apply','route-cancel','view-overview','view-aircraft','region','region-move','terrain-reload','time-scale','wind-apply','stall-prepare','ground-reset',...windFields]) el(id).disabled=!value||busy;
+  for(const id of ['auto-takeoff','auto-land','prepare-landing','operation-cancel','gust-apply','gust-clear','failures-apply','failures-clear','engine-power-fraction',...Object.values(gustInputs),...jamFields])el(id).disabled=!value||busy;
+  el('airframe-reload').disabled=!value||running||busy;
+  el('visual-reload').disabled=!value||running||busy;
+  el('view-projectile').disabled=!value||busy||!hasActiveProjectile;
+  el('gear-down').disabled=!value||busy||automaticActive;
+  el('gear-up').disabled=!value||busy||automaticActive||onGround;
+  el('step').disabled=!value||running||busy;
+}
+function message(text,error=false){el('message').textContent=text;el('message').classList.toggle('error',error);}
+function clearAircraft(){
+  generation++;dirty=false;groundDirty=false;clearTimeout(timer);running=false;aircraft=null;windDirty=false;gustDirty=false;failuresDirty=false;onGround=false;automaticActive=false;hasActiveProjectile=false;enable(false);
+  el('run-state').textContent='OFFLINE';el('toggle').textContent='비행 재생';el('last-seen').textContent='수신 대기';
+  for(const id of ['lat','lon','height','sim-time','speed','distance','effective-time-scale'])el(id).textContent='—';
+  el('time-scale').value='1';
+  for(const id of ['aoa','sideslip','ground-speed','air-density','dynamic-pressure','load-factor','lift-coefficient','drag-coefficient','flow-separation'])el(id).textContent='—';
+  el('stall-state').textContent='수신 대기';el('stall-state').classList.remove('warning','stalled');el('separation-meter').value=0;
+  for(const key of windFields)el(key).value=0;el('wind-applied').textContent='적용 바람 수신 대기';
+  for(const [key,id] of Object.entries(gustInputs))el(id).value=key==='duration_s'?5:0;
+  el('gust-applied').textContent='돌풍 수신 대기';el('effective-wind').textContent='유효 바람 수신 대기';
+  el('engine-power-fraction').value=1;for(const key of jamFields)el(key).checked=false;el('failures-applied').textContent='고장 설정 수신 대기';
+  el('operation-state').textContent='수신 대기';el('operation-detail').textContent='—';el('operation-message').textContent='';
+  el('airframe-state').textContent='기체 데이터 수신 대기';el('airframe-fingerprint').textContent='';el('airframe-error').textContent='';el('thrust').textContent='—';
+  el('visual-state').textContent='형상 수신 대기';el('visual-path').textContent='';el('visual-error').textContent='';
+  for(const id of ['height-agl','wheels-on-ground','ground-normal-force','terrain-height','impact-speed','ground-surface'])el(id).textContent='—';
+  el('ground-state').textContent='수신 대기';el('ground-state').classList.remove('grounded','crashed');el('ground-applied').textContent='지상 입력 수신 대기';
+  el('gear-state').textContent='수신 대기';el('gear-extension').value=0;el('gear-percent').textContent='—';el('gear-command').textContent='기어 명령 수신 대기';
+  desiredGround={steering_deg:0,brake:0,parking_brake:false};el('steering-deg').value=0;el('ground-brake').value=0;el('parking-brake').checked=false;groundReadout();
+  el('navigation-state').textContent='수신 대기';el('navigation-detail').textContent='—';
+  el('view-state').textContent='수신 대기';el('terrain-state').textContent='지형 수신 대기';
+  el('terrain-manifest').textContent='지도 파일 수신 대기';el('terrain-attribution').textContent='지도 출처 수신 대기';el('terrain-error').textContent='';
+  for(const id of ['view-overview','view-aircraft','view-projectile'])el(id).setAttribute('aria-pressed','false');
+  for(const s of specs){desired[s.key]=0;el(s.key).value=0;el(s.key+'-out').textContent=format(s,0);el(s.key+'-ack').textContent='명령 — · 실제 —';}
+  for(const id of ['elevator-mark','left-aileron','right-aileron','rudder-mark'])el(id).style.fill='var(--cyan)';
+}
+function renderEngine(state){
+  const wasReady=engine?.ready;engine=state;
+  const names={stopped:'꺼짐',starting:'시작 중',running:'실행 중',stopping:'종료 중',error:'실행 오류',external:'별도 실행 중'};
+  const details={stopped:'실행하면 비행 장면이 별도 창으로 열리고 자동으로 연결됩니다.',starting:'Unreal과 지형을 준비하고 있습니다. 처음 실행은 시간이 걸릴 수 있습니다.',running:'시뮬레이션 실행 중 · 엔진을 종료해도 이 Web UI는 유지됩니다.',stopping:'Unreal을 종료하고 있습니다.',external:'별도로 실행한 Unreal입니다. 종료는 해당 Unreal 창에서 해주세요.',error:state?.message||'Unreal 실행에 실패했습니다.'};
+  el('engine-status').textContent=state?(names[state.status]||state.status):'API 연결 끊김';
+  el('engine-detail').textContent=state?details[state.status]:'로컬 API 서버에 연결할 수 없습니다. API 서버 실행 상태를 확인하세요.';
+  el('engine-badge').classList.toggle('live',Boolean(state?.ready));
+  el('engine-start').disabled=engineBusy||!state||!['stopped','error'].includes(state.status)||state.pid!==null;
+  el('engine-stop').disabled=engineBusy||!state?.managed||!['running','error'].includes(state.status);
+  if(!state?.ready&&(wasReady||connected))clearAircraft();
+  if(!state?.ready)message(state?.status==='starting'?'Unreal 준비가 끝나면 조종 입력이 활성화됩니다.':'Unreal 실행 후 조종면을 움직일 수 있습니다.');
+}
+async function request(path,method='GET',body) {
+  const response=await fetch('/api/v1/'+path,{method,headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(path==='terrain/reload'?65000:35000)});
+  const value=await response.json();
+  if(!response.ok){const error=new Error(value.error?.message||value.message||'API 요청 실패');error.status=response.status;throw error;}
+  return value;
+}
+function render(state) {
+  const a=state.aircraft,c=state.controls,act=state.actuators,d=state.disturbance;running=a.running;aircraft=a;
+  el('run-state').textContent=running?'RUNNING':'PAUSED';el('toggle').textContent=running?'비행 일시정지':'비행 재생';
+  el('lat').textContent=a.latitude_deg.toFixed(6)+'° N';el('lon').textContent=a.longitude_deg.toFixed(6)+'° E';
+  el('height').textContent=a.ellipsoid_height_m.toFixed(1);el('sim-time').textContent=a.simulation_time_s.toFixed(2);
+  el('speed').textContent=a.speed_mps.toFixed(2);el('distance').textContent=a.distance_travelled_m.toFixed(1);el('effective-time-scale').textContent=a.effective_time_scale.toFixed(2);
+  el('aoa').textContent=a.angle_of_attack_deg.toFixed(2);el('sideslip').textContent=a.sideslip_deg.toFixed(2);el('ground-speed').textContent=a.ground_speed_mps.toFixed(2);
+  el('air-density').textContent=a.air_density_kg_m3.toFixed(3);el('dynamic-pressure').textContent=a.dynamic_pressure_pa.toFixed(1);el('load-factor').textContent=a.load_factor.toFixed(2);
+  el('lift-coefficient').textContent=a.lift_coefficient.toFixed(3);el('drag-coefficient').textContent=a.drag_coefficient.toFixed(3);el('flow-separation').textContent=(a.flow_separation*100).toFixed(1);el('separation-meter').value=a.flow_separation;
+  el('stall-state').textContent=a.stalled?'실속 상태':a.stall_warning?'실속 경고 · 받음각 높음':'실속 경고 없음';el('stall-state').classList.toggle('warning',a.stall_warning&&!a.stalled);el('stall-state').classList.toggle('stalled',a.stalled);
+  if(!windDirty&&!busy)for(const key of windFields)el(key).value=state.environment[key];
+  el('wind-applied').textContent=`적용 바람: 동 ${state.environment.wind_east_mps.toFixed(1)} · 북 ${state.environment.wind_north_mps.toFixed(1)} · 위 ${state.environment.wind_up_mps.toFixed(1)} m/s`;
+  el('gust-applied').textContent=`최대 성분: 동 ${d.gust_east_mps.toFixed(1)} · 북 ${d.gust_north_mps.toFixed(1)} · 위 ${d.gust_up_mps.toFixed(1)} m/s · 시작 t=${d.gust_start_s.toFixed(1)} s · 지속 ${d.gust_duration_s.toFixed(1)} s`;
+  el('effective-wind').textContent=`현재 유효 바람: 동 ${d.effective_wind_east_mps.toFixed(1)} · 북 ${d.effective_wind_north_mps.toFixed(1)} · 위 ${d.effective_wind_up_mps.toFixed(1)} m/s`;
+  if(!gustDirty&&!busy){el('gust-east').value=d.gust_east_mps;el('gust-north').value=d.gust_north_mps;el('gust-up').value=d.gust_up_mps;el('gust-delay').value=Math.max(0,d.gust_start_s-a.simulation_time_s).toFixed(1);el('gust-duration').value=d.gust_duration_s>0?d.gust_duration_s:5;}
+  if(!failuresDirty&&!busy){el('engine-power-fraction').value=d.engine_power_fraction;for(const key of jamFields)el(key).checked=d[key];}
+  const jamNames={elevator_jammed:'엘리베이터',aileron_jammed:'에일러론',rudder_jammed:'러더'};
+  el('failures-applied').textContent=`적용 엔진 출력 ${Math.round(d.engine_power_fraction*100)}% · 고착: ${jamFields.filter(key=>d[key]).map(key=>jamNames[key]).join(', ')||'없음'}`;
+  const op=state.automation;
+  automaticActive=op.kind!=='none'&&!['idle','complete','aborted'].includes(op.phase);
+  el('operation-state').textContent=(op.completed&&op.phase!=='complete'?'완료 · ':'')+(operationPhases[op.phase]||op.phase);
+  el('operation-detail').textContent=`${{none:'수동',takeoff:'이륙',landing:'착륙'}[op.kind]||op.kind} · ${op.runway_name||'활주로 미선택'} (${op.runway_index}) · 횡오차 ${op.cross_track_m.toFixed(1)} m · 종방향 ${op.along_track_m.toFixed(1)} m · 목표 높이 ${op.target_height_m.toFixed(1)} m`;
+  el('operation-message').textContent=op.message;
+  el('airframe-state').textContent=`${state.airframe.id} · ${state.airframe.profile}`;el('airframe-fingerprint').textContent=state.airframe.fingerprint?'파일 식별값: '+state.airframe.fingerprint:'';el('airframe-error').textContent=state.airframe.error;
+  const visual=state.visual;
+  el('visual-state').textContent=`${{builtin:'기본 기체',stl:'STL 기체'}[visual.source]||visual.source} · ${visual.triangle_count.toLocaleString('ko-KR')}개 삼각형 · 형상 폭 ${visual.span_m.toFixed(3)} m · 기본 기어 ${visual.show_builtin_gear?'표시':'숨김'}`;
+  el('visual-path').textContent=`${visual.config}${visual.mesh?' · aircraft/'+visual.mesh:''}`;el('visual-error').textContent=visual.error;
+  el('thrust').textContent=act.thrust_n.toFixed(2);
+  const ground=state.ground;
+  onGround=ground.on_ground;
+  const gear=state.gear;
+  el('gear-state').textContent=gear.moving?(gear.command_down?'전개 중':'수납 중'):gear.down_locked?'전개 잠금':gear.up_locked?'수납 잠금':'중간 위치';
+  el('gear-extension').value=gear.extension;el('gear-percent').textContent=(gear.extension*100).toFixed(1)+'%';
+  el('gear-command').textContent=`명령: ${gear.command_down?'전개':'수납'} · ${automaticActive?'자동 이착륙 제어 중':onGround?'지상 · 수납 불가':'수동 기어 조작 가능'}`;
+  el('ground-state').textContent=ground.crashed?'충돌 · 초기화 필요':!ground.available?'지면 자료 없음':ground.on_ground?'지상 접촉':'공중';el('ground-state').classList.toggle('grounded',ground.on_ground&&!ground.crashed);el('ground-state').classList.toggle('crashed',ground.crashed);
+  el('height-agl').textContent=ground.available?ground.height_agl_m.toFixed(2):'—';el('terrain-height').textContent=ground.available?ground.terrain_height_m.toFixed(2):'—';
+  el('wheels-on-ground').textContent=ground.wheels_on_ground;el('ground-normal-force').textContent=ground.normal_force_n.toFixed(1);el('impact-speed').textContent=ground.impact_speed_mps.toFixed(2);el('ground-surface').textContent=ground.available?ground.surface:'—';
+  el('ground-applied').textContent=`적용: 조향 ${ground.steering_deg.toFixed(1)}° · 브레이크 ${Math.round(ground.brake*100)}% · 주차 ${ground.parking_brake?'켜짐':'꺼짐'}`;
+  if(!groundDirty&&!busy){desiredGround={steering_deg:ground.steering_deg,brake:ground.brake,parking_brake:ground.parking_brake};el('steering-deg').value=ground.steering_deg;el('ground-brake').value=ground.brake;el('parking-brake').checked=ground.parking_brake;groundReadout();}
+  if(!busy){const select=el('time-scale');select.querySelector('[data-custom]')?.remove();if(!Array.from(select.options).some(option=>Number(option.value)===a.time_scale)){const option=new Option(a.time_scale+'×',String(a.time_scale));option.dataset.custom='true';select.add(option);}select.value=String(a.time_scale);}
+  hasActiveProjectile=state.wargame.shots.some(shot=>shot.phase==='animating');
+  el('view-state').textContent={aircraft:'기체 추적',overview:'지도 전체',projectile:'탄체 따라보기'}[state.view_mode]||state.view_mode;
+  for(const mode of ['overview','aircraft','projectile'])el('view-'+mode).setAttribute('aria-pressed',String(state.view_mode===mode));
+  el('terrain-state').textContent=`${state.terrain.dataset} · ${state.terrain.tile_count}개 타일`;
+  el('terrain-manifest').textContent=state.terrain.manifest;
+  el('terrain-attribution').textContent=state.terrain.attribution;
+  el('terrain-error').textContent=state.terrain.error;
+  const n=state.navigation;el('navigation-state').textContent=n.stall_recovery?'실속 회복 우선 제어':({manual:'수동 조종',waypoint:'항로점 추종',loiter:'마지막 지점 선회'}[n.mode]||n.mode);
+  el('navigation-detail').textContent=`${a.speed_mps.toFixed(2)} m/s · ${n.active_waypoint_index+1}/${n.waypoint_count} 항로점 · 거리 ${n.distance_to_waypoint_m.toFixed(1)} m · 선회 반경 ${n.loiter_radius_m.toFixed(0)} m`;
+  if(state.fault)message(state.fault,true);
+  for(const s of specs){el(s.key+'-ack').textContent='명령 '+format(s,c[s.key])+' · 실제 '+format(s,act[s.key]);
+    if(!dirty&&!busy){desired[s.key]=c[s.key];el(s.key).value=c[s.key];el(s.key+'-out').textContent=format(s,c[s.key]);}}
+  el('elevator-mark').style.fill=Math.abs(act.elevator_deg)>.01?'var(--lime)':'var(--cyan)';
+  for(const id of ['left-aileron','right-aileron'])el(id).style.fill=Math.abs(act.aileron_deg)>.01?'var(--lime)':'var(--cyan)';
+  el('rudder-mark').style.fill=Math.abs(act.rudder_deg)>.01?'var(--lime)':'var(--cyan)';
+  el('last-seen').textContent='마지막 수신 '+new Date().toLocaleTimeString('ko-KR');enable(true);
+}
+async function flush(){
+  if(busy||(!dirty&&!groundDirty)||!connected)return;
+  const ground=groundDirty&&!dirty,sent=ground?{...desiredGround}:{...desired},current=generation;
+  if(ground)groundDirty=false;else dirty=false;busy=true;enable(true);
+  try{const state=await request(ground?'ground-controls':'controls','PUT',sent);if(current===generation&&engine?.ready&&!engineBusy){render(state);message(ground?'지상 조종 입력 적용':'수동 조종 입력 적용 · 자동항법 해제');}}
+  catch(error){if(current===generation){clearAircraft();message(error.message+' · 연결 후 새 입력을 보내세요.',true);}}
+  finally{busy=false;enable(connected);if((dirty||groundDirty)&&connected)flush();}
+}
+async function action(path,method,body,{followAircraft=false,successMessage='명령 적용 완료',after=[]}={}){
+  if(busy||!connected)return;dirty=false;groundDirty=false;clearTimeout(timer);busy=true;enable(connected);const current=generation;
+  if(path==='terrain/reload')message('지도 파일을 읽고 있습니다. 완료될 때까지 기다려 주세요.');
+  if(path==='aircraft/visual/reload')message('기체 형상 파일을 읽고 있습니다.');
+  try{let state=await request(path,method,body);if(path==='environment')windDirty=false;if(path==='gust')gustDirty=false;if(path==='failures')failuresDirty=false;for(const command of after){if(current!==generation||!engine?.ready||engineBusy)return;state=await request(...command);}if(followAircraft&&current===generation&&engine?.ready&&!engineBusy)state=await request('view','PUT',{mode:'aircraft'});busy=false;if(current===generation&&engine?.ready&&!engineBusy){render(state);message(successMessage);}}
+  catch(error){if(current===generation){if(error.status===400||error.status===409){message(error.message+(after.length?' · 앞선 준비 명령은 이미 적용됐을 수 있습니다.':''),true);}else{clearAircraft();message(error.message+' · 응답 실패 시 명령이 이미 적용됐을 수 있습니다. 상태를 다시 확인합니다.',true);}}}
+  finally{busy=false;enable(connected);if((dirty||groundDirty)&&connected)flush();}
+}
+el('neutral').onclick=()=>{desired={elevator_deg:0,aileron_deg:0,rudder_deg:0,throttle:0};for(const s of specs){el(s.key).value=0;el(s.key+'-out').textContent=format(s,0);}dirty=true;flush();};
+el('toggle').onclick=()=>action('simulation','PUT',{running:!running},{followAircraft:!running});
+el('step').onclick=()=>action('step','POST',{dt_s:.1});
+el('reset').onclick=()=>action('reset','POST',{});
+function groundReadout(){el('steering-out').textContent=desiredGround.steering_deg.toFixed(1)+'°';el('brake-out').textContent=Math.round(desiredGround.brake*100)+'%';}
+for(const id of ['steering-deg','ground-brake','parking-brake'])el(id).oninput=()=>{desiredGround={steering_deg:Number(el('steering-deg').value),brake:Number(el('ground-brake').value),parking_brake:el('parking-brake').checked};groundReadout();groundDirty=true;clearTimeout(timer);timer=setTimeout(flush,70);};
+el('ground-reset').onclick=()=>action('ground/reset','POST',{},{followAircraft:true,after:[['time-scale','PUT',{factor:1}]],successMessage:'지상 시작 준비 완료 · 주차 브레이크를 해제한 뒤 비행 재생을 누르세요.'});
+el('gear-down').onclick=()=>action('gear','PUT',{down:true},{successMessage:'기어 전개 명령 적용 · 시간 진행에 따라 움직입니다.'});
+el('gear-up').onclick=()=>action('gear','PUT',{down:false},{successMessage:'기어 수납 명령 적용 · 시간 진행에 따라 움직입니다.'});
+el('auto-takeoff').onclick=()=>action('automation/takeoff','POST',{runway_index:0,climb_height_m:50,speed_mps:19},{followAircraft:true,after:[['simulation','PUT',{running:true}]],successMessage:'자동 이륙 진행 · 운항 단계와 실제 출력을 확인하세요.'});
+el('auto-land').onclick=()=>action('automation/land','POST',{runway_index:0,approach_speed_mps:18},{followAircraft:true,after:[['simulation','PUT',{running:true}]],successMessage:'자동 착륙 진행 · 운항 단계와 접지를 확인하세요.'});
+el('prepare-landing').onclick=()=>action('automation/prepare-landing','POST',{runway_index:0},{followAircraft:true,successMessage:'착륙 시험 위치로 초기화·일시정지했습니다. 자동 착륙을 눌러 시작하세요.'});
+el('operation-cancel').onclick=()=>action('automation/cancel','POST',{},{successMessage:'자동 이착륙 해제 · 현재 재생/정지 상태는 유지합니다.'});
+el('airframe-reload').onclick=()=>action('aircraft/reload','POST',{},{successMessage:'기체 파일 다시 읽기·초기화 완료 · 비행은 일시정지 상태입니다.'});
+el('visual-reload').onclick=()=>action('aircraft/visual/reload','POST',{},{successMessage:'기체 형상 다시 읽기 완료 · 위치·시간·비행역학은 유지합니다.'});
+el('view-overview').onclick=()=>action('view','PUT',{mode:'overview'});
+el('view-aircraft').onclick=()=>action('view','PUT',{mode:'aircraft'});
+el('view-projectile').onclick=()=>action('view','PUT',{mode:'projectile'});
+el('region-move').onclick=()=>{const [latitude_deg,longitude_deg]=regions[el('region').value];action('initial-condition','PUT',{latitude_deg,longitude_deg,ellipsoid_height_m:2600,heading_deg:0,pitch_deg:0,roll_deg:0,speed_mps:19},{followAircraft:true,after:[['reset','POST',{}]],successMessage:'지역 이동·수평 트림 준비 완료 · 비행 재생을 누르세요.'});};
+el('time-scale').onchange=()=>action('time-scale','PUT',{factor:Number(el('time-scale').value)});
+el('terrain-reload').onclick=()=>action('terrain/reload','POST',{},{successMessage:'지도 다시 읽기 완료 · 비행은 일시정지 상태입니다.'});
+for(const key of windFields)el(key).oninput=()=>{windDirty=true;};
+el('wind-apply').onclick=()=>{if(windFields.some(key=>!el(key).reportValidity()))return;action('environment','PUT',Object.fromEntries(windFields.map(key=>[key,Number(el(key).value)])));};
+for(const id of Object.values(gustInputs))el(id).oninput=()=>{gustDirty=true;};
+el('gust-apply').onclick=()=>{if(Object.values(gustInputs).some(id=>!el(id).reportValidity()))return;action('gust','PUT',Object.fromEntries(Object.entries(gustInputs).map(([key,id])=>[key,Number(el(id).value)])),{successMessage:'돌풍 설정 적용 · 시뮬레이션 시간 기준으로 진행합니다.'});};
+el('gust-clear').onclick=()=>action('gust','PUT',{east_mps:0,north_mps:0,up_mps:0,delay_s:0,duration_s:1},{successMessage:'돌풍 해제 완료 · 일정 바람은 유지합니다.'});
+for(const id of ['engine-power-fraction',...jamFields])el(id).oninput=()=>{failuresDirty=true;};
+el('failures-apply').onclick=()=>{if(!el('engine-power-fraction').reportValidity())return;action('failures','PUT',{engine_power_fraction:Number(el('engine-power-fraction').value),...Object.fromEntries(jamFields.map(key=>[key,el(key).checked]))},{successMessage:'고장 설정 적용 · 실제 작동기 출력과 추력을 확인하세요.'});};
+el('failures-clear').onclick=()=>action('failures','PUT',{engine_power_fraction:1,elevator_jammed:false,aileron_jammed:false,rudder_jammed:false},{successMessage:'고장 해제 완료'});
+el('stall-prepare').onclick=()=>{if(!aircraft)return;const a=aircraft;action('initial-condition','PUT',{latitude_deg:a.latitude_deg,longitude_deg:a.longitude_deg,ellipsoid_height_m:a.ellipsoid_height_m,heading_deg:a.heading_deg,pitch_deg:18,roll_deg:0,speed_mps:9,angle_of_attack_deg:18,sideslip_deg:0},{followAircraft:true,after:[['controls','PUT',{elevator_deg:0,aileron_deg:0,rudder_deg:0,throttle:0}],['time-scale','PUT',{factor:1}]],successMessage:'실속 시험 준비 완료 · 비행 재생을 눌러 받음각·속도·박리 비율 변화를 확인하세요.'});};
+el('route-apply').onclick=()=>{try{const waypoints=JSON.parse(el('waypoints').value);action('route','PUT',{waypoints,loiter_radius_m:Number(el('loiter-radius').value),clockwise:el('clockwise').checked});}catch(error){message('항로점 JSON을 확인하세요: '+error.message,true);}};
+el('route-cancel').onclick=()=>action('navigation/cancel','POST',{});
+async function engineAction(command){
+  if(engineBusy)return;engineBusy=true;engineRevision++;clearAircraft();renderEngine(engine);let failure='';
+  el('engine-detail').textContent=command==='start'?'Unreal 실행을 요청하고 있습니다.':'Unreal 종료를 요청하고 있습니다.';
+  try{engine=await request('engine/'+command,'POST',{});}
+  catch(error){engine=null;failure=error.message+' · 실행 상태를 다시 확인합니다.';}
+  finally{engineBusy=false;renderEngine(engine);if(failure)el('engine-detail').textContent=failure;pollEngine();}
+}
+el('engine-start').onclick=()=>engineAction('start');
+el('engine-stop').onclick=()=>engineAction('stop');
+async function pollEngine(){
+  if(enginePolling||engineBusy||busy)return;enginePolling=true;const current=engineRevision;
+  try{const state=await request('engine');if(!engineBusy&&current===engineRevision)renderEngine(state);}
+  catch(error){if(!engineBusy&&current===engineRevision){clearAircraft();renderEngine(null);}}
+  finally{enginePolling=false;}
+}
+async function poll(){
+  if(polling||busy||dirty||groundDirty||!engine?.ready||engineBusy)return;polling=true;const current=generation;
+  try{const state=await request('state');if(!busy&&!dirty&&!groundDirty&&!engineBusy&&engine?.ready&&current===generation){const wasConnected=connected;render(state);if(!wasConnected)message('연결되었습니다. 조종면을 움직여 보세요.');}}
+  catch(error){if(!busy&&current===generation){clearAircraft();message(error.message+' · Unreal 연결 상태를 다시 확인합니다.',true);}}
+  finally{polling=false;}
+}
+pollEngine();setInterval(pollEngine,1000);setInterval(poll,500);
+</script>
+</body>
+</html>
