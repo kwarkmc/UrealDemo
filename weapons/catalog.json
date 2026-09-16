@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "weapons": [
+    {
+      "id": "training-marker",
+      "label": "Sim projectile",
+      "mesh": "models/example.stl",
+      "scale_to_m": 1.0,
+      "forward_axis": "x",
+      "up_axis": "z",
+      "origin": [0, 0, 0],
+      "color": [0.72, 0.84, 0.95],
+      "animation_duration_s": 5.0
+    }
+  ]
+}

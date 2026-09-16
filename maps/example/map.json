@@ -1,0 +1,26 @@
+{
+  "id": "example",
+  "name": "제주 사용자 지도 예제",
+  "attribution": "Contains modified Copernicus Sentinel data 2025-04-06; Copernicus DEM GLO-30; NGA EGM2008 via PROJ.",
+  "origin": {
+    "latitude_deg": 33.43,
+    "longitude_deg": 126.52,
+    "ellipsoid_height_m": 0
+  },
+  "tiles": [
+    {
+      "id": "jeju",
+      "bounds_deg": [
+        126.48,
+        33.39,
+        126.56,
+        33.47
+      ],
+      "image": "source/satellite.png",
+      "dem": "source/elevation.tif",
+      "vertical_datum": "EGM2008",
+      "geoid_file": "source/geoid-egm2008.tif",
+      "grid_size": 129
+    }
+  ]
+}

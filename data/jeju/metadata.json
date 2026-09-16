@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "name": "Jeju North and Hallasan - real terrain demonstration",
+  "width": 513,
+  "height": 513,
+  "grid_size": 513,
+  "vertex_file": "vertices.raw",
+  "height_file": "heights.raw",
+  "image_file": "satellite.png",
+  "origin": {
+    "latitude_deg": 33.43,
+    "longitude_deg": 126.52,
+    "ellipsoid_height_m": 0.0
+  },
+  "vertex_format": "little-endian float32 E,N,U triples in metres, row-major",
+  "height_format": "little-endian float32 metres, row-major",
+  "height_vertical_datum": "EGM2008",
+  "vertex_vertical_datum": "WGS84 ellipsoid -> local ENU",
+  "row_direction": "north_to_south",
+  "column_direction": "west_to_east",
+  "uv": "u=column/(width-1), v=row/(height-1); PNG row 0 is north",
+  "grid_crs": "EPSG:32652",
+  "grid_bounds_m": [
+    259430.51973558555,
+    3691708.5520587806,
+    279430.51973558555,
+    3711708.5520587806
+  ],
+  "grid_spacing_m": 39.0625,
+  "image_width": 2048,
+  "image_height": 2048,
+  "height_range_m": [
+    -0.8120796084403992,
+    1922.169921875
+  ],
+  "geoid_undulation_range_m": [
+    24.85906982421875,
+    26.05817413330078
+  ],
+  "vertical_conversion": "h_WGS84 = H_orthometric + N_geoid; bilinear geoid sampling",
+  "sources": {
+    "dem": {
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N33_00_E126_00_DEM/Copernicus_DSM_COG_10_N33_00_E126_00_DEM.tif",
+      "native_crs": "EPSG:4326",
+      "source_size": [
+        3600,
+        3600
+      ],
+      "source_window": [
+        1472,
+        1717,
+        800,
+        672
+      ],
+      "source_tags": {
+        "AREA_OR_POINT": "Point"
+      },
+      "sha256": "75f2005b9969ed852d0d2bd6c6803bf5d5ce13f3e877562f5fa8cd33d15dd68b"
+    },
+    "imagery": {
+      "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/BC/2025/4/S2B_52SBC_20250406_0_L2A/TCI.tif",
+      "native_crs": "EPSG:32652",
+      "source_size": [
+        10980,
+        10980
+      ],
+      "source_window": [
+        5939,
+        8827,
+        2012,
+        2013
+      ],
+      "source_tags": {
+        "OVR_RESAMPLING_ALG": "AVERAGE",
+        "AREA_OR_POINT": "Area"
+      },
+      "sha256": "37fcb05f49cd2c8d2cd5f2cbf237562408771d72e82937bedf76065221cb79e8"
+    },
+    "geoid": {
+      "source": "https://cdn.proj.org/us_nga_egm08_25.tif",
+      "native_crs": "EPSG:4979",
+      "source_size": [
+        8640,
+        4321
+      ],
+      "source_window": [
+        7352,
+        1353,
+        10,
+        10
+      ],
+      "source_tags": {
+        "TIFFTAG_IMAGEDESCRIPTION": "WGS 84 (EPSG:4979) to EGM2008 height (EPSG:3855). Converted from egm08_25.gtx (last modified at 2018/10/08)",
+        "TIFFTAG_DATETIME": "2019:12:27 00:00:00",
+        "TIFFTAG_COPYRIGHT": "Derived from work by NGA. Public Domain",
+        "area_of_use": "World",
+        "target_crs_epsg_code": "3855",
+        "TYPE": "VERTICAL_OFFSET_GEOGRAPHIC_TO_VERTICAL",
+        "AREA_OR_POINT": "Point"
+      },
+      "sha256": "9417518cb3df9dc97d2539ff6533027921326b0778c78990afbf20929d7156a1"
+    }
+  },
+  "imagery_scene": "S2B_52SBC_20250406_0_L2A",
+  "imagery_date": "2025-04-06",
+  "tool_versions": {
+    "rasterio": "1.5.1",
+    "gdal": "3.12.4",
+    "pyproj": "3.8.0",
+    "proj": "9.8.1",
+    "numpy": "2.5.3"
+  },
+  "validation": "finite coverage, axes/order and ECEF/ENU check at five points (<2 mm)",
+  "limitations": [
+    "DEM is a sampled surface including vegetation/buildings, not bare earth.",
+    "Terrain source ~30 m, imagery 10 m; this is not survey-grade geometry.",
+    "One static 20 km patch; terrain outside the patch is not provided.",
+    "No aircraft flight dynamics or qualification tests are part of this data tool."
+  ],
+  "sha256": {
+    "vertices.raw": "cc119f79e23a6b436f917f5801344b723369699b8cd3fd0d5eacca0a2f6936c9",
+    "heights.raw": "53eead12e0883475cdfdb08339b111060fb9b6e5b3fbf0d0f61d6874a5210553",
+    "satellite.png": "060c323b740d7a7c2fc90581ac0c9f692aae259f5134177908b0e75012cf313c"
+  }
+}

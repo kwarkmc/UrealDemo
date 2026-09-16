@@ -1,0 +1,9 @@
+{
+  "example_import_exit_code": 0,
+  "vertices": 16641,
+  "finite_vertices": true,
+  "roundtrip_error_m": 0.00017207534983754158,
+  "rejected_cross_map_source_exit_code": 1,
+  "manifest_preserved": true,
+  "active_map": "korea/terrain.json"
+}

@@ -1,0 +1,3208 @@
+{
+  "schema_version": 2,
+  "name": "South Korea terrain base with Dokdo detail",
+  "origin": {
+    "latitude_deg": 36.0,
+    "longitude_deg": 128.0,
+    "ellipsoid_height_m": 0.0
+  },
+  "bounds_deg": [
+    124.0,
+    33.0,
+    132.0,
+    39.0
+  ],
+  "tiles": [
+    {
+      "id": "N33E124",
+      "directory": "tiles/N33E124",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -325026.67203344696,
+        -271415.20386871684,
+        -14083.162711412879
+      ],
+      "west_deg": 124,
+      "south_deg": 33,
+      "east_deg": 125,
+      "north_deg": 34,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        17.727336883544922,
+        20.91896629333496
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=124%2C33%2C125%2C34&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "22ebbe83deceeee0b0bd85bfd7bf229bebbda07300c6089851755f436bf2ba36"
+        }
+      },
+      "files": {
+        "vertices.raw": "d3c2f44d5bc9422ff09433316378b03bc8c5922f0f8730fbb01fb39d80a52f15",
+        "satellite.png": "afd3f263248b2b7160fcb1c07a1b6b1c32de31c7d8c7cc7019b0d5d420e7a0db"
+      }
+    },
+    {
+      "id": "N33E125",
+      "directory": "tiles/N33E125",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -232232.65322175287,
+        -274273.6790555509,
+        -10148.809144139028
+      ],
+      "west_deg": 125,
+      "south_deg": 33,
+      "east_deg": 126,
+      "north_deg": 34,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        20.770864486694336,
+        23.730915069580078
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=125%2C33%2C126%2C34&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "c234a94b59ec2d25dfa6f142f6d75035d64de11b56a4fbf4bccc6fb156f42051"
+        }
+      },
+      "files": {
+        "vertices.raw": "32757187fc500ed32d919de27d0a9dc0c7562bff5188bf4a92ed336cb3055553",
+        "satellite.png": "a74a1f74a6d56da5787b94079200b3349fbe74a6abe7c7fa80a9d0fa9ce5d583"
+      }
+    },
+    {
+      "id": "N33E126",
+      "directory": "tiles/N33E126",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -139367.89409420098,
+        -276179.81305058126,
+        -7525.240775383732
+      ],
+      "west_deg": 126,
+      "south_deg": 33,
+      "east_deg": 127,
+      "north_deg": 34,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -0.003895178670063615,
+        1847.8946533203125
+      ],
+      "geoid_range_m": [
+        23.141447067260742,
+        26.084529876708984
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N33_00_E126_00_DEM/Copernicus_DSM_COG_10_N33_00_E126_00_DEM.tif",
+          "geographic_request_bounds": [
+            126,
+            33,
+            127,
+            34
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "867bf46418bdc7bae0e454fdf8af70c863a73b81d60309eb5fe8e4125d87d2f5"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=126%2C33%2C127%2C34&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "fd9270ba93a44a3048879089732d3ffe0326868330c14508029aa5d050aa5cfc"
+        }
+      },
+      "files": {
+        "vertices.raw": "5b5f709c92ad47ca45d6b31ef4fbf6de584c9a4649e25f6a5e250ca2d5ee77b2",
+        "satellite.png": "deba72ab59d7ad5c7680a375f1fa095b56599d3d462de8b5a22214f335447d3f"
+      }
+    },
+    {
+      "id": "N33E127",
+      "directory": "tiles/N33E127",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -46460.68215601931,
+        -277133.0252269279,
+        -6213.256769487227
+      ],
+      "west_deg": 127,
+      "south_deg": 33,
+      "east_deg": 128,
+      "north_deg": 34,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        25.69993782043457,
+        27.991544723510742
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=127%2C33%2C128%2C34&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "72c8152861d8f0d1add86ece514b08eac0238dded2eba144f1556fb3563829c4"
+        }
+      },
+      "files": {
+        "vertices.raw": "6b78dc77ddc6cd8204ae156b96c9018d4189af6a4754a310bc276ee0baa9840e",
+        "satellite.png": "361f1d1cf26de54c2af24d4287314ba6ea41f555ea4c69911badbd338f95a842"
+      }
+    },
+    {
+      "id": "N33E128",
+      "directory": "tiles/N33E128",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        46460.68215601951,
+        -277133.02522692806,
+        -6213.256769487067
+      ],
+      "west_deg": 128,
+      "south_deg": 33,
+      "east_deg": 129,
+      "north_deg": 34,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        40.32107162475586
+      ],
+      "geoid_range_m": [
+        27.763469696044922,
+        30.6912841796875
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N33_00_E128_00_DEM/Copernicus_DSM_COG_10_N33_00_E128_00_DEM.tif",
+          "geographic_request_bounds": [
+            128,
+            33,
+            129,
+            34
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "675628959be4c980463beb0fd27511a6b91a8e2d2127a0a4ad5bf52611897635"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=128%2C33%2C129%2C34&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "a6901382f5b53bf44b37620b94432a837f527043cfb3f18735037ecf4e7f54e8"
+        }
+      },
+      "files": {
+        "vertices.raw": "41162c25b9772f52f28f9ea75669d8ac945fb13b21efcbc683c84ae5b0fd5004",
+        "satellite.png": "695da32a308e36d22d2b3004e78b31deaaedddbe1784b2d9331ec4fe340eea63"
+      }
+    },
+    {
+      "id": "N33E129",
+      "directory": "tiles/N33E129",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        139367.89409420168,
+        -276179.8130505814,
+        -7525.240775383514
+      ],
+      "west_deg": 129,
+      "south_deg": 33,
+      "east_deg": 130,
+      "north_deg": 34,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -0.15175959467887878,
+        691.4824829101562
+      ],
+      "geoid_range_m": [
+        29.4990234375,
+        32.232582092285156
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N33_00_E129_00_DEM/Copernicus_DSM_COG_10_N33_00_E129_00_DEM.tif",
+          "geographic_request_bounds": [
+            129,
+            33,
+            130,
+            34
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "738ecedee43421a0747524e40e43d22dbe8e24a995b0536d58e97c2261578998"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=129%2C33%2C130%2C34&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "4f811e54531c6cb9909c4a7d8214a5e80727c095eda0c8b47e2674c402ebe8b7"
+        }
+      },
+      "files": {
+        "vertices.raw": "2d2e7be5a13b541a89280a96e6f74a2f47617e9876cb9195405ba8daeecb87e4",
+        "satellite.png": "b7fb93d692764bc57dc67e500c36313c349a0b1765244dd95e373d978e5f1d75"
+      }
+    },
+    {
+      "id": "N33E130",
+      "directory": "tiles/N33E130",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        232232.65322175247,
+        -274273.6790555506,
+        -10148.809144139464
+      ],
+      "west_deg": 130,
+      "south_deg": 33,
+      "east_deg": 131,
+      "north_deg": 34,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -2.197565793991089,
+        1131.2794189453125
+      ],
+      "geoid_range_m": [
+        31.116987228393555,
+        33.04569625854492
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N33_00_E130_00_DEM/Copernicus_DSM_COG_10_N33_00_E130_00_DEM.tif",
+          "geographic_request_bounds": [
+            130,
+            33,
+            131,
+            34
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "304e49a6afdeece6dae008f11d576458f6e2275a8a868216d748a33d3b44afbc"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=130%2C33%2C131%2C34&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "929e95839517b23a39ddc790029686fd29321c79c7eaeccfb1baac00aa1f58c9"
+        }
+      },
+      "files": {
+        "vertices.raw": "ed85a7c5a30c493f00788a4ada15b5e7e1fec3086460acc545001fe962af2de2",
+        "satellite.png": "287e8e1cc3806ad2dfcc00fafe8e19973f46d38ceb00d849517113534dd50dcc"
+      }
+    },
+    {
+      "id": "N33E131",
+      "directory": "tiles/N33E131",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        325026.6720334469,
+        -271415.20386871666,
+        -14083.162711413112
+      ],
+      "west_deg": 131,
+      "south_deg": 33,
+      "east_deg": 132,
+      "north_deg": 34,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -6.7474870681762695,
+        1710.6763916015625
+      ],
+      "geoid_range_m": [
+        30.869709014892578,
+        33.00483322143555
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N33_00_E131_00_DEM/Copernicus_DSM_COG_10_N33_00_E131_00_DEM.tif",
+          "geographic_request_bounds": [
+            131,
+            33,
+            132,
+            34
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "3f2f0c6afc87d48935fd02291efc016541622754aa79604bc5957d781e973a9a"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=131%2C33%2C132%2C34&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "4dc7c19fb2fef907541323ca25a54bd9e6347add3c778fb63eb1bfd073c2fb4b"
+        }
+      },
+      "files": {
+        "vertices.raw": "710632a1637455544cee81c6f87a45aa37955850db28563ac98ea3ba26c98b0b",
+        "satellite.png": "b902c297316f20bbdfe54040b9d58afd62bdcd4b214538b57db662bcfb6bdc95"
+      }
+    },
+    {
+      "id": "N34E124",
+      "directory": "tiles/N34E124",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -321240.0599579726,
+        -160629.78581541392,
+        -10118.505918011113
+      ],
+      "west_deg": 124,
+      "south_deg": 34,
+      "east_deg": 125,
+      "north_deg": 35,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        17.151409149169922,
+        20.770864486694336
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=124%2C34%2C125%2C35&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "99d776a98e91359f2ad0d0d2cc1be509d7d03b2e0bf83c74eda712d9b19917d4"
+        }
+      },
+      "files": {
+        "vertices.raw": "94320f8299327a6da000b212d69b89c8afe4c2c8dd68c10d6584440b6adc897c",
+        "satellite.png": "752de69c61db7c0f38ef4f8a87f561d3fb2aa01de391af2341ee84b6be55741c"
+      }
+    },
+    {
+      "id": "N34E125",
+      "directory": "tiles/N34E125",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -229527.1061246256,
+        -163454.95931475225,
+        -6229.988191327517
+      ],
+      "west_deg": 125,
+      "south_deg": 34,
+      "east_deg": 126,
+      "north_deg": 35,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        454.11181640625
+      ],
+      "geoid_range_m": [
+        20.160436630249023,
+        23.141447067260742
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N34_00_E125_00_DEM/Copernicus_DSM_COG_10_N34_00_E125_00_DEM.tif",
+          "geographic_request_bounds": [
+            125,
+            34,
+            126,
+            35
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "1198fd575a036d8220766a18230f32a5cdd510780ed2bad111b4cfc83dd272d8"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=125%2C34%2C126%2C35&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "a1fd08157f93056a4ba76bc720ac4df25203f0e7b1e3ad4346af02e632569f87"
+        }
+      },
+      "files": {
+        "vertices.raw": "d3af3cbadb3b0ec6f102a6cfcf51cdf5f6d8115c1da3a775bcc17325e429876a",
+        "satellite.png": "e5098f724c66e6305ce5fb6caf83e1d0078abeaf55bf6dc55cd03beb1b2fb410"
+      }
+    },
+    {
+      "id": "N34E126",
+      "directory": "tiles/N34E126",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -137744.23611127638,
+        -165338.88654761759,
+        -3636.9848085283884
+      ],
+      "west_deg": 126,
+      "south_deg": 34,
+      "east_deg": 127,
+      "north_deg": 35,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -3.5,
+        676.391845703125
+      ],
+      "geoid_range_m": [
+        22.45940589904785,
+        25.69993782043457
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N34_00_E126_00_DEM/Copernicus_DSM_COG_10_N34_00_E126_00_DEM.tif",
+          "geographic_request_bounds": [
+            126,
+            34,
+            127,
+            35
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "686545aecd3d8c82ebb4c6a40453d060e3340df3c936939617470cc763ff8f6e"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=126%2C34%2C127%2C35&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "aebeda70b3dec70b603474ff03b0a8deed838d97c242ead09f1a0f468d519b82"
+        }
+      },
+      "files": {
+        "vertices.raw": "14b8d4b6bbbb25450f17332577443440b72177d1233f66a2c3b1cc50af658d52",
+        "satellite.png": "62de9a95973cd0a91e209b62ecc40dcff59c8f1f6c08301e80a0d034b806951b"
+      }
+    },
+    {
+      "id": "N34E127",
+      "directory": "tiles/N34E127",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -45919.40786924779,
+        -166280.9936515258,
+        -2340.2856235617073
+      ],
+      "west_deg": 127,
+      "south_deg": 34,
+      "east_deg": 128,
+      "north_deg": 35,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -1.5,
+        754.3276977539062
+      ],
+      "geoid_range_m": [
+        25.343849182128906,
+        27.967405319213867
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N34_00_E127_00_DEM/Copernicus_DSM_COG_10_N34_00_E127_00_DEM.tif",
+          "geographic_request_bounds": [
+            127,
+            34,
+            128,
+            35
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "076cceffc3a6cb1ded86a8156c8ea0c5c30d887787abb4f3ed9718cc1fc341ab"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=127%2C34%2C128%2C35&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "a8d357237db79e45bb876993bf21f5faeaba25c421868f4d2251119230bb2c0d"
+        }
+      },
+      "files": {
+        "vertices.raw": "94f833d2ad9bc3cb05f92774c676b9b0afbd39821e52cb4079f3711c3fd7c9a6",
+        "satellite.png": "c3f4e8b4b873d7e8afb009058e1752ed74faf174788b29cdeff116782d25c585"
+      }
+    },
+    {
+      "id": "N34E128",
+      "directory": "tiles/N34E128",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        45919.407869247065,
+        -166280.99365152582,
+        -2340.2856235616637
+      ],
+      "west_deg": 128,
+      "south_deg": 34,
+      "east_deg": 129,
+      "north_deg": 35,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -9.770171163836494e-05,
+        683.965087890625
+      ],
+      "geoid_range_m": [
+        27.811899185180664,
+        29.4990234375
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N34_00_E128_00_DEM/Copernicus_DSM_COG_10_N34_00_E128_00_DEM.tif",
+          "geographic_request_bounds": [
+            128,
+            34,
+            129,
+            35
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "ce7c87f4106bc7dbf6da8ea9da9974ec22aaa759246d8a383f87165cb8c7eac1"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=128%2C34%2C129%2C35&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "3a667c161856df2e8a209fc40a32f25cc9cbb13a828d927356095114c7942a03"
+        }
+      },
+      "files": {
+        "vertices.raw": "40cc92420290614746e94e2b9aa71fa690c4c592c672df3ddedde1d4660ea5ab",
+        "satellite.png": "6537c06e05103798b683317ee3f11f3447b9b330520cfdf7a47794b0ce884861"
+      }
+    },
+    {
+      "id": "N34E129",
+      "directory": "tiles/N34E129",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        137744.23611127672,
+        -165338.8865476177,
+        -3636.9848085282283
+      ],
+      "west_deg": 129,
+      "south_deg": 34,
+      "east_deg": 130,
+      "north_deg": 35,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        570.896484375
+      ],
+      "geoid_range_m": [
+        28.87485122680664,
+        31.116987228393555
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N34_00_E129_00_DEM/Copernicus_DSM_COG_10_N34_00_E129_00_DEM.tif",
+          "geographic_request_bounds": [
+            129,
+            34,
+            130,
+            35
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "12eab26f93eb2b57a5cf7bb1ac63081049b6cb5b0f9f3c663568dceb86e51fba"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=129%2C34%2C130%2C35&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e7b3b5906d407e065a7e59a02c7027aa430e403a586d569309064a83023858c0"
+        }
+      },
+      "files": {
+        "vertices.raw": "423bde580ca2ecb5075b8caa95ae67e8dd3363302477cef17119538370678db6",
+        "satellite.png": "c1fc2b4ba8e23526c1ffa2a3544730b25cce7db69bdab389813345bb2a166eb2"
+      }
+    },
+    {
+      "id": "N34E130",
+      "directory": "tiles/N34E130",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        229527.10612462545,
+        -163454.9593147519,
+        -6229.988191328041
+      ],
+      "west_deg": 130,
+      "south_deg": 34,
+      "east_deg": 131,
+      "north_deg": 35,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        566.6195068359375
+      ],
+      "geoid_range_m": [
+        29.803335189819336,
+        32.2470703125
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N34_00_E130_00_DEM/Copernicus_DSM_COG_10_N34_00_E130_00_DEM.tif",
+          "geographic_request_bounds": [
+            130,
+            34,
+            131,
+            35
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "486a2a76bacf4b48b6acd5d0516b5f8096490057b20d1758eb365b8478855bef"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=130%2C34%2C131%2C35&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "21cf1f5c53d693b7f07e2d635cfa7e1cd4f0966329b77b700c18cd751fa6145c"
+        }
+      },
+      "files": {
+        "vertices.raw": "e615314591db9cb0e8a3a20f7c07b737a5e6359a03294888a67b48462a6469da",
+        "satellite.png": "fd049c2d50000248892fc7e896e448a607ba610fb560b72a15b99998a39d819f"
+      }
+    },
+    {
+      "id": "N34E131",
+      "directory": "tiles/N34E131",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        321240.059957972,
+        -160629.78581541384,
+        -10118.505918011186
+      ],
+      "west_deg": 131,
+      "south_deg": 34,
+      "east_deg": 132,
+      "north_deg": 35,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -0.048588477075099945,
+        1204.3533935546875
+      ],
+      "geoid_range_m": [
+        31.146692276000977,
+        33.336814880371094
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N34_00_E131_00_DEM/Copernicus_DSM_COG_10_N34_00_E131_00_DEM.tif",
+          "geographic_request_bounds": [
+            131,
+            34,
+            132,
+            35
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "2436ce8aeed4ebd481fc1ced00955ec36e3c59d29d339f9f30418b1bdbb729a7"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=131%2C34%2C132%2C35&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "2f92be15b3ddfde1c7844dcc0fe8650f36fd80d6ea4a570be39601259fa586aa"
+        }
+      },
+      "files": {
+        "vertices.raw": "e7bc0ca6af12ce34a133ca63e53bd3bc1ab43b2a355d37f22d79ee46247af7fe",
+        "satellite.png": "b2b1b3b9d0371a773c7a98b3520ab4420bb40c89df5b0c0cfbe3b89feaf41352"
+      }
+    },
+    {
+      "id": "N35E124",
+      "directory": "tiles/N35E124",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -317355.41201232513,
+        -49777.26792124517,
+        -8086.357369523837
+      ],
+      "west_deg": 124,
+      "south_deg": 35,
+      "east_deg": 125,
+      "north_deg": 36,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        15.997452735900879,
+        20.31407928466797
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=124%2C35%2C125%2C36&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        }
+      },
+      "files": {
+        "vertices.raw": "13a173d2c9f3c1f7cbf81ede275184a49cea8d097e7da5bf82d5fd2f532760d6",
+        "satellite.png": "417e35a1eb7d22fbc97c6a3f67bcd7aacb0c48d4bc8fc6feab826f59c21c5070"
+      }
+    },
+    {
+      "id": "N35E125",
+      "directory": "tiles/N35E125",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -226751.51206766383,
+        -52568.27754814592,
+        -4244.862179196665
+      ],
+      "west_deg": 125,
+      "south_deg": 35,
+      "east_deg": 126,
+      "north_deg": 36,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        36.921871185302734
+      ],
+      "geoid_range_m": [
+        19.09758949279785,
+        22.6002140045166
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E125_00_DEM/Copernicus_DSM_COG_10_N35_00_E125_00_DEM.tif",
+          "geographic_request_bounds": [
+            125,
+            35,
+            126,
+            36
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "c72a8a64c6a11fbd4e4eb3c1b4a0f66e418e351d7df8ed401b039f9777caf938"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=125%2C35%2C126%2C36&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "fdb5ab9c092164fc8415cb9d5c579f7d61b7fb534474161c03a0d30bcc655d1c"
+        }
+      },
+      "files": {
+        "vertices.raw": "0cef41bab11d36e9695d96966b30fc9bd0cb83212b2b80dc6ba400ddb359dbfd",
+        "satellite.png": "a00aa0a3ed2d3faeed5c0ff1c0a76e2b2456b49aea32e7ac610fc438d039df5f"
+      }
+    },
+    {
+      "id": "N35E126",
+      "directory": "tiles/N35E126",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -136078.54141583783,
+        -54429.42308293836,
+        -1683.2151137427063
+      ],
+      "west_deg": 126,
+      "south_deg": 35,
+      "east_deg": 127,
+      "north_deg": 36,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -1.9034087657928467,
+        1016.5966186523438
+      ],
+      "geoid_range_m": [
+        21.97838592529297,
+        25.395442962646484
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E126_00_DEM/Copernicus_DSM_COG_10_N35_00_E126_00_DEM.tif",
+          "geographic_request_bounds": [
+            126,
+            35,
+            127,
+            36
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "17bc06670c1519a835fcc891f96e2b3de605b4011cabe6fb3d1b9bc0bcc90882"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=126%2C35%2C127%2C36&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "f6ce0b8da1848a78c9e5f8fe3574372614959b6e3b17f8aebe460f159bb52def"
+        }
+      },
+      "files": {
+        "vertices.raw": "35d29e7dd3767b7abeb3ff245ceadc03dedaeae851a68e3c23c6802141086a96",
+        "satellite.png": "7f5b18c34983eaff515da48e47aebe73fdb8014cf7d04e95f156b30bdfc6f852"
+      }
+    },
+    {
+      "id": "N35E127",
+      "directory": "tiles/N35E127",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -45364.11992207215,
+        -55360.1376026643,
+        -402.1964756719026
+      ],
+      "west_deg": 127,
+      "south_deg": 35,
+      "east_deg": 128,
+      "north_deg": 36,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -0.08607839047908783,
+        1774.779296875
+      ],
+      "geoid_range_m": [
+        24.2727108001709,
+        28.085506439208984
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E127_00_DEM/Copernicus_DSM_COG_10_N35_00_E127_00_DEM.tif",
+          "geographic_request_bounds": [
+            127,
+            35,
+            128,
+            36
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "8bc6a0cd2688cb3f8cacff5de8470fa4b4416d8ce650d6fc6e9cd00f262d709f"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=127%2C35%2C128%2C36&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "ca3257a45e9cb85b851c57c403e0f5e51a6605656045c24e17d04ea6361452f3"
+        }
+      },
+      "files": {
+        "vertices.raw": "d7a140867e4368116c610133b893975af53bdb1855566fb99b643d74532dd712",
+        "satellite.png": "238d23a7d7cc91f4d8cc2658cfb2ef1562d7d87b084ab5ad4857ba0599e0266c"
+      }
+    },
+    {
+      "id": "N35E128",
+      "directory": "tiles/N35E128",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        45364.119922071775,
+        -55360.13760266421,
+        -402.1964756720263
+      ],
+      "west_deg": 128,
+      "south_deg": 35,
+      "east_deg": 129,
+      "north_deg": 36,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -1.63503897190094,
+        1314.2547607421875
+      ],
+      "geoid_range_m": [
+        27.285036087036133,
+        29.76214027404785
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E128_00_DEM/Copernicus_DSM_COG_10_N35_00_E128_00_DEM.tif",
+          "geographic_request_bounds": [
+            128,
+            35,
+            129,
+            36
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "876724e8a1f07574094249ea60cfadd9b3524dd32ae11ea878968cd8a2060f1a"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=128%2C35%2C129%2C36&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "cf62a6e571d5690c452414d410060fc15e3d6023da4ae3a10bf6459d20fc1d57",
+          "sentinel_patches": {
+            "scenes": [
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/DD/2025/7/S2A_52SDD_20250729_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128,
+                  35,
+                  129,
+                  35.243021
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  876,
+                  0,
+                  9131,
+                  2698
+                ],
+                "cached_size": [
+                  1537,
+                  454
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "cee48a431fa35f635b60debd6f143258cdb97edb8ace7d0d9fb656e21279eb43",
+                "scene_id": "S2A_52SDD_20250729_0_L2A",
+                "scene_cloud_cover_percent": 0.222279,
+                "replaced_pixels": 211214
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/DE/2025/8/S2B_52SDE_20250801_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128,
+                  35.149921,
+                  129,
+                  36
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  893,
+                  1558,
+                  9114,
+                  9422
+                ],
+                "cached_size": [
+                  1486,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "65fdc9ac80d9643c4afd3afeb9abdc1472110e3a4bae2d7c1063a0164b86fcfe",
+                "scene_id": "S2B_52SDE_20250801_0_L2A",
+                "scene_cloud_cover_percent": 0.240583,
+                "replaced_pixels": 795092
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/ED/2025/7/S2A_52SED_20250729_1_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128.999791,
+                  35,
+                  129,
+                  35.243069
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  0,
+                  5,
+                  2698
+                ],
+                "cached_size": [
+                  3,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "bf6b35a8018775cd57c8919fc07d7f8a7090149925a2e586d5fdf2774b6627a5",
+                "scene_id": "S2A_52SED_20250729_1_L2A",
+                "scene_cloud_cover_percent": 0.246253,
+                "replaced_pixels": 0
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/EE/2025/7/S2A_52SEE_20250729_1_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128.999789,
+                  35.148905,
+                  129,
+                  36
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  1605,
+                  5,
+                  9375
+                ],
+                "cached_size": [
+                  1,
+                  1537
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "6ec0c63c7e7cff1795d60cd5e65b47d4680ce4e78cc871cb6aeaec9237ecefb6",
+                "scene_id": "S2A_52SEE_20250729_1_L2A",
+                "scene_cloud_cover_percent": 0.678392,
+                "replaced_pixels": 0
+              }
+            ],
+            "replaced_land_pixels": 1006306,
+            "total_land_pixels": 1006306,
+            "compositing": "Best cloud-score scene first; finite Sentinel RGB only on DEM > 0.1 m; EOX elsewhere"
+          }
+        }
+      },
+      "files": {
+        "vertices.raw": "0ac165457c03b5673fba195c7c097019f4f5b086214acdea762a09b20d131bff",
+        "satellite.png": "5c05e4148aa05651006599fa3f32316cb48aedd2c6d5c3982b612579d198d699"
+      }
+    },
+    {
+      "id": "N35E129",
+      "directory": "tiles/N35E129",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        136078.54141583806,
+        -54429.423082938316,
+        -1683.2151137427427
+      ],
+      "west_deg": 129,
+      "south_deg": 35,
+      "east_deg": 130,
+      "north_deg": 36,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -2.5862763664008526e-07,
+        1145.9776611328125
+      ],
+      "geoid_range_m": [
+        27.317523956298828,
+        29.803335189819336
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N35_00_E129_00_DEM/Copernicus_DSM_COG_10_N35_00_E129_00_DEM.tif",
+          "geographic_request_bounds": [
+            129,
+            35,
+            130,
+            36
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "897b123191f8bc3ac54b26cc971f12574ee68531bb12b1105dd403240dbc5008"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=129%2C35%2C130%2C36&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "30aac6e60e0a87ce27a233f66057cf34bd2b07705f66eb6a6dd827c5edb48abd",
+          "sentinel_patches": {
+            "scenes": [
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/DD/2025/7/S2A_52SDD_20250729_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  35,
+                  129.107264,
+                  35.243021
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  10002,
+                  0,
+                  978,
+                  2698
+                ],
+                "cached_size": [
+                  557,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "a5bdf8305e693b2653b00899069e402efdcb7023cf9a4b1261e7c950065ae7d8",
+                "scene_id": "S2A_52SDD_20250729_0_L2A",
+                "scene_cloud_cover_percent": 0.222279,
+                "replaced_pixels": 19225
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/DE/2025/8/S2B_52SDE_20250801_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  35.149921,
+                  129.108478,
+                  36
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  10002,
+                  1604,
+                  978,
+                  9376
+                ],
+                "cached_size": [
+                  161,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "f5348568b843f0f27fbf99a0bbfe65cca95bbf13c1e41442db6876316686ef17",
+                "scene_id": "S2B_52SDE_20250801_0_L2A",
+                "scene_cloud_cover_percent": 0.240583,
+                "replaced_pixels": 85521
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/ED/2025/7/S2A_52SED_20250729_1_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  35,
+                  130,
+                  35.243069
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  0,
+                  9130,
+                  2698
+                ],
+                "cached_size": [
+                  1536,
+                  454
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "5fd2e4b6523eb43f1148aeae92ade79e0bdcc2d66bf4b63dad94c7ed79a77ccf",
+                "scene_id": "S2A_52SED_20250729_1_L2A",
+                "scene_cloud_cover_percent": 0.246253,
+                "replaced_pixels": 12059
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/EE/2025/7/S2A_52SEE_20250729_1_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  35.148905,
+                  130,
+                  36
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  1558,
+                  9113,
+                  9422
+                ],
+                "cached_size": [
+                  1486,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "cb8b976fa6b0aea9861ce675d70b5a19f4a3eb007211a6b0801f23289934a43a",
+                "scene_id": "S2A_52SEE_20250729_1_L2A",
+                "scene_cloud_cover_percent": 0.678392,
+                "replaced_pixels": 263511
+              }
+            ],
+            "replaced_land_pixels": 380316,
+            "total_land_pixels": 380316,
+            "compositing": "Best cloud-score scene first; finite Sentinel RGB only on DEM > 0.1 m; EOX elsewhere"
+          }
+        }
+      },
+      "files": {
+        "vertices.raw": "f0d0200516a45d515c85764f25b43fa45085f4134b55c2f0c9ab2b7139a1d120",
+        "satellite.png": "85dffc05573d0dec5fc0d2dfcc9d832fbd28e6c52cadf3b7b8fd943d488bb02f"
+      }
+    },
+    {
+      "id": "N35E130",
+      "directory": "tiles/N35E130",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        226751.51206766395,
+        -52568.277548145415,
+        -4244.862179197364
+      ],
+      "west_deg": 130,
+      "south_deg": 35,
+      "east_deg": 131,
+      "north_deg": 36,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        27.252349853515625,
+        31.146692276000977
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=130%2C35%2C131%2C36&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        }
+      },
+      "files": {
+        "vertices.raw": "e706fa0f2340fb599aedfd6e49ecfca75ea33bb5c1b059a82ddf1eb3dc1e7c0f",
+        "satellite.png": "417e35a1eb7d22fbc97c6a3f67bcd7aacb0c48d4bc8fc6feab826f59c21c5070"
+      }
+    },
+    {
+      "id": "N35E131",
+      "directory": "tiles/N35E131",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        317355.41201232496,
+        -49777.26792124526,
+        -8086.3573695237355
+      ],
+      "west_deg": 131,
+      "south_deg": 35,
+      "east_deg": 132,
+      "north_deg": 36,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        28.117958068847656,
+        32.827919006347656
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=131%2C35%2C132%2C36&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "8275115ec971088edef1b7a48dba8a0ce555603c666a37560eeab7a2f023558a"
+        }
+      },
+      "files": {
+        "vertices.raw": "55091d6fb72e23fb7681ccc255a38fd1e5939c5d35c9a2d9cf2cdd15b1f734c2",
+        "satellite.png": "f4f72c112bc357b4578a8de2be1336b830cc87080195d98e33b19d602c1772a8"
+      }
+    },
+    {
+      "id": "N36E124",
+      "directory": "tiles/N36E124",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -313373.8712262671,
+        61108.8310432014,
+        -7987.969780813208
+      ],
+      "west_deg": 124,
+      "south_deg": 36,
+      "east_deg": 125,
+      "north_deg": 37,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        15.783056259155273,
+        19.09758949279785
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=124%2C36%2C125%2C37&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        }
+      },
+      "files": {
+        "vertices.raw": "dbda9ffb8fa7958d947899844170851a94ce5e0cfb3e75cf9aa2578a83ea2540",
+        "satellite.png": "417e35a1eb7d22fbc97c6a3f67bcd7aacb0c48d4bc8fc6feab826f59c21c5070"
+      }
+    },
+    {
+      "id": "N36E125",
+      "directory": "tiles/N36E125",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -223906.68774948694,
+        58352.837421205986,
+        -4194.669986564859
+      ],
+      "west_deg": 125,
+      "south_deg": 36,
+      "east_deg": 126,
+      "north_deg": 37,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -0.02234138734638691,
+        103.42461395263672
+      ],
+      "geoid_range_m": [
+        18.706924438476562,
+        21.97838592529297
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E125_00_DEM/Copernicus_DSM_COG_10_N36_00_E125_00_DEM.tif",
+          "geographic_request_bounds": [
+            125,
+            36,
+            126,
+            37
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "83a9bdb2c5858420c495d1af62ea2d2634faed8f3ea71ab8c1b7d4083eb56517"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=125%2C36%2C126%2C37&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "ae7549decfe2d15d45d1ad948511bd713d5f46a4c336edda8f032fd9eef445af"
+        }
+      },
+      "files": {
+        "vertices.raw": "8d34236f119887408af6dc82e43f1359ddad338b459f0014906a19615b5a75d4",
+        "satellite.png": "bd9e9a2136f51bbc32a330e8252b96ed0e858c7429b2ea92f3297ba84d225980"
+      }
+    },
+    {
+      "id": "N36E126",
+      "directory": "tiles/N36E126",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -134371.30012658754,
+        56515.04181704376,
+        -1665.1613434745632
+      ],
+      "west_deg": 126,
+      "south_deg": 36,
+      "east_deg": 127,
+      "north_deg": 37,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -2.0,
+        698.19482421875
+      ],
+      "geoid_range_m": [
+        20.789596557617188,
+        24.2727108001709
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E126_00_DEM/Copernicus_DSM_COG_10_N36_00_E126_00_DEM.tif",
+          "geographic_request_bounds": [
+            126,
+            36,
+            127,
+            37
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "ef40a2b0b7ba8aaf17c90831059b925665e0f74d68e713e24f3ba82e8d9db85b"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=126%2C36%2C127%2C37&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "de3761ccf56fd3fc4fee5312d9d66464e2dfb741a78e31d24343b707d5569a9b"
+        }
+      },
+      "files": {
+        "vertices.raw": "7da05c3b2a95fd9fe1d1a8a6acf47c203b766afffcc39a4851495757d4e2b425",
+        "satellite.png": "53a8952ea54a6bd652e22e0c023e16fe3081888259d2e0cd9df24496d50846df"
+      }
+    },
+    {
+      "id": "N36E127",
+      "directory": "tiles/N36E127",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -44794.981703984246,
+        55596.00404105743,
+        -400.2143643769414
+      ],
+      "west_deg": 127,
+      "south_deg": 36,
+      "east_deg": 128,
+      "north_deg": 37,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        1.6852666139602661,
+        1127.085693359375
+      ],
+      "geoid_range_m": [
+        23.46487045288086,
+        27.285036087036133
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.tif",
+          "geographic_request_bounds": [
+            127,
+            36,
+            128,
+            37
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "d026377cd26403290961b295b96df20f6892adb3b25d1dd3d428af8657a7ebe2"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=127%2C36%2C128%2C37&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "bc0a5a8e30afc0ed45c803851c1c35f84f8a75f1004942ef883257c4a9435c02"
+        }
+      },
+      "files": {
+        "vertices.raw": "8d396a49bdad7e60ae168813c767d553d252e8019815cdd9ad540ab74536c88e",
+        "satellite.png": "80c4b48486de2ba6046680feaf85f3bf13e2b2c8b1d6a2681b099b45837bd552"
+      }
+    },
+    {
+      "id": "N36E128",
+      "directory": "tiles/N36E128",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        44794.98170398331,
+        55596.00404105748,
+        -400.21436437701414
+      ],
+      "west_deg": 128,
+      "south_deg": 36,
+      "east_deg": 129,
+      "north_deg": 37,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        19.91604995727539,
+        1368.6651611328125
+      ],
+      "geoid_range_m": [
+        26.205286026000977,
+        29.434154510498047
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E128_00_DEM/Copernicus_DSM_COG_10_N36_00_E128_00_DEM.tif",
+          "geographic_request_bounds": [
+            128,
+            36,
+            129,
+            37
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "0f284b821cd68c837f8cbb505c34b95c312cc4dc9b24c3f8e45433170de5ebfc"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=128%2C36%2C129%2C37&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "60496f224251c6817c6c48280e91598273d3e989ddf9126c77ecf15a9e80bcf1",
+          "sentinel_patches": {
+            "scenes": [
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/EG/2025/7/S2C_52SEG_20250727_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128.999784,
+                  36.951489,
+                  129,
+                  37
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  10510,
+                  5,
+                  470
+                ],
+                "cached_size": [
+                  5,
+                  470
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "ab95a9f5995a83bc2d7198e4193f2a23fbac34c8fa3f3791084a44660ffa8f70",
+                "scene_id": "S2C_52SEG_20250727_0_L2A",
+                "scene_cloud_cover_percent": 0.007867,
+                "replaced_pixels": 0
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/DE/2025/8/S2B_52SDE_20250801_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128,
+                  36,
+                  129,
+                  36.14484
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  989,
+                  0,
+                  9018,
+                  1610
+                ],
+                "cached_size": [
+                  1536,
+                  275
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "4419754316ca937c3bfdb2dad83a48fb7f63f1c26c1dd9ee7f094b0af7f6f2e1",
+                "scene_id": "S2B_52SDE_20250801_0_L2A",
+                "scene_cloud_cover_percent": 0.240583,
+                "replaced_pixels": 150413
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/EF/2025/4/S2C_52SEF_20250408_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128.999786,
+                  36.050537,
+                  129,
+                  37
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  514,
+                  5,
+                  10466
+                ],
+                "cached_size": [
+                  1,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "7adfa8bc0efaa9468468147593b240319cf0cf50b1613d2362eb0cf64751d554",
+                "scene_id": "S2C_52SEF_20250408_0_L2A",
+                "scene_cloud_cover_percent": 0.28258,
+                "replaced_pixels": 0
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/EE/2025/7/S2A_52SEE_20250729_1_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128.999789,
+                  36,
+                  129,
+                  36.144889
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  0,
+                  5,
+                  1610
+                ],
+                "cached_size": [
+                  5,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "be7a1ad46c96cc31c5a43f6a515122cd27f00428d85790a2debdcef4a6dcdc19",
+                "scene_id": "S2A_52SEE_20250729_1_L2A",
+                "scene_cloud_cover_percent": 0.678392,
+                "replaced_pixels": 0
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/DF/2025/5/S2A_52SDF_20250530_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  128,
+                  36.051588,
+                  129,
+                  37
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  994,
+                  468,
+                  9013,
+                  10512
+                ],
+                "cached_size": [
+                  1317,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "e2e2739c7f7f3e2949fdac85e9f3f122fffc83c3dbb56f4e5d9804792783f90d",
+                "scene_id": "S2A_52SDF_20250530_0_L2A",
+                "scene_cloud_cover_percent": 1.466684,
+                "replaced_pixels": 898163
+              }
+            ],
+            "replaced_land_pixels": 1048576,
+            "total_land_pixels": 1048576,
+            "compositing": "Best cloud-score scene first; finite Sentinel RGB only on DEM > 0.1 m; EOX elsewhere"
+          }
+        }
+      },
+      "files": {
+        "vertices.raw": "fb8d6555c628fab0624015813b98fef45c45acd5934836794c960156795f1b11",
+        "satellite.png": "42b3b5d25b95b2029565e1a5c59d8eedad791520bccfc36e3f5eaea9981cbd5e"
+      }
+    },
+    {
+      "id": "N36E129",
+      "directory": "tiles/N36E129",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        134371.30012658783,
+        56515.04181704348,
+        -1665.1613434741776
+      ],
+      "west_deg": 129,
+      "south_deg": 36,
+      "east_deg": 130,
+      "north_deg": 37,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        1128.994140625
+      ],
+      "geoid_range_m": [
+        26.811710357666016,
+        29.568986892700195
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E129_00_DEM/Copernicus_DSM_COG_10_N36_00_E129_00_DEM.tif",
+          "geographic_request_bounds": [
+            129,
+            36,
+            130,
+            37
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "3405936c899b8a9d6e90150f8650ed286d65bfb8923aba3b44ef8614e83d1f0e"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=129%2C36%2C130%2C37&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "1cb2db3a05596da3f73cf941508327107414b1d49deb8c957fc5127929b0cb03",
+          "sentinel_patches": {
+            "scenes": [
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/EG/2025/7/S2C_52SEG_20250727_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  36.951489,
+                  130,
+                  37
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  10464,
+                  8908,
+                  516
+                ],
+                "cached_size": [
+                  1537,
+                  89
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "0452d9872e0e4e196422b5f60bf6d53164c6879cd32f4b72de59bb170eb2ac86",
+                "scene_id": "S2C_52SEG_20250727_0_L2A",
+                "scene_cloud_cover_percent": 0.007867,
+                "replaced_pixels": 18461
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/DE/2025/8/S2B_52SDE_20250801_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  36,
+                  129.108478,
+                  36.14484
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  10002,
+                  0,
+                  978,
+                  1610
+                ],
+                "cached_size": [
+                  934,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "c14de985fbc9b9cb6a6d22262ea408f96679fac97c4b7c8cde7b347b189ecec9",
+                "scene_id": "S2B_52SDE_20250801_0_L2A",
+                "scene_cloud_cover_percent": 0.240583,
+                "replaced_pixels": 16428
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/EF/2025/4/S2C_52SEF_20250408_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  36.050537,
+                  130,
+                  37
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  468,
+                  9012,
+                  10512
+                ],
+                "cached_size": [
+                  1317,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "3e703e0f4826954505f7df998dd38f887b436fc9b6c5f6a5ecbaa053a8e21cd4",
+                "scene_id": "S2C_52SEF_20250408_0_L2A",
+                "scene_cloud_cover_percent": 0.28258,
+                "replaced_pixels": 392421
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/EE/2025/7/S2A_52SEE_20250729_1_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  36,
+                  130,
+                  36.144889
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  0,
+                  0,
+                  9017,
+                  1610
+                ],
+                "cached_size": [
+                  1536,
+                  275
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "62a4b700270fd4742a90e4afd5f1f43a4e64c5e45ef522ab2567a413c2d65b4b",
+                "scene_id": "S2A_52SEE_20250729_1_L2A",
+                "scene_cloud_cover_percent": 0.678392,
+                "replaced_pixels": 23047
+              },
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/DF/2025/5/S2A_52SDF_20250530_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  129,
+                  36.051588,
+                  129.109748,
+                  37
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  10002,
+                  514,
+                  978,
+                  10466
+                ],
+                "cached_size": [
+                  144,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "5a721f10f9575054df5cd410e24b90368abf56ec55ca3304350f5dfbdfcdbe0b",
+                "scene_id": "S2A_52SDF_20250530_0_L2A",
+                "scene_cloud_cover_percent": 1.466684,
+                "replaced_pixels": 0
+              }
+            ],
+            "replaced_land_pixels": 450357,
+            "total_land_pixels": 450357,
+            "compositing": "Best cloud-score scene first; finite Sentinel RGB only on DEM > 0.1 m; EOX elsewhere"
+          }
+        }
+      },
+      "files": {
+        "vertices.raw": "3684a456925599fd19342b0aaa9459a57a9925f5b909cc92b57ad0764dce45bc",
+        "satellite.png": "4ae42b1100bf3a29965daf9e550aaa3cb1ba65ac53b911a248c24e9c69fff293"
+      }
+    },
+    {
+      "id": "N36E130",
+      "directory": "tiles/N36E130",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        223906.68774948688,
+        58352.837421206365,
+        -4194.669986565354
+      ],
+      "west_deg": 130,
+      "south_deg": 36,
+      "east_deg": 131,
+      "north_deg": 37,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        26.4919490814209,
+        28.117958068847656
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=130%2C36%2C131%2C37&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        }
+      },
+      "files": {
+        "vertices.raw": "97315a7037684ba5191928bf80642f473a4b2a0da692015dbcef1a5947478d4b",
+        "satellite.png": "417e35a1eb7d22fbc97c6a3f67bcd7aacb0c48d4bc8fc6feab826f59c21c5070"
+      }
+    },
+    {
+      "id": "N36E131",
+      "directory": "tiles/N36E131",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        313373.8712262671,
+        61108.83104320138,
+        -7987.969780813179
+      ],
+      "west_deg": 131,
+      "south_deg": 36,
+      "east_deg": 132,
+      "north_deg": 37,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        27.4361515045166,
+        30.16379165649414
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=131%2C36%2C132%2C37&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        }
+      },
+      "files": {
+        "vertices.raw": "6df8d8c8fb960b590862e67f70578f5709f5e6020e7ba2eb2a92b48dce4a81ab",
+        "satellite.png": "417e35a1eb7d22fbc97c6a3f67bcd7aacb0c48d4bc8fc6feab826f59c21c5070"
+      }
+    },
+    {
+      "id": "N37E124",
+      "directory": "tiles/N37E124",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -309296.6107415285,
+        171994.94871627493,
+        -9824.018988701297
+      ],
+      "west_deg": 124,
+      "south_deg": 37,
+      "east_deg": 125,
+      "north_deg": 38,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        244.37791442871094
+      ],
+      "geoid_range_m": [
+        15.447257995605469,
+        18.706924438476562
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E124_00_DEM/Copernicus_DSM_COG_10_N37_00_E124_00_DEM.tif",
+          "geographic_request_bounds": [
+            124,
+            37,
+            125,
+            38
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "23063c5a3a0f0b5690e9c77cf649168addc731c281ce30d2da4d4672c36ceb2c"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=124%2C37%2C125%2C38&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "dafa4bb3fdb9c4a8d2110eeeef27acaa7b0f986976adffc9da00c13977179761"
+        }
+      },
+      "files": {
+        "vertices.raw": "2366c0b67f6e8e3a2a4657f1edd7476844409b273d871b8acfb3d78901669572",
+        "satellite.png": "fe26e0822f87d40602ef1416148c8808d10aad5b21ea95840944d3f97f64224e"
+      }
+    },
+    {
+      "id": "N37E125",
+      "directory": "tiles/N37E125",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -220993.4713838171,
+        169274.81291435636,
+        -6080.07324971426
+      ],
+      "west_deg": 125,
+      "south_deg": 37,
+      "east_deg": 126,
+      "north_deg": 38,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        358.5928649902344
+      ],
+      "geoid_range_m": [
+        18.16350555419922,
+        20.789596557617188
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E125_00_DEM/Copernicus_DSM_COG_10_N37_00_E125_00_DEM.tif",
+          "geographic_request_bounds": [
+            125,
+            37,
+            126,
+            38
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "9510e9a35f3a886478aa7101715706ad6283ae2ad2ce9e42a3d8781733d37dc5"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=125%2C37%2C126%2C38&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "18e6cfe45ebc53541de17f0e62befed90a2c5db7b8ef12da1b14e22b5a72324a"
+        }
+      },
+      "files": {
+        "vertices.raw": "7303d26417a53e35027505c5f2eb9ee3f5c9d3a17b82333c997c9c40628114a8",
+        "satellite.png": "82c416e14faf5d16b9ef43544ca68bf2d4a86864325b8750229078960d66e40f"
+      }
+    },
+    {
+      "id": "N37E126",
+      "directory": "tiles/N37E126",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -132623.0152739124,
+        167460.928593437,
+        -3583.47566457474
+      ],
+      "west_deg": 126,
+      "south_deg": 37,
+      "east_deg": 127,
+      "north_deg": 38,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -1.323923945426941,
+        656.9265747070312
+      ],
+      "geoid_range_m": [
+        20.322195053100586,
+        23.46487045288086
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E126_00_DEM/Copernicus_DSM_COG_10_N37_00_E126_00_DEM.tif",
+          "geographic_request_bounds": [
+            126,
+            37,
+            127,
+            38
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "3552534cd909d1a1d0d65ea98e0050a399c6c8a4a6e39ebb68cf088dd711379f"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=126%2C37%2C127%2C38&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "edc1de7116f597ead5fb1025e3ff9a0f6848a4c197ec51c18082a9c8d6d3ab43"
+        }
+      },
+      "files": {
+        "vertices.raw": "3b31a33bfb78e4d79d441a6822500032a933c824cc85880373f451494066ea5b",
+        "satellite.png": "7b9f95e2c4b6f191ac93db50d87440b68936b16e39c903f8c8ae0a9bf6e8108d"
+      }
+    },
+    {
+      "id": "N37E127",
+      "directory": "tiles/N37E127",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -44212.16090880541,
+        166553.84828025172,
+        -2334.986721091147
+      ],
+      "west_deg": 127,
+      "south_deg": 37,
+      "east_deg": 128,
+      "north_deg": 38,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        3.441168785095215,
+        1386.498046875
+      ],
+      "geoid_range_m": [
+        23.078548431396484,
+        26.24905014038086
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E127_00_DEM/Copernicus_DSM_COG_10_N37_00_E127_00_DEM.tif",
+          "geographic_request_bounds": [
+            127,
+            37,
+            128,
+            38
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "aae68495456eda597b2ae4bd8b00c4abf19032efa4c63f295db8d620195d6416"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=127%2C37%2C128%2C38&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "16ff3512d13e789820e18f8413c9005bd6f1c17be48f3e0c9b34db10b0c2584e"
+        }
+      },
+      "files": {
+        "vertices.raw": "5d7627b476185f1bb8578bdcc32a9f9cd4b5bbb8531ebd6020e1f318b6bdd390",
+        "satellite.png": "43fc38a285f10f6c6068ed8361d9029c5a55b41a68d25aa3d7d699bcbdc78173"
+      }
+    },
+    {
+      "id": "N37E128",
+      "directory": "tiles/N37E128",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        44212.160908805,
+        166553.84828025175,
+        -2334.98672109122
+      ],
+      "west_deg": 128,
+      "south_deg": 37,
+      "east_deg": 129,
+      "north_deg": 38,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        1494.7216796875
+      ],
+      "geoid_range_m": [
+        25.516237258911133,
+        29.14984130859375
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E128_00_DEM/Copernicus_DSM_COG_10_N37_00_E128_00_DEM.tif",
+          "geographic_request_bounds": [
+            128,
+            37,
+            129,
+            38
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "cc996020b3f1c7ee5b5f15569644e2642ef255a2ad0c9d22f732117bcdfc9a30"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=128%2C37%2C129%2C38&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "b34d71c5f0cd6ea9dd2d0d1bf72be1a10836077916f06f8df79310c3a5c77b75"
+        }
+      },
+      "files": {
+        "vertices.raw": "59576bfed7d40c4e1c5c300a9401fe89647a1d93b84753b23432abf929fa6fb7",
+        "satellite.png": "3d517845a5a09939f053bc3d88f3ec387c4bea41b64be833d49ac0691a4574cb"
+      }
+    },
+    {
+      "id": "N37E129",
+      "directory": "tiles/N37E129",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        132623.01527391272,
+        167460.92859343672,
+        -3583.4756645743037
+      ],
+      "west_deg": 129,
+      "south_deg": 37,
+      "east_deg": 130,
+      "north_deg": 38,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -1.4442995052377228e-05,
+        1252.510498046875
+      ],
+      "geoid_range_m": [
+        25.338640213012695,
+        29.214080810546875
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E129_00_DEM/Copernicus_DSM_COG_10_N37_00_E129_00_DEM.tif",
+          "geographic_request_bounds": [
+            129,
+            37,
+            130,
+            38
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "744abc9539796130019c63fbc4aa0b4b73d9a9f3086e21a5a7f74f6ea382c66c"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=129%2C37%2C130%2C38&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "85f599dd5142a3b12b87c5f8166fe8d91890393ad4814436cbdf4e0b900a75cc"
+        }
+      },
+      "files": {
+        "vertices.raw": "cb9038c6b96d29810995062d153257d645545990343790f46b94901344cb635d",
+        "satellite.png": "91e12283777806f2e75bf92a5e62322cd16b7fba36ad39c026b8aea9378557d2"
+      }
+    },
+    {
+      "id": "N37E130",
+      "directory": "tiles/N37E130",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        220993.47138381697,
+        169274.81291435653,
+        -6080.073249714464
+      ],
+      "west_deg": 130,
+      "south_deg": 37,
+      "east_deg": 131,
+      "north_deg": 38,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        884.6432495117188
+      ],
+      "geoid_range_m": [
+        25.80414581298828,
+        28.193016052246094
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E130_00_DEM/Copernicus_DSM_COG_10_N37_00_E130_00_DEM.tif",
+          "geographic_request_bounds": [
+            130,
+            37,
+            131,
+            38
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "86c8a9150f193098d4fbedae3c448171a5680763f9d9b7a31764efda99e3d371"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=130%2C37%2C131%2C38&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "a26d700a260cb58feb49ef7b733d9a5773dbf2477309fbf4a7c9b1f843c4d2aa",
+          "sentinel_patches": {
+            "scenes": [
+              {
+                "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/52/S/FG/2025/8/S2C_52SFG_20250823_0_L2A/TCI.tif",
+                "geographic_request_bounds": [
+                  130.75,
+                  37.4,
+                  131,
+                  37.65
+                ],
+                "source_crs": "EPSG:32652",
+                "source_window": [
+                  5435,
+                  3111,
+                  2270,
+                  2823
+                ],
+                "cached_size": [
+                  1236,
+                  1536
+                ],
+                "resampling": "bilinear, COG overview selected by GDAL",
+                "sha256": "87c592f39805b312fd6d80b9e8a5be8dc19b6bb53ca26dd321021c0b4b3f04d6",
+                "scene_id": "S2C_52SFG_20250823_0_L2A",
+                "scene_cloud_cover_percent": 0.127595,
+                "replaced_pixels": 9298
+              }
+            ],
+            "replaced_land_pixels": 9298,
+            "total_land_pixels": 9298,
+            "compositing": "Best cloud-score scene first; finite Sentinel RGB only on DEM > 0.1 m; EOX elsewhere"
+          }
+        }
+      },
+      "files": {
+        "vertices.raw": "4d5b5bef6162132a6e1bee79271f888cdf93ad3f385772e23603a10a9f6a2b41",
+        "satellite.png": "dd9a995833dc20a2f7a148a5cf041d9f3dd49902d24b4d7420f2006479291939"
+      }
+    },
+    {
+      "id": "N37E131",
+      "directory": "tiles/N37E131",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        309296.61074152833,
+        171994.94871627475,
+        -9824.018988701093
+      ],
+      "west_deg": 131,
+      "south_deg": 37,
+      "east_deg": 132,
+      "north_deg": 38,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        1.6453250646591187
+      ],
+      "geoid_range_m": [
+        27.46482276916504,
+        29.73884391784668
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E131_00_DEM/Copernicus_DSM_COG_10_N37_00_E131_00_DEM.tif",
+          "geographic_request_bounds": [
+            131,
+            37,
+            132,
+            38
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "252a098761bb95bae0ddb5e2d3528217ec9368c0edd06fdfc5967f703d99df10"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=131%2C37%2C132%2C38&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        }
+      },
+      "files": {
+        "vertices.raw": "647ca19a7ada7ce8cd5d21f6fcd55bf98feed082b1cf56d2d5650f785710563b",
+        "satellite.png": "417e35a1eb7d22fbc97c6a3f67bcd7aacb0c48d4bc8fc6feab826f59c21c5070"
+      },
+      "skip_cells": [
+        216,
+        188,
+        228,
+        200
+      ]
+    },
+    {
+      "id": "N38E124",
+      "directory": "tiles/N38E124",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -305124.83356318856,
+        282847.4887637162,
+        -13594.60198821238
+      ],
+      "west_deg": 124,
+      "south_deg": 38,
+      "east_deg": 125,
+      "north_deg": 39,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        391.19671630859375
+      ],
+      "geoid_range_m": [
+        14.857964515686035,
+        18.45160675048828
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E124_00_DEM/Copernicus_DSM_COG_10_N38_00_E124_00_DEM.tif",
+          "geographic_request_bounds": [
+            124,
+            38,
+            125,
+            39
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "0f7de3add991720e88f27b163ace5ca15a0f96de97f899bb7e946b51722309da"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=124%2C38%2C125%2C39&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "f530100d0134efabefcf6f4f583e0024610a0271f026c321143ffe5259a368ab"
+        }
+      },
+      "files": {
+        "vertices.raw": "5b123400f5fd409d0b7ce3cc00e5f25d05c80bce7dd368d5c88ba1a9783f12eb",
+        "satellite.png": "861637c4975d41bc125a572d6dded1ac373d6bbc3620241a5645675a6eded8b3"
+      }
+    },
+    {
+      "id": "N38E125",
+      "directory": "tiles/N38E125",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -218012.72252183998,
+        280164.04201711324,
+        -9901.154401640903
+      ],
+      "west_deg": 125,
+      "south_deg": 38,
+      "east_deg": 126,
+      "north_deg": 39,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -67.6147232055664,
+        854.447998046875
+      ],
+      "geoid_range_m": [
+        17.672195434570312,
+        20.9934024810791
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E125_00_DEM/Copernicus_DSM_COG_10_N38_00_E125_00_DEM.tif",
+          "geographic_request_bounds": [
+            125,
+            38,
+            126,
+            39
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "36012fa966c195c64473a336155f5be6e675ddc063bb32227d9fcfeefc0a5dbb"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=125%2C38%2C126%2C39&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "3fb0d28d11f4b47c39b343b432a8d9813536081343cc552cc971e6d39df2dfe4"
+        }
+      },
+      "files": {
+        "vertices.raw": "13206d68c210efc136b18e48005e889dd1e30469454fe34cb1d1cfaa7d7c194b",
+        "satellite.png": "5ed1b9f07ed805b7fd85324d2a89ebc6d4d35880cbc46f1ca884135fb69b62dd"
+      }
+    },
+    {
+      "id": "N38E126",
+      "directory": "tiles/N38E126",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -130834.20269327683,
+        278374.6232769709,
+        -7438.230799556681
+      ],
+      "west_deg": 126,
+      "south_deg": 38,
+      "east_deg": 127,
+      "north_deg": 39,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        3.12589955329895,
+        1354.3660888671875
+      ],
+      "geoid_range_m": [
+        20.616348266601562,
+        23.80573844909668
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E126_00_DEM/Copernicus_DSM_COG_10_N38_00_E126_00_DEM.tif",
+          "geographic_request_bounds": [
+            126,
+            38,
+            127,
+            39
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "68b9502aa867faa6b63d7150ca81a66be002aa1ad4feb3377e7cf1930102ad27"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=126%2C38%2C127%2C39&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "50015cf359df37ad2df57592b26bc0914ed913d63b31a168caa2e0e7630350ec"
+        }
+      },
+      "files": {
+        "vertices.raw": "d0bcff5f37c862eae001e2cc1404b81716a0bc3bad8621a196f348318fd2557c",
+        "satellite.png": "dc51544417b1fdd139ddca5f2bbbd87af99f3f528e24048f36800ec3e4d93d8b"
+      }
+    },
+    {
+      "id": "N38E127",
+      "directory": "tiles/N38E127",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        -43615.82949915209,
+        277479.77761757135,
+        -6206.581412347034
+      ],
+      "west_deg": 127,
+      "south_deg": 38,
+      "east_deg": 128,
+      "north_deg": 39,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        1473.1016845703125
+      ],
+      "geoid_range_m": [
+        23.13400650024414,
+        25.949974060058594
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E127_00_DEM/Copernicus_DSM_COG_10_N38_00_E127_00_DEM.tif",
+          "geographic_request_bounds": [
+            127,
+            38,
+            128,
+            39
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "1c0bee4fc3cf40baff0a47a14a895f7da9b504ca8e9985b9b0888b0a34153954"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=127%2C38%2C128%2C39&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "941a1101c0ae9522fe7bbdfdeecd2f87b3dc8ae3cb6cdad0935e0dcce9080f3e"
+        }
+      },
+      "files": {
+        "vertices.raw": "4ea7c255b5b039c5f0c85dac0e07e68ca526cfa048011eae01c1b5b45a582e38",
+        "satellite.png": "280a5b230a45c12868d56416036190414034e15d0ff731c10bd19463dfdcf159"
+      }
+    },
+    {
+      "id": "N38E128",
+      "directory": "tiles/N38E128",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        43615.82949915178,
+        277479.7776175715,
+        -6206.581412347266
+      ],
+      "west_deg": 128,
+      "south_deg": 38,
+      "east_deg": 129,
+      "north_deg": 39,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        1584.46435546875
+      ],
+      "geoid_range_m": [
+        23.07496452331543,
+        26.880416870117188
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N38_00_E128_00_DEM/Copernicus_DSM_COG_10_N38_00_E128_00_DEM.tif",
+          "geographic_request_bounds": [
+            128,
+            38,
+            129,
+            39
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            0,
+            0,
+            3600,
+            3600
+          ],
+          "cached_size": [
+            513,
+            513
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "6e93a30b8d859c1339678f394f857db5cd202c1325086126ba0d232496eb7ea8"
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=128%2C38%2C129%2C39&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "4937ffdec45f4a4c602b0d393186c95f52136669922ae6f0e08122bd804ffff8"
+        }
+      },
+      "files": {
+        "vertices.raw": "6c7eaaf25fbd911420944297118987073700c307453ef5058320eae9a4dee53f",
+        "satellite.png": "ce9eef456df7c94dbeb19e52d7ff684707e6da5da461c3eaff96e252b5565fb4"
+      }
+    },
+    {
+      "id": "N38E129",
+      "directory": "tiles/N38E129",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        130834.20269327721,
+        278374.6232769708,
+        -7438.2307995566225
+      ],
+      "west_deg": 129,
+      "south_deg": 38,
+      "east_deg": 130,
+      "north_deg": 39,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        23.14040756225586,
+        25.980403900146484
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=129%2C38%2C130%2C39&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e93a7366b6c0d8ceb759fdba9808318f3aef49c4dfc087220b4574a94c5c3d7a"
+        }
+      },
+      "files": {
+        "vertices.raw": "c00b8e66e36bb87cdfd2a98e18706ec6f81e7c33dd1a17ad1841f8daa8b66211",
+        "satellite.png": "b54fe37809e8fad10d825282323290afad559f470c9bf3f1cc381ac1253b5875"
+      }
+    },
+    {
+      "id": "N38E130",
+      "directory": "tiles/N38E130",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        218012.72252183987,
+        280164.04201711365,
+        -9901.154401641514
+      ],
+      "west_deg": 130,
+      "south_deg": 38,
+      "east_deg": 131,
+      "north_deg": 39,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        24.66206932067871,
+        27.481443405151367
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=130%2C38%2C131%2C39&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        }
+      },
+      "files": {
+        "vertices.raw": "2f7822e2fac10d12e6a36273b456ac9e94691b5c3b66ab62c01ea46868030ea2",
+        "satellite.png": "417e35a1eb7d22fbc97c6a3f67bcd7aacb0c48d4bc8fc6feab826f59c21c5070"
+      }
+    },
+    {
+      "id": "N38E131",
+      "directory": "tiles/N38E131",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        305124.83356318827,
+        282847.4887637161,
+        -13594.601988212235
+      ],
+      "west_deg": 131,
+      "south_deg": 38,
+      "east_deg": 132,
+      "north_deg": 39,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        0.0,
+        0.0
+      ],
+      "geoid_range_m": [
+        25.12969207763672,
+        28.407724380493164
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+          "ocean_tile": true,
+          "orthometric_height_m": 0
+        },
+        "imagery": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=131%2C38%2C132%2C39&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        }
+      },
+      "files": {
+        "vertices.raw": "c19b7eb5e8ded07daab79f5b25989e68238c0275779976a7e31bdc2bfa509dda",
+        "satellite.png": "417e35a1eb7d22fbc97c6a3f67bcd7aacb0c48d4bc8fc6feab826f59c21c5070"
+      }
+    },
+    {
+      "id": "Dokdo",
+      "directory": "tiles/Dokdo",
+      "width": 257,
+      "height": 257,
+      "center_enu_m": [
+        342869.526381487,
+        144639.30886508728,
+        -10858.968814226573
+      ],
+      "west_deg": 131.84375,
+      "south_deg": 37.21875,
+      "east_deg": 131.890625,
+      "north_deg": 37.265625,
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "orthometric_height_range_m": [
+        -1.8441087007522583,
+        35.19972610473633
+      ],
+      "geoid_range_m": [
+        29.44730567932129,
+        29.599699020385742
+      ],
+      "sources": {
+        "elevation": {
+          "source": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E131_00_DEM/Copernicus_DSM_COG_10_N37_00_E131_00_DEM.tif",
+          "geographic_request_bounds": [
+            131.84375,
+            37.21875,
+            131.890625,
+            37.265625
+          ],
+          "source_crs": "EPSG:4326",
+          "source_window": [
+            3036,
+            2642,
+            173,
+            174
+          ],
+          "cached_size": [
+            173,
+            174
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "d713c6ee9a6193c7915b8d9ce1c1a05c9377d8291d48200e69bb56e9babd0655"
+        },
+        "imagery": {
+          "source": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/53/S/KB/2025/6/S2C_53SKB_20250604_0_L2A/TCI.tif",
+          "geographic_request_bounds": [
+            131.84375,
+            37.21875,
+            131.890625,
+            37.265625
+          ],
+          "source_crs": "EPSG:32653",
+          "source_window": [
+            1993,
+            7096,
+            438,
+            539
+          ],
+          "cached_size": [
+            438,
+            539
+          ],
+          "resampling": "bilinear, COG overview selected by GDAL",
+          "sha256": "bc492a2bec3e832ffda6c7fcdc8ef889fa5dc069d2cf092ef0336c30d1ca4943"
+        },
+        "water": {
+          "source": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless&styles=&srs=EPSG%3A4326&bbox=131.84375%2C37.21875%2C131.890625%2C37.265625&width=1024&height=1024&format=image%2Fjpeg",
+          "sha256": "e251d846e81f0912542ecaf71579b5ef49ff9b1543630bd39fc10f23d4bb0430"
+        },
+        "imagery_date": "2025-06-04",
+        "imagery_cloud_cover_percent": 0.00142,
+        "water_blend": "EOX water where Copernicus orthometric DEM <= 0.1 m"
+      },
+      "files": {
+        "vertices.raw": "f922db213901693d8203dcad82eb8739836b1513837f8f95c992db0233e22f18",
+        "satellite.png": "912239c496b5074ba02ba578b77f0288004fb91bd1d18ad8ad707bcfa55d81bb"
+      },
+      "detail": true
+    }
+  ],
+  "grid_size": 257,
+  "vertex_format": "little-endian float32 local E,N,U metres; add tile center_enu_m; north-to-south rows",
+  "height_vertical_datum": "EGM2008",
+  "vertex_vertical_datum": "WGS84 ellipsoid -> ENU",
+  "source": {
+    "elevation": "Copernicus GLO-30 DSM, EGM2008 orthometric heights",
+    "geoid": {
+      "source": "https://cdn.proj.org/us_nga_egm08_25.tif",
+      "geographic_request_bounds": [
+        123.9,
+        32.9,
+        132.1,
+        39.1
+      ],
+      "source_crs": "EPSG:4979",
+      "source_window": [
+        7292,
+        1220,
+        201,
+        153
+      ],
+      "cached_size": [
+        201,
+        153
+      ],
+      "resampling": "bilinear, COG overview selected by GDAL",
+      "sha256": "78d2c80b7ecd2db40ab939b37f260f35f70e5ff98130a1a2f6b9bfec96821d50"
+    },
+    "tile_list": {
+      "source": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt",
+      "sha256": "10604e3052c98a09e9216f1a8f0a555a04148419757575f783d4937fd44316dc"
+    },
+    "imagery": "EOX Sentinel-2 cloudless 2016; five southeast/Ulleung tiles supplemented by 2025 Sentinel; Dokdo 2025-06-04"
+  },
+  "licenses": [
+    {
+      "name": "EOX 2016 CC BY 4.0",
+      "url": "https://cloudless.eox.at/license-non-commercial",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)"
+    },
+    {
+      "name": "Copernicus DEM public licence",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html"
+    },
+    {
+      "name": "Copernicus Sentinel data",
+      "url": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice"
+    }
+  ],
+  "limitations": [
+    "Base mesh spacing about 340-435 m; base imagery about 84-109 m per pixel.",
+    "DSM includes vegetation and buildings; not DTED or survey-verified terrain.",
+    "Rectangular bounds include surrounding sea and neighbouring land; no political-boundary clipping.",
+    "Missing samples only on the outside bbox edge use the adjacent interior sample; missing interior elevations fail.",
+    "2016 base is not completely cloud-free. Five named tiles use real 2025 land imagery; dates and colour differ across sources.",
+    "Dokdo source heights and its small coastline are limited by Copernicus DEM resolution."
+  ],
+  "checks": {
+    "base_tile_count": 48,
+    "detail_tile_count": 1,
+    "maximum_coordinate_error_m": 0.00195092469220981,
+    "maximum_shared_edge_error_m": 0.003850018205412198,
+    "imagery_size": [
+      1024,
+      1024
+    ],
+    "global_height_lattice": [
+      1537,
+      2049
+    ],
+    "finite_elevations": true,
+    "outer_boundary_extrapolated_samples": 2045,
+    "land_tile_count": 35,
+    "ocean_tile_count": 13,
+    "dokdo_positive_height_vertices": 629,
+    "elapsed_seconds": 35.24
+  }
+}

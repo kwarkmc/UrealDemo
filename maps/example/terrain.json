@@ -1,0 +1,52 @@
+{
+  "schema_version": 2,
+  "id": "example",
+  "name": "제주 사용자 지도 예제",
+  "attribution": "Contains modified Copernicus Sentinel data 2025-04-06; Copernicus DEM GLO-30; NGA EGM2008 via PROJ.",
+  "origin": {
+    "latitude_deg": 33.43,
+    "longitude_deg": 126.52,
+    "ellipsoid_height_m": 0.0
+  },
+  "bounds_deg": [
+    126.48,
+    33.39,
+    126.56,
+    33.47
+  ],
+  "tiles": [
+    {
+      "id": "jeju",
+      "directory": "tiles/jeju",
+      "width": 129,
+      "height": 129,
+      "west_deg": 126.48,
+      "south_deg": 33.39,
+      "east_deg": 126.56,
+      "north_deg": 33.47,
+      "center_enu_m": [
+        1.6769181177711924e-09,
+        -4.5667312447169866e-11,
+        6.917926948794348e-11
+      ],
+      "vertex_file": "vertices.raw",
+      "image_file": "satellite.png",
+      "sources": {
+        "dem": "source/elevation.tif",
+        "dem_sha256": "abeccb106b357974231e6f1fd803f0c7c86d589147fc349262a27f4845fef350",
+        "image": "source/satellite.png",
+        "image_sha256": "8a7a096c2f98deffc3c3771db5e24db84304397995706d90d4c3b2d862e58058",
+        "vertical": {
+          "datum": "EGM2008",
+          "source_file": "C:\\src\\Projects\\UAVSim\\maps\\example\\source\\geoid-egm2008.tif",
+          "sha256": "9417518cb3df9dc97d2539ff6533027921326b0778c78990afbf20929d7156a1"
+        }
+      }
+    }
+  ],
+  "vertex_format": "float32 little-endian ENU metres relative to tile center; rows north to south",
+  "checks": {
+    "finite_coordinates": true,
+    "maximum_roundtrip_error_m": 0.00017207534983754158
+  }
+}
