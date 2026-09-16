@@ -1,0 +1,26 @@
+# Local build/editor output
+/build/
+/.venv/
+__pycache__/
+*.egg-info/
+# Runtime terrain lives in maps/. Keep provenance, not duplicate legacy tiles or downloads.
+/data/**
+!/data/jeju/
+!/data/korea/
+!/data/jeju/metadata.json
+!/data/korea/metadata.json
+# Selected reports/screenshots linked by the manuals are intentionally tracked.
+/artifacts/
+/.codex/
+.env
+.env.*
+!.env.example
+.vs/
+**/Binaries/
+**/Intermediate/
+**/Saved/
+**/DerivedDataCache/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
