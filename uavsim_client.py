@@ -32,6 +32,12 @@ class UAVSimClient:
             raise UAVSimError(error.code, message) from error
 
     def get_state(self):
+        """Get applied limits/support and physics; file selection may differ until reload.
+
+        airframe.dynamic_propeller enables actuator RPM, shaft power W and torque Nm.
+        ground wheel arrays are nose/left/right: reaction N, signed clearance m,
+        lateral slip m/s; wheel_surfaces_sampled marks separate terrain queries.
+        """
         return self._request("GET", "state")
 
     def set_eoir(self, *, enabled, mode="ccd", fov_deg=30):
@@ -176,12 +182,21 @@ class UAVSimClient:
         """Start paused on the test runway with zero ground speed/thrust and parking brake on."""
         return self._request("POST", "ground/reset", {})
 
+    def set_flaps(self, degrees):
+        """Command flaps in degrees; actual angle advances in simulation time.
+
+        Range: 0..airframe.maximum_flap_deg; active automatic operations reject manual commands.
+        """
+        return self._request("PUT", "flaps", {"degrees": degrees})
+
     def set_landing_gear(self, down=True):
         """Command gear down/up with a strict bool; full travel takes 3 simulated seconds.
 
         Paused commands need step() or playback to move. Ground retraction and
         manual commands during an active automatic flight operation are rejected.
         Initial conditions start gear down; ordinary flight controls preserve gear.
+        Up requires airframe.retractable_gear. The current default uses a hypothetical
+        retractable research derivative; the original C208B research file stays fixed.
         """
         return self._request("PUT", "gear", {"down": down})
 
@@ -195,7 +210,7 @@ class UAVSimClient:
                              longitude_deg=longitude_deg, heading_deg=heading_deg, ground_speed_mps=ground_speed_mps))
 
     def start_automatic_takeoff(self, *, runway_index=0, climb_height_m=50, speed_mps=19):
-        """Arm takeoff on runway index 0..15, climb height 20..150 m, TAS 16..24 m/s.
+        """Arm takeoff on runway index 0..15, climb height 20..150 m, TAS within airframe route limits.
 
         Preserves pause/running state. Use set_running(True) or paused step(dt_s)
         to advance; this command does not move the aircraft to the runway.
@@ -204,9 +219,12 @@ class UAVSimClient:
                              climb_height_m=climb_height_m, speed_mps=speed_mps))
 
     def start_automatic_landing(self, *, runway_index=0, approach_speed_mps=18):
-        """Arm landing on runway index 0..15 with approach TAS 16..22 m/s.
+        """Arm landing on runway index 0..15 with approach TAS within airframe landing limits.
 
-        Preserves position and pause/running state; preparation limits apply.
+        Preserves position and pause/running state. Returns through a terrain-surveyed
+        approach orbit before deceleration/flap configuration and final approach.
+        Inspect state.automation.rejection and desired_* fields; path is WGS84.
+        Local mission distance/terrain/trim and development wind limits apply.
         """
         return self._request("POST", "automation/land", dict(runway_index=runway_index,
                              approach_speed_mps=approach_speed_mps))
@@ -218,15 +236,16 @@ class UAVSimClient:
     def prepare_landing_approach(self, *, runway_index=0):
         """Reset position to a landing test approach for runway 0..15 and pause.
 
-        Explicit test setup 600 m before the threshold, 60 m above the runway,
-        TAS 18 m/s; replaces the current initial condition, not flight guidance.
+        Explicit test setup 1200 m before the threshold, 70 m above the runway,
+        Thor TAS 18 m/s; C208B research TAS 40 m/s with 30-degree flaps.
+        Replaces the current initial condition, not flight guidance.
         """
         return self._request("POST", "automation/prepare-landing", {"runway_index": runway_index})
 
     def reload_aircraft_profile(self):
         """Read aircraft/active.json while paused and reset with the loaded profile.
 
-        Resets to 2600 m ellipsoid height / 19 m/s airborne level trim; clears
+        Resets to airframe.initial_height_m / initial_speed_mps level trim; clears
         gusts, failures and autopilot, but preserves steady wind. Check
         airframe.error on failure; requests are not automatically retried.
         """
@@ -282,7 +301,7 @@ class UAVSimClient:
     def set_initial_condition(self, *, latitude_deg, longitude_deg, ellipsoid_height_m,
                               heading_deg, pitch_deg, roll_deg, speed_mps,
                               angle_of_attack_deg=None, sideslip_deg=None):
-        """Set pose and 5..45 m/s true airspeed, zero rates; cancel route and pause.
+        """Set pose and profile-supported TAS, zero rates; cancel route and pause.
 
         Supply both aerodynamic angles to specify body-relative airflow: AoA
         -180..180 deg, sideslip -89..89 deg. Omit both for the default trim AoA.
@@ -299,7 +318,10 @@ class UAVSimClient:
     def set_route(self, waypoints, *, loiter_radius_m, clockwise=True):
         """1..64 points with latitude_deg, longitude_deg, ellipsoid_height_m, speed_mps.
 
-        Track points in order then orbit the last at loiter_radius_m. Preserves
+        Fly through intermediate points in order; the last is the orbit center,
+        acquired at loiter_radius_m with altitude/speed/course gates. Missed
+        intermediate points use a fixed reentry leg (navigation.reacquiring).
+        Preserves
         pause/running state; set_running(True) starts movement after a paused setup.
         Speed is true airspeed in m/s; ground speed also depends on wind.
         """

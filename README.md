@@ -4,9 +4,25 @@ Prepar3D/SimConnect를 대체할 Unreal 기반 고정익 무인기 시뮬레이�
 
 외부 프레임워크 연동의 기준 문서는 [전체 API 사용 매뉴얼](docs/api-reference.md)이다. 모든 HTTP 경로·Python 메서드, 필드·단위·상태·오류, 실행 예제를 모았으며 API 변경과 함께 갱신한다.
 
+2026-11-19 [추진·지상·비행 영역 확장 및 공식 시험 후속 계획](docs/physics-expansion-plan.md)을 작성했다. 거버너/후류·완충/타이어·비대칭 실속/스핀·연료/CG와 운용/공식 시험의 단계·완료 기준을 정리한 계획이며 아직 구현 착수/완료를 뜻하지 않는다.
+
+2026-11-18 [Prepar3D SimConnect 주입·관측 기능 조사](docs/simconnect-reference.md): v6 공개 SDK의 SimVar900행·별도 전역변수42개·이벤트1125행·함수208개를 CSV와 한국어 분야별 안내로 정리했다. 직접 쓰기·명령 이벤트·전용 API를 구분한 문서 조사이며, DLL/실제 기체의 실행 검증이나 UAVSim 구현 완료를 뜻하지 않는다.
+
 **처음 내려받았다면 [저장소 시작·인수인계 안내](docs/repository-guide.md)를 먼저 읽는다.** Git LFS 자산 받기, 새 PC 실행 순서, 기능별 코드 위치와 이번 커밋 구성을 정리했다. 아래 검사 결과는 개발 당시 기록이며 새 PC에서 다시 실행한 결과를 뜻하지 않는다.
 
+2026-11-19 저장소 동기화: 최신 연구 모델·항법/물리·외형·API/UI·비행시험 도구와 문서에서 참조하는 결과 자료를 함께 관리한다. Windows Release CTest15/15·기록 도구8검사를 이번 정리에서 확인했다. [클라우드 개발·새 PC 인계](docs/cloud-development.md)에 Linux 계산 검사 명령과 Windows Unreal 검증의 경계, 환경 게시 절차를 기록했다. 클라우드 실행·환경 게시와 Unreal 재빌드는 이번 정리에서 수행하지 않았다.
+
+**2026-11-18 항법·물리 통합 개선:** 보류했던 근접 항로점/재접근·선회 잔차 분석·러더 협조를 구현했다. 수납식 연구 구성에 로터 관성/RPM·축동력/토크·운동량 추력·자이로 반작용·바퀴별 지면/횡미끄럼을 연결했다. 코어15/15·실제 API19검사와 무풍/작은 바람20km 임무 왕복을 통과했다. [기준 대비 결과·수식·가정·남은 범위](docs/navigation-physics.md). 실제 거버너/후류·완충·실기체 성능 검증은 별도다.
+
+**이전 M0~M5 연구 범위 구현:** 원거리 자동착륙의 귀환·고도 처리·감속/형상·접근 정렬, 경로/진단 UI·API, 실제 지형의 중간 초기화 없는 왕복, 플랩·기어/바퀴/프로펠러 표시, 추력선 모멘트·기체별 지상 응답을 연결했다. 당시 Release CTest12/12·UE5.8.4 빌드·실제 관련 API173검사가 통과했다. [당시 결과·화면·사용법](docs/return-landing-results.md), [원래 계획과 진단](docs/return-landing-plan.md). 이 단계에서 보류했던 항법 작업은 위 통합 개선에서 진행했다. 실제 성능은 미검증이다.
+
 ## 현재 상태 — 2026-09-13
+
+2026-11-18 기본 기체 후속 변경: 사용자 요청으로 **가상의 수납식 기어 연구 구성**을 선택했다. 동체 힌지부터 접히는 기어를3초 동안 표시하며 자동 이륙 후 수납·착륙 전 전개를 연결한다. 기존 C208B 고정기어 프로필은 별도로 유지한다. [조작법·수납 화면·검사 결과](docs/retractable-research.md).
+
+2026-11-18 외형 후속 수정: 동체에 연결되는 주기어 지지대, 곡면3엽 프로펠러·스피너와 고속 회전 잔상 표시를 적용했다. [실제 화면·표시 검사·사용법](docs/propeller-visual.md).
+
+**2026-11-17 추가 구현:** 사용자 승인한 **별도 C208B 연구 모델**로 C~F 연구 범위를 구현했다. 약3811kg·초기TAS65m/s·고정기어·단순 출력 제한 추진·플랩·기체별 접촉/항로/자동 운항을 연결했다. 관성·추진·저속 계수 등은 개발 가정이며 **실제 비행성능 미검증**이다. Release CTest **10/10**·UE **5.8.4 빌드**·[기존 API30개](artifacts/airframe-api-check.json)·[연구 API 검사](artifacts/c208b-api-check.json)가 통과했다. [사용법·가정](docs/c208b-research.md), [단계별 상태](docs/fixed-wing-expansion.md). 아래 표는 이전 Thor 개발 결과이며 현재 기본 선택과 구분한다.
 
 | 항목 | 실제 상태 |
 | --- | --- |
@@ -34,9 +50,13 @@ Prepar3D/SimConnect를 대체할 Unreal 기반 고정익 무인기 시뮬레이�
 
 사용자 지시에 따라 컴퓨터 사용/UI 자동화를 중단했다. 명령행·파일·API 작업은 계속하고, 필요한 화면 작업만 사용자에게 안내한다.
 
+메인 추적 카메라 크기 대응 수정: [C208B 카메라 적용·빌드 상태](docs/c208b-research.md)를 따른다.
+
+[비행시험 기록·비교 사용법](docs/flight-tests.md): 기존 API 기반 명령행 시험·CSV/JSON·정적 그래프·두 실행 비교를 제공한다. 최종13회15,013개 표본·완전 재현·관성 비교·Thor 회귀를 완료했고, 사용자 요청으로 Unreal/API를 종료했다. 개발 검사와 실제 성능 검증을 구분하며, 구현 순서는 [작업 계획](docs/flight-test-plan.md)을 따른다.
+
 ## 실행
 
-PowerShell 7에서 프로젝트 루트를 기준으로 실행한다. C++ 구성은 .vsconfig, 데이터 도구 버전은 requirements-terrain.txt에 기록했다.
+Windows PowerShell 5.1 또는 PowerShell 7에서 프로젝트 루트를 기준으로 실행한다. C++ 구성은 .vsconfig, 데이터 도구 버전은 requirements-terrain.txt에 기록했다.
 
 평소에는 아래 명령으로 API를 시작하고 [조종 UI](http://127.0.0.1:8765/)의 **Unreal 실행**을 누른다. API가 이미 실행 중이면 브라우저만 열면 된다. 전국 지형을 읽는 비행 창이 열리고 지형이 준비되면 조종 입력이 활성화된다. 에디터에서 Play를 누를 필요는 없다. **Unreal 종료**를 눌러도 API와 Web UI는 유지되어 다시 실행할 수 있다.
 
@@ -76,6 +96,8 @@ PowerShell 7에서 프로젝트 루트를 기준으로 실행한다. C++ 구성�
 setup-scene은 위성 재질과 /Game/Maps/JejuDemo를 만들고 FlightScene을 배치하는 일회성 작업이다. 명령은 에디터를 시작한 뒤 먼저 반환하며, Python 작업이 끝나면 에디터가 정상 종료된다. Saved/Logs/UAVSim.log의 `UAVSim scene setup complete`와 artifacts/scene-setup.json으로 완료를 확인한다. 현재 장면은 이미 생성되어 있다.
 
 별도로 연 에디터나 비행 창은 `external`로 표시하며 해당 창에서 직접 종료한다. API 서버를 재시작해 이전 비행 프로세스의 소유 정보를 잃은 경우도 같다. Web UI 종료는 이 API 서버가 시작하고 초기화가 끝난 독립 비행 창에만 적용한다. 지형 로드에 실패한 창도 정상 종료를 요청할 수 있으며 강제 종료하지 않는다. 프로세스가 살아 있는 오류 상태에서는 먼저 종료한 뒤 다시 실행한다.
+
+2026-11-18 실행 호환 수정: Windows PowerShell5.1에 없는 `ProcessStartInfo.ArgumentList` 대신 해당 환경에서는 Windows 인수 인용 처리를 사용한다. 공백·따옴표·빈 인수·한글·끝 역슬래시 전달과 종료 코드를5.1/7에서 검사했고,5.1의 실제 API 시작·웹/상태 HTTP200을 확인했다. 이 PC의 시작 명령은 `.\scripts\dev.ps1 api -UnrealRoot 'C:\UnrealEngine-release'`다. 재현 검사는 `powershell.exe -NoProfile -File tests/dev_process_checks.ps1`로 실행한다. Unreal 빌드/비행시험은 이 실행 스크립트 수정 때문에 반복하지 않았다.
 
 다른 엔진 경로는 `dev.ps1 api -UnrealRoot 'C:\경로\UE_5.8'` 또는 `UAVSIM_UNREAL_ROOT`로 지정한다. 서버 직접 실행 시에는 `serve-api.py --unreal-root`를 사용한다. MSBuild의 PATH/Path 중복 문제는 하네스의 자식 프로세스 환경에서만 정리한다.
 
@@ -381,6 +403,8 @@ $response.ReturnValue
 MCP는 UE5.8 내장 ModelContextProtocol/EditorToolset을 에디터 대상에만 켠다. 주소는 http://127.0.0.1:8000/mcp이며 장면 초기화에서 .codex/config.toml이 생성됐다. 서버는 에디터가 실행 중일 때 연결할 수 있다. list_toolsets, describe_toolset, StartPIE, Actor 조회를 실제 호출했고, PIE 카메라 대상이 FlightScene인 것과 [게임 화면](artifacts/jeju-pie.png)을 확인했다. [Epic MCP 문서](https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor)
 
 ## 기준 기체와 다음 작업
+
+2026-11-17 최종 결정: 첫 대형기 기준은 Cessna208B Super Cargomaster, 후속 쌍발 후보는 King Air350이다. 사용자 승인으로 별도 C208B 연구 가정 모델을 만들고 C~F 연구 범위까지 연결했다. 현재 기본 선택은 `aircraft/c208b-research.json`이며 Thor는 `thor.json`으로 복귀할 수 있다. 실기체 동일 구성 자료와 성능 검증은 미완료다. [연구 모델 사용법](docs/c208b-research.md), [원래 자료 기반 계획과 현재 진행 구분](docs/fixed-wing-expansion.md)을 따른다.
 
 DTED 다운로드·연결은 사용자 지시로 다음에 진행한다. 현재 Copernicus DSM·위성영상의 전국 기본 장면을 사용한다.
 

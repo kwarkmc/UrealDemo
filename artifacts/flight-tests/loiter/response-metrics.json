@@ -1,0 +1,74 @@
+{
+  "metrics": {
+    "speed_mps": {
+      "minimum": 64.1105337240969,
+      "maximum": 66.21571555693943,
+      "peak_absolute": 66.21571555693943,
+      "peak_time_s": 43.80000000000035,
+      "change": 0.811665983555713
+    },
+    "ellipsoid_height_m": {
+      "minimum": 2597.377491616644,
+      "maximum": 2603.2116551268846,
+      "peak_absolute": 2603.2116551268846,
+      "peak_time_s": 38.50000000000028,
+      "change": 1.6681348495185375
+    },
+    "pitch_deg": {
+      "minimum": 5.254362847411843,
+      "maximum": 6.953383891953241,
+      "peak_absolute": 6.953383891953241,
+      "peak_time_s": 18.29999999999999,
+      "change": -0.21668856362961986
+    },
+    "angle_of_attack_deg": {
+      "minimum": 4.920224737397252,
+      "maximum": 7.348973699486865,
+      "peak_absolute": 7.348973699486865,
+      "peak_time_s": 117.79999999999758,
+      "change": -0.026093211528185556
+    },
+    "roll_deg": {
+      "minimum": -30.203189350648316,
+      "maximum": 30.465244838546262,
+      "peak_absolute": 30.465244838546262,
+      "peak_time_s": 19.500000000000007,
+      "change": -16.183267847512568
+    },
+    "sideslip_deg": {
+      "minimum": -2.2498985071133424,
+      "maximum": 6.445946017132718,
+      "peak_absolute": 6.445946017132718,
+      "peak_time_s": 115.39999999999772,
+      "change": -1.1484582535608456
+    },
+    "roll_rate_deg_s": {
+      "minimum": -9.827270149237167,
+      "maximum": 39.975830270967734,
+      "peak_absolute": 39.975830270967734,
+      "peak_time_s": 114.49999999999777,
+      "change": -4.197786138597587
+    },
+    "pitch_rate_deg_s": {
+      "minimum": -0.1355852603077436,
+      "maximum": 3.935088352910498,
+      "peak_absolute": 3.935088352910498,
+      "peak_time_s": 43.50000000000035,
+      "change": 0.7213018124905559
+    },
+    "yaw_rate_deg_s": {
+      "minimum": -6.882247549877635,
+      "maximum": 8.154884929945833,
+      "peak_absolute": 8.154884929945833,
+      "peak_time_s": 42.80000000000034,
+      "change": -2.2089153599401246
+    }
+  },
+  "comparison": null,
+  "coordinated_turn": {
+    "qualified_samples": 0,
+    "median_relative_difference": null,
+    "maximum_absolute_relative_difference": null,
+    "meaning": "Development comparison under no-wind near-steady level conditions; not measured aircraft turn performance"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "case": "loiter",
+  "duration_s": 180,
+  "sample_dt_s": 0.1,
+  "created_utc": "2026-11-17T10:59:58.021053+00:00",
+  "events": [
+    {
+      "time_s": 0,
+      "kind": "route",
+      "radius_m": 1000
+    }
+  ],
+  "research_warning": "Development assumptions; real aircraft performance unvalidated",
+  "iy_scale": 1,
+  "units": "SI lengths/speeds/forces; API angles deg, body FRD rates deg/s; WGS84 ellipsoid height; heading clockwise from North",
+  "original_profile_sha256": "f55993c2f5515eed550f7c4f44211525ac7a7924de412fa448151393265c7c32",
+  "profile_sha256": "f55993c2f5515eed550f7c4f44211525ac7a7924de412fa448151393265c7c32",
+  "source_sha256": {
+    "Source\\FlightCore\\Aerodynamics.h": "a974e8cc1d8a6153571eafe0cac6dcdd6f41cbd187258e68db2b9380fc6c5080",
+    "Source\\FlightCore\\AircraftParameters.h": "fa1b41111df62ad1ffdf487820d5c3324d2d92f1557f3e28903d43196a688e40",
+    "Source\\FlightCore\\FixedWing.h": "4daa10a71f4bd21791a78af00cca9a540e96c1754890fdba259664af610722bb",
+    "Source\\FlightCore\\FlightCore.h": "b0e8be3da168f8cf9b2ebdd933a451739bf3fd441c489c264935fa1466d7eeaf",
+    "Source\\FlightCore\\FlightOperations.h": "b35eeb0148a97fe79c888adead41d5f3c909e666ad8d99a8a806e164fc1251b9",
+    "Source\\FlightCore\\Gimbal.h": "d0a56b0be552959869c586b0058a7a341f1236e6557282ff123781b43f7804e3",
+    "Source\\FlightCore\\GroundContact.h": "be44eb4343a648ca0cdb5c4c4203568016ab0e9f5a45363e3eae72b12411bec1",
+    "Source\\FlightCore\\Navigation.h": "5a253e1c3a89adaccdb71a66601e8b23684373862457f72f1d09357881b19dcd",
+    "Source\\FlightCore\\StlMesh.h": "745536d0362558ad51f2fbb0231bd80f915242a0c80e876d5e2473e081772126",
+    "Source\\FlightCore\\TerrainSurface.h": "1540150b3d1b81ed4f1238f0ccda68f1528c914e7cc87b0695e40c698f74bb72",
+    "uavsim_client.py": "687c63b2720b62bb1d39b70d40f0dd2b1eac0426764e3fef0900f84e7adfec00",
+    "scripts\\run-flight-test.py": "dda7b7572ebd0f6ee9aea48eaa0d0bf9e4a54d310e304b0f32c4cf30c0e9ee84",
+    "scripts\\serve-api.py": "66c70eadc52b6646c5dd1f3629c7f3470113130f3e199586fcec113a47dabdaa",
+    "scripts\\report-flight-test.py": "f5d4dc0cb90e4bca66b837eb83dddacd2f09ad755c90d8cdcaefb70b0ba009f1",
+    "Binaries\\Win64\\UnrealEditor-UAVSim.dll": "0c5257ae53bf600e363cb549f5da3b74ef745f36e47d8ec38f92bdb147690ddc"
+  },
+  "airframe": {
+    "id": "c208b-research-assumptions",
+    "profile": "aircraft/c208b-research.json",
+    "fingerprint": "sha1:22c052f02c9fe9fd99862d739713b18ee7ae4d23",
+    "error": "",
+    "schema_version": 2,
+    "initial_speed_mps": 65,
+    "initial_height_m": 2600,
+    "minimum_speed_mps": 0,
+    "maximum_speed_mps": 110,
+    "minimum_height_m": -500,
+    "maximum_height_m": 6000,
+    "maximum_alpha_deg": 180,
+    "maximum_beta_deg": 89,
+    "ground_supported": true,
+    "navigation_supported": true,
+    "automation_supported": true,
+    "support_message": "C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+    "retractable_gear": false,
+    "route_minimum_speed_mps": 36,
+    "route_maximum_speed_mps": 75,
+    "landing_minimum_speed_mps": 36,
+    "landing_maximum_speed_mps": 44,
+    "maximum_flap_deg": 30
+  },
+  "initial_condition": {
+    "aircraft": {
+      "latitude_deg": 33.43299999999999,
+      "longitude_deg": 126.52,
+      "ellipsoid_height_m": 2599.9999999990687,
+      "heading_deg": 0,
+      "pitch_deg": 5.680213701137778,
+      "roll_deg": 0,
+      "simulation_time_s": 0,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 65,
+      "vertical_speed_mps": -4.3021142204224816e-16,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 0,
+      "roll_rate_deg_s": 0,
+      "pitch_rate_deg_s": 0,
+      "yaw_rate_deg_s": 0,
+      "angle_of_attack_deg": 5.680213701137778,
+      "sideslip_deg": 0,
+      "ground_speed_mps": 65,
+      "air_density_kg_m3": 0.9472641688488673,
+      "dynamic_pressure_pa": 2001.0955566932323,
+      "lift_coefficient": 0.7137272220601639,
+      "drag_coefficient": 0.05747032737548593,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 0.995089809318127
+    },
+    "controls": {
+      "elevator_deg": 0.8068392946712832,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.6262852500712698
+    },
+    "actuators": {
+      "elevator_deg": 0.8068392946712832,
+      "aileron_deg": 0,
+      "rudder_deg": 0,
+      "throttle": 0.6262852500712698,
+      "thrust_n": 3000.2255705424304
+    },
+    "flaps": {
+      "command_deg": 0,
+      "actual_deg": 0
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "environment": {
+      "wind_east_mps": 0,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    }
+  },
+  "trim_controls": {
+    "elevator_deg": 0.8068392946712832,
+    "aileron_deg": 0,
+    "rudder_deg": 0,
+    "throttle": 0.6262852500712698
+  },
+  "elapsed_wall_s": 103.62117800000124
+}

@@ -1,0 +1,283 @@
+{
+  "ok": false,
+  "phases": [
+    {
+      "phase": "departure:takeoff_roll",
+      "time_s": 1,
+      "height_m": 51.65923736337572,
+      "speed_mps": 0.25060554996137707
+    },
+    {
+      "phase": "departure:rotate",
+      "time_s": 18,
+      "height_m": 51.62061501387507,
+      "speed_mps": 35.61844259866846
+    },
+    {
+      "phase": "departure:climb",
+      "time_s": 32,
+      "height_m": 52.07285950053483,
+      "speed_mps": 58.0865795495074
+    },
+    {
+      "phase": "departure:hold",
+      "time_s": 112,
+      "height_m": 129.64927351474762,
+      "speed_mps": 54.783350418382604
+    }
+  ],
+  "initializations": 1,
+  "restore_errors": [],
+  "initial_airframe": {
+    "id": "c208b-research-assumptions",
+    "profile": "aircraft/c208b-research.json",
+    "fingerprint": "sha1:11da3138f8e2cceb622e6e1e4609e3102f55b58c",
+    "error": "",
+    "schema_version": 2,
+    "initial_speed_mps": 65,
+    "initial_height_m": 2600,
+    "minimum_speed_mps": 0,
+    "maximum_speed_mps": 110,
+    "minimum_height_m": -500,
+    "maximum_height_m": 6000,
+    "maximum_alpha_deg": 180,
+    "maximum_beta_deg": 89,
+    "ground_supported": true,
+    "navigation_supported": true,
+    "automation_supported": true,
+    "support_message": "C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+    "retractable_gear": false,
+    "route_minimum_speed_mps": 36,
+    "route_maximum_speed_mps": 75,
+    "landing_minimum_speed_mps": 36,
+    "landing_maximum_speed_mps": 44,
+    "maximum_flap_deg": 30
+  },
+  "environment": {
+    "wind_east_mps": 0.5,
+    "wind_north_mps": 0,
+    "wind_up_mps": 0
+  },
+  "case": {
+    "distance_km": 5.0,
+    "height_above_departure_m": 500.0
+  },
+  "source_sha256": {
+    "Source\\FlightCore\\Aerodynamics.h": "a974e8cc1d8a6153571eafe0cac6dcdd6f41cbd187258e68db2b9380fc6c5080",
+    "Source\\FlightCore\\AircraftParameters.h": "b33be5f4f29329ddfc611d5bc2e9347119144e9ebbc4b4108b31d250b98e8e00",
+    "Source\\FlightCore\\FixedWing.h": "b5e47cc908cbe824f057d370366621c7c598da009dfbb8aff78c033d279ceff4",
+    "Source\\FlightCore\\FlightCore.h": "b0e8be3da168f8cf9b2ebdd933a451739bf3fd441c489c264935fa1466d7eeaf",
+    "Source\\FlightCore\\FlightOperations.h": "041b9a924ba6652c251c494ce918c7c5412738de02b6ecff72a94cd4fe5c5f35",
+    "Source\\FlightCore\\Gimbal.h": "d0a56b0be552959869c586b0058a7a341f1236e6557282ff123781b43f7804e3",
+    "Source\\FlightCore\\GroundContact.h": "be44eb4343a648ca0cdb5c4c4203568016ab0e9f5a45363e3eae72b12411bec1",
+    "Source\\FlightCore\\Navigation.h": "262efd7d0266309a8a719034d437ff99b02acafed52292bfce80d9b8a6c9b075",
+    "Source\\FlightCore\\StlMesh.h": "745536d0362558ad51f2fbb0231bd80f915242a0c80e876d5e2473e081772126",
+    "Source\\FlightCore\\TerrainSurface.h": "1540150b3d1b81ed4f1238f0ccda68f1528c914e7cc87b0695e40c698f74bb72",
+    "Binaries\\Win64\\UnrealEditor-UAVSim.dll": "31d6aa533515398db06cb55877591e9f8270ecc27b038cd2ad54392ebb15eb30"
+  },
+  "mission_waypoint": {
+    "latitude_deg": 33.63986638953159,
+    "longitude_deg": 126.7605678351643,
+    "ellipsoid_height_m": 551.6592576699331,
+    "speed_mps": 65
+  },
+  "error": "RuntimeError: Scene capture timed out",
+  "last_state": {
+    "aircraft": {
+      "latitude_deg": 33.52913343702257,
+      "longitude_deg": 126.52957539028387,
+      "ellipsoid_height_m": 129.64927351474762,
+      "heading_deg": 105.40136660426981,
+      "pitch_deg": 7.131344875379897,
+      "roll_deg": 3.8606835449546355,
+      "simulation_time_s": 112,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 54.783350418382604,
+      "vertical_speed_mps": 1.005099826874234,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 5402.075455658227,
+      "roll_rate_deg_s": 5.6124804658404575,
+      "pitch_rate_deg_s": -2.2412112068483,
+      "yaw_rate_deg_s": -0.3738543625717642,
+      "angle_of_attack_deg": 6.18472066577243,
+      "sideslip_deg": -1.3619915393288882,
+      "ground_speed_mps": 55.2601810425298,
+      "air_density_kg_m3": 1.2100793812847421,
+      "dynamic_pressure_pa": 1815.8544874237143,
+      "lift_coefficient": 0.7644692789625263,
+      "drag_coefficient": 0.061559643085330185,
+      "flow_separation": 6.614883253490771e-41,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 0.9668917397653637
+    },
+    "controls": {
+      "elevator_deg": 2.6149265513268296,
+      "aileron_deg": 15.568719861598947,
+      "rudder_deg": 0,
+      "throttle": 0.42183378729379256
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "applied_steering_deg": 7.29170643928783e-143,
+      "applied_brake": 0,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 104.4593532535216,
+      "terrain_height_m": 25.189920080825686,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "terrain",
+      "available": true
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "automation": {
+      "phase": "hold",
+      "kind": "takeoff",
+      "runway_index": 0,
+      "runway_name": "Jeju 2km research strip (virtual)",
+      "completed": true,
+      "message": "Takeoff complete; flying departure hold",
+      "cross_track_m": -96.78220778542183,
+      "along_track_m": 5300.268451662658,
+      "target_height_m": 80,
+      "rejection": "",
+      "desired_course_deg": -118.1649875495012,
+      "desired_bank_deg": 29.999999999999996,
+      "desired_speed_mps": 55,
+      "desired_height_m": 131.77770064026117,
+      "desired_climb_mps": 0.1283095587388877,
+      "return_radius_m": 0,
+      "path": []
+    },
+    "actuators": {
+      "elevator_deg": 2.623685488913155,
+      "aileron_deg": 10.459740177809705,
+      "rudder_deg": 4.8769866571178135e-236,
+      "throttle": 0.5263211734141638,
+      "thrust_n": 3821.5547393377965
+    },
+    "airframe": {
+      "id": "c208b-research-assumptions",
+      "profile": "aircraft/c208b-research.json",
+      "fingerprint": "sha1:11da3138f8e2cceb622e6e1e4609e3102f55b58c",
+      "error": "",
+      "schema_version": 2,
+      "initial_speed_mps": 65,
+      "initial_height_m": 2600,
+      "minimum_speed_mps": 0,
+      "maximum_speed_mps": 110,
+      "minimum_height_m": -500,
+      "maximum_height_m": 6000,
+      "maximum_alpha_deg": 180,
+      "maximum_beta_deg": 89,
+      "ground_supported": true,
+      "navigation_supported": true,
+      "automation_supported": true,
+      "support_message": "C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+      "retractable_gear": false,
+      "route_minimum_speed_mps": 36,
+      "route_maximum_speed_mps": 75,
+      "landing_minimum_speed_mps": 36,
+      "landing_maximum_speed_mps": 44,
+      "maximum_flap_deg": 30
+    },
+    "flaps": {
+      "command_deg": 0,
+      "actual_deg": 0
+    },
+    "visual": {
+      "source": "builtin",
+      "config": "aircraft/visual.json",
+      "mesh": "",
+      "triangle_count": 0,
+      "span_m": 15.85,
+      "fingerprint": "sha1:31eec5e362e4e61ee3884fef27312c28760f59b0",
+      "error": "",
+      "show_builtin_gear": true
+    },
+    "eoir": {
+      "enabled": false,
+      "mode": "ccd",
+      "fov_deg": 30,
+      "azimuth_deg": 0,
+      "elevation_deg": -45,
+      "gimbal_mode": "body_fixed",
+      "point_latitude_deg": 0,
+      "point_longitude_deg": 0,
+      "point_ellipsoid_height_m": 0,
+      "target_id": "",
+      "tracking_status": "manual",
+      "limited": false,
+      "target_in_fov": false,
+      "error_deg": 0,
+      "frame_sequence": 0,
+      "error": ""
+    },
+    "targets": [],
+    "wargame": {
+      "time_s": 1149.0100000000002,
+      "error": "",
+      "weapons": [
+        {
+          "id": "training-marker",
+          "label": "Sim projectile",
+          "mesh": "models/example.stl",
+          "animation_duration_s": 5,
+          "triangle_count": 144
+        }
+      ],
+      "shots": []
+    },
+    "disturbance": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 0,
+      "gust_north_mps": 0,
+      "gust_up_mps": 0,
+      "gust_start_s": 0,
+      "gust_duration_s": 0,
+      "effective_wind_east_mps": 0.5,
+      "effective_wind_north_mps": 0,
+      "effective_wind_up_mps": 0
+    },
+    "navigation": {
+      "mode": "manual",
+      "stall_recovery": false,
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "environment": {
+      "wind_east_mps": 0.5,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 50,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.\nJeju detail: modified Copernicus Sentinel-2 data 2025-04-06.",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_nonlinear_6dof_v2",
+    "fault": ""
+  },
+  "elapsed_wall_s": 66.68760550000297
+}

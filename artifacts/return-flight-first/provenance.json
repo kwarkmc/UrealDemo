@@ -1,0 +1,13 @@
+{
+  "Source\\FlightCore\\Aerodynamics.h": "a974e8cc1d8a6153571eafe0cac6dcdd6f41cbd187258e68db2b9380fc6c5080",
+  "Source\\FlightCore\\AircraftParameters.h": "fa1b41111df62ad1ffdf487820d5c3324d2d92f1557f3e28903d43196a688e40",
+  "Source\\FlightCore\\FixedWing.h": "4daa10a71f4bd21791a78af00cca9a540e96c1754890fdba259664af610722bb",
+  "Source\\FlightCore\\FlightCore.h": "b0e8be3da168f8cf9b2ebdd933a451739bf3fd441c489c264935fa1466d7eeaf",
+  "Source\\FlightCore\\FlightOperations.h": "041b9a924ba6652c251c494ce918c7c5412738de02b6ecff72a94cd4fe5c5f35",
+  "Source\\FlightCore\\Gimbal.h": "d0a56b0be552959869c586b0058a7a341f1236e6557282ff123781b43f7804e3",
+  "Source\\FlightCore\\GroundContact.h": "be44eb4343a648ca0cdb5c4c4203568016ab0e9f5a45363e3eae72b12411bec1",
+  "Source\\FlightCore\\Navigation.h": "262efd7d0266309a8a719034d437ff99b02acafed52292bfce80d9b8a6c9b075",
+  "Source\\FlightCore\\StlMesh.h": "745536d0362558ad51f2fbb0231bd80f915242a0c80e876d5e2473e081772126",
+  "Source\\FlightCore\\TerrainSurface.h": "1540150b3d1b81ed4f1238f0ccda68f1528c914e7cc87b0695e40c698f74bb72",
+  "Binaries\\Win64\\UnrealEditor-UAVSim.dll": "13248f9425f297ce371fe8675eb5373eac64d8c7914750597bf9e2c16e9072d2"
+}

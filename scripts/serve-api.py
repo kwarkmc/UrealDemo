@@ -22,6 +22,9 @@ CONTROL_FIELDS = {
 }
 GROUND_CONTROL_FIELDS = {"steering_deg": "SteeringDeg", "brake": "Brake", "parking_brake": "ParkingBrake"}
 GROUND_FIELDS = GROUND_CONTROL_FIELDS | {
+    "wheel_surfaces_sampled":"WheelSurfacesSampled", "wheel_normal_force_n":"WheelNormalForceN",
+    "wheel_clearance_m":"WheelClearanceM", "wheel_lateral_slip_mps":"WheelLateralSlipMps",
+    "applied_steering_deg": "AppliedSteeringDeg", "applied_brake": "AppliedBrake",
     "on_ground": "GroundOnGround", "wheels_on_ground": "WheelsOnGround",
     "height_agl_m": "HeightAglM", "terrain_height_m": "TerrainHeightM",
     "normal_force_n": "GroundNormalForceN", "impact_speed_mps": "ImpactSpeedMps",
@@ -35,11 +38,30 @@ AUTOMATION_FIELDS = {
     "phase": "OperationPhase", "kind": "OperationKind", "runway_index": "OperationRunwayIndex",
     "runway_name": "OperationRunwayName", "completed": "OperationCompleted", "message": "OperationMessage",
     "cross_track_m": "OperationCrossTrackM", "along_track_m": "OperationAlongTrackM",
-    "target_height_m": "OperationTargetHeightM",
+    "target_height_m": "OperationTargetHeightM", "rejection": "OperationRejection",
+    "desired_course_deg": "OperationDesiredCourseDeg", "desired_bank_deg": "OperationDesiredBankDeg",
+    "desired_speed_mps": "OperationDesiredSpeedMps", "desired_height_m": "OperationDesiredHeightM",
+    "desired_climb_mps": "OperationDesiredClimbMps", "return_radius_m": "OperationReturnRadiusM",
 }
 ACTUATOR_FIELDS = {"elevator_deg": "AppliedElevatorDeg", "aileron_deg": "AppliedAileronDeg",
-                   "rudder_deg": "AppliedRudderDeg", "throttle": "AppliedThrottle", "thrust_n": "ThrustN"}
+                   "rudder_deg": "AppliedRudderDeg", "throttle": "AppliedThrottle", "thrust_n": "ThrustN",
+                   "propeller_rpm":"PropellerRpm", "shaft_drive_power_w":"ShaftDrivePowerW", "shaft_load_power_w":"ShaftLoadPowerW",
+                   "shaft_drive_torque_nm":"ShaftDriveTorqueNm", "propeller_load_torque_nm":"PropellerLoadTorqueNm"}
 AIRFRAME_FIELDS = {"id": "AirframeId", "profile": "AirframeProfile", "fingerprint": "AirframeFingerprint", "error": "AirframeError"}
+AIRFRAME_FIELDS |= {
+    "dynamic_propeller":"DynamicPropeller",
+    "schema_version": "AirframeSchemaVersion", "initial_speed_mps": "AirframeInitialSpeedMps",
+    "initial_height_m": "AirframeInitialHeightM", "minimum_speed_mps": "AirframeMinimumSpeedMps",
+    "maximum_speed_mps": "AirframeMaximumSpeedMps", "minimum_height_m": "AirframeMinimumHeightM",
+    "maximum_height_m": "AirframeMaximumHeightM", "maximum_alpha_deg": "AirframeMaximumAlphaDeg",
+    "maximum_beta_deg": "AirframeMaximumBetaDeg", "ground_supported": "AirframeGroundSupported",
+    "navigation_supported": "AirframeNavigationSupported", "automation_supported": "AirframeAutomationSupported",
+    "support_message": "AirframeSupportMessage",
+}
+AIRFRAME_FIELDS |= {"retractable_gear": "AirframeRetractableGear", "route_minimum_speed_mps": "AirframeRouteMinimumSpeedMps",
+    "route_maximum_speed_mps": "AirframeRouteMaximumSpeedMps", "landing_minimum_speed_mps": "AirframeLandingMinimumSpeedMps",
+    "landing_maximum_speed_mps": "AirframeLandingMaximumSpeedMps", "maximum_flap_deg": "AirframeMaximumFlapDeg"}
+FLAP_FIELDS = {"command_deg": "FlapCommandDeg", "actual_deg": "FlapDeg"}
 VISUAL_FIELDS = {"source": "VisualSource", "config": "VisualConfig", "mesh": "VisualMesh",
                  "triangle_count": "VisualTriangleCount", "span_m": "VisualSpanM",
                  "fingerprint": "VisualFingerprint", "error": "VisualError", "show_builtin_gear": "VisualShowBuiltinGear"}
@@ -89,6 +111,7 @@ AIRCRAFT_FIELDS = POSE_FIELDS | {
     "stall_warning": "StallWarning", "stalled": "Stalled", "load_factor": "LoadFactor",
 }
 NAVIGATION_FIELDS = {"mode": "NavigationMode", "stall_recovery": "StallRecovery", "active_waypoint_index": "ActiveWaypointIndex",
+                     "reacquiring":"NavigationReacquiring",
                      "waypoint_count": "WaypointCount", "distance_to_waypoint_m": "DistanceToWaypointM",
                      "loiter_radius_m": "LoiterRadiusM"}
 WAYPOINT_FIELDS = {key: POSE_FIELDS[key] for key in ("latitude_deg", "longitude_deg", "ellipsoid_height_m")} | {"speed_mps": "SpeedMps"}
@@ -179,9 +202,11 @@ class Unreal:
                     "controls": {key: native[value] for key, value in CONTROL_FIELDS.items()},
                     "ground": {key: native[value] for key, value in GROUND_FIELDS.items()},
                     "gear": {key: native[value] for key, value in GEAR_FIELDS.items()},
-                    "automation": {key: native[value] for key, value in AUTOMATION_FIELDS.items()},
+                    "automation": {key: native[value] for key, value in AUTOMATION_FIELDS.items()} | {
+                        "path": [{key: point[value] for key, value in WAYPOINT_FIELDS.items()} for point in native["OperationPath"]]},
                     "actuators": {key: native[value] for key, value in ACTUATOR_FIELDS.items()},
                     "airframe": {key: native[value] for key, value in AIRFRAME_FIELDS.items()},
+                    "flaps": {key: native[value] for key, value in FLAP_FIELDS.items()},
                     "visual": {key: native[value] for key, value in VISUAL_FIELDS.items()},
                     "eoir": {key: native[value] for key, value in EOIR_FIELDS.items()},
                     "targets": [{key: target[value] for key, value in TARGET_FIELDS.items()} for target in native["Targets"]],
@@ -241,6 +266,9 @@ class Unreal:
             parameters = {native: number(body, key, *limits)
                           for (key, native), limits in zip(GROUND_INITIAL_FIELDS.items(), ranges)}
             function = "SetGroundInitialCondition"
+        elif method == "PUT" and route == "/api/v1/flaps":
+            fields(body, ("degrees",))
+            function, parameters = "SetFlaps", {"Degrees": number(body, "degrees", 0, 40)}
         elif method == "PUT" and route == "/api/v1/gear":
             fields(body, ("down",))
             if type(body["down"]) is not bool:
@@ -250,11 +278,11 @@ class Unreal:
             fields(body, ("runway_index", "climb_height_m", "speed_mps"))
             function = "StartAutomaticTakeoff"
             parameters = {"RunwayIndex": runway_index(body), "ClimbHeightM": number(body, "climb_height_m", 20, 150),
-                          "SpeedMps": number(body, "speed_mps", 16, 24)}
+                          "SpeedMps": number(body, "speed_mps", 5, 200)}
         elif method == "POST" and route == "/api/v1/automation/land":
             fields(body, ("runway_index", "approach_speed_mps"))
             function = "StartAutomaticLanding"
-            parameters = {"RunwayIndex": runway_index(body), "ApproachSpeedMps": number(body, "approach_speed_mps", 16, 22)}
+            parameters = {"RunwayIndex": runway_index(body), "ApproachSpeedMps": number(body, "approach_speed_mps", 5, 200)}
         elif method == "POST" and route == "/api/v1/automation/prepare-landing":
             fields(body, ("runway_index",))
             function, parameters = "PrepareLandingApproach", {"RunwayIndex": runway_index(body)}
@@ -370,7 +398,7 @@ class Unreal:
                           for (key, native), limits in zip(POSE_FIELDS.items(), ranges)}
             function = "SetAircraftGeodetic"
             if initial:
-                parameters["SpeedMps"] = number(body, "speed_mps", 5, 45)
+                parameters["SpeedMps"] = number(body, "speed_mps", 1, 250)
                 function = "SetInitialCondition"
                 if aerodynamic:
                     parameters["AngleOfAttackDeg"] = number(body, "angle_of_attack_deg", -180, 180)
@@ -385,7 +413,7 @@ class Unreal:
             points = []
             for point in body["waypoints"]:
                 fields(point, WAYPOINT_FIELDS)
-                limits = [(-90, 90), (-180, 180), (-500, 20000), (16, 24)]
+                limits = [(-90, 90), (-180, 180), (-500, 20000), (5, 200)]
                 points.append({native: number(point, key, *bounds)
                                for (key, native), bounds in zip(WAYPOINT_FIELDS.items(), limits)})
             minimum = max(100, points[-1]["SpeedMps"] ** 2 / (9.80665 * math.tan(math.radians(30))))
@@ -412,7 +440,35 @@ class Unreal:
         else:
             raise APIError(404, "Unknown API route or method.")
         path = self.object_path()
-        self.state(path)  # Resolve the current game actor before any mutation.
+        current = self.state(path)  # Read applied limits from the actor, never the selector file.
+        support = current["airframe"]
+        operation = ("ground_supported" if function in ("SetGroundControls", "ResetOnGround", "SetGroundInitialCondition", "SetLandingGear")
+                     else "navigation_supported" if function == "SetRoute"
+                     else "automation_supported" if function in ("StartAutomaticTakeoff", "StartAutomaticLanding", "PrepareLandingApproach") else None)
+        if operation and not support[operation]:
+            raise APIError(409, "Operation unsupported by applied profile: " + support["support_message"])
+        if function == "SetLandingGear" and not parameters["Down"] and not support["retractable_gear"]:
+            raise APIError(409, "Applied research profile has fixed landing gear")
+        if function == "SetFlaps" and parameters["Degrees"] > support["maximum_flap_deg"]:
+            raise APIError(400, "Flap command outside applied airframe range")
+        if function in ("SetRoute", "StartAutomaticTakeoff", "StartAutomaticLanding"):
+            landing = function == "StartAutomaticLanding"
+            prefix = "landing" if landing else "route"
+            if function == "SetRoute" and any(not support["minimum_height_m"] <= point["EllipsoidHeightM"] <= support["maximum_height_m"] for point in parameters["Waypoints"]):
+                raise APIError(400, "Waypoint height outside applied airframe range")
+            speeds = ([point["SpeedMps"] for point in parameters["Waypoints"]] if function == "SetRoute"
+                      else [parameters["ApproachSpeedMps" if landing else "SpeedMps"]])
+            if any(not support[prefix+"_minimum_speed_mps"] <= speed <= support[prefix+"_maximum_speed_mps"] for speed in speeds):
+                raise APIError(400, "Target TAS outside applied airframe guidance range")
+        if function in ("SetInitialCondition", "SetAerodynamicInitialCondition", "SetAircraftGeodetic"):
+            speed = parameters.get("SpeedMps", current["aircraft"]["speed_mps"])
+            if not support["minimum_speed_mps"] <= speed <= support["maximum_speed_mps"]:
+                raise APIError(400, "Initial TAS outside applied airframe speed range")
+            if not support["minimum_height_m"] <= parameters["EllipsoidHeightM"] <= support["maximum_height_m"]:
+                raise APIError(400, "Initial height outside applied airframe height range")
+            if (abs(parameters.get("AngleOfAttackDeg", 0)) > support["maximum_alpha_deg"]
+                    or abs(parameters.get("SideslipDeg", 0)) > support["maximum_beta_deg"]):
+                raise APIError(400, "Initial air angles outside applied airframe range")
         timeout = {"LoadTerrain": 60, "ReloadAircraftVisual": 30}.get(function, 10)
         if self.call(path, function, parameters, timeout=timeout) is False:
             failed = self.state(path)
@@ -428,6 +484,8 @@ class Unreal:
                     raise APIError(409, "Aircraft visual reload requires pause; the current mesh and flight state are preserved.")
                 raise APIError(409, failed["visual"]["error"]
                                or "Aircraft visual reload failed. The previous mesh and flight state are preserved.")
+            if function == "StartAutomaticLanding":
+                raise APIError(409, failed["automation"]["rejection"] or failed["fault"] or "Landing request rejected")
             if function in ("StartAutomaticTakeoff", "StartAutomaticLanding", "PrepareLandingApproach", "CancelFlightOperation"):
                 raise APIError(409, failed["fault"] or failed["automation"]["message"]
                                or "Unreal rejected the flight operation. Check the runway and aircraft state.")

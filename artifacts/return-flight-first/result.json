@@ -1,0 +1,72 @@
+{
+  "ok": false,
+  "phases": [
+    {
+      "phase": "departure:takeoff_roll",
+      "time_s": 1,
+      "height_m": 51.65923742298037,
+      "speed_mps": 0.4500609790675279
+    },
+    {
+      "phase": "departure:rotate",
+      "time_s": 17,
+      "height_m": 51.62440236657858,
+      "speed_mps": 33.90984003080769
+    },
+    {
+      "phase": "departure:climb",
+      "time_s": 32,
+      "height_m": 52.000051913782954,
+      "speed_mps": 58.35503555063872
+    },
+    {
+      "phase": "departure:hold",
+      "time_s": 113,
+      "height_m": 129.72784098051488,
+      "speed_mps": 54.8126108203921
+    }
+  ],
+  "initializations": 1,
+  "restore_errors": [
+    "Unreal did not return a valid response. The command was not retried; a write may already have completed. Check state before continuing."
+  ],
+  "initial_airframe": {
+    "id": "c208b-research-assumptions",
+    "profile": "aircraft/c208b-research.json",
+    "fingerprint": "sha1:22c052f02c9fe9fd99862d739713b18ee7ae4d23",
+    "error": "",
+    "schema_version": 2,
+    "initial_speed_mps": 65,
+    "initial_height_m": 2600,
+    "minimum_speed_mps": 0,
+    "maximum_speed_mps": 110,
+    "minimum_height_m": -500,
+    "maximum_height_m": 6000,
+    "maximum_alpha_deg": 180,
+    "maximum_beta_deg": 89,
+    "ground_supported": true,
+    "navigation_supported": true,
+    "automation_supported": true,
+    "support_message": "C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+    "retractable_gear": false,
+    "route_minimum_speed_mps": 36,
+    "route_maximum_speed_mps": 75,
+    "landing_minimum_speed_mps": 36,
+    "landing_maximum_speed_mps": 44,
+    "maximum_flap_deg": 30
+  },
+  "environment": {
+    "wind_east_mps": 0,
+    "wind_north_mps": 0,
+    "wind_up_mps": 0
+  },
+  "mission_waypoint": {
+    "latitude_deg": 33.63986638953159,
+    "longitude_deg": 126.7605678351643,
+    "ellipsoid_height_m": 551.6592576699331,
+    "speed_mps": 65
+  },
+  "error": "RuntimeError: Scene capture timed out",
+  "observation_error": "Unreal did not return a valid response. The command was not retried; a write may already have completed. Check state before continuing.",
+  "elapsed_wall_s": 40.62691670001368
+}

@@ -1,0 +1,43 @@
+﻿prefix,name,units,settable,in_simconnect_sample,source,sample_source
+E,ABSOLUTE TIME,Seconds,N,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,ZULU TIME,Seconds,N,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,ZULU DAY OF WEEK,Number,N,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,ZULU DAY OF MONTH,Number,N,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,ZULU MONTH OF YEAR,Number,N,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,ZULU DAY OF YEAR,Number,N,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,ZULU YEAR,Number,N,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,LOCAL TIME,Seconds,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,LOCAL DAY OF WEEK,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,LOCAL DAY OF MONTH,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,LOCAL MONTH OF YEAR,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,LOCAL DAY OF YEAR,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,LOCAL YEAR,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,TIME ZONE OFFSET,Seconds,N,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,TIME OF DAY,Enum,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,DAY NIGHT INTERPOLANT,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,SUN MOON INTERPOLANT,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,EXPOSURE INTERPOLANT,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+E,EMISSIVE INTERPOLANT,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,SIMULATION RATE,Number,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,UNITS OF MEASURE,Enum,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,SCENERY COMPLEXITY,Enum,Y,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,IS CAST AIRCRAFT SHADOW ON GROUND ACTIVE,Bool,Y,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,CONTROLLERS ENABLED,Bool,Y,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,RECORDER PLAYBACK ACTIVE,Bool,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT LLA,"SIMCONNECT_DATA_LATLONALT structure, feet",N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT PBH,"SIMCONNECT_DATA_PBH structure, degrees",N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT LAT,Degrees Latitude,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT LON,Degrees Longitude,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT ALT,Feet,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT PITCH,Degrees,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT BANK,Degrees,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT HEADING,Degrees,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT LOOK AT LAT,Degrees Latitude,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT LOOK AT LON,Degrees Longitude,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT LOOK AT ALT,Feet,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,ACTIVE EYEPOINT LOOK AT DISTANCE,Meters,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,AVATAR MODE IS AVAILABLE,Bool,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,SHOW WINDSHIELD EFFECTS,Bool,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,IS POSITION FREEZE ALL ON,Bool,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,IS POSITION FREEZE USER ON,Bool,N,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html
+P,SIM PAUSED,Bool,Y,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html

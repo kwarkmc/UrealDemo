@@ -1,0 +1,7 @@
+trim: 0/30s simulation
+{"ok": false, "folder": "C:\\Users\\admin\\AppData\\Local\\Packages\\openai.codex_2p2nqsd0c76g0\\AC\\#!sandbox.{ae3d2d3c-4501-469a-853a-abc936b1c409}\\Temp\\tmpzkcuov9a\\run", "samples": 1, "error": "TimeoutError: lost write response", "restore_errors": []}
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 1.570s
+
+OK

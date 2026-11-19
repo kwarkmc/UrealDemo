@@ -1,0 +1,68 @@
+{
+  "metrics": {
+    "speed_mps": {
+      "minimum": 64.56714444387082,
+      "maximum": 65.55926276290684,
+      "peak_absolute": 65.55926276290684,
+      "peak_time_s": 13.839999999999794,
+      "change": -0.4328555561291836
+    },
+    "ellipsoid_height_m": {
+      "minimum": 2596.051048805006,
+      "maximum": 2602.621036896482,
+      "peak_absolute": 2602.621036896482,
+      "peak_time_s": 29.99999999999945,
+      "change": 2.6210368974134326
+    },
+    "pitch_deg": {
+      "minimum": 4.60193956995494,
+      "maximum": 6.2052763672067055,
+      "peak_absolute": 6.2052763672067055,
+      "peak_time_s": 23.619999999999585,
+      "change": 0.23244853003157218
+    },
+    "angle_of_attack_deg": {
+      "minimum": 4.980042136955833,
+      "maximum": 5.7330477749658355,
+      "peak_absolute": 5.7330477749658355,
+      "peak_time_s": 7.819999999999921,
+      "change": 0.03920544033327644
+    },
+    "roll_deg": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "peak_absolute": 0.0,
+      "peak_time_s": 0.0,
+      "change": 0.0
+    },
+    "sideslip_deg": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "peak_absolute": 0.0,
+      "peak_time_s": 0.0,
+      "change": 0.0
+    },
+    "roll_rate_deg_s": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "peak_absolute": 0.0,
+      "peak_time_s": 0.0,
+      "change": 0.0
+    },
+    "pitch_rate_deg_s": {
+      "minimum": -1.6501877848452242,
+      "maximum": 0.4602365880824268,
+      "peak_absolute": 1.6501877848452242,
+      "peak_time_s": 5.579999999999969,
+      "change": -0.07936659694522143
+    },
+    "yaw_rate_deg_s": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "peak_absolute": 0.0,
+      "peak_time_s": 0.0,
+      "change": 0.0
+    }
+  },
+  "comparison": null
+}

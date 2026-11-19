@@ -1,0 +1,11 @@
+{
+  "return-flight-refined": {
+    "applied_profile_verified": true,
+    "csv_sha256": "a5b08b1b8962433a6e2a67cd8cf3b169f5fb4c79aa9b0e70d4f15a9e2a58e7d9"
+  },
+  "return-flight-final": {
+    "applied_profile_verified": true,
+    "csv_sha256": "a5b08b1b8962433a6e2a67cd8cf3b169f5fb4c79aa9b0e70d4f15a9e2a58e7d9"
+  },
+  "same_numeric_record": true
+}

@@ -21,7 +21,16 @@ function Invoke-DevProcess([string]$File, [string[]]$Arguments, [switch]$Backgro
     [void]$start.Environment.Remove('Path')
     $start.Environment['Path'] = [Environment]::GetEnvironmentVariable('Path')
     if ($RawArguments) { $start.Arguments = $RawArguments }
-    else { foreach ($argument in $Arguments) { [void]$start.ArgumentList.Add($argument) } }
+    elseif ($null -ne $start.ArgumentList) {
+        foreach ($argument in $Arguments) { [void]$start.ArgumentList.Add($argument) }
+    }
+    else {
+        # .NET Framework (Windows PowerShell 5.1) needs Windows argv quoting.
+        $quoted = foreach ($argument in $Arguments) {
+            '"' + ([regex]::Replace($argument, '(\\*)"', '$1$1\"') -replace '(\\+)$', '$1$1') + '"'
+        }
+        $start.Arguments = $quoted -join ' '
+    }
     $process = [System.Diagnostics.Process]::Start($start)
     if ($Background) { Write-Output "PID: $($process.Id). Action: $Action"; return }
     $errorOutput = $process.StandardError.ReadToEndAsync()

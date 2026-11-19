@@ -9,6 +9,7 @@
 #include "FlightScene.generated.h"
 
 class UCameraComponent;
+class UMaterialInstanceDynamic;
 class UProceduralMeshComponent;
 class UTexture2D;
 class USceneCaptureComponent2D;
@@ -143,6 +144,12 @@ struct FAircraftState
     UPROPERTY(BlueprintReadOnly) double ImpactSpeedMps = 0;
     UPROPERTY(BlueprintReadOnly) bool Crashed = false;
     UPROPERTY(BlueprintReadOnly) double SteeringDeg = 0;
+    UPROPERTY(BlueprintReadOnly) double AppliedSteeringDeg = 0;
+    UPROPERTY(BlueprintReadOnly) double AppliedBrake = 0;
+    UPROPERTY(BlueprintReadOnly) bool WheelSurfacesSampled=false;
+    UPROPERTY(BlueprintReadOnly) TArray<double> WheelNormalForceN;
+    UPROPERTY(BlueprintReadOnly) TArray<double> WheelClearanceM;
+    UPROPERTY(BlueprintReadOnly) TArray<double> WheelLateralSlipMps;
     UPROPERTY(BlueprintReadOnly) double Brake = 0;
     UPROPERTY(BlueprintReadOnly) bool ParkingBrake = false;
     UPROPERTY(BlueprintReadOnly) bool GearCommandDown = true;
@@ -158,6 +165,7 @@ struct FAircraftState
     UPROPERTY(BlueprintReadOnly) FString Model = TEXT("thor_nonlinear_6dof_v2");
     UPROPERTY(BlueprintReadOnly) FString NavigationMode = TEXT("manual");
     UPROPERTY(BlueprintReadOnly) bool StallRecovery = false;
+    UPROPERTY(BlueprintReadOnly) bool NavigationReacquiring=false;
     UPROPERTY(BlueprintReadOnly) int32 ActiveWaypointIndex = -1;
     UPROPERTY(BlueprintReadOnly) int32 WaypointCount = 0;
     UPROPERTY(BlueprintReadOnly) double DistanceToWaypointM = 0;
@@ -172,15 +180,51 @@ struct FAircraftState
     UPROPERTY(BlueprintReadOnly) double OperationCrossTrackM = 0;
     UPROPERTY(BlueprintReadOnly) double OperationAlongTrackM = 0;
     UPROPERTY(BlueprintReadOnly) double OperationTargetHeightM = 0;
+    UPROPERTY(BlueprintReadOnly) FString OperationRejection;
+    UPROPERTY(BlueprintReadOnly) double OperationDesiredCourseDeg=0;
+    UPROPERTY(BlueprintReadOnly) double OperationDesiredBankDeg=0;
+    UPROPERTY(BlueprintReadOnly) double OperationDesiredSpeedMps=0;
+    UPROPERTY(BlueprintReadOnly) double OperationDesiredHeightM=0;
+    UPROPERTY(BlueprintReadOnly) double OperationDesiredClimbMps=0;
+    UPROPERTY(BlueprintReadOnly) double OperationReturnRadiusM=0;
+    UPROPERTY(BlueprintReadOnly) TArray<FFlightWaypoint> OperationPath;
+
     UPROPERTY(BlueprintReadOnly) double AppliedElevatorDeg = 0;
     UPROPERTY(BlueprintReadOnly) double AppliedAileronDeg = 0;
     UPROPERTY(BlueprintReadOnly) double AppliedRudderDeg = 0;
     UPROPERTY(BlueprintReadOnly) double AppliedThrottle = 0;
     UPROPERTY(BlueprintReadOnly) double ThrustN = 0;
+    UPROPERTY(BlueprintReadOnly) bool DynamicPropeller=false;
+    UPROPERTY(BlueprintReadOnly) double PropellerRpm=0;
+    UPROPERTY(BlueprintReadOnly) double ShaftDrivePowerW=0;
+    UPROPERTY(BlueprintReadOnly) double ShaftLoadPowerW=0;
+    UPROPERTY(BlueprintReadOnly) double ShaftDriveTorqueNm=0;
+    UPROPERTY(BlueprintReadOnly) double PropellerLoadTorqueNm=0;
+    UPROPERTY(BlueprintReadOnly) bool AirframeRetractableGear = true;
+    UPROPERTY(BlueprintReadOnly) double AirframeRouteMinimumSpeedMps = 0;
+    UPROPERTY(BlueprintReadOnly) double AirframeRouteMaximumSpeedMps = 0;
+    UPROPERTY(BlueprintReadOnly) double AirframeLandingMinimumSpeedMps = 0;
+    UPROPERTY(BlueprintReadOnly) double AirframeLandingMaximumSpeedMps = 0;
+    UPROPERTY(BlueprintReadOnly) double AirframeMaximumFlapDeg = 0;
+    UPROPERTY(BlueprintReadOnly) double FlapCommandDeg = 0;
+    UPROPERTY(BlueprintReadOnly) double FlapDeg = 0;
     UPROPERTY(BlueprintReadOnly) FString AirframeId;
     UPROPERTY(BlueprintReadOnly) FString AirframeProfile;
     UPROPERTY(BlueprintReadOnly) FString AirframeFingerprint;
     UPROPERTY(BlueprintReadOnly) FString AirframeError;
+    UPROPERTY(BlueprintReadOnly) int32 AirframeSchemaVersion = 1;
+    UPROPERTY(BlueprintReadOnly) double AirframeInitialSpeedMps = 19;
+    UPROPERTY(BlueprintReadOnly) double AirframeInitialHeightM = 2600;
+    UPROPERTY(BlueprintReadOnly) double AirframeMinimumSpeedMps = 5;
+    UPROPERTY(BlueprintReadOnly) double AirframeMaximumSpeedMps = 45;
+    UPROPERTY(BlueprintReadOnly) double AirframeMinimumHeightM = -500;
+    UPROPERTY(BlueprintReadOnly) double AirframeMaximumHeightM = 20000;
+    UPROPERTY(BlueprintReadOnly) double AirframeMaximumAlphaDeg = 180;
+    UPROPERTY(BlueprintReadOnly) double AirframeMaximumBetaDeg = 89;
+    UPROPERTY(BlueprintReadOnly) bool AirframeGroundSupported = true;
+    UPROPERTY(BlueprintReadOnly) bool AirframeNavigationSupported = true;
+    UPROPERTY(BlueprintReadOnly) bool AirframeAutomationSupported = true;
+    UPROPERTY(BlueprintReadOnly) FString AirframeSupportMessage = TEXT("Thor development model; unqualified flight performance");
     UPROPERTY(BlueprintReadOnly) double GustEastMps = 0;
     UPROPERTY(BlueprintReadOnly) double GustNorthMps = 0;
     UPROPERTY(BlueprintReadOnly) double GustUpMps = 0;
@@ -253,6 +297,7 @@ public:
         double SteeringDeg, double Brake, bool ParkingBrake);
     // Command only; travel uses simulation time. Retraction on ground and manual changes during auto operations refuse.
     UFUNCTION(BlueprintCallable, Category="UAVSim") bool SetLandingGear(bool Down);
+    UFUNCTION(BlueprintCallable, Category="UAVSim") bool SetFlaps(double Degrees);
     UFUNCTION(BlueprintCallable, Category="UAVSim") bool SetGroundInitialCondition(
         double LatitudeDeg, double LongitudeDeg, double HeadingDeg, double GroundSpeedMps);
     UFUNCTION(BlueprintCallable, Category="UAVSim") bool ResetOnGround();
@@ -311,6 +356,7 @@ private:
     bool SyncState();
     bool QueryGround(flight_core::Vec3 Position, flight_core::Geodetic Origin,
         flight_core::GroundPlane& Plane, FString* SurfaceName = nullptr, double* EllipsoidHeight = nullptr) const;
+    bool SampleWheelGround(const flight_core::Aircraft& Body,flight_core::Geodetic Origin,flight_core::GroundPlane& Plane) const;
     bool PrepareRunways(const FString& Directory, const flight_core::TerrainSurface& Surface,
         flight_core::TerrainSurface& Shoulders, flight_core::Geodetic RenderOrigin, TArray<FGroundRunway>& Prepared,
         TArray<TObjectPtr<UProceduralMeshComponent>>& Meshes, FString& Error);
@@ -318,7 +364,21 @@ private:
     void SyncSystemsState();
     bool LoadAircraftProfile(bool Reset);
     bool LocalRunway(int32 Index, flight_core::Runway& Out) const;
+    bool PrepareLandingCorridor(flight_core::FlightOperation& Candidate);
+    void ShowLandingPath(const flight_core::FlightOperation& Candidate);
+
     void ApplyControlVisuals();
+    void ConfigureBuiltinGeometry();
+    FString GeometryFingerprint;
+    double VisualTimeS=0, PropellerAngleDeg=0, WheelAngleDeg=0;
+    UPROPERTY() TObjectPtr<USceneComponent> LeftFlap;
+    UPROPERTY() TObjectPtr<USceneComponent> RightFlap;
+    UPROPERTY() TObjectPtr<USceneComponent> Propeller;
+    UPROPERTY() TObjectPtr<UProceduralMeshComponent> PropellerBlades;
+    UPROPERTY() TObjectPtr<UProceduralMeshComponent> PropellerBlur;
+    UPROPERTY() TObjectPtr<UProceduralMeshComponent> PropellerSpinner;
+    UPROPERTY() TObjectPtr<UMaterialInstanceDynamic> PropellerBladeMaterial;
+    UPROPERTY() TObjectPtr<UMaterialInstanceDynamic> PropellerBlurMaterial;
     void SyncSensor();
     TOptional<FVector> SensorPointWorld(double Latitude, double Longitude, double Height) const;
     void ClearGroundTargets();
@@ -354,6 +414,7 @@ private:
     UPROPERTY(VisibleAnywhere) TObjectPtr<USceneComponent> LeftAileron;
     UPROPERTY(VisibleAnywhere) TObjectPtr<USceneComponent> RightAileron;
     UPROPERTY(VisibleAnywhere) TObjectPtr<USceneComponent> Rudder;
+    UPROPERTY(VisibleAnywhere) TObjectPtr<UProceduralMeshComponent> LandingPath;
     UPROPERTY(VisibleAnywhere) TObjectPtr<UCameraComponent> Camera;
     UPROPERTY(VisibleAnywhere) TObjectPtr<USceneCaptureComponent2D> SensorCamera;
     UPROPERTY(Transient) TObjectPtr<UTextureRenderTarget2D> SensorRenderTarget;

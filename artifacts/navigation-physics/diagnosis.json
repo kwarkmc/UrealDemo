@@ -1,0 +1,16 @@
+{
+  "baseline": {
+    "samples": 181,
+    "median_beta_deg": 0.7937704029496648,
+    "median_ideal_residual_percent": 6.189719817364647,
+    "side_radial_mps2": -0.1790720488945812,
+    "vertical_accel_mps2": -8.943203881628392e-05
+  },
+  "navigation": {
+    "samples": 181,
+    "median_beta_deg": -0.000339872733721426,
+    "median_ideal_residual_percent": -0.23308881015385863,
+    "side_radial_mps2": 0.03164611321068858,
+    "vertical_accel_mps2": -2.048648495112104e-05
+  }
+}

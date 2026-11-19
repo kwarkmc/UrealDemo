@@ -46,7 +46,7 @@
     <div class="terrain-actions"><button id="view-overview" aria-pressed="false" disabled>지도 전체</button><button id="view-aircraft" aria-pressed="false" disabled>기체 추적</button><button id="view-projectile" type="button" aria-pressed="false" disabled>탄체 따라보기</button><label for="region">지역</label><select id="region" disabled><option value="jeju">제주</option><option value="seoul">서울</option><option value="busan">부산</option><option value="daegu">대구</option><option value="gangneung">강릉</option><option value="ulleung">울릉도</option><option value="dokdo">독도</option></select><button id="region-move" disabled>이동</button><button id="terrain-reload" disabled>지도 다시 읽기</button></div>
     <p id="terrain-state" class="mono">지형 수신 대기</p>
     <p id="terrain-manifest" class="mono">지도 파일 수신 대기</p>
-    <p>지역 이동은 기체 초기 조건을 해당 위치·타원체고 2600 m·속도 19 m/s로 설정하고 일시정지합니다. 기체 추적 화면에서 비행 재생을 누르세요.</p>
+    <p>지역 이동은 기체 초기 조건을 해당 위치·적용 기체의 초기 타원체고·TAS로 설정하고 일시정지합니다. 기체 추적 화면에서 비행 재생을 누르세요.</p>
     <p>지도 교체: 프로젝트의 <code>maps/active.json</code>에서 <code>maps/&lt;name&gt;/terrain.json</code>을 지정한 뒤 지도 다시 읽기를 누르세요. 다시 읽으면 비행이 일시정지하며, 실패하면 기존 지도를 유지합니다.</p>
     <p id="terrain-attribution">지도 출처 수신 대기</p>
     <p id="terrain-error" role="status" aria-live="polite" style="color:var(--amber)"></p>
@@ -54,7 +54,8 @@
   <section class="panel terrain" aria-labelledby="airframe-title">
     <div class="row"><h2 id="airframe-title">기체 데이터</h2><button id="airframe-reload" disabled>기체 파일 다시 읽기</button></div>
     <p id="airframe-state" class="mono">기체 데이터 수신 대기</p><p id="airframe-fingerprint" class="mono"></p>
-    <p><code>aircraft/active.json</code>에서 기체 데이터 파일을 선택합니다. 일시정지한 뒤 다시 읽으면 타원체고 2600 m·TAS 19 m/s 공중 트림으로 초기화하고 돌풍·고장·자동항법을 해제합니다. 일정 바람은 유지합니다. 입력 명령과 실제 작동기 출력은 조종 입력 패널에서 비교하세요.</p>
+    <p><code>aircraft/active.json</code>에서 기체 데이터 파일을 선택합니다. 일시정지한 뒤 다시 읽으면 적용 기체가 선언한 공중 트림으로 초기화하고 돌풍·고장·자동항법을 해제합니다. 일정 바람은 유지합니다. 입력 명령과 실제 작동기 출력은 조종 입력 패널에서 비교하세요.</p>
+    <p id="airframe-support" role="status"></p>
     <p id="airframe-error" role="status" aria-live="polite" style="color:var(--amber)"></p>
   </section>
   <section class="panel terrain" aria-labelledby="visual-title">
@@ -100,6 +101,7 @@
       <div class="panel-head"><h2>조종 입력</h2><button id="neutral" disabled>중립 · 스로틀 0</button></div>
       <div id="controls"></div>
       <p class="motion-hint">현재 추진 추력 <output id="thrust" class="mono">—</output> N · 작동기 지연·고장이 있으면 명령과 실제 출력이 다를 수 있습니다.</p>
+      <p id="propulsion-state" class="motion-hint">추진 모델 수신 대기</p>
     </section>
   </div>
   <section class="panel ground" aria-labelledby="ground-title">
@@ -114,7 +116,7 @@
     </div>
     <div class="wind">
       <div class="row"><h2>랜딩기어</h2><output id="gear-state" class="badge" role="status" aria-live="polite">수신 대기</output></div>
-      <div class="terrain-actions"><button id="gear-down" disabled>랜딩기어 전개</button><button id="gear-up" disabled>랜딩기어 수납</button><label for="gear-extension">전개율</label><meter id="gear-extension" min="0" max="1" value="0"></meter><output id="gear-percent" for="gear-extension">—</output></div>
+      <div class="terrain-actions"><label for="flap-command">플랩 °</label><input id="flap-command" type="number" min="0" max="30" value="0" step="10"><button id="flap-apply" disabled>플랩 적용</button><output id="flap-state">0°</output><button id="gear-down" disabled>랜딩기어 전개</button><button id="gear-up" disabled>랜딩기어 수납</button><label for="gear-extension">전개율</label><meter id="gear-extension" min="0" max="1" value="0"></meter><output id="gear-percent" for="gear-extension">—</output></div>
       <p id="gear-command">기어 명령 수신 대기</p>
       <p>전개·수납은 시뮬레이션 시간으로 3초가 걸립니다. 정지 중 명령한 뒤 +0.1초 또는 비행 재생으로 진행하세요. 지상 수납과 자동 이착륙 운항 중 수동 명령은 거부됩니다. 자동 착륙은 기어를 전개하고 자동 이륙은 안전 상승 후 수납합니다.</p>
     </div>
@@ -127,7 +129,7 @@
     <div class="wind">
       <div class="row"><h2>자동 이륙 · 착륙</h2><output id="operation-state" class="badge" role="status" aria-live="polite">수신 대기</output></div>
       <div class="terrain-actions"><button id="auto-takeoff" disabled>자동 이륙</button><button id="prepare-landing" disabled>착륙 시험 위치</button><button id="auto-land" disabled>자동 착륙</button><button id="operation-cancel" disabled>자동 이착륙 해제</button></div>
-      <p id="operation-detail" class="mono">—</p><p id="operation-message" role="status" aria-live="polite"></p>
+      <p id="operation-detail" class="mono">—</p><p id="operation-targets" class="mono">—</p><p id="operation-rejection" role="alert" style="color:var(--amber)"></p><p id="operation-message" role="status" aria-live="polite"></p>
       <p>첫 설정 활주로(인덱스 0)를 사용합니다. 지상 시작 후 자동 이륙은 활주로 위 50 m·TAS 19 m/s를 목표로 재생합니다. 자동 착륙은 현재 위치에서 TAS 18 m/s로 진입하며 준비 조건을 벗어나면 거부됩니다.</p>
       <p><strong>착륙 시험 위치</strong>는 기체를 활주로 시작점 600 m 뒤·60 m 위, TAS 18 m/s의 초기 조건으로 바꾸고 정지합니다. 이후 자동 착륙을 누르세요. 자동 이륙·착륙 버튼은 준비 성공 후 재생하며, 외부 API는 준비와 시간 진행을 별도로 제어할 수 있습니다. 이륙 완료 후에는 고도를 유지하고, 착륙 완료 후에는 주차 브레이크·일시정지 상태가 됩니다. 개발용 제어기로 임의 조건의 성공을 보장하지 않습니다.</p>
     </div>
@@ -171,12 +173,12 @@
       <div class="wind-fields"><label for="engine-power-fraction">엔진 출력 비율<input id="engine-power-fraction" type="number" min="0" max="1" step="0.05" value="1" required disabled></label><button id="failures-apply" disabled>고장 적용</button><button id="failures-clear" disabled>고장 해제</button></div>
       <div class="route-options"><label><input id="elevator_jammed" type="checkbox" disabled> 엘리베이터 고착</label><label><input id="aileron_jammed" type="checkbox" disabled> 에일러론 고착</label><label><input id="rudder_jammed" type="checkbox" disabled> 러더 고착</label></div>
       <p id="failures-applied" class="mono">고장 설정 수신 대기</p>
-      <p>엔진 출력 비율 1은 정상, 0은 추력 상실입니다. 조종면 고착과 작동기 응답은 조종 입력 패널의 실제 출력에서 확인하세요. 고장 해제는 비행 상태를 초기화하지 않습니다.</p>
+      <p>엔진 출력 비율 1은 정상, 0은 축 구동 상실입니다. 동적 프로펠러는 남은 회전 에너지로 감속하며 잔류 추력이 생길 수 있습니다. 조종면 고착과 작동기 응답은 실제 출력에서 확인하세요. 고장 해제는 비행 상태를 초기화하지 않습니다.</p>
     </div>
   </section>
   <section class="panel route" aria-labelledby="route-title">
     <div class="row"><h2 id="route-title">항로점 자동항법</h2><output id="navigation-state">수신 대기</output></div>
-    <p class="muted">항로점 1~64개를 순서대로 통과한 뒤 마지막 지점을 선회합니다. 고도는 WGS84 타원체고(m), 속도는 대기속도(m/s)입니다.</p>
+    <p class="muted">항로점 1~64개를 설정합니다. 중간 점은 순서대로 통과하고, 마지막 점은 선회 중심으로 사용해 지정 반경의 원주에 진입합니다. 고도는 WGS84 타원체고(m), 속도는 대기속도(m/s)입니다.</p>
     <label for="waypoints">항로점 JSON 배열</label>
     <textarea id="waypoints" spellcheck="false">[
   {"latitude_deg":33.433,"longitude_deg":126.52,"ellipsoid_height_m":2600,"speed_mps":19},
@@ -209,7 +211,7 @@ const regions={jeju:[33.43,126.52],seoul:[37.5665,126.978],busan:[35.1796,129.07
 const windFields=['wind_east_mps','wind_north_mps','wind_up_mps'];
 const gustInputs={east_mps:'gust-east',north_mps:'gust-north',up_mps:'gust-up',delay_s:'gust-delay',duration_s:'gust-duration'};
 const jamFields=['elevator_jammed','aileron_jammed','rudder_jammed'];
-const operationPhases={idle:'대기',takeoff_roll:'이륙 활주',rotate:'기수 들기',climb:'상승',hold:'고도 유지',join:'접근 경로 진입',final:'최종 접근',flare:'플레어',rollout:'착륙 감속',rejected_takeoff:'이륙 중단 · 제동',go_around:'복행',complete:'착륙 · 주차 완료',aborted:'중단'};
+const operationPhases={idle:'대기',takeoff_roll:'이륙 활주',rotate:'기수 들기',climb:'상승',hold:'고도 유지',join:'접근 경로 진입',returning:'귀환 · 고도 처리',configuring:'접근 대기 · 감속/플랩',aligning:'활주로 연장선 정렬',final:'최종 접근',flare:'플레어',rollout:'착륙 감속',rejected_takeoff:'이륙 중단 · 제동',go_around:'복행',complete:'착륙 · 주차 완료',aborted:'중단'};
 let aircraft=null,windDirty=false,gustDirty=false,failuresDirty=false,onGround=false,automaticActive=false,hasActiveProjectile=false;
 let desired = {elevator_deg:0,aileron_deg:0,rudder_deg:0,throttle:0};
 let desiredGround={steering_deg:0,brake:0,parking_brake:false},groundDirty=false;
@@ -225,6 +227,8 @@ for (const s of specs) {
   el('controls').append(box);
   el(s.key).addEventListener('input',()=>{desired[s.key]=Number(el(s.key).value);el(s.key+'-out').textContent=format(s,desired[s.key]);dirty=true;clearTimeout(timer);timer=setTimeout(flush,70);});
 }
+let airframeSupport=null;
+let routeExampleProfile=null;
 function enable(value) {
   value=Boolean(value&&engine?.ready&&!engineBusy);
   connected=value;el('connection').classList.toggle('live',value);el('connection-text').textContent=value?'Unreal 연결됨':'연결 대기';
@@ -236,8 +240,15 @@ function enable(value) {
   el('visual-reload').disabled=!value||running||busy;
   el('view-projectile').disabled=!value||busy||!hasActiveProjectile;
   el('gear-down').disabled=!value||busy||automaticActive;
-  el('gear-up').disabled=!value||busy||automaticActive||onGround;
+  el('gear-up').disabled=!value||busy||automaticActive||onGround||airframeSupport?.retractable_gear===false;
+  el('flap-apply').disabled=!value||busy||automaticActive||!airframeSupport?.maximum_flap_deg;
   el('step').disabled=!value||running||busy;
+  if(value&&airframeSupport){
+    if(!airframeSupport.ground_supported)for(const id of ['steering-deg','ground-brake','parking-brake','ground-reset','gear-down','gear-up'])el(id).disabled=true;
+    if(!airframeSupport.navigation_supported)el('route-apply').disabled=true;
+    if(!airframeSupport.automation_supported)for(const id of ['auto-takeoff','auto-land','prepare-landing'])el(id).disabled=true;
+    if(airframeSupport.schema_version===2)el('stall-prepare').disabled=true;
+  }
 }
 function message(text,error=false){el('message').textContent=text;el('message').classList.toggle('error',error);}
 function clearAircraft(){
@@ -284,7 +295,14 @@ async function request(path,method='GET',body) {
   return value;
 }
 function render(state) {
-  const a=state.aircraft,c=state.controls,act=state.actuators,d=state.disturbance;running=a.running;aircraft=a;
+  if(routeExampleProfile!==state.airframe.id){
+    const a=state.aircraft,speed=state.airframe.initial_speed_mps;
+    el('waypoints').value=JSON.stringify([{latitude_deg:a.latitude_deg+.03,longitude_deg:a.longitude_deg,ellipsoid_height_m:a.ellipsoid_height_m,speed_mps:speed}],null,2);
+    el('loiter-radius').value=Math.ceil(Math.max(150,speed*speed/(9.80665*Math.tan(Math.PI/6))*1.5));
+    routeExampleProfile=state.airframe.id;
+  }
+  el('flap-state').textContent=`명령 ${state.flaps.command_deg.toFixed(1)}° / 실제 ${state.flaps.actual_deg.toFixed(1)}°`;el('flap-command').max=state.airframe.maximum_flap_deg;
+  const a=state.aircraft,c=state.controls,act=state.actuators,d=state.disturbance;running=a.running;aircraft=a;airframeSupport=state.airframe;
   el('run-state').textContent=running?'RUNNING':'PAUSED';el('toggle').textContent=running?'비행 일시정지':'비행 재생';
   el('lat').textContent=a.latitude_deg.toFixed(6)+'° N';el('lon').textContent=a.longitude_deg.toFixed(6)+'° E';
   el('height').textContent=a.ellipsoid_height_m.toFixed(1);el('sim-time').textContent=a.simulation_time_s.toFixed(2);
@@ -304,23 +322,27 @@ function render(state) {
   const op=state.automation;
   automaticActive=op.kind!=='none'&&!['idle','complete','aborted'].includes(op.phase);
   el('operation-state').textContent=(op.completed&&op.phase!=='complete'?'완료 · ':'')+(operationPhases[op.phase]||op.phase);
+  el('operation-rejection').textContent=op.rejection?'착륙 요청 거절: '+op.rejection:'';
+  el('operation-targets').textContent=op.kind==='none'?'자동 운항 목표 없음':`목표/실제 TAS ${op.desired_speed_mps.toFixed(1)} / ${a.speed_mps.toFixed(1)} m/s · 뱅크 ${op.desired_bank_deg.toFixed(1)} / ${a.roll_deg.toFixed(1)}° · 강하/상승 목표 ${op.desired_climb_mps.toFixed(1)} m/s · 기준 경로 ${op.path.length}점`;
   el('operation-detail').textContent=`${{none:'수동',takeoff:'이륙',landing:'착륙'}[op.kind]||op.kind} · ${op.runway_name||'활주로 미선택'} (${op.runway_index}) · 횡오차 ${op.cross_track_m.toFixed(1)} m · 종방향 ${op.along_track_m.toFixed(1)} m · 목표 높이 ${op.target_height_m.toFixed(1)} m`;
   el('operation-message').textContent=op.message;
-  el('airframe-state').textContent=`${state.airframe.id} · ${state.airframe.profile}`;el('airframe-fingerprint').textContent=state.airframe.fingerprint?'파일 식별값: '+state.airframe.fingerprint:'';el('airframe-error').textContent=state.airframe.error;
+  el('airframe-state').textContent=`${state.airframe.id} · ${state.airframe.profile}`;el('airframe-fingerprint').textContent=state.airframe.fingerprint?'파일 식별값: '+state.airframe.fingerprint:'';el('airframe-error').textContent=state.airframe.error;el('airframe-support').textContent=`${state.airframe.support_message} · 초기 TAS ${state.airframe.initial_speed_mps} m/s · 높이 ${state.airframe.initial_height_m} m · TAS 범위 ${state.airframe.minimum_speed_mps}~${state.airframe.maximum_speed_mps} m/s · 기어 ${state.airframe.retractable_gear?"수납식":"고정"} · 항로 TAS ${state.airframe.route_minimum_speed_mps}~${state.airframe.route_maximum_speed_mps} m/s · 지상 ${state.airframe.ground_supported?'지원':'미지원'} · 항로 ${state.airframe.navigation_supported?'지원':'미지원'} · 자동 운항 ${state.airframe.automation_supported?'지원':'미지원'}`;
   const visual=state.visual;
   el('visual-state').textContent=`${{builtin:'기본 기체',stl:'STL 기체'}[visual.source]||visual.source} · ${visual.triangle_count.toLocaleString('ko-KR')}개 삼각형 · 형상 폭 ${visual.span_m.toFixed(3)} m · 기본 기어 ${visual.show_builtin_gear?'표시':'숨김'}`;
   el('visual-path').textContent=`${visual.config}${visual.mesh?' · aircraft/'+visual.mesh:''}`;el('visual-error').textContent=visual.error;
   el('thrust').textContent=act.thrust_n.toFixed(2);
+  el('propulsion-state').textContent=state.airframe.dynamic_propeller?`연구 추진 모델 · ${act.propeller_rpm.toFixed(0)} RPM · 축 입력/부하 ${(act.shaft_drive_power_w/1000).toFixed(1)} / ${(act.shaft_load_power_w/1000).toFixed(1)} kW · 토크 ${act.shaft_drive_torque_nm.toFixed(0)} N·m`:'기존 추력 모델 · 프로펠러 회전은 표시 애니메이션';
   const ground=state.ground;
   onGround=ground.on_ground;
   const gear=state.gear;
   el('gear-state').textContent=gear.moving?(gear.command_down?'전개 중':'수납 중'):gear.down_locked?'전개 잠금':gear.up_locked?'수납 잠금':'중간 위치';
   el('gear-extension').value=gear.extension;el('gear-percent').textContent=(gear.extension*100).toFixed(1)+'%';
-  el('gear-command').textContent=`명령: ${gear.command_down?'전개':'수납'} · ${automaticActive?'자동 이착륙 제어 중':onGround?'지상 · 수납 불가':'수동 기어 조작 가능'}`;
+  el('gear-command').textContent=`${state.airframe.retractable_gear?'수납식 기어':'고정기어'} · 명령: ${gear.command_down?'전개':'수납'} · ${automaticActive?'자동 이착륙 제어 중':onGround?'지상 · 수납 불가':'수동 기어 조작 가능'}`;
   el('ground-state').textContent=ground.crashed?'충돌 · 초기화 필요':!ground.available?'지면 자료 없음':ground.on_ground?'지상 접촉':'공중';el('ground-state').classList.toggle('grounded',ground.on_ground&&!ground.crashed);el('ground-state').classList.toggle('crashed',ground.crashed);
   el('height-agl').textContent=ground.available?ground.height_agl_m.toFixed(2):'—';el('terrain-height').textContent=ground.available?ground.terrain_height_m.toFixed(2):'—';
   el('wheels-on-ground').textContent=ground.wheels_on_ground;el('ground-normal-force').textContent=ground.normal_force_n.toFixed(1);el('impact-speed').textContent=ground.impact_speed_mps.toFixed(2);el('ground-surface').textContent=ground.available?ground.surface:'—';
-  el('ground-applied').textContent=`적용: 조향 ${ground.steering_deg.toFixed(1)}° · 브레이크 ${Math.round(ground.brake*100)}% · 주차 ${ground.parking_brake?'켜짐':'꺼짐'}`;
+  el('ground-applied').textContent=`명령/실제: 조향 ${ground.steering_deg.toFixed(1)}° / ${ground.applied_steering_deg.toFixed(1)}° · 브레이크 ${Math.round(ground.brake*100)}% / ${Math.round(ground.applied_brake*100)}% · 주차 ${ground.parking_brake?'켜짐':'꺼짐'}`;
+  el('ground-applied').textContent+=` · 바퀴별 지면 ${ground.wheel_surfaces_sampled?'적용':'공중/단일 평면'} · 전/좌/우 반력 ${ground.wheel_normal_force_n.map(v=>v.toFixed(0)).join(' / ')} N · 최대 횡미끄럼 ${Math.max(...ground.wheel_lateral_slip_mps.map(Math.abs)).toFixed(2)} m/s`;
   if(!groundDirty&&!busy){desiredGround={steering_deg:ground.steering_deg,brake:ground.brake,parking_brake:ground.parking_brake};el('steering-deg').value=ground.steering_deg;el('ground-brake').value=ground.brake;el('parking-brake').checked=ground.parking_brake;groundReadout();}
   if(!busy){const select=el('time-scale');select.querySelector('[data-custom]')?.remove();if(!Array.from(select.options).some(option=>Number(option.value)===a.time_scale)){const option=new Option(a.time_scale+'×',String(a.time_scale));option.dataset.custom='true';select.add(option);}select.value=String(a.time_scale);}
   hasActiveProjectile=state.wargame.shots.some(shot=>shot.phase==='animating');
@@ -330,7 +352,7 @@ function render(state) {
   el('terrain-manifest').textContent=state.terrain.manifest;
   el('terrain-attribution').textContent=state.terrain.attribution;
   el('terrain-error').textContent=state.terrain.error;
-  const n=state.navigation;el('navigation-state').textContent=n.stall_recovery?'실속 회복 우선 제어':({manual:'수동 조종',waypoint:'항로점 추종',loiter:'마지막 지점 선회'}[n.mode]||n.mode);
+  const n=state.navigation;el('navigation-state').textContent=n.stall_recovery?'실속 회복 우선 제어':n.reacquiring?'놓친 항로점 재접근 중':({manual:'수동 조종',waypoint:'항로점 추종',loiter:'마지막 중심 선회'}[n.mode]||n.mode);
   el('navigation-detail').textContent=`${a.speed_mps.toFixed(2)} m/s · ${n.active_waypoint_index+1}/${n.waypoint_count} 항로점 · 거리 ${n.distance_to_waypoint_m.toFixed(1)} m · 선회 반경 ${n.loiter_radius_m.toFixed(0)} m`;
   if(state.fault)message(state.fault,true);
   for(const s of specs){el(s.key+'-ack').textContent='명령 '+format(s,c[s.key])+' · 실제 '+format(s,act[s.key]);
@@ -364,9 +386,10 @@ function groundReadout(){el('steering-out').textContent=desiredGround.steering_d
 for(const id of ['steering-deg','ground-brake','parking-brake'])el(id).oninput=()=>{desiredGround={steering_deg:Number(el('steering-deg').value),brake:Number(el('ground-brake').value),parking_brake:el('parking-brake').checked};groundReadout();groundDirty=true;clearTimeout(timer);timer=setTimeout(flush,70);};
 el('ground-reset').onclick=()=>action('ground/reset','POST',{},{followAircraft:true,after:[['time-scale','PUT',{factor:1}]],successMessage:'지상 시작 준비 완료 · 주차 브레이크를 해제한 뒤 비행 재생을 누르세요.'});
 el('gear-down').onclick=()=>action('gear','PUT',{down:true},{successMessage:'기어 전개 명령 적용 · 시간 진행에 따라 움직입니다.'});
+el('flap-apply').onclick=()=>action('flaps','PUT',{degrees:Number(el('flap-command').value)});
 el('gear-up').onclick=()=>action('gear','PUT',{down:false},{successMessage:'기어 수납 명령 적용 · 시간 진행에 따라 움직입니다.'});
-el('auto-takeoff').onclick=()=>action('automation/takeoff','POST',{runway_index:0,climb_height_m:50,speed_mps:19},{followAircraft:true,after:[['simulation','PUT',{running:true}]],successMessage:'자동 이륙 진행 · 운항 단계와 실제 출력을 확인하세요.'});
-el('auto-land').onclick=()=>action('automation/land','POST',{runway_index:0,approach_speed_mps:18},{followAircraft:true,after:[['simulation','PUT',{running:true}]],successMessage:'자동 착륙 진행 · 운항 단계와 접지를 확인하세요.'});
+el('auto-takeoff').onclick=()=>action('automation/takeoff','POST',{runway_index:0,climb_height_m:50,speed_mps:airframeSupport.schema_version===1?19:Math.min(airframeSupport.initial_speed_mps,Math.max(airframeSupport.route_minimum_speed_mps,airframeSupport.initial_speed_mps*.85))},{followAircraft:true,after:[['simulation','PUT',{running:true}]],successMessage:'자동 이륙 진행 · 운항 단계와 실제 출력을 확인하세요.'});
+el('auto-land').onclick=()=>action('automation/land','POST',{runway_index:0,approach_speed_mps:airframeSupport.schema_version===1?18:(airframeSupport.landing_minimum_speed_mps+airframeSupport.landing_maximum_speed_mps)/2},{followAircraft:true,after:[['simulation','PUT',{running:true}]],successMessage:'자동 착륙 진행 · 운항 단계와 접지를 확인하세요.'});
 el('prepare-landing').onclick=()=>action('automation/prepare-landing','POST',{runway_index:0},{followAircraft:true,successMessage:'착륙 시험 위치로 초기화·일시정지했습니다. 자동 착륙을 눌러 시작하세요.'});
 el('operation-cancel').onclick=()=>action('automation/cancel','POST',{},{successMessage:'자동 이착륙 해제 · 현재 재생/정지 상태는 유지합니다.'});
 el('airframe-reload').onclick=()=>action('aircraft/reload','POST',{},{successMessage:'기체 파일 다시 읽기·초기화 완료 · 비행은 일시정지 상태입니다.'});
@@ -374,7 +397,7 @@ el('visual-reload').onclick=()=>action('aircraft/visual/reload','POST',{},{succe
 el('view-overview').onclick=()=>action('view','PUT',{mode:'overview'});
 el('view-aircraft').onclick=()=>action('view','PUT',{mode:'aircraft'});
 el('view-projectile').onclick=()=>action('view','PUT',{mode:'projectile'});
-el('region-move').onclick=()=>{const [latitude_deg,longitude_deg]=regions[el('region').value];action('initial-condition','PUT',{latitude_deg,longitude_deg,ellipsoid_height_m:2600,heading_deg:0,pitch_deg:0,roll_deg:0,speed_mps:19},{followAircraft:true,after:[['reset','POST',{}]],successMessage:'지역 이동·수평 트림 준비 완료 · 비행 재생을 누르세요.'});};
+el('region-move').onclick=()=>{const [latitude_deg,longitude_deg]=regions[el('region').value];action('initial-condition','PUT',{latitude_deg,longitude_deg,ellipsoid_height_m:airframeSupport.initial_height_m,heading_deg:0,pitch_deg:0,roll_deg:0,speed_mps:airframeSupport.initial_speed_mps},{followAircraft:true,after:[['reset','POST',{}]],successMessage:'지역 이동·수평 트림 준비 완료 · 비행 재생을 누르세요.'});};
 el('time-scale').onchange=()=>action('time-scale','PUT',{factor:Number(el('time-scale').value)});
 el('terrain-reload').onclick=()=>action('terrain/reload','POST',{},{successMessage:'지도 다시 읽기 완료 · 비행은 일시정지 상태입니다.'});
 for(const key of windFields)el(key).oninput=()=>{windDirty=true;};

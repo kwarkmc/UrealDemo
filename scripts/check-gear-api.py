@@ -9,6 +9,9 @@ import argparse
 import json
 from pathlib import Path
 import sys
+import time
+import math
+import shutil
 from urllib.request import Request
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,10 +33,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/gear-api-check.json")
     parser.add_argument("--impact", action="store_true", help="Also attempt the low-altitude body-impact fixture")
+    parser.add_argument("--capture",action="store_true",help="Save native viewport images of the folding gear")
     args = parser.parse_args()
     sim = CheckClient()
     report = {"ok": False, "passed": [], "landing": [], "impact_requested": args.impact}
     native_requests = 0
+    snapshot=ROOT/"artifacts/terrain-view.png"
+    old_snapshot=snapshot.read_bytes() if snapshot.exists() else None
 
     def check(condition, name):
         if not condition:
@@ -57,20 +63,33 @@ def main():
             return json.load(response)[name]
 
     def check_visual(state, label):
-        fold = 90 * (1 - state["gear"]["extension"])
         components = {}
-        for component, axis, sign in (("NoseGearHinge", "Pitch", -1), ("LeftMainGearHinge", "Roll", -1),
-                                       ("RightMainGearHinge", "Roll", 1)):
+        for component in ("NoseGearHinge", "LeftMainGearHinge", "RightMainGearHinge"):
             rotation = native_property(state, component, "RelativeRotation")
             hidden = native_property(state, component, "bHiddenInGame")
             components[component] = {"rotation": rotation, "hidden": hidden}
-            expected = dict(Pitch=0, Yaw=0, Roll=0)
-            expected[axis] = sign * fold
-            if any(abs(rotation[key] - value) >= 1e-6 for key, value in expected.items()) or hidden != state["gear"]["up_locked"]:
+            rotated=any(abs(value)>1e-6 for value in rotation.values())
+            if rotated != (state["gear"]["extension"]<1-1e-9) or hidden != state["gear"]["up_locked"]:
                 report[label + "_visual"] = components
                 raise RuntimeError(f"{label}: {component} fold or visibility does not match extension")
         report[label + "_visual"] = components
         check(True, label + " native hinge rotations and visibility match physical gear extension")
+        if args.capture:
+            def put(route,body):
+                request=Request("http://127.0.0.1:30010/remote/object/"+route,json.dumps(body).encode(),{"Content-Type":"application/json"},method="PUT")
+                with sim.opener.open(request,timeout=15) as response:return response.read()
+            values={"RelativeLocation":{"X":1200,"Y":-1600,"Z":200},
+                    "RelativeRotation":{"Pitch":-math.degrees(math.atan2(200,2000)),"Yaw":math.degrees(math.atan2(1600,-1200)),"Roll":0}}
+            for name,value in values.items():
+                put("property",{"objectPath":state["object_path"]+".ChaseCamera","propertyName":name,"access":"WRITE_ACCESS","propertyValue":{name:value}})
+            previous=snapshot.stat().st_mtime_ns if snapshot.exists() else 0
+            result=json.loads(put("call",{"objectPath":state["object_path"],"functionName":"CaptureView","parameters":{}}))
+            if result.get("ReturnValue") is not True:raise RuntimeError("Capture rejected")
+            deadline=time.monotonic()+20
+            while not snapshot.exists() or snapshot.stat().st_mtime_ns==previous:
+                if time.monotonic()>deadline:raise RuntimeError("Gear viewport capture timed out")
+                time.sleep(.05)
+            shutil.copyfile(snapshot,args.output.with_name(args.output.stem+"-"+label+".png"))
 
     def advance(seconds):
         while seconds > 1e-9:
@@ -111,6 +130,9 @@ def main():
               "ground retraction is rejected without changing state")
 
         initial = sim.reset()
+        check(initial["airframe"]["retractable_gear"],"selected profile supports retractable gear")
+        report["airframe"]=initial["airframe"]
+        landing_speed=18 if initial["airframe"]["schema_version"]==1 else (initial["airframe"]["landing_minimum_speed_mps"]+initial["airframe"]["landing_maximum_speed_mps"])/2
         commanded = sim.set_landing_gear(False)
         paused = sim.get_state()
         report["paused_command"] = capture(paused)
@@ -156,11 +178,20 @@ def main():
         check(replay[0] == replay[1], "explicit gear and flight steps replay identically at .25x and 20x")
 
         sim.set_time_scale(1)
+        sim.reset_on_ground()
+        sim.start_automatic_takeoff(climb_height_m=80,speed_mps=19 if initial["airframe"]["schema_version"]==1 else 55)
+        for _ in range(180):
+            departure=sim.step(1)
+            if departure["fault"] or departure["ground"]["crashed"]:raise RuntimeError("Automatic departure failed")
+            if departure["automation"]["phase"]=="hold" and departure["gear"]["up_locked"]:break
+        check(departure["automation"]["phase"]=="hold" and departure["gear"]["up_locked"],"automatic departure retracts gear and reaches airborne hold")
+        check_visual(departure,"automatic-up")
+        sim.cancel_flight_operation()
         sim.prepare_landing_approach()
         sim.set_landing_gear(False)
         approach = advance(3)
         check(approach["gear"]["up_locked"], "landing test approach can start with retracted gear")
-        armed = sim.start_automatic_landing()
+        armed = sim.start_automatic_landing(approach_speed_mps=landing_speed)
         check(armed["gear"]["command_down"] and armed["gear"]["extension"] == approach["gear"]["extension"]
               and armed["aircraft"] == approach["aircraft"],
               "automatic landing arms gear deployment without teleporting or instant travel")
@@ -215,6 +246,7 @@ def main():
             normal_environment()
             sim.reset_on_ground()
             final = sim.set_time_scale(1)
+            sim.set_view("aircraft")
             report["restored"] = capture(final)
             check(not final["fault"] and final["gear"]["down_locked"] and not final["gear"]["moving"]
                   and final["ground"]["on_ground"] and final["ground"]["parking_brake"]
@@ -223,12 +255,15 @@ def main():
         except Exception as error:
             report["ok"] = False
             report["restore_error"] = str(error)
+        if old_snapshot is not None:snapshot.write_bytes(old_snapshot)
+        elif snapshot.exists():snapshot.unlink()
     report["api_requests"] = sim.request_count
     report["native_property_requests"] = native_requests
     text = json.dumps(report, indent=2, ensure_ascii=False, allow_nan=False)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(text + "\n", encoding="utf-8")
-    print(text)
+    print(json.dumps({"ok":report["ok"],"passed_count":len(report["passed"]),"api_requests":sim.request_count,
+        "native_property_requests":native_requests,"error":report.get("error"),"output":str(args.output)},indent=2))
     return 0 if report["ok"] else 1
 
 

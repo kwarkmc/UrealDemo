@@ -1,0 +1,62 @@
+{
+  "return-flight-baseline": {
+    "return_distance_m": 22736.21203217809,
+    "return_height_wgs84_m": 521.6636795671657,
+    "completed_time_s": 1012.8199999999993,
+    "distance_travelled_m": 60602.606409325796,
+    "final_max_abs_bank_deg": 1.4574410028580196,
+    "final_max_abs_cross_track_m": 3.844649152329737,
+    "final_aileron_reversals_above_1deg": 0,
+    "final_aileron_saturation_samples": 0,
+    "touchdown_normal_speed_mps": 0.36685345595296476,
+    "parked_ground_speed_mps": 0.12525429390479137,
+    "parked_reaction_n": 37373.60165670784,
+    "initializations": 1,
+    "go_arounds": 0
+  },
+  "return-flight-refined": {
+    "return_distance_m": 22791.960727044105,
+    "return_height_wgs84_m": 521.8642198285088,
+    "completed_time_s": 1014.6399999999994,
+    "distance_travelled_m": 60729.78627132441,
+    "final_max_abs_bank_deg": 1.4549926205409291,
+    "final_max_abs_cross_track_m": 3.8290712242516762,
+    "final_aileron_reversals_above_1deg": 0,
+    "final_aileron_saturation_samples": 0,
+    "touchdown_normal_speed_mps": 0.35514757626692384,
+    "parked_ground_speed_mps": 0.1234778391993484,
+    "parked_reaction_n": 37373.559522624055,
+    "initializations": 1,
+    "go_arounds": 0
+  },
+  "return-flight-wind-numeric": {
+    "return_distance_m": 22772.49305023902,
+    "return_height_wgs84_m": 521.7925842236727,
+    "completed_time_s": 1012.5899999999995,
+    "distance_travelled_m": 60650.60995051868,
+    "final_max_abs_bank_deg": 1.5220630964042459,
+    "final_max_abs_cross_track_m": 4.176351249642477,
+    "final_aileron_reversals_above_1deg": 0,
+    "final_aileron_saturation_samples": 0,
+    "touchdown_normal_speed_mps": 0.35693521246475934,
+    "parked_ground_speed_mps": 0.11344332195865803,
+    "parked_reaction_n": 37379.63110508378,
+    "initializations": 1,
+    "go_arounds": 0
+  },
+  "return-flight-high": {
+    "return_distance_m": 20013.07779295767,
+    "return_height_wgs84_m": 1045.0598091538996,
+    "completed_time_s": 923.8399999999992,
+    "distance_travelled_m": 55464.037385977696,
+    "final_max_abs_bank_deg": 1.415977921526281,
+    "final_max_abs_cross_track_m": 3.7103992094224854,
+    "final_aileron_reversals_above_1deg": 0,
+    "final_aileron_saturation_samples": 0,
+    "touchdown_normal_speed_mps": 0.3619737610667102,
+    "parked_ground_speed_mps": 0.1333107501883366,
+    "parked_reaction_n": 37373.56337103281,
+    "initializations": 1,
+    "go_arounds": 0
+  }
+}

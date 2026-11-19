@@ -1,0 +1,16 @@
+{
+  "normal_shutdown_requested": {
+    "status": "stopping",
+    "pid": 7876,
+    "managed": true,
+    "ready": false,
+    "message": "Unreal \uc885\ub8cc \uc911"
+  },
+  "final_engine_status": {
+    "status": "stopped",
+    "pid": null,
+    "managed": false,
+    "ready": false,
+    "message": "Unreal \uaebc\uc9d0 \u00b7 \uc2e4\ud589 \ubc84\ud2bc\uc73c\ub85c \ube44\ud589 \ucc3d\uc744 \uc5ec\uc138\uc694"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "passed": [
+    "C208B research profile selected",
+    "builtin model selected",
+    "main strut starts inside fuselage: LeftMain",
+    "main strut ends at physical wheel center: LeftMain",
+    "main strut starts inside fuselage: RightMain",
+    "main strut ends at physical wheel center: RightMain",
+    "capture accepted: stopped-front",
+    "capture accepted: gear-side",
+    "low speed shows shaped blades",
+    "capture accepted: low-speed",
+    "high speed replaces aliased blades with blur disk",
+    "capture accepted: high-speed",
+    "capture accepted: airborne",
+    "airborne rotation follows simulation time",
+    "capture accepted: airborne-next"
+  ],
+  "captures": [
+    "stopped-front.png",
+    "gear-side.png",
+    "low-speed.png",
+    "high-speed.png",
+    "airborne.png",
+    "airborne-next.png"
+  ]
+}

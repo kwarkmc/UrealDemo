@@ -1,0 +1,2 @@
+# Offline plots only; the API/client/recorder use Python's standard library.
+matplotlib==3.10.7

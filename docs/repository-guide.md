@@ -4,7 +4,9 @@
 
 ## 새 PC에서 실행
 
-Windows, PowerShell 7, Git과 Git LFS, Python 3.12, Unreal Engine 5.8.2, Visual Studio 2022 C++ 도구가 필요하다. VS 구성 요소는 [`.vsconfig`](../.vsconfig)를 따른다. 기본 Unreal 설치 경로는 `C:\Program Files\Epic Games\UE_5.8`이다.
+Windows, Windows PowerShell5.1 또는 PowerShell7, Git과 Git LFS, Python 3.12, 호환되는 Unreal Engine 5.8, Visual Studio C++ 도구가 필요하다. 최신 연구 기능의 빌드 기록은 UE5.8.4이며 초기 기록의5.8.2와 구분한다. VS 구성 요소는 [`.vsconfig`](../.vsconfig)를 따르며 현재 Windows 계산 검사는 VS2022에서 통과했다. 기본 Unreal 설치 경로는 `C:\Program Files\Epic Games\UE_5.8`이다.
+
+[클라우드 개발·인계 안내](cloud-development.md)에 클라우드 검사와 Windows 실행의 구분, 현재 엔진 연결 정보와 게시 절차를 기록했다.
 
 ```powershell
 git lfs install

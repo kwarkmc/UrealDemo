@@ -1,0 +1,222 @@
+{
+  "ok": true,
+  "checks": [
+    "finite samples, exact time grid, profile and controller isolation"
+  ],
+  "restore_errors": [],
+  "samples": 1801,
+  "status": "complete",
+  "final_state": {
+    "aircraft": {
+      "latitude_deg": 33.46688001231835,
+      "longitude_deg": 126.52711023551167,
+      "ellipsoid_height_m": 2600.3706599557772,
+      "heading_deg": 133.07231373261055,
+      "pitch_deg": 6.260939151913393,
+      "roll_deg": 24.30022669848363,
+      "simulation_time_s": 179.99999999999406,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 64.91900693803228,
+      "vertical_speed_mps": -0.022488454892177323,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 11698.40971224135,
+      "roll_rate_deg_s": -0.4263430798649181,
+      "pitch_rate_deg_s": 1.5178741051441316,
+      "yaw_rate_deg_s": 3.3317076064891427,
+      "angle_of_attack_deg": 6.5322177703249515,
+      "sideslip_deg": 0.788625710516292,
+      "ground_speed_mps": 64.9190030429433,
+      "air_density_kg_m3": 0.947338981212334,
+      "dynamic_pressure_pa": 1996.2693925115852,
+      "lift_coefficient": 0.7769203378109176,
+      "drag_coefficient": 0.062293923907647576,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 1.080087037693204
+    },
+    "controls": {
+      "elevator_deg": 0.04694474352866673,
+      "aileron_deg": -0.07937557826407103,
+      "rudder_deg": 0,
+      "throttle": 0.6453764897654184
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 0,
+      "parking_brake": false,
+      "on_ground": false,
+      "wheels_on_ground": 0,
+      "height_agl_m": 2385.6119699925393,
+      "terrain_height_m": 212.26906584575772,
+      "normal_force_n": 0,
+      "impact_speed_mps": 0,
+      "crashed": false,
+      "surface": "terrain",
+      "available": true
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "automation": {
+      "phase": "idle",
+      "kind": "none",
+      "runway_index": -1,
+      "runway_name": "",
+      "completed": false,
+      "message": "Inactive",
+      "cross_track_m": 0,
+      "along_track_m": 0,
+      "target_height_m": 0
+    },
+    "actuators": {
+      "elevator_deg": 0.04764844992597949,
+      "aileron_deg": -0.0796083184903668,
+      "rudder_deg": 0,
+      "throttle": 0.6425390258904833,
+      "thrust_n": 3082.1730734241796
+    },
+    "airframe": {
+      "id": "c208b-research-assumptions",
+      "profile": "aircraft/c208b-research.json",
+      "fingerprint": "sha1:22c052f02c9fe9fd99862d739713b18ee7ae4d23",
+      "error": "",
+      "schema_version": 2,
+      "initial_speed_mps": 65,
+      "initial_height_m": 2600,
+      "minimum_speed_mps": 0,
+      "maximum_speed_mps": 110,
+      "minimum_height_m": -500,
+      "maximum_height_m": 6000,
+      "maximum_alpha_deg": 180,
+      "maximum_beta_deg": 89,
+      "ground_supported": true,
+      "navigation_supported": true,
+      "automation_supported": true,
+      "support_message": "C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+      "retractable_gear": false,
+      "route_minimum_speed_mps": 36,
+      "route_maximum_speed_mps": 75,
+      "landing_minimum_speed_mps": 36,
+      "landing_maximum_speed_mps": 44,
+      "maximum_flap_deg": 30
+    },
+    "flaps": {
+      "command_deg": 0,
+      "actual_deg": 0
+    },
+    "visual": {
+      "source": "builtin",
+      "config": "aircraft/visual.json",
+      "mesh": "",
+      "triangle_count": 0,
+      "span_m": 15.85,
+      "fingerprint": "sha1:31eec5e362e4e61ee3884fef27312c28760f59b0",
+      "error": "",
+      "show_builtin_gear": true
+    },
+    "eoir": {
+      "enabled": false,
+      "mode": "ccd",
+      "fov_deg": 30,
+      "azimuth_deg": 0,
+      "elevation_deg": -45,
+      "gimbal_mode": "body_fixed",
+      "point_latitude_deg": 0,
+      "point_longitude_deg": 0,
+      "point_ellipsoid_height_m": 0,
+      "target_id": "",
+      "tracking_status": "manual",
+      "limited": false,
+      "target_in_fov": false,
+      "error_deg": 0,
+      "frame_sequence": 0,
+      "error": ""
+    },
+    "targets": [],
+    "wargame": {
+      "time_s": 747.1900000001128,
+      "error": "",
+      "weapons": [
+        {
+          "id": "training-marker",
+          "label": "Sim projectile",
+          "mesh": "models/example.stl",
+          "animation_duration_s": 5,
+          "triangle_count": 144
+        }
+      ],
+      "shots": []
+    },
+    "disturbance": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 0,
+      "gust_north_mps": 0,
+      "gust_up_mps": 0,
+      "gust_start_s": 0,
+      "gust_duration_s": 0,
+      "effective_wind_east_mps": 0,
+      "effective_wind_north_mps": 0,
+      "effective_wind_up_mps": 0
+    },
+    "navigation": {
+      "mode": "loiter",
+      "stall_recovery": false,
+      "active_waypoint_index": 0,
+      "waypoint_count": 1,
+      "distance_to_waypoint_m": 1006.8294275604434,
+      "loiter_radius_m": 1000
+    },
+    "environment": {
+      "wind_east_mps": 0,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 50,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.\nJeju detail: modified Copernicus Sentinel-2 data 2025-04-06.",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_nonlinear_6dof_v2",
+    "fault": ""
+  },
+  "restored_airframe": {
+    "id": "c208b-research-assumptions",
+    "profile": "aircraft/c208b-research.json",
+    "fingerprint": "sha1:22c052f02c9fe9fd99862d739713b18ee7ae4d23",
+    "error": "",
+    "schema_version": 2,
+    "initial_speed_mps": 65,
+    "initial_height_m": 2600,
+    "minimum_speed_mps": 0,
+    "maximum_speed_mps": 110,
+    "minimum_height_m": -500,
+    "maximum_height_m": 6000,
+    "maximum_alpha_deg": 180,
+    "maximum_beta_deg": 89,
+    "ground_supported": true,
+    "navigation_supported": true,
+    "automation_supported": true,
+    "support_message": "C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+    "retractable_gear": false,
+    "route_minimum_speed_mps": 36,
+    "route_maximum_speed_mps": 75,
+    "landing_minimum_speed_mps": 36,
+    "landing_maximum_speed_mps": 44,
+    "maximum_flap_deg": 30
+  },
+  "restore_contract": "Selector bytes and wind restored; original profile paused at airborne trim. Previous dynamic state/time NOT restored."
+}

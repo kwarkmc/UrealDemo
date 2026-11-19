@@ -1,0 +1,901 @@
+﻿category,name,units,settable,readable,multiplayer,deprecated,source
+Aircraft Engine Variables,NUMBER OF ENGINES,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENGINE CONTROL SELECT,Mask,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,THROTTLE LOWER LIMIT,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENGINE TYPE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,MASTER IGNITION SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG COMBUSTION: index,Bool,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG MASTER ALTERNATOR: index,Bool,N,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG FUEL PUMP SWITCH: index,Bool,N,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG FUEL PUMP ON: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG RPM: index,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG PCT MAX RPM: index,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG MAX REACHED RPM: index,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG THROTTLE LEVER POSITION: index,Percent over 100,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG MIXTURE LEVER POSITION: index,Percent over 100,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG PROPELLER LEVER POSITION: index,Percent over 100,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG STARTER: index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG EXHAUST GAS TEMPERATURE: index,Rankine,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG OIL PRESSURE: index,Psf,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG OIL LEAKED PERCENT: index,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG COMBUSTION SOUND PERCENT: index,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG DAMAGE PERCENT: index,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG OIL TEMPERATURE: index,Rankine,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG FAILED: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG GENERATOR SWITCH: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG GENERATOR ACTIVE: index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG ANTI ICE POSITION: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG FUEL VALVE: index,Bool,N,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG FUEL PRESSURE: index,Psi,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG ELAPSED TIME: index,Hours,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG COWL FLAP POSITION: index,Percent,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG PRIMER: index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG MANIFOLD PRESSURE: index,Psi,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG ALTERNATE AIR POSITION: index,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG COOLANT RESERVOIR PERCENT: index,Percent,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG LEFT MAGNETO: index,Bool,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG RIGHT MAGNETO: index,Bool,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG BRAKE POWER: index,Ft lb per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG STARTER TORQUE: index,Foot pound,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG TURBOCHARGER FAILED: index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG EMERGENCY BOOST ACTIVE: index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG EMERGENCY BOOST ELAPSED TIME: index,Hours,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG WASTEGATE POSITION: index,Percent,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG TURBINE INLET TEMPERATURE: index,Celsius,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG CYLINDER HEAD TEMPERATURE: index,Celsius,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG RADIATOR TEMPERATURE: index,Celsius,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG FUEL AVAILABLE: index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG FUEL FLOW: index,Pounds per hour,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG FUEL TANK SELECTOR: index,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG FUEL TANKS USED: index,Mask,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP ENG FUEL NUMBER TANKS USED: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP CARBURETOR TEMPERATURE: index,Celsius,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,RECIP MIXTURE RATIO: index,Ratio,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG N1: index,Percent,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG N2: index,Percent,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG CORRECTED N1: index,Percent,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG CORRECTED N2: index,Percent,Y,Y,Shared Cockpit (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG CORRECTED FF: index,Pounds per hour,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG MAX TORQUE PERCENT: index,Percent,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG PRESSURE RATIO: index,Ratio,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG ITT: index,Rankine,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG AFTERBURNER: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG JET THRUST: index,Pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG BLEED AIR: index,Psi,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG TANK SELECTOR: index,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG TANKS USED: index,Mask,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG NUM TANKS USED: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG FUEL FLOW PPH: index,Pounds per hour,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG FUEL AVAILABLE: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG REVERSE NOZZLE PERCENT: index,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG VIBRATION: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG FAILED: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG RPM ANIMATION PERCENT: index,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG ON FIRE: index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG ON FIRE INDICATED: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG FUEL FLOW BUG POSITION: index,Pounds per hour,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP RPM: index,Rpm,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP MAX RPM PERCENT: index,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP THRUST: index,Pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP BETA: index,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP FEATHERING INHIBIT: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP FEATHERED: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP SYNC DELTA LEVER: index,Position,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP AUTO FEATHER ARMED: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP FEATHER SWITCH: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PANEL AUTO FEATHER SWITCH: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP SYNC ACTIVE: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,PROP DEICE SWITCH: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG COMBUSTION,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG N1 RPM: index,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG N2 RPM: index,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG FUEL FLOW GPH: index,Gallons per hour,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG FUEL FLOW PPH: index,Pounds per hour,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG TORQUE: index,Foot pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG ANTI ICE: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG PRESSURE RATIO: index,Ratio,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG EXHAUST GAS TEMPERATURE: index,Rankine,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG EXHAUST GAS TEMPERATURE GES: index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG CYLINDER HEAD TEMPERATURE: index,Rankine,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG OIL TEMPERATURE: index,Rankine,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG OIL PRESSURE: index,Pounds per square foot,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG OIL QUANTITY: index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG HYDRAULIC PRESSURE: index,Pounds per square foot,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG HYDRAULIC QUANTITY: index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG MANIFOLD PRESSURE: index,inHG,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG VIBRATION: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG RPM SCALER: index,Scalar,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,ENG MAX RPM,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG STARTER ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,GENERAL ENG FUEL USED SINCE START,Pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG PRIMARY NOZZLE PERCENT: index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG IGNITION SWITCH,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG IGNITION ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG MASTER STARTER SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG AFTERBURNER STAGE ACTIVE,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Engine Variables,TURB ENG AFTERBURNER PCT ACTIVE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER2 LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER3 LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT MAIN LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT AUX LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT TIP LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT MAIN LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT AUX LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT TIP LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK EXTERNAL1 LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK EXTERNAL2 LEVEL,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER2 CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER3 CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT MAIN CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT AUX CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT TIP CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT MAIN CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT AUX CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT TIP CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK EXTERNAL1 CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK EXTERNAL2 CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL LEFT CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL RIGHT CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER2 QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK CENTER3 QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT MAIN QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT AUX QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK LEFT TIP QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT MAIN QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT AUX QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK RIGHT TIP QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK EXTERNAL1 QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK EXTERNAL2 QUANTITY,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL LEFT QUANTITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL RIGHT QUANTITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TOTAL QUANTITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL WEIGHT PER GALLON,Pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TANK SELECTOR: index,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL CROSS FEED,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TOTAL CAPACITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL SELECTED QUANTITY PERCENT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL SELECTED QUANTITY,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,FUEL TOTAL QUANTITY WEIGHT,Pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,NUM FUEL SELECTORS,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,UNLIMITED FUEL,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Fuel Variables,ESTIMATED FUEL FLOW,Pounds per hour,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT HEADLIGHT,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT BRAKE,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT GENERAL,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT STROBE,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT PANEL,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT LANDING,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT TAXI,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT BEACON,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT NAV,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT LOGO,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT WING,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT RECOGNITION,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT CABIN,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT ON STATES,Mask,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT STATES,Mask,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LANDING LIGHT PBH,SIMCONNECT_DATA_XYZ structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LANDING LIGHT PITCH,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LANDING LIGHT HEADING,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT TAXI ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT STROBE ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT PANEL ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT RECOGNITION ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT WING ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT LOGO ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT CABIN ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT HEAD ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT BRAKE ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT NAV ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT BEACON ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Lights Variables,LIGHT LANDING ON,Bool,N,Y,-,True,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,GROUND VELOCITY,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,TOTAL WORLD VELOCITY,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,VELOCITY BODY Z,Feet per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,VELOCITY BODY X,Feet per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,VELOCITY BODY Y,Feet per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,VELOCITY WORLD Z,Feet per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,VELOCITY WORLD X,Feet per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,VELOCITY WORLD Y,Feet per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ACCELERATION WORLD X,Feet per second squared,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ACCELERATION WORLD Y,Feet per second squared,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ACCELERATION WORLD Z,Feet per second squared,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ACCELERATION BODY X,Feet per second squared,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ACCELERATION BODY Y,Feet per second squared,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ACCELERATION BODY Z,Feet per second squared,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ROTATION VELOCITY BODY X,Radians per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ROTATION VELOCITY BODY Y,Radians per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ROTATION VELOCITY BODY Z,Radians per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ROTATION ACCELERATION BODY X,Radians per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ROTATION ACCELERATION BODY Y,Radians per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,ROTATION ACCELERATION BODY Z,Radians per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,RELATIVE WIND VELOCITY BODY X,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,RELATIVE WIND VELOCITY BODY Y,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,RELATIVE WIND VELOCITY BODY Z,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,PLANE ALT ABOVE GROUND,Feet,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,PLANE LATITUDE,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,PLANE LONGITUDE,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,PLANE ALTITUDE,Feet,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,PLANE PITCH DEGREES,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,PLANE BANK DEGREES,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,PLANE HEADING DEGREES TRUE,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,PLANE HEADING DEGREES MAGNETIC,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,MAGVAR,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,GROUND ALTITUDE,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,SURFACE TYPE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,SIM ON GROUND,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,INCIDENCE ALPHA,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,INCIDENCE BETA,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,WING FLEX PCT: index,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT LATLONALT,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT LATLONALTPBH,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT SURFACE RELATIVE VELOCITY,"SIMCONNECT_DATA_XYZ structure, feet per second",N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT WORLDVELOCITY,"SIMCONNECT_DATA_XYZ structure, feet per second",Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT WORLD ROTATION VELOCITY,"SIMCONNECT_DATA_XYZ structure, radians per second",Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT BODY VELOCITY,"SIMCONNECT_DATA_XYZ structure, feet per second",Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT BODY ACCELERATION,"SIMCONNECT_DATA_XYZ structure, feet per second squared",Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT BODY ROTATION VELOCITY,"SIMCONNECT_DATA_XYZ structure, radians per second",Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT BODY ROTATION ACCELERATION,"SIMCONNECT_DATA_XYZ structure, radians per second squared",Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT WORLD ACCELERATION,"SIMCONNECT_DATA_XYZ structure, feet per second squared",N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT ENGINE POSITION: index,"SIMCONNECT_DATA_XYZ structure, feet.",N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT EYEPOINT DYNAMIC ANGLE,"SIMCONNECT_DATA_XYZ structure, radians",N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,STRUCT EYEPOINT DYNAMIC OFFSET,"SIMCONNECT_DATA_XYZ structure, feet",N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Position and Speed Variables,EYEPOINT POSITION,"SIMCONNECT_DATA_XYZ structure, feet",N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,AIRSPEED TRUE,Knots,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,AIRSPEED INDICATED,Knots,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,AIRSPEED TRUE CALIBRATE,Degrees,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,AIRSPEED BARBER POLE,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,AIRSPEED MACH,Mach,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,VERTICAL SPEED,Feet per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,MACH MAX OPERATE,Mach,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,STALL WARNING,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,OVERSPEED WARNING,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,BARBER POLE MACH,Mach,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,INDICATED ALTITUDE,Feet,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,KOHLSMAN SETTING MB,Millibars,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,KOHLSMAN SETTING HG,"Inches of Mercury, inHg",Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,ATTITUDE INDICATOR PITCH DEGREES,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,ATTITUDE INDICATOR BANK DEGREES,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,ATTITUDE BARS POSITION,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,ATTITUDE CAGE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,WISKEY COMPASS INDICATION DEGREES,Degrees,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PLANE HEADING DEGREES GYRO,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,HEADING INDICATOR,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,GYRO DRIFT ERROR,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,DELTA HEADING RATE,Radians per second,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,TURN COORDINATOR BALL,Position 128,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,ANGLE OF ATTACK INDICATOR,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,RADIO HEIGHT,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL ADF,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL AIRSPEED,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL ALTIMETER,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL ATTITUDE,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL COMM,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL COMPASS,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL ELECTRICAL,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL AVIONICS,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL ENGINE,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL FUEL INDICATOR,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL HEADING,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL VERTICAL VELOCITY,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL TRANSPONDER,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL NAV,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL PITOT,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL TURN COORDINATOR,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL VACUUM,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,PARTIAL PANEL TACAN,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,MAX G FORCE,Gforce,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,MIN G FORCE,Gforce,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Flight Instrumentation Variables,SUCTION PRESSURE,"Inches of Mercury, inHg",Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,AVIONICS MASTER SWITCH,Bool,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV SOUND: index,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,DME SOUND,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN DME SOUND,Bool,N,Y,All Aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF SOUND: index,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN SOUND: index,Bool,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,MARKER SOUND,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM TRANSMIT: index,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM RECIEVE ALL,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM ACTIVE FREQUENCY: index,Frequency BCD16,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM STANDBY FREQUENCY: index,Frequency BCD16,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM IS 8333HZ MODE: index,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM STATUS: index,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM RECEIVE ALL,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,COM TEST: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV AVAILABLE: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV ACTIVE FREQUENCY: index,MHz,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV STANDBY FREQUENCY: index,MHz,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV SIGNAL: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV HAS NAV: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV HAS LOCALIZER: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV HAS DME: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV HAS GLIDE SLOPE: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV BACK COURSE FLAGS: index,Flags,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV MAGVAR: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV RADIAL: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV RADIAL ERROR: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV LOCALIZER: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV GLIDE SLOPE ERROR: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV CDI: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV GSI: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV TOFROM: index,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV GS FLAG: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV OBS: index,Degrees,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV DME: index,Nautical miles,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV DMESPEED: index,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF ACTIVE FREQUENCY: index,Frequency ADF BCD32,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF STANDBY FREQUENCY: index,Hz,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF RADIAL: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF SIGNAL: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF MAGVAR: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN ACTIVE CHANNEL: index,Number,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN STANDBY CHANNEL: index,Number,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN XY BAND: index,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN STANDBY XY BAND: index,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN RADIAL: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN RADIAL ERROR: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN SIGNAL: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN AVAILABLE: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN HAS NAV: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN MAGVAR: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN DME: index,Nautical Miles,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN DMESPEED: index,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN OBS: index,Degrees,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN TOFROM: index,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN CDI: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TRANSPONDER CODE: index,BCO16,N,Y,All aircraft (Index of 1 only).,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,MARKER BEACON STATE,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,INNER MARKER,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,MIDDLE MARKER,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,OUTER MARKER,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV RAW GLIDE SLOPE: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF CARD,Degrees,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI CDI NEEDLE,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI GSI NEEDLE,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI CDI NEEDLE VALID,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI GSI NEEDLE VALID,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI TF FLAGS,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI BEARING VALID,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI BEARING,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI HAS LOCALIZER,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI SPEED,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,HSI DISTANCE,Nautical miles,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS POSITION LAT,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS POSITION LON,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS POSITION ALT,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS MAGVAR,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS IS ACTIVE FLIGHT PLAN,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS IS ACTIVE WAY POINT,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS IS ARRIVED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS IS DIRECTTO FLIGHTPLAN,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS GROUND SPEED,Meters per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS GROUND TRUE HEADING,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS GROUND MAGNETIC TRACK,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS GROUND TRUE TRACK,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP DISTANCE,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP BEARING,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP TRUE BEARING,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP CROSS TRK,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP DESIRED TRACK,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP TRUE REQ HDG,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP VERTICAL SPEED,Meters per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP TRACK ANGLE ERROR,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS ETE,Seconds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS ETA,Seconds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP NEXT LAT,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP NEXT LON,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP NEXT ALT,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP PREV VALID,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP PREV LAT,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP PREV LON,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP PREV ALT,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP ETE,Seconds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP ETA,Seconds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS COURSE TO STEER,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS FLIGHT PLAN WP INDEX,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS FLIGHT PLAN WP COUNT,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS IS ACTIVE WP LOCKED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS IS APPROACH LOADED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS IS APPROACH ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH MODE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH WP TYPE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH IS WP RUNWAY,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH SEGMENT TYPE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH APPROACH INDEX,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH APPROACH TYPE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH TRANSITION INDEX,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH IS FINAL,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH IS MISSED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH FINAL APPROACH WP INDEX,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH MISSED APPROACH WP INDEX,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH TIMEZONE DEVIATION,Seconds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH WP INDEX,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH WP COUNT,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH WP LAT: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH WP LON: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS APPROACH WP ALT: index,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS DRIVES NAV1,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TRANSPONDER AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF FREQUENCY: index,Frequency BCD16,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF EXT FREQUENCY: index,Frequency BCD16,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF IDENT,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF NAME,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV IDENT,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV NAME,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN IDENT,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN NAME,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV CODES: index,Flags,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV GLIDE SLOPE,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV RELATIVE BEARING TO STATION: index,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,SELECTED DME,Number,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP NEXT ID,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS WP PREV ID,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS TARGET DISTANCE,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,GPS TARGET ALTITUDE,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,ADF LATLONALT: index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV VOR LATLONALT: index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV GS LATLONALT: index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,NAV DME LATLONALT: index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN LATLONALT: index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,TACAN DME LATLONALT: index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,INNER MARKER LATLONALT,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,MIDDLE MARKER LATLONALT,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Avionics Variables,OUTER MARKER LATLONALT,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,YOKE Y POSITION,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,YOKE X POSITION,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,RUDDER PEDAL POSITION,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,RUDDER POSITION,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,ELEVATOR POSITION,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON POSITION,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,ELEVATOR TRIM POSITION,Radians,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,ELEVATOR TRIM INDICATOR,Position,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,ELEVATOR TRIM PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,BRAKE LEFT POSITION,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,BRAKE RIGHT POSITION,Position,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,BRAKE INDICATOR,Position,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,BRAKE PARKING AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,BRAKE PARKING POSITION,Bool,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,BRAKE PARKING INDICATOR,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,SPOILERS ARMED,Bool,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,SPOILERS HANDLE POSITION,Position,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,SPOILERS LEFT POSITION,Position,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,SPOILERS RIGHT POSITION,Position,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,FLAPS HANDLE PERCENT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,FLAPS HANDLE INDEX,Number,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,FLAPS NUM HANDLE POSITIONS,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,TRAILING EDGE FLAPS LEFT PERCENT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,TRAILING EDGE FLAPS RIGHT PERCENT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,TRAILING EDGE FLAPS LEFT ANGLE,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,TRAILING EDGE FLAPS RIGHT ANGLE,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,LEADING EDGE FLAPS LEFT PERCENT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,LEADING EDGE FLAPS RIGHT PERCENT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,LEADING EDGE FLAPS LEFT ANGLE,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,LEADING EDGE FLAPS RIGHT ANGLE,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON LEFT DEFLECTION,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON LEFT DEFLECTION PCT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON RIGHT DEFLECTION,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON RIGHT DEFLECTION PCT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON AVERAGE DEFLECTION,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON TRIM,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON TRIM PCT,Percent over 100,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,RUDDER DEFLECTION,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,RUDDER DEFLECTION PCT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,RUDDER TRIM,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,RUDDER TRIM PCT,Percent over 100,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,FLAPS AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,FLAP DAMAGE BY SPEED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,FLAP SPEED EXCEEDED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,ELEVATOR DEFLECTION,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,ELEVATOR DEFLECTION PCT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,ALTERNATE STATIC SOURCE OPEN,Bool,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,AILERON TRIM PCT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,RUDDER TRIM PCT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,FOLDING WING HANDLE POSITION,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Controls Variables,FUEL DUMP SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT MASTER,Bool,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT NAV SELECTED,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT WING LEVELER,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT NAV1 LOCK,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT HEADING LOCK,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT HEADING LOCK DIR,Degrees,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT ALTITUDE LOCK,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT ALTITUDE LOCK VAR,Feet,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT ATTITUDE HOLD,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT GLIDESLOPE HOLD,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT PITCH HOLD REF,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT APPROACH HOLD,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT BACKCOURSE HOLD,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT VERTICAL HOLD VAR,Feet/minute,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT PITCH HOLD,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT FLIGHT DIRECTOR ACTIVE,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT FLIGHT DIRECTOR PITCH,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT FLIGHT DIRECTOR BANK,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT AIRSPEED HOLD,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT AIRSPEED HOLD VAR,Knots,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT MACH HOLD,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT MACH HOLD VAR,Number,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT YAW DAMPER,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT RPM HOLD VAR,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT THROTTLE ARM,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT TAKEOFF POWER ACTIVE,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOTHROTTLE ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT NAV1 LOCK,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT VERTICAL HOLD,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT RPM HOLD,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT MAX BANK,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,AUTOPILOT NAV MODE TACAN,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,FLY BY WIRE ELAC SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,FLY BY WIRE FAC SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,FLY BY WIRE SEC SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,FLY BY WIRE ELAC FAILED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,FLY BY WIRE FAC FAILED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Autopilot Variables,FLY BY WIRE SEC FAILED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,IS GEAR RETRACTABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,IS GEAR SKIS,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,IS GEAR FLOATS,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,IS GEAR SKIDS,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,IS GEAR WHEELS,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR HANDLE POSITION,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR HYDRAULIC PRESSURE,Pound force per square foot (psf),N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,TAILWHEEL LOCK ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR CENTER POSITION,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR LEFT POSITION,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR RIGHT POSITION,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR TAIL POSITION,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR AUX POSITION,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR POSITION: index,Enum,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR ANIMATION POSITION: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR TOTAL PCT EXTENDED,Percentage,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,AUTO BRAKE SWITCH CB,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WATER RUDDER HANDLE POSITION,Percent over 100,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WATER LEFT RUDDER EXTENDED,Percentage,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WATER RIGHT RUDDER EXTENDED,Percentage,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR CENTER STEER ANGLE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR LEFT STEER ANGLE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR RIGHT STEER ANGLE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR AUX STEER ANGLE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR STEER ANGLE: index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WATER LEFT RUDDER STEER ANGLE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WATER RIGHT RUDDER STEER ANGLE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR CENTER STEER ANGLE PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR LEFT STEER ANGLE PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR RIGHT STEER ANGLE PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR AUX STEER ANGLE PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR STEER ANGLE PCT: index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WATER LEFT RUDDER STEER ANGLE PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WATER RIGHT RUDDER STEER ANGLE PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WHEEL RPM: index,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,CENTER WHEEL RPM,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,LEFT WHEEL RPM,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,RIGHT WHEEL RPM,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,AUX WHEEL RPM,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,WHEEL ROTATION ANGLE: index,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,CENTER WHEEL ROTATION ANGLE,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,LEFT WHEEL ROTATION ANGLE,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,RIGHT WHEEL ROTATION ANGLE,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,AUX WHEEL ROTATION ANGLE,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR EMERGENCY HANDLE POSITION,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR WARNING,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,ANTISKID BRAKES ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,RETRACT FLOAT SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,RETRACT LEFT FLOAT EXTENDED,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,RETRACT RIGHT FLOAT EXTENDED,Percent,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,STEER INPUT CONTROL,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR DAMAGE BY SPEED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,GEAR SPEED EXCEEDED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Landing Gear Variables,NOSEWHEEL LOCK ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT DENSITY,Slugs per cubic feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT TEMPERATURE,Celsius,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT PRESSURE,Millibars,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT WIND VELOCITY,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT WIND DIRECTION,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT WIND X,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT WIND Y,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT WIND Z,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,STRUCT AMBIENT WIND,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT PRECIP STATE,Mask,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT PRECIP RATE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AIRCRAFT WIND X,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AIRCRAFT WIND Y,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AIRCRAFT WIND Z,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,BAROMETER PRESSURE,Millibars,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,SEA LEVEL PRESSURE,Millibars,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,TOTAL AIR TEMPERATURE,Celsius,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,WINDSHIELD RAIN EFFECT AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT IN CLOUD,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT IN PRECIP,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,AMBIENT VISIBILITY,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Environment Variables,STANDARD ATM TEMPERATURE,Rankine,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR BRAKE HANDLE POS,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR BRAKE ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR CLUTCH SWITCH POS,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR CLUTCH ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR TEMPERATURE,Rankine,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR CHIP DETECTED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR GOV SWITCH POS,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR GOV ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR LATERAL TRIM PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR RPM PCT:index,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ENG TURBINE TEMPERATURE,Celsius scalar 16K,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ENG TORQUE PERCENT: index,Percent scalar 16K,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ENG FUEL PRESSURE,PSI scalar 16K,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ENG ELECTRICAL LOAD,Percent scalar 16K,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ENG TRANSMISSION PRESSURE,PSI scalar 16K,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ENG TRANSMISSION TEMPERATURE,Celsius scalar 16K,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ENG ROTOR RPM: index,Percent scalar 16K,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,COLLECTIVE POSITION,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,NUM SLING CABLES,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,PAYLOAD STATION OBJECT:index,String,Y- set only,N,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,PAYLOAD STATION NUM SIMOBJECTS:index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,SLING OBJECT ATTACHED:index,Bool/String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,SLING CABLE BROKEN:index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,SLING CABLE EXTENDED LENGTH:index,Feet,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,SLING ACTIVE PAYLOAD STATION:index,Number,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,SLING HOIST PERCENT DEPLOYED:index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,SLING HOOK IN PICKUP MODE:index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,IS ATTACHED TO SLING,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,ROTOR ROTATION ANGLE:index,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,DISK PITCH ANGLE:index,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,DISK BANK ANGLE:index,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,DISK PITCH PCT:index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,DISK BANK PCT:index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Helicopter Specific Variables,DISK CONING PCT:index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,SMOKE ENABLE,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,SMOKESYSTEM AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,PITOT HEAT,Bool,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,FOLDING WING LEFT PERCENT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,FOLDING WING RIGHT PERCENT,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CANOPY OPEN,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,TAILHOOK POSITION,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,EXIT OPEN: index,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,EXIT CONTROL: index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,STALL HORN AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ENGINE MIXURE AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CARB HEAT AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,SPOILER AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,IS TAIL DRAGGER,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,STROBES AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,TOE BRAKES AVAILABLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,PUSHBACK STATE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL MASTER BATTERY,Bool,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL TOTAL LOAD AMPS,Amperes,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL BATTERY LOAD,Amperes,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL BATTERY VOLTAGE,Volts,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL BATTERY IS CHARGING,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL MAIN BUS VOLTAGE,Volts,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL MAIN BUS AMPS,Amperes,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL AVIONICS BUS VOLTAGE,Volts,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL AVIONICS BUS AMPS,Amperes,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL HOT BATTERY BUS VOLTAGE,Volts,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL HOT BATTERY BUS AMPS,Amperes,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL BATTERY BUS VOLTAGE,Volts,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL BATTERY BUS AMPS,Amperes,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL BATTERY BUS CONTACT SWITCH,Volts,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL GENALT BUS VOLTAGE: index,Volts,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL GENALT BUS AMPS: index,Amperes,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL GENALT SWITCH: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL GENALT BUS CONTACT SWITCH: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRICAL GENALT ACTIVE: index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRIC GPU ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,ELECTRIC GPU SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT GENERAL PANEL ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT FLAP MOTOR ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT GEAR MOTOR ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT AUTOPILOT ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT AVIONICS ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT PITOT HEAT ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT PROP SYNC ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT AUTO FEATHER ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT AUTO BRAKES ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT STANDY VACUUM ON,Bool,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT MARKER BEACON ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT GEAR WARNING ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,CIRCUIT HYDRAULIC PUMP ON,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,HYDRAULIC PRESSURE :index,Pound force per square foot,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,HYDRAULIC RESERVOIR PERCENT: index,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,HYDRAULIC SYSTEM INTEGRITY,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,STRUCTURAL DEICE SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,APPLY HEAT TO SYSTEMS,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,DROPPABLE OBJECTS TYPE: index,String,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft Miscellaneous Systems Variables,DROPPABLE OBJECTS COUNT: index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,SIM TIME,Seconds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TOTAL WEIGHT,Pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,MAX GROSS WEIGHT,Pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EMPTY WEIGHT,Pounds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,IS USER SIM,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,LABEL SUPPORTED,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,SIM DISABLED,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,IS INVISIBLE,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,G FORCE,GForce,Y,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ATC HEAVY,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,AUTO COORDINATION,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,REALISM,Number,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TRUE AIRSPEED SELECTED,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,DESIGN SPEED VS0,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,DESIGN SPEED VS1,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,DESIGN SPEED VC,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,MIN DRAG VELOCITY,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ESTIMATED CRUISE SPEED,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CG PERCENT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CG PERCENT LATERAL,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,IS SLEW ACTIVE,Bool,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,IS SLEW ALLOWED,Bool,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ATC SUGGESTED MIN RWY TAKEOFF,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ATC SUGGESTED MIN RWY LANDING,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PAYLOAD STATION WEIGHT: index,Pounds,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PAYLOAD STATION COUNT,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,USER INPUT ENABLED,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TYPICAL DESCENT RATE,Feet per minute,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,VISUAL MODEL RADIUS,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CATEGORY,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,SIGMA SQRT,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,DYNAMIC PRESSURE,Pounds per square foot,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TOTAL VELOCITY,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,AIRSPEED SELECT INDICATED OR TRUE,Knots,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,VARIOMETER RATE,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,VARIOMETER SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PRESSURE ALTITUDE,Meters,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,MAGNETIC COMPASS,Degrees,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TURN INDICATOR RATE,Radians per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TURN INDICATOR SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,YOKE Y INDICATOR,Position,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,YOKE X INDICATOR,Position,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,RUDDER PEDAL INDICATOR,Position,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,BRAKE DEPENDENT HYDRAULIC PRESSURE,Pounds per square foot,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PANEL ANTI ICE SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,WING AREA,Square feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,WING SPAN,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,BETA DOT,Radians per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,LINEAR CL ALPHA,Per radian,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,STALL ALPHA,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ZERO LIFT ALPHA,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CG AFT LIMIT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CG FWD LIMIT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CG MAX MACH,Machs,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CG MIN MACH,Machs,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PAYLOAD STATION NAME,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ELEVON DEFLECTION,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EXIT TYPE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EXIT POSX,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EXIT POSY,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EXIT POSZ,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,DECISION HEIGHT,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,DECISION ALTITUDE MSL,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EMPTY WEIGHT PITCH MOI,Slugs per feet squared,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EMPTY WEIGHT ROLL MOI,Slugs per feet squared,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EMPTY WEIGHT YAW MOI,Slugs per feet squared,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EMPTY WEIGHT CROSS COUPLED MOI,Slugs per feet squared,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TOTAL WEIGHT PITCH MOI,Slugs per feet squared,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TOTAL WEIGHT ROLL MOI,Slugs per feet squared,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TOTAL WEIGHT YAW MOI,Slugs per feet squared,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TOTAL WEIGHT CROSS COUPLED MOI,Slugs per feet squared,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,WATER BALLAST VALVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,MAX RATED ENGINE RPM,Rpm,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,FULL THROTTLE THRUST TO WEIGHT RATIO,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PROP AUTO CRUISE ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PROP ROTATION ANGLE,Radians,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PROP BETA MAX,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PROP BETA MIN,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PROP BETA MIN REVERSE,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,FUEL SELECTED TRANSFER MODE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,DROPPABLE OBJECTS UI NAME,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,MANUAL FUEL PUMP HANDLE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,BLEED AIR SOURCE CONTROL,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ELECTRICAL OLD CHARGING AMPS,Amps,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,HYDRAULIC SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CONCORDE VISOR NOSE HANDLE,Enum,N,Y,All aircraft,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CONCORDE VISOR POSITION PERCENT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CONCORDE NOSE ANGLE,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,REALISM CRASH WITH OTHERS,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,REALISM CRASH DETECTION,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,MANUAL INSTRUMENT LIGHTS,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PITOT ICE PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,RAD INS SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,SIMULATED RADIUS,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,STRUCTURAL ICE PCT,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ARTIFICIAL GROUND ELEVATION,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,SURFACE INFO VALID,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,SURFACE CONDITION,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PUSHBACK ANGLE,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PUSHBACK CONTACTX,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PUSHBACK CONTACTY,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PUSHBACK CONTACTZ,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PUSHBACK WAIT,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,YAW STRING ANGLE,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,YAW STRING PCT EXTENDED,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,INDUCTOR COMPASS PERCENT DEVIATION,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,INDUCTOR COMPASS HEADING REF,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,ANEMOMETER PCT RPM,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,NAV VOR LLAF64,LLA structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,NAV GS LLAF64,LLA structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,STATIC CG TO GROUND,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,STATIC PITCH,Radians,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CRASH SEQUENCE,Enum,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CRASH FLAG,Enum,N,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,DAMAGE STATE,Enum,Y,Y,Shared Cockpit,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TOW RELEASE HANDLE,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,TOW CONNECTION,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,APU PCT RPM,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,APU PCT STARTER,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,APU VOLTS,Volts,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,APU GENERATOR SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,APU GENERATOR ACTIVE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,APU ON FIRE DETECTED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PRESSURIZATION CABIN ALTITUDE,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PRESSURIZATION CABIN ALTITUDE GOAL,Feet,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PRESSURIZATION CABIN ALTITUDE RATE,Feet per second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PRESSURIZATION PRESSURE DIFFERENTIAL,Pounds per square foot,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,PRESSURIZATION DUMP SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,FIRE BOTTLE SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,FIRE BOTTLE DISCHARGED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CABIN NO SMOKING ALERT SWITCH,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,CABIN SEATBELTS ALERT SWITCH,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,GPWS WARNING,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,GPWS SYSTEM ACTIVE,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,IS LATITUDE LONGITUDE FREEZE ON,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,IS ALTITUDE FREEZE ON,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,IS ATTITUDE FREEZE ON,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,IS POSITION FREEZE ON,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EXTERNAL PRIMARY SIM ID,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Miscellaneous Variables,EXTERNAL PRIMARY SIM DATA,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,ATC TYPE,String (30),N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,ATC MODEL,String (10),N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,ATC ID,String (10),Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,ATC AIRLINE,String (50),Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,ATC FLIGHT NUMBER,String (6),Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,TITLE,Variable length string,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,HSI STATION IDENT,String(6),N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,GPS WP_PREV ID,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,GPS WP_NEXT ID,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,GPS APPROACH AIRPORT ID,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,GPS APPROACH APPROACH ID,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Aircraft String Variables,GPS APPROACH TRANSITION ID,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI DESIRED SPEED,Knots,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI WAYPOINT LIST,SIMCONNECT_DATA_WAYPOINT structure list,Y,N,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI CURRENT WAYPOINT,Number,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI DESIRED HEADING,Degrees,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI GROUNDTURNTIME,Seconds,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI GROUNDCRUISESPEED,Knots,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI GROUNDTURNSPEED,Knots,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC ISIFR,Boolean,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC STATE,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC CURRENT AIRPORT,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC ASSIGNED RUNWAY,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC ASSIGNED PARKING,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC FROMAIRPORT,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC TOAIRPORT,String,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC ETD,Seconds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+AI Controlled Aircraft,AI TRAFFIC ETA,Seconds,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,LAUNCHBAR POSITION,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,LAUNCHBAR SWITCH,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,LAUNCHBAR HELD EXTENDED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,NUMBER OF CATAPULTS,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,CATAPULT STROKE POSITION:index,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,HOLDBACK BAR INSTALLED,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,BLAST SHIELD POSITION:index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,CABLE CAUGHT BY TAILHOOK,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,TAILHOOK HANDLE,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,SURFACE RELATIVE GROUND SPEED,Feet_per_second,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,CATAPULT START POSITION LLA:index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,CATAPULT END POSITION LLA:index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,CABLES ENDPOINT1 POSITION LLA:index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,CABLES ENDPOINT2 POSITION LLA:index,SIMCONNECT_DATA_LATLONALT structure,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,AIRCRAFT ELEVATOR POSITION:index,Percent over 100,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Carrier Operations,AIRCRAFT ELEVATOR CONTROL:index,Number,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG DETONATING:index,Bool,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG CYLINDER HEALTH:index,Percent over 100,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG NUM CYLINDERS,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG NUM CYLINDERS FAILED,Number,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG ANTIDETONATION TANK VALVE:index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG ANTIDETONATION TANK QUANTITY:index,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG ANTIDETONATION TANK MAX QUANTITY:index,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG NITROUS TANK VALVE:index,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG NITROUS TANK QUANTITY:index,Gallons,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Racing,RECIP ENG NITROUS TANK MAX QUANTITY:index,Gallons,N,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html
+Avatar Mode,AVATAR MODE IS ATTACHED,Bool,Y,Y,-,False,https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html

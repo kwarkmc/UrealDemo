@@ -1,4 +1,5 @@
 #include "FlightScene.h"
+#include "LandingGearVisual.h"
 #include "Components/SceneComponent.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Misc/FileHelper.h"
@@ -261,6 +262,7 @@ bool AFlightScene::PrepareRunways(const FString& Directory, const flight_core::T
 
 bool AFlightScene::SetGroundControls(double SteeringDeg, double Brake, bool ParkingBrake)
 {
+    if (!ModelParameters.operating.ground_supported) return false;
     const flight_core::GroundControls Candidate{SteeringDeg, Brake, ParkingBrake};
     if (!flight_core::valid_ground_controls(Candidate) || State.Crashed) return false;
     GroundInputs = Candidate;
@@ -268,18 +270,28 @@ bool AFlightScene::SetGroundControls(double SteeringDeg, double Brake, bool Park
     return true;
 }
 
+bool AFlightScene::SetFlaps(double Degrees)
+{
+    if (flight_core::operation_active(Operation) || !State.Fault.IsEmpty()
+        || !flight_core::request_flaps(Dynamics, Degrees, FlightEnvironment)) return false;
+    CancelNavigation();
+    return SyncState();
+}
+
 bool AFlightScene::SetLandingGear(bool Down)
 {
+    if (!ModelParameters.operating.ground_supported) return false;
     if (!State.TerrainLoaded || !State.Fault.IsEmpty() || flight_core::operation_active(Operation)) return false;
     flight_core::GroundPlane Plane;
     QueryGround(Dynamics.position_enu_m, {OriginLatitude, OriginLongitude, OriginHeight}, Plane);
-    if (!Down && flight_core::ground_data(Dynamics, Plane).on_ground) return false;
-    if (!flight_core::request_gear(Dynamics, Down)) return false;
+    if (!Down && flight_core::ground_data(Dynamics, Plane, FlightEnvironment).on_ground) return false;
+    if (!flight_core::request_gear(Dynamics, Down, FlightEnvironment)) return false;
     return SyncState();
 }
 
 bool AFlightScene::SetGroundInitialCondition(double LatitudeDeg, double LongitudeDeg, double HeadingDeg, double GroundSpeedMps)
 {
+    if (!ModelParameters.operating.ground_supported) return false;
     if (!State.TerrainLoaded || !flight_core::valid({LatitudeDeg, LongitudeDeg, 0})
         || !FMath::IsFinite(HeadingDeg) || std::abs(HeadingDeg) > 360
         || !FMath::IsFinite(GroundSpeedMps) || GroundSpeedMps < 0 || GroundSpeedMps > 15) return false;
@@ -324,7 +336,8 @@ void AFlightScene::SyncGroundState()
     State.TerrainHeightM = 0;
     State.GroundAvailable = QueryGround(Dynamics.position_enu_m, {OriginLatitude, OriginLongitude, OriginHeight},
         Plane, &State.GroundSurfaceName, &State.TerrainHeightM);
-    const auto Ground = flight_core::ground_data(Dynamics, Plane);
+    if(State.GroundAvailable) State.GroundAvailable=SampleWheelGround(Dynamics,{OriginLatitude,OriginLongitude,OriginHeight},Plane);
+    const auto Ground = flight_core::ground_data(Dynamics, Plane, FlightEnvironment);
     State.GroundOnGround = Ground.on_ground;
     State.WheelsOnGround = Ground.wheels_on_ground;
     State.HeightAglM = State.GroundAvailable ? Ground.clearance_m : 0;
@@ -332,6 +345,15 @@ void AFlightScene::SyncGroundState()
     State.ImpactSpeedMps = Dynamics.ground.impact_speed_mps;
     State.Crashed = Dynamics.ground.crashed;
     State.SteeringDeg = GroundInputs.steering_deg;
+    State.AppliedSteeringDeg = Dynamics.actual_steering_deg;
+    State.AppliedBrake = Dynamics.actual_brake;
+    State.WheelSurfacesSampled=Plane.per_wheel;
+    State.WheelNormalForceN.Empty();State.WheelClearanceM.Empty();State.WheelLateralSlipMps.Empty();
+    for(int I=0;I<3;++I) {
+        State.WheelNormalForceN.Add(Dynamics.ground.wheel_normal_force_n[I]);
+        State.WheelClearanceM.Add(Ground.wheel_clearance_m[I]);
+        State.WheelLateralSlipMps.Add(Dynamics.ground.wheel_lateral_slip_mps[I]);
+    }
     State.Brake = GroundInputs.brake;
     State.ParkingBrake = GroundInputs.parking_brake;
     State.GearCommandDown = Dynamics.gear.target_down;
@@ -339,12 +361,35 @@ void AFlightScene::SyncGroundState()
     State.GearDownLocked = flight_core::gear_down_locked(Dynamics.gear);
     State.GearUpLocked = flight_core::gear_up_locked(Dynamics.gear);
     State.GearMoving = Dynamics.gear.target_down ? !State.GearDownLocked : !State.GearUpLocked;
-    const double FoldDeg = 90 * (1 - Dynamics.gear.extension);
-    NoseGearHinge->SetRelativeRotation(FRotator(-FoldDeg, 0, 0));
-    LeftMainGearHinge->SetRelativeRotation(FRotator(0, 0, -FoldDeg));
-    RightMainGearHinge->SetRelativeRotation(FRotator(0, 0, FoldDeg));
+    USceneComponent* Hinges[] = {NoseGearHinge.Get(), LeftMainGearHinge.Get(), RightMainGearHinge.Get()};
+    for (int Index=0; Index<3; ++Index) {
+        const auto Root=landing_gear_visual::root(ModelParameters,Index);
+        const auto Delta=landing_gear_visual::center(ModelParameters,Index)-Root;
+        const auto Stowed=landing_gear_visual::stowed_direction(Index);
+        Hinges[Index]->SetRelativeLocation(FVector(Root.x,Root.y,Root.z)*100);
+        const FQuat Fold=FQuat::FindBetweenNormals(FVector(Delta.x,Delta.y,Delta.z).GetSafeNormal(),
+            FVector(Stowed.x,Stowed.y,Stowed.z).GetSafeNormal());
+        Hinges[Index]->SetRelativeRotation(FQuat::Slerp(FQuat::Identity,Fold,1-Dynamics.gear.extension));
+    }
     // ponytail: no gear-bay mesh; hide fully stowed parts until measured geometry is available.
     for (USceneComponent* Hinge : {NoseGearHinge.Get(), LeftMainGearHinge.Get(), RightMainGearHinge.Get()})
         Hinge->SetHiddenInGame(State.GearUpLocked || !State.VisualShowBuiltinGear, true);
-    if (NoseWheel) NoseWheel->SetRelativeRotation(FRotator(0, GroundInputs.steering_deg, 0));
+    if (NoseWheel) NoseWheel->SetRelativeRotation(FRotator(0, Dynamics.actual_steering_deg, 0));
+}
+
+bool AFlightScene::SampleWheelGround(const flight_core::Aircraft& Body,flight_core::Geodetic Origin,flight_core::GroundPlane& Plane) const
+{
+    using namespace flight_core;
+    using namespace fixed_wing_detail;
+    if(!Plane.valid) return false;
+    if(dot(Body.position_enu_m-Plane.point_enu_m,Plane.normal_enu)>ModelParameters.cg_height_m+10) return true;
+    Plane.per_wheel=true;
+    const auto Points=wheel_points(ModelParameters);
+    for(int I=0;I<3;++I) {
+        const auto Position=Body.position_enu_m+enu(rotate(orientation(Body),Points[I]));
+        GroundPlane Surface;
+        if(!QueryGround(Position,Origin,Surface)) {Plane.valid=false;return false;}
+        Plane.wheels[I]={Surface.point_enu_m,Surface.normal_enu,true};
+    }
+    return valid_ground_plane(Plane);
 }

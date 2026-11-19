@@ -1,5 +1,8 @@
 #include "FlightScene.h"
 #include "FlightCore.h"
+#include "PropellerGeometry.h"
+#include "LandingGearVisual.h"
+#include "KismetProceduralMeshLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "Components/SceneCaptureComponent2D.h"
 #include "Components/DirectionalLightComponent.h"
@@ -34,6 +37,12 @@
 
 namespace
 {
+FVector ChaseCameraOffset(double SpanM)
+{
+    const double DistanceCm = FMath::Max(600.0, SpanM * 300.0);
+    return FVector(-DistanceCm, 0, DistanceCm * .3);
+}
+
 // ECEF basis of an ENU frame. Reflect both source and destination Y at the Unreal boundary.
 FMatrix RenderFrame(double Latitude, double Longitude, double RenderLatitude, double RenderLongitude)
 {
@@ -109,6 +118,18 @@ AFlightScene::AFlightScene()
     LeftElevator = Surface(TEXT("LeftElevatorHinge"), TEXT("LeftElevatorSurface"), FVector(-157.5, -67.5, 20), FVector(.25, .85, .08));
     RightElevator = Surface(TEXT("RightElevatorHinge"), TEXT("RightElevatorSurface"), FVector(-157.5, 67.5, 20), FVector(.25, .85, .08));
     Rudder = Surface(TEXT("RudderHinge"), TEXT("RudderSurface"), FVector(-160, 0, 65), FVector(.25, .08, 1.1));
+    LeftFlap = Surface(TEXT("LeftFlapHinge"), TEXT("LeftFlapSurface"), FVector::ZeroVector, FVector(.2, 1, .05));
+    RightFlap = Surface(TEXT("RightFlapHinge"), TEXT("RightFlapSurface"), FVector::ZeroVector, FVector(.2, 1, .05));
+    Propeller=CreateDefaultSubobject<USceneComponent>(TEXT("Propeller"));
+    Propeller->SetupAttachment(AirframeVisual);
+    PropellerBlades=CreateDefaultSubobject<UProceduralMeshComponent>(TEXT("PropellerBlades"));
+    PropellerBlur=CreateDefaultSubobject<UProceduralMeshComponent>(TEXT("PropellerBlur"));
+    PropellerSpinner=CreateDefaultSubobject<UProceduralMeshComponent>(TEXT("PropellerSpinner"));
+    for(auto* Mesh:{PropellerBlades.Get(),PropellerBlur.Get(),PropellerSpinner.Get()}) {
+        Mesh->SetupAttachment(Propeller);
+        Mesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+        Mesh->SetCastShadow(false);
+    }
     // Development folding geometry. Fully extended wheel bottoms match GroundContact.h (cm here).
     auto Gear = [this, &Part](const TCHAR* HingeName, const TCHAR* PivotName, const TCHAR* MeshName, FVector Position)
     {
@@ -128,6 +149,10 @@ AFlightScene::AFlightScene()
     NoseGearHinge = Gear(TEXT("NoseGearHinge"), TEXT("NoseWheelPivot"), TEXT("NoseWheel"), FVector(35, 0, -4));
     LeftMainGearHinge = Gear(TEXT("LeftMainGearHinge"), TEXT("LeftMainWheelPivot"), TEXT("LeftMainWheel"), FVector(-12, -22, -4));
     RightMainGearHinge = Gear(TEXT("RightMainGearHinge"), TEXT("RightMainWheelPivot"), TEXT("RightMainWheel"), FVector(-12, 22, -4));
+    LandingPath=CreateDefaultSubobject<UProceduralMeshComponent>(TEXT("LandingReferencePath"));
+    LandingPath->SetupAttachment(RootComponent);
+    LandingPath->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+    LandingPath->SetVisibility(false);
     Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("ChaseCamera"));
     Camera->SetupAttachment(Aircraft);
     Camera->SetRelativeLocation(FVector(-600, 0, 180));
@@ -532,11 +557,14 @@ bool AFlightScene::InitializeFlight(double LatitudeDeg, double LongitudeDeg, dou
 {
     const auto Position = flight_core::geodetic_to_enu({LatitudeDeg, LongitudeDeg, EllipsoidHeightM},
                                                       {LatitudeDeg, LongitudeDeg, 0});
-    if (!Position || !FMath::IsFinite(SpeedMps) || SpeedMps < 5 || SpeedMps > 45
+    const auto& Limits = ModelParameters.operating;
+    if (!Position || !FMath::IsFinite(SpeedMps) || SpeedMps < Limits.minimum_speed_mps || SpeedMps > Limits.maximum_speed_mps
         || !FMath::IsFinite(PitchDeg) || FMath::Abs(PitchDeg) > 89
         || !FMath::IsFinite(RollDeg) || FMath::Abs(RollDeg) > 180
         || !FMath::IsFinite(HeadingDeg) || FMath::Abs(HeadingDeg) > 360
-        || EllipsoidHeightM < -500 || EllipsoidHeightM > 20000) return false;
+        || EllipsoidHeightM < Limits.minimum_height_m || EllipsoidHeightM > Limits.maximum_height_m) return false;
+    if (AirAngles.IsSet() && (std::abs(AirAngles->X)>Limits.maximum_alpha_deg
+        || std::abs(AirAngles->Y)>Limits.maximum_beta_deg)) return false;
     const auto RenderPosition = flight_core::geodetic_to_enu({LatitudeDeg, LongitudeDeg, EllipsoidHeightM},
         {RenderOriginLatitude, RenderOriginLongitude, RenderOriginHeight});
     if (!RenderPosition || std::hypot(RenderPosition->x, RenderPosition->y) > 1e6) return false;
@@ -568,11 +596,16 @@ bool AFlightScene::InitializeFlight(double LatitudeDeg, double LongitudeDeg, dou
     // The initial condition represents an established flow at the supplied AoA.
     Initial->separation = flight_core::equilibrium_separation(Alpha, Environment);
     Initial->time_s = Dynamics.time_s;
+    if (!flight_core::fixed_wing_detail::valid({*Initial, flight_core::fixed_wing_detail::orientation(*Initial)}, Environment)) return false;
     flight_core::GroundPlane Plane;
     if (QueryGround(Initial->position_enu_m, {LatitudeDeg, LongitudeDeg, 0}, Plane))
     {
-        const auto Ground = flight_core::ground_data(*Initial, Plane);
-        if (Ground.minimum_wheel_clearance_m < -1e-5 || Ground.body_strike) return false;
+        if (!Limits.ground_supported) {
+            if (flight_core::fixed_wing_detail::dot(Initial->position_enu_m-Plane.point_enu_m, Plane.normal_enu)<=ModelParameters.span_m) return false;
+        } else {
+            const auto Ground = flight_core::ground_data(*Initial, Plane, FlightEnvironment);
+            if (Ground.minimum_wheel_clearance_m < -1e-5 || Ground.body_strike) return false;
+        }
     }
     OriginLatitude = LatitudeDeg;
     OriginLongitude = LongitudeDeg;
@@ -594,6 +627,7 @@ bool AFlightScene::InitializeFlight(double LatitudeDeg, double LongitudeDeg, dou
 
 bool AFlightScene::SetRoute(const TArray<FFlightWaypoint>& Waypoints, double LoiterRadiusM, bool Clockwise)
 {
+    if (!ModelParameters.operating.navigation_supported) return false;
     if (!State.Fault.IsEmpty() || State.GroundOnGround || Waypoints.Num() < 1 || Waypoints.Num() > 64) return false;
     flight_core::Navigation Route;
     Route.loiter_radius_m = LoiterRadiusM;
@@ -602,11 +636,11 @@ bool AFlightScene::SetRoute(const TArray<FFlightWaypoint>& Waypoints, double Loi
     {
         const auto Position = flight_core::geodetic_to_enu({Point.LatitudeDeg, Point.LongitudeDeg, Point.EllipsoidHeightM},
                                                           {OriginLatitude, OriginLongitude, OriginHeight});
-        if (!Position || Point.EllipsoidHeightM < -500 || Point.EllipsoidHeightM > 20000
+        if (!Position || Point.EllipsoidHeightM < ModelParameters.operating.minimum_height_m || Point.EllipsoidHeightM > ModelParameters.operating.maximum_height_m
             || std::hypot(Position->x, Position->y) > 50000) return false;
         Route.waypoints.push_back({*Position, Point.SpeedMps});
     }
-    if (!flight_core::valid_route(Route)) return false;
+    if (!flight_core::valid_route(Route, ModelParameters)) return false;
     // Keep the complete final circle inside the local scene coordinate envelope.
     const auto& Center = Route.waypoints.back().position_enu_m;
     if (std::hypot(Center.x, Center.y) + LoiterRadiusM > 50000) return false;
@@ -635,6 +669,7 @@ bool AFlightScene::SetControls(double ElevatorDeg, double AileronDeg, double Rud
 
 void AFlightScene::ApplyControlVisuals()
 {
+    if (GeometryFingerprint!=State.AirframeFingerprint) ConfigureBuiltinGeometry();
     const auto Actual = flight_core::applied_controls(Dynamics, Inputs, FlightEnvironment);
     const double ElevatorDeg = Actual.elevator_deg, AileronDeg = Actual.aileron_deg, RudderDeg = Actual.rudder_deg;
     // UE +pitch lowers trailing (-X) edges. Negative yaw moves the rudder trailing edge right (+Y).
@@ -643,10 +678,99 @@ void AFlightScene::ApplyControlVisuals()
     LeftAileron->SetRelativeRotation(FRotator(AileronDeg, 0, 0));
     RightAileron->SetRelativeRotation(FRotator(-AileronDeg, 0, 0));
     Rudder->SetRelativeRotation(FRotator(0, -RudderDeg, 0));
+    LeftFlap->SetRelativeRotation(FRotator(Dynamics.flap_deg,0,0));
+    RightFlap->SetRelativeRotation(FRotator(Dynamics.flap_deg,0,0));
+    if (Dynamics.time_s<VisualTimeS) PropellerAngleDeg=0;
+    const double Elapsed=FMath::Max(0.0,Dynamics.time_s-VisualTimeS);
+    VisualTimeS=Dynamics.time_s;
+    // shortcut: propeller phase is display animation, not an RPM/torque model.
+    const double VisualRps=flight_core::dynamic_propeller(ModelParameters) ? Dynamics.propeller_omega_rps/(2*PI)
+        : 20*Actual.throttle*FlightEnvironment.engine_power_fraction;
+    PropellerAngleDeg=FMath::Fmod(PropellerAngleDeg+Elapsed*360*VisualRps*ModelParameters.propeller_spin_direction,360.0);
+    WheelAngleDeg=FMath::RadiansToDegrees(Dynamics.wheel_rotation_rad);
+    Propeller->SetRelativeRotation(FRotator(0,0,PropellerAngleDeg));
+    const double Blend=propeller_visual::blur_fraction(VisualRps);
+    if(PropellerBladeMaterial) PropellerBladeMaterial->SetScalarParameterValue(TEXT("Opacity"),1-Blend);
+    if(PropellerBlurMaterial) PropellerBlurMaterial->SetScalarParameterValue(TEXT("Opacity"),.28*Blend);
+    PropellerBlades->SetVisibility(Blend<.999 && State.VisualSource==TEXT("builtin"));
+    PropellerBlur->SetVisibility(Blend>.001 && State.VisualSource==TEXT("builtin"));
+    TInlineComponentArray<UStaticMeshComponent*> Meshes(this);
+    for (auto* Mesh:Meshes) if (Mesh->GetName()==TEXT("NoseWheel") || Mesh->GetName()==TEXT("LeftMainWheel") || Mesh->GetName()==TEXT("RightMainWheel"))
+        Mesh->SetRelativeRotation(FRotator(WheelAngleDeg,0,0));
+    if (State.VisualSource == TEXT("builtin")) State.VisualSpanM=ModelParameters.span_m;
+    if (State.ViewMode == TEXT("aircraft")) Camera->SetRelativeLocation(ChaseCameraOffset(State.VisualSpanM));
     State.ElevatorDeg = Inputs.elevator_deg;
     State.AileronDeg = Inputs.aileron_deg;
     State.RudderDeg = Inputs.rudder_deg;
     State.Throttle = Inputs.throttle;
+}
+
+void AFlightScene::ConfigureBuiltinGeometry()
+{
+    GeometryFingerprint=State.AirframeFingerprint;
+    AirframeVisual->SetRelativeScale3D(FVector(1));
+    const auto& P=ModelParameters;
+    TInlineComponentArray<UStaticMeshComponent*> Meshes(this);
+    auto Shape=[&](const TCHAR* Name,FVector Position,FVector Dimensions) {
+        for (auto* Mesh:Meshes) if (Mesh->GetName()==Name) {
+            Mesh->SetRelativeLocation(Position*100);
+            Mesh->SetRelativeScale3D(Dimensions);
+        }
+    };
+    const double C=P.chord_m, B=P.span_m, L=P.body_half_length_m, H=P.body_half_height_m, Z=.75*H;
+    Shape(TEXT("Fuselage"),FVector::ZeroVector,FVector(2*L,.8*C,2*H));
+    Shape(TEXT("WingLeadingEdge"),FVector(.125*C,0,Z),FVector(.75*C,B,.06*C));
+    Shape(TEXT("WingFixedTrailingEdge"),FVector::ZeroVector,FVector(.001));
+    auto Surface=[&](USceneComponent* Pivot,const TCHAR* Name,double X,double Y,double Height,FVector Dimensions) {
+        Pivot->SetRelativeLocation(FVector(X,Y,Height)*100);
+        Shape(Name,FVector(-Dimensions.X*.5,0,0),Dimensions);
+    };
+    Surface(LeftAileron,TEXT("LeftAileronSurface"),-.25*C,-.375*B,Z,FVector(.25*C,.25*B,.06*C));
+    Surface(RightAileron,TEXT("RightAileronSurface"),-.25*C,.375*B,Z,FVector(.25*C,.25*B,.06*C));
+    Surface(LeftFlap,TEXT("LeftFlapSurface"),-.25*C,-.125*B,Z,FVector(.25*C,.25*B,.06*C));
+    Surface(RightFlap,TEXT("RightFlapSurface"),-.25*C,.125*B,Z,FVector(.25*C,.25*B,.06*C));
+    Shape(TEXT("TailplaneLeadingEdge"),FVector(-.7*L,0,.5*H),FVector(.4*C,.32*B,.04*C));
+    Surface(LeftElevator,TEXT("LeftElevatorSurface"),-.7*L-.2*C,-.08*B,.5*H,FVector(.2*C,.16*B,.04*C));
+    Surface(RightElevator,TEXT("RightElevatorSurface"),-.7*L-.2*C,.08*B,.5*H,FVector(.2*C,.16*B,.04*C));
+    Shape(TEXT("FinLeadingEdge"),FVector(-.7*L,0,H*1.5),FVector(.4*C,.04*C,2*H));
+    Surface(Rudder,TEXT("RudderSurface"),-.7*L-.2*C,0,H*1.5,FVector(.2*C,.04*C,2*H));
+    Propeller->SetRelativeLocation(FVector(L+.02*P.propeller_radius_m,0,-P.thrust_z_m)*100);
+    // Remove legacy serialized stick blades/hub if a saved map still contains them.
+    for(auto* Mesh:Meshes) if(Mesh->GetName().StartsWith(TEXT("PropellerBlade")) || Mesh->GetName()==TEXT("PropellerHub"))
+        Mesh->SetVisibility(false);
+    auto MakeMesh=[&](UProceduralMeshComponent* Component,const propeller_visual::Mesh& Data,bool Blade,bool Blur) {
+        TArray<FVector> Vertices,Normals;TArray<int32> Indices;TArray<FVector2D> UV;
+        TArray<FLinearColor> Colors;TArray<FProcMeshTangent> Tangents;
+        for(const auto& V:Data.vertices) {
+            Vertices.Add(FVector(V.x,V.y,V.z)*100);UV.Add(FVector2D(V.y,V.z));
+            Colors.Add(Blade ? FMath::Lerp(FLinearColor(.025f,.03f,.035f,1),FLinearColor(.95f,.65f,.06f,1),float(V.tip))
+                : FLinearColor(.15f,.17f,.18f,float(V.alpha)));
+        }
+        for(int I:Data.indices) Indices.Add(I);
+        UKismetProceduralMeshLibrary::CalculateTangentsForMesh(Vertices,Indices,UV,Normals,Tangents);
+        Component->CreateMeshSection_LinearColor(0,Vertices,Indices,Normals,UV,Colors,Tangents,false);
+        if(auto* Material=LoadObject<UMaterialInterface>(nullptr,TEXT("/Game/Materials/M_PropellerVisual.M_PropellerVisual"))) {
+            if(Blade || Blur) {
+                auto* Instance=UMaterialInstanceDynamic::Create(Material,this);Component->SetMaterial(0,Instance);
+                if(Blade) PropellerBladeMaterial=Instance;else PropellerBlurMaterial=Instance;
+            }
+        }
+        if(!Blade && !Blur) if(auto* Material=LoadObject<UMaterialInterface>(nullptr,TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial")))
+            Component->SetMaterial(0,Material);
+    };
+    MakeMesh(PropellerBlades,propeller_visual::blades(P.propeller_radius_m),true,false);
+    MakeMesh(PropellerBlur,propeller_visual::blur(P.propeller_radius_m),false,true);
+    MakeMesh(PropellerSpinner,propeller_visual::spinner(P.propeller_radius_m),false,false);
+    for(int Index=0;Index<3;++Index) {
+        const TCHAR* Name=Index==0 ? TEXT("NoseWheelPivotStrut") : Index==1 ? TEXT("LeftMainWheelPivotStrut") : TEXT("RightMainWheelPivotStrut");
+        const auto Delta=landing_gear_visual::center(P,Index)-landing_gear_visual::root(P,Index);
+        const FVector Direction(Delta.x,Delta.y,Delta.z);
+        Shape(Name,Direction*.5,FVector(P.wheel_radius_m*.25,P.wheel_radius_m*.25,Direction.Size()));
+        for(auto* Mesh:Meshes) if(Mesh->GetName()==Name)
+            Mesh->SetRelativeRotation(FQuat::FindBetweenNormals(FVector::UpVector,Direction.GetSafeNormal()));
+        Shape(Index==0 ? TEXT("NoseWheel") : Index==1 ? TEXT("LeftMainWheel") : TEXT("RightMainWheel"),Direction,
+            FVector(2*P.wheel_radius_m,.8*P.wheel_radius_m,2*P.wheel_radius_m));
+    }
 }
 
 bool AFlightScene::SetRunning(bool Running)
@@ -682,7 +806,7 @@ bool AFlightScene::SetViewMode(const FString& ViewMode)
     const double MapHeightCm = FMath::Max(1000.0, TerrainViewSpanM) * 100 * FMath::Max(1.0, Aspect)
         / (2 * FMath::Tan(FMath::DegreesToRadians(65.0 / 2))) * 1.1;
     Camera->SetRelativeLocation(Overview ? TerrainViewCenter + FVector(0, 0, MapHeightCm)
-                                       : FVector(-600, 0, 180));
+                                       : ChaseCameraOffset(State.VisualSpanM));
     Camera->SetRelativeRotation(Overview ? FRotator(-90, -90, 0) : FRotator(-17, 0, 0));
     Camera->FieldOfView = Projectile ? 60 : Overview ? 65 : 75;
     if (Projectile) UpdateWargameView();
@@ -738,6 +862,7 @@ bool AFlightScene::SyncState()
     State.ActiveWaypointIndex = State.WaypointCount ? static_cast<int32>(Navigation.active_index) : -1;
     State.NavigationMode = State.WaypointCount ? (Navigation.loitering ? TEXT("loiter") : TEXT("waypoint")) : TEXT("manual");
     State.StallRecovery = State.WaypointCount && Navigation.recovering;
+    State.NavigationReacquiring=State.WaypointCount && Navigation.reacquiring;
     State.LoiterRadiusM = State.WaypointCount ? Navigation.loiter_radius_m : 0;
     State.DistanceToWaypointM = 0;
     if (State.WaypointCount)
@@ -757,6 +882,17 @@ bool AFlightScene::SyncState()
     State.OperationMessage = UTF8_TO_TCHAR(Operation.message.c_str());
     State.OperationCrossTrackM = Operation.cross_track_m;
     State.OperationAlongTrackM = Operation.along_m;
+    const auto& Guidance=Operation.kind==flight_core::FlightOperationKind::none ? Navigation : Operation.navigation;
+    State.OperationDesiredCourseDeg=FMath::RadiansToDegrees(Guidance.desired_course_rad);
+    State.OperationDesiredBankDeg=FMath::RadiansToDegrees(Guidance.desired_bank_rad);
+    State.OperationDesiredSpeedMps=Guidance.desired_speed_mps;
+    const auto TargetGeo=flight_core::enu_to_geodetic({Dynamics.position_enu_m.x,Dynamics.position_enu_m.y,Guidance.desired_height_m},
+        {OriginLatitude,OriginLongitude,OriginHeight});
+    State.OperationDesiredHeightM=TargetGeo ? TargetGeo->ellipsoid_height_m : 0;
+    State.OperationDesiredClimbMps=Guidance.desired_climb_mps;
+    State.OperationReturnRadiusM=Operation.return_radius_m;
+    if(Operation.kind!=flight_core::FlightOperationKind::landing) State.OperationPath.Empty();
+    LandingPath->SetVisibility(Operation.kind==flight_core::FlightOperationKind::landing && flight_core::operation_active(Operation));
     State.OperationTargetHeightM = Operation.kind == flight_core::FlightOperationKind::none ? 0 : Operation.target_agl_m;
     return true;
 }
@@ -776,7 +912,10 @@ bool AFlightScene::StepFlight(double DeltaSeconds)
     {
         const double Dt = FMath::Min(.01, DeltaSeconds - Index * .01);
         flight_core::GroundPlane Plane;
-        QueryGround(Next.position_enu_m, {OriginLatitude, OriginLongitude, OriginHeight}, Plane);
+        if(!QueryGround(Next.position_enu_m,{OriginLatitude,OriginLongitude,OriginHeight},Plane)
+            || !SampleWheelGround(Next,{OriginLatitude,OriginLongitude,OriginHeight},Plane)) {
+            State.Fault=TEXT("Terrain missing under aircraft or wheel; no replacement ground was assumed.");SetRunning(false);return false;
+        }
         if (flight_core::operation_active(NextOperation))
         {
             const auto Command = flight_core::update_flight_operation(NextOperation, Next, FlightEnvironment, Plane, Dt);
@@ -788,7 +927,8 @@ bool AFlightScene::StepFlight(double DeltaSeconds)
             }
             Commands = Command->flight;
             Wheels = Command->ground;
-            if (Command->gear_down && !flight_core::request_gear(Next, *Command->gear_down))
+            if (Command->flap_deg && !flight_core::request_flaps(Next, *Command->flap_deg, FlightEnvironment)) return false;
+            if (Command->gear_down && !flight_core::request_gear(Next, *Command->gear_down, FlightEnvironment))
             {
                 State.Fault = TEXT("Automatic gear command refused by ground interlock. Reset or cancel flight.");
                 SetRunning(false);
@@ -845,10 +985,10 @@ bool AFlightScene::StepFlight(double DeltaSeconds)
 void AFlightScene::ResetFlight()
 {
     SetRunning(false);
-    const auto Position = flight_core::geodetic_to_enu({OriginLatitude, OriginLongitude, 2600},
+    const auto Position = flight_core::geodetic_to_enu({OriginLatitude, OriginLongitude, ModelParameters.operating.initial_height_m},
         {OriginLatitude, OriginLongitude, OriginHeight});
     FlightEnvironment.origin_altitude_m = OriginHeight;
-    const auto Initial = Position ? flight_core::level_trim(*Position, 0, 19, FlightEnvironment) : std::nullopt;
+    const auto Initial = Position ? flight_core::level_trim(*Position, 0, ModelParameters.operating.initial_speed_mps, FlightEnvironment) : std::nullopt;
     if (!Initial) { State.Fault = TEXT("Could not initialize the flight model."); return; }
     Dynamics = Initial->aircraft;
     Navigation = {};

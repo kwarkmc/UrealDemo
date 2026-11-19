@@ -1,0 +1,7 @@
+﻿name,source
+AircraftLoaded,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/general_functions.html#SimConnect_RequestSystemState
+DialogMode,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/general_functions.html#SimConnect_RequestSystemState
+FlightLoaded,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/general_functions.html#SimConnect_RequestSystemState
+FlightPlan,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/general_functions.html#SimConnect_RequestSystemState
+FullScreenMode,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/general_functions.html#SimConnect_RequestSystemState
+Sim,https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/general_functions.html#SimConnect_RequestSystemState

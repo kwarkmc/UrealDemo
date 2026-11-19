@@ -1,0 +1,220 @@
+{
+  "aircraft": {
+    "latitude_deg": 33.43299999999999,
+    "longitude_deg": 126.52,
+    "ellipsoid_height_m": 2599.9999999990687,
+    "heading_deg": 0,
+    "pitch_deg": 5.672326903403909,
+    "roll_deg": 0,
+    "simulation_time_s": 0,
+    "running": false,
+    "terrain_loaded": true,
+    "speed_mps": 65.00000000000001,
+    "vertical_speed_mps": 8.534839501805891e-16,
+    "time_scale": 1,
+    "effective_time_scale": 0,
+    "distance_travelled_m": 0,
+    "roll_rate_deg_s": 0,
+    "pitch_rate_deg_s": 0,
+    "yaw_rate_deg_s": 0,
+    "angle_of_attack_deg": 5.672326903403909,
+    "sideslip_deg": 0.010312712708274364,
+    "ground_speed_mps": 65,
+    "air_density_kg_m3": 0.9472641688488673,
+    "dynamic_pressure_pa": 2001.0955566932332,
+    "lift_coefficient": 0.7137351527929843,
+    "drag_coefficient": 0.05747091285463205,
+    "flow_separation": 0,
+    "stall_warning": false,
+    "stalled": false,
+    "load_factor": 0.9951034240112138
+  },
+  "controls": {
+    "elevator_deg": 0.8734040860073303,
+    "aileron_deg": 0.6936263741970601,
+    "rudder_deg": 0.049208270592859704,
+    "throttle": 0.6677512213487801
+  },
+  "ground": {
+    "steering_deg": 0,
+    "brake": 0,
+    "parking_brake": false,
+    "wheel_surfaces_sampled": false,
+    "wheel_normal_force_n": [
+      0,
+      0,
+      0
+    ],
+    "wheel_clearance_m": [
+      2154.3368426105326,
+      2153.7374324430775,
+      2153.5696896161235
+    ],
+    "wheel_lateral_slip_mps": [
+      0,
+      0,
+      0
+    ],
+    "applied_steering_deg": 0,
+    "applied_brake": 0,
+    "on_ground": false,
+    "wheels_on_ground": 0,
+    "height_agl_m": 2155.4633570324054,
+    "terrain_height_m": 436.4543880932033,
+    "normal_force_n": 0,
+    "impact_speed_mps": 0,
+    "crashed": false,
+    "surface": "terrain",
+    "available": true
+  },
+  "gear": {
+    "command_down": true,
+    "extension": 1,
+    "down_locked": true,
+    "up_locked": false,
+    "moving": false
+  },
+  "automation": {
+    "phase": "idle",
+    "kind": "none",
+    "runway_index": -1,
+    "runway_name": "",
+    "completed": false,
+    "message": "Inactive",
+    "cross_track_m": 0,
+    "along_track_m": 0,
+    "target_height_m": 0,
+    "rejection": "",
+    "desired_course_deg": 0,
+    "desired_bank_deg": 0,
+    "desired_speed_mps": 0,
+    "desired_height_m": -9.313225746154785e-10,
+    "desired_climb_mps": 0,
+    "return_radius_m": 0,
+    "path": []
+  },
+  "actuators": {
+    "elevator_deg": 0.8734040860073303,
+    "aileron_deg": 0.6936263741970601,
+    "rudder_deg": 0.049208270592859704,
+    "throttle": 0.6677512213487801,
+    "thrust_n": 3000.2151353847726,
+    "propeller_rpm": 1660.7024226309777,
+    "shaft_drive_power_w": 259908.08256607462,
+    "shaft_load_power_w": 259908.08256607447,
+    "shaft_drive_torque_nm": 1494.511757499188,
+    "propeller_load_torque_nm": 1494.511757499187
+  },
+  "airframe": {
+    "id": "c208b-retractable-research-assumptions",
+    "profile": "aircraft/c208b-retractable-research.json",
+    "fingerprint": "sha1:28f8ca620257c3df7b3879976c93d19afe3d091f",
+    "error": "",
+    "dynamic_propeller": true,
+    "schema_version": 2,
+    "initial_speed_mps": 65,
+    "initial_height_m": 2600,
+    "minimum_speed_mps": 0,
+    "maximum_speed_mps": 110,
+    "minimum_height_m": -500,
+    "maximum_height_m": 6000,
+    "maximum_alpha_deg": 180,
+    "maximum_beta_deg": 89,
+    "ground_supported": true,
+    "navigation_supported": true,
+    "automation_supported": true,
+    "support_message": "HYPOTHETICAL retractable-gear derivative of C208B research model. Not an actual C208B configuration. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+    "retractable_gear": true,
+    "route_minimum_speed_mps": 36,
+    "route_maximum_speed_mps": 75,
+    "landing_minimum_speed_mps": 36,
+    "landing_maximum_speed_mps": 44,
+    "maximum_flap_deg": 30
+  },
+  "flaps": {
+    "command_deg": 0,
+    "actual_deg": 0
+  },
+  "visual": {
+    "source": "builtin",
+    "config": "aircraft/visual.json",
+    "mesh": "",
+    "triangle_count": 0,
+    "span_m": 15.85,
+    "fingerprint": "sha1:31eec5e362e4e61ee3884fef27312c28760f59b0",
+    "error": "",
+    "show_builtin_gear": true
+  },
+  "eoir": {
+    "enabled": false,
+    "mode": "ccd",
+    "fov_deg": 30,
+    "azimuth_deg": 0,
+    "elevation_deg": -45,
+    "gimbal_mode": "body_fixed",
+    "point_latitude_deg": 0,
+    "point_longitude_deg": 0,
+    "point_ellipsoid_height_m": 0,
+    "target_id": "",
+    "tracking_status": "manual",
+    "limited": false,
+    "target_in_fov": false,
+    "error_deg": 0,
+    "frame_sequence": 0,
+    "error": ""
+  },
+  "targets": [],
+  "wargame": {
+    "time_s": 2762.439999999998,
+    "error": "",
+    "weapons": [
+      {
+        "id": "training-marker",
+        "label": "Sim projectile",
+        "mesh": "models/example.stl",
+        "animation_duration_s": 5,
+        "triangle_count": 144
+      }
+    ],
+    "shots": []
+  },
+  "disturbance": {
+    "engine_power_fraction": 1,
+    "elevator_jammed": false,
+    "aileron_jammed": false,
+    "rudder_jammed": false,
+    "gust_east_mps": 0,
+    "gust_north_mps": 0,
+    "gust_up_mps": 0,
+    "gust_start_s": 0,
+    "gust_duration_s": 0,
+    "effective_wind_east_mps": 0,
+    "effective_wind_north_mps": 0,
+    "effective_wind_up_mps": 0
+  },
+  "navigation": {
+    "mode": "manual",
+    "stall_recovery": false,
+    "active_waypoint_index": -1,
+    "reacquiring": false,
+    "waypoint_count": 0,
+    "distance_to_waypoint_m": 0,
+    "loiter_radius_m": 0
+  },
+  "environment": {
+    "wind_east_mps": 0,
+    "wind_north_mps": 0,
+    "wind_up_mps": 0
+  },
+  "view_mode": "aircraft",
+  "terrain": {
+    "dataset": "korea",
+    "tile_count": 50,
+    "manifest": "korea/terrain.json",
+    "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.\nJeju detail: modified Copernicus Sentinel-2 data 2025-04-06.",
+    "error": ""
+  },
+  "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+  "model": "thor_nonlinear_6dof_v2",
+  "fault": ""
+}

@@ -1,0 +1,430 @@
+<!doctype html><meta charset="utf-8"><title>UAVSim flight test</title><style>body{max-width:1200px;margin:2rem auto;font:16px system-ui;padding:1rem}img{width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>UAVSim flight test</h1><p>Research assumptions. Real aircraft performance unvalidated.</p><p>COMPLETE</p><img alt="Flight response time histories" src="response.svg"><pre>{
+  &quot;status&quot;: &quot;COMPLETE&quot;,
+  &quot;baseline&quot;: &quot;artifacts\\flight-tests\\thor-elevator&quot;,
+  &quot;candidate&quot;: null,
+  &quot;conditions&quot;: {
+    &quot;schema_version&quot;: 1,
+    &quot;case&quot;: &quot;elevator-pulse&quot;,
+    &quot;duration_s&quot;: 30,
+    &quot;sample_dt_s&quot;: 0.02,
+    &quot;created_utc&quot;: &quot;2026-11-17T11:10:44.619529+00:00&quot;,
+    &quot;events&quot;: [
+      {
+        &quot;time_s&quot;: 5,
+        &quot;kind&quot;: &quot;surface&quot;,
+        &quot;axis&quot;: &quot;elevator&quot;,
+        &quot;delta_deg&quot;: 1
+      },
+      {
+        &quot;time_s&quot;: 5.5,
+        &quot;kind&quot;: &quot;trim-controls&quot;
+      }
+    ],
+    &quot;research_warning&quot;: &quot;Development assumptions; real aircraft performance unvalidated&quot;,
+    &quot;iy_scale&quot;: 1,
+    &quot;units&quot;: &quot;SI lengths/speeds/forces; API angles deg, body FRD rates deg/s; WGS84 ellipsoid height; heading clockwise from North&quot;,
+    &quot;original_profile_sha256&quot;: &quot;894f09de9b04b6ec789dd19f5dbe6c576867fbc65bdb18035a070fe470dfcc20&quot;,
+    &quot;profile_sha256&quot;: &quot;894f09de9b04b6ec789dd19f5dbe6c576867fbc65bdb18035a070fe470dfcc20&quot;,
+    &quot;source_sha256&quot;: {
+      &quot;Source\\FlightCore\\Aerodynamics.h&quot;: &quot;a974e8cc1d8a6153571eafe0cac6dcdd6f41cbd187258e68db2b9380fc6c5080&quot;,
+      &quot;Source\\FlightCore\\AircraftParameters.h&quot;: &quot;fa1b41111df62ad1ffdf487820d5c3324d2d92f1557f3e28903d43196a688e40&quot;,
+      &quot;Source\\FlightCore\\FixedWing.h&quot;: &quot;4daa10a71f4bd21791a78af00cca9a540e96c1754890fdba259664af610722bb&quot;,
+      &quot;Source\\FlightCore\\FlightCore.h&quot;: &quot;b0e8be3da168f8cf9b2ebdd933a451739bf3fd441c489c264935fa1466d7eeaf&quot;,
+      &quot;Source\\FlightCore\\FlightOperations.h&quot;: &quot;b35eeb0148a97fe79c888adead41d5f3c909e666ad8d99a8a806e164fc1251b9&quot;,
+      &quot;Source\\FlightCore\\Gimbal.h&quot;: &quot;d0a56b0be552959869c586b0058a7a341f1236e6557282ff123781b43f7804e3&quot;,
+      &quot;Source\\FlightCore\\GroundContact.h&quot;: &quot;be44eb4343a648ca0cdb5c4c4203568016ab0e9f5a45363e3eae72b12411bec1&quot;,
+      &quot;Source\\FlightCore\\Navigation.h&quot;: &quot;5a253e1c3a89adaccdb71a66601e8b23684373862457f72f1d09357881b19dcd&quot;,
+      &quot;Source\\FlightCore\\StlMesh.h&quot;: &quot;745536d0362558ad51f2fbb0231bd80f915242a0c80e876d5e2473e081772126&quot;,
+      &quot;Source\\FlightCore\\TerrainSurface.h&quot;: &quot;1540150b3d1b81ed4f1238f0ccda68f1528c914e7cc87b0695e40c698f74bb72&quot;,
+      &quot;uavsim_client.py&quot;: &quot;687c63b2720b62bb1d39b70d40f0dd2b1eac0426764e3fef0900f84e7adfec00&quot;,
+      &quot;scripts\\run-flight-test.py&quot;: &quot;616ee13ef5d4d74e993aac812da4e96c1138fa5a4fd150722ce53d44fdba4c21&quot;,
+      &quot;scripts\\serve-api.py&quot;: &quot;66c70eadc52b6646c5dd1f3629c7f3470113130f3e199586fcec113a47dabdaa&quot;,
+      &quot;scripts\\report-flight-test.py&quot;: &quot;f5d4dc0cb90e4bca66b837eb83dddacd2f09ad755c90d8cdcaefb70b0ba009f1&quot;,
+      &quot;Binaries\\Win64\\UnrealEditor-UAVSim.dll&quot;: &quot;0c5257ae53bf600e363cb549f5da3b74ef745f36e47d8ec38f92bdb147690ddc&quot;
+    },
+    &quot;airframe&quot;: {
+      &quot;id&quot;: &quot;thor-development&quot;,
+      &quot;profile&quot;: &quot;aircraft/thor.json&quot;,
+      &quot;fingerprint&quot;: &quot;sha1:0fa4369e8814b26210c5242491f7422bf0dd83c2&quot;,
+      &quot;error&quot;: &quot;&quot;,
+      &quot;schema_version&quot;: 1,
+      &quot;initial_speed_mps&quot;: 19,
+      &quot;initial_height_m&quot;: 2600,
+      &quot;minimum_speed_mps&quot;: 5,
+      &quot;maximum_speed_mps&quot;: 45,
+      &quot;minimum_height_m&quot;: -500,
+      &quot;maximum_height_m&quot;: 20000,
+      &quot;maximum_alpha_deg&quot;: 180,
+      &quot;maximum_beta_deg&quot;: 89,
+      &quot;ground_supported&quot;: true,
+      &quot;navigation_supported&quot;: true,
+      &quot;automation_supported&quot;: true,
+      &quot;support_message&quot;: &quot;Thor-compatible development model; unqualified flight performance&quot;,
+      &quot;retractable_gear&quot;: true,
+      &quot;route_minimum_speed_mps&quot;: 16,
+      &quot;route_maximum_speed_mps&quot;: 24,
+      &quot;landing_minimum_speed_mps&quot;: 16,
+      &quot;landing_maximum_speed_mps&quot;: 22,
+      &quot;maximum_flap_deg&quot;: 0
+    },
+    &quot;initial_condition&quot;: {
+      &quot;aircraft&quot;: {
+        &quot;latitude_deg&quot;: 33.43299999999999,
+        &quot;longitude_deg&quot;: 126.52,
+        &quot;ellipsoid_height_m&quot;: 2599.9999999990687,
+        &quot;heading_deg&quot;: 0,
+        &quot;pitch_deg&quot;: 2.0529535292746846,
+        &quot;roll_deg&quot;: 0,
+        &quot;simulation_time_s&quot;: 0,
+        &quot;running&quot;: false,
+        &quot;terrain_loaded&quot;: true,
+        &quot;speed_mps&quot;: 19,
+        &quot;vertical_speed_mps&quot;: 1.8599488268988829e-16,
+        &quot;time_scale&quot;: 1,
+        &quot;effective_time_scale&quot;: 0,
+        &quot;distance_travelled_m&quot;: 0,
+        &quot;roll_rate_deg_s&quot;: 0,
+        &quot;pitch_rate_deg_s&quot;: 0,
+        &quot;yaw_rate_deg_s&quot;: 0,
+        &quot;angle_of_attack_deg&quot;: 2.052953529274684,
+        &quot;sideslip_deg&quot;: 0,
+        &quot;ground_speed_mps&quot;: 19.000000000000004,
+        &quot;air_density_kg_m3&quot;: 0.9472641688488673,
+        &quot;dynamic_pressure_pa&quot;: 170.98118247722056,
+        &quot;lift_coefficient&quot;: 0.35830889654185566,
+        &quot;drag_coefficient&quot;: 0.11545448290703683,
+        &quot;flow_separation&quot;: 0,
+        &quot;stall_warning&quot;: false,
+        &quot;stalled&quot;: false,
+        &quot;load_factor&quot;: 0.9993581456148746
+      },
+      &quot;controls&quot;: {
+        &quot;elevator_deg&quot;: -0.5973560576663506,
+        &quot;aileron_deg&quot;: 0,
+        &quot;rudder_deg&quot;: 0,
+        &quot;throttle&quot;: 0.3907286267055552
+      },
+      &quot;actuators&quot;: {
+        &quot;elevator_deg&quot;: -0.5973560576663506,
+        &quot;aileron_deg&quot;: 0,
+        &quot;rudder_deg&quot;: 0,
+        &quot;throttle&quot;: 0.3907286267055552,
+        &quot;thrust_n&quot;: 6.123499037729461
+      },
+      &quot;flaps&quot;: {
+        &quot;command_deg&quot;: 0,
+        &quot;actual_deg&quot;: 0
+      },
+      &quot;gear&quot;: {
+        &quot;command_down&quot;: true,
+        &quot;extension&quot;: 1,
+        &quot;down_locked&quot;: true,
+        &quot;up_locked&quot;: false,
+        &quot;moving&quot;: false
+      },
+      &quot;environment&quot;: {
+        &quot;wind_east_mps&quot;: 0,
+        &quot;wind_north_mps&quot;: 0,
+        &quot;wind_up_mps&quot;: 0
+      }
+    },
+    &quot;trim_controls&quot;: {
+      &quot;elevator_deg&quot;: -0.5973560576663506,
+      &quot;aileron_deg&quot;: 0,
+      &quot;rudder_deg&quot;: 0,
+      &quot;throttle&quot;: 0.3907286267055552
+    },
+    &quot;elapsed_wall_s&quot;: 84.41490219999832
+  },
+  &quot;candidate_conditions&quot;: null,
+  &quot;result&quot;: {
+    &quot;ok&quot;: true,
+    &quot;checks&quot;: [
+      &quot;finite samples, exact time grid, profile and controller isolation&quot;,
+      &quot;initial elevator pitch-rate sign agrees with declared Cm_delta_e&quot;
+    ],
+    &quot;restore_errors&quot;: [],
+    &quot;samples&quot;: 1501,
+    &quot;status&quot;: &quot;complete&quot;,
+    &quot;final_state&quot;: {
+      &quot;aircraft&quot;: {
+        &quot;latitude_deg&quot;: 33.43815143743556,
+        &quot;longitude_deg&quot;: 126.52,
+        &quot;ellipsoid_height_m&quot;: 2598.9939203429967,
+        &quot;heading_deg&quot;: 0,
+        &quot;pitch_deg&quot;: 2.0323685304025814,
+        &quot;roll_deg&quot;: 0,
+        &quot;simulation_time_s&quot;: 29.99999999999945,
+        &quot;running&quot;: false,
+        &quot;terrain_loaded&quot;: true,
+        &quot;speed_mps&quot;: 18.98844125836549,
+        &quot;vertical_speed_mps&quot;: -0.007562004920214826,
+        &quot;time_scale&quot;: 1,
+        &quot;effective_time_scale&quot;: 0,
+        &quot;distance_travelled_m&quot;: 571.6274943143751,
+        &quot;roll_rate_deg_s&quot;: 0,
+        &quot;pitch_rate_deg_s&quot;: -0.017246316808627832,
+        &quot;yaw_rate_deg_s&quot;: 0,
+        &quot;angle_of_attack_deg&quot;: 2.0551861472960784,
+        &quot;sideslip_deg&quot;: 0,
+        &quot;ground_speed_mps&quot;: 18.98843975260944,
+        &quot;air_density_kg_m3&quot;: 0.947363764535202,
+        &quot;dynamic_pressure_pa&quot;: 170.79116645786385,
+        &quot;lift_coefficient&quot;: 0.35851009881688733,
+        &quot;drag_coefficient&quot;: 0.11545775463504249,
+        &quot;flow_separation&quot;: 0,
+        &quot;stall_warning&quot;: false,
+        &quot;stalled&quot;: false,
+        &quot;load_factor&quot;: 0.9988130142637774
+      },
+      &quot;controls&quot;: {
+        &quot;elevator_deg&quot;: -0.5973560576663506,
+        &quot;aileron_deg&quot;: 0,
+        &quot;rudder_deg&quot;: 0,
+        &quot;throttle&quot;: 0.3907286267055552
+      },
+      &quot;ground&quot;: {
+        &quot;steering_deg&quot;: 0,
+        &quot;brake&quot;: 0,
+        &quot;parking_brake&quot;: false,
+        &quot;on_ground&quot;: false,
+        &quot;wheels_on_ground&quot;: 0,
+        &quot;height_agl_m&quot;: 2160.0502621382366,
+        &quot;terrain_height_m&quot;: 404.8794764932245,
+        &quot;normal_force_n&quot;: 0,
+        &quot;impact_speed_mps&quot;: 0,
+        &quot;crashed&quot;: false,
+        &quot;surface&quot;: &quot;terrain&quot;,
+        &quot;available&quot;: true
+      },
+      &quot;gear&quot;: {
+        &quot;command_down&quot;: true,
+        &quot;extension&quot;: 1,
+        &quot;down_locked&quot;: true,
+        &quot;up_locked&quot;: false,
+        &quot;moving&quot;: false
+      },
+      &quot;automation&quot;: {
+        &quot;phase&quot;: &quot;idle&quot;,
+        &quot;kind&quot;: &quot;none&quot;,
+        &quot;runway_index&quot;: -1,
+        &quot;runway_name&quot;: &quot;&quot;,
+        &quot;completed&quot;: false,
+        &quot;message&quot;: &quot;Inactive&quot;,
+        &quot;cross_track_m&quot;: 0,
+        &quot;along_track_m&quot;: 0,
+        &quot;target_height_m&quot;: 0
+      },
+      &quot;actuators&quot;: {
+        &quot;elevator_deg&quot;: -0.5973560576663501,
+        &quot;aileron_deg&quot;: 0,
+        &quot;rudder_deg&quot;: 0,
+        &quot;throttle&quot;: 0.3907286267055552,
+        &quot;thrust_n&quot;: 6.123499037729461
+      },
+      &quot;airframe&quot;: {
+        &quot;id&quot;: &quot;thor-development&quot;,
+        &quot;profile&quot;: &quot;aircraft/thor.json&quot;,
+        &quot;fingerprint&quot;: &quot;sha1:0fa4369e8814b26210c5242491f7422bf0dd83c2&quot;,
+        &quot;error&quot;: &quot;&quot;,
+        &quot;schema_version&quot;: 1,
+        &quot;initial_speed_mps&quot;: 19,
+        &quot;initial_height_m&quot;: 2600,
+        &quot;minimum_speed_mps&quot;: 5,
+        &quot;maximum_speed_mps&quot;: 45,
+        &quot;minimum_height_m&quot;: -500,
+        &quot;maximum_height_m&quot;: 20000,
+        &quot;maximum_alpha_deg&quot;: 180,
+        &quot;maximum_beta_deg&quot;: 89,
+        &quot;ground_supported&quot;: true,
+        &quot;navigation_supported&quot;: true,
+        &quot;automation_supported&quot;: true,
+        &quot;support_message&quot;: &quot;Thor-compatible development model; unqualified flight performance&quot;,
+        &quot;retractable_gear&quot;: true,
+        &quot;route_minimum_speed_mps&quot;: 16,
+        &quot;route_maximum_speed_mps&quot;: 24,
+        &quot;landing_minimum_speed_mps&quot;: 16,
+        &quot;landing_maximum_speed_mps&quot;: 22,
+        &quot;maximum_flap_deg&quot;: 0
+      },
+      &quot;flaps&quot;: {
+        &quot;command_deg&quot;: 0,
+        &quot;actual_deg&quot;: 0
+      },
+      &quot;visual&quot;: {
+        &quot;source&quot;: &quot;builtin&quot;,
+        &quot;config&quot;: &quot;aircraft/visual.json&quot;,
+        &quot;mesh&quot;: &quot;&quot;,
+        &quot;triangle_count&quot;: 0,
+        &quot;span_m&quot;: 1.27,
+        &quot;fingerprint&quot;: &quot;sha1:31eec5e362e4e61ee3884fef27312c28760f59b0&quot;,
+        &quot;error&quot;: &quot;&quot;,
+        &quot;show_builtin_gear&quot;: true
+      },
+      &quot;eoir&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;mode&quot;: &quot;ccd&quot;,
+        &quot;fov_deg&quot;: 30,
+        &quot;azimuth_deg&quot;: 0,
+        &quot;elevation_deg&quot;: -45,
+        &quot;gimbal_mode&quot;: &quot;body_fixed&quot;,
+        &quot;point_latitude_deg&quot;: 0,
+        &quot;point_longitude_deg&quot;: 0,
+        &quot;point_ellipsoid_height_m&quot;: 0,
+        &quot;target_id&quot;: &quot;&quot;,
+        &quot;tracking_status&quot;: &quot;manual&quot;,
+        &quot;limited&quot;: false,
+        &quot;target_in_fov&quot;: false,
+        &quot;error_deg&quot;: 0,
+        &quot;frame_sequence&quot;: 0,
+        &quot;error&quot;: &quot;&quot;
+      },
+      &quot;targets&quot;: [],
+      &quot;wargame&quot;: {
+        &quot;time_s&quot;: 897.1899999999764,
+        &quot;error&quot;: &quot;&quot;,
+        &quot;weapons&quot;: [
+          {
+            &quot;id&quot;: &quot;training-marker&quot;,
+            &quot;label&quot;: &quot;Sim projectile&quot;,
+            &quot;mesh&quot;: &quot;models/example.stl&quot;,
+            &quot;animation_duration_s&quot;: 5,
+            &quot;triangle_count&quot;: 144
+          }
+        ],
+        &quot;shots&quot;: []
+      },
+      &quot;disturbance&quot;: {
+        &quot;engine_power_fraction&quot;: 1,
+        &quot;elevator_jammed&quot;: false,
+        &quot;aileron_jammed&quot;: false,
+        &quot;rudder_jammed&quot;: false,
+        &quot;gust_east_mps&quot;: 0,
+        &quot;gust_north_mps&quot;: 0,
+        &quot;gust_up_mps&quot;: 0,
+        &quot;gust_start_s&quot;: 0,
+        &quot;gust_duration_s&quot;: 0,
+        &quot;effective_wind_east_mps&quot;: 0,
+        &quot;effective_wind_north_mps&quot;: 0,
+        &quot;effective_wind_up_mps&quot;: 0
+      },
+      &quot;navigation&quot;: {
+        &quot;mode&quot;: &quot;manual&quot;,
+        &quot;stall_recovery&quot;: false,
+        &quot;active_waypoint_index&quot;: -1,
+        &quot;waypoint_count&quot;: 0,
+        &quot;distance_to_waypoint_m&quot;: 0,
+        &quot;loiter_radius_m&quot;: 0
+      },
+      &quot;environment&quot;: {
+        &quot;wind_east_mps&quot;: 0,
+        &quot;wind_north_mps&quot;: 0,
+        &quot;wind_up_mps&quot;: 0
+      },
+      &quot;view_mode&quot;: &quot;aircraft&quot;,
+      &quot;terrain&quot;: {
+        &quot;dataset&quot;: &quot;korea&quot;,
+        &quot;tile_count&quot;: 50,
+        &quot;manifest&quot;: &quot;korea/terrain.json&quot;,
+        &quot;attribution&quot;: &quot;EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 &amp; 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.\nJeju detail: modified Copernicus Sentinel-2 data 2025-04-06.&quot;,
+        &quot;error&quot;: &quot;&quot;
+      },
+      &quot;object_path&quot;: &quot;/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0&quot;,
+      &quot;model&quot;: &quot;thor_nonlinear_6dof_v2&quot;,
+      &quot;fault&quot;: &quot;&quot;
+    },
+    &quot;restored_airframe&quot;: {
+      &quot;id&quot;: &quot;c208b-research-assumptions&quot;,
+      &quot;profile&quot;: &quot;aircraft/c208b-research.json&quot;,
+      &quot;fingerprint&quot;: &quot;sha1:22c052f02c9fe9fd99862d739713b18ee7ae4d23&quot;,
+      &quot;error&quot;: &quot;&quot;,
+      &quot;schema_version&quot;: 2,
+      &quot;initial_speed_mps&quot;: 65,
+      &quot;initial_height_m&quot;: 2600,
+      &quot;minimum_speed_mps&quot;: 0,
+      &quot;maximum_speed_mps&quot;: 110,
+      &quot;minimum_height_m&quot;: -500,
+      &quot;maximum_height_m&quot;: 6000,
+      &quot;maximum_alpha_deg&quot;: 180,
+      &quot;maximum_beta_deg&quot;: 89,
+      &quot;ground_supported&quot;: true,
+      &quot;navigation_supported&quot;: true,
+      &quot;automation_supported&quot;: true,
+      &quot;support_message&quot;: &quot;C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.&quot;,
+      &quot;retractable_gear&quot;: false,
+      &quot;route_minimum_speed_mps&quot;: 36,
+      &quot;route_maximum_speed_mps&quot;: 75,
+      &quot;landing_minimum_speed_mps&quot;: 36,
+      &quot;landing_maximum_speed_mps&quot;: 44,
+      &quot;maximum_flap_deg&quot;: 30
+    },
+    &quot;restore_contract&quot;: &quot;Selector bytes and wind restored; original profile paused at airborne trim. Previous dynamic state/time NOT restored.&quot;
+  },
+  &quot;metrics&quot;: {
+    &quot;speed_mps&quot;: {
+      &quot;minimum&quot;: 18.812916684554423,
+      &quot;maximum&quot;: 19.546325377157057,
+      &quot;peak_absolute&quot;: 19.546325377157057,
+      &quot;peak_time_s&quot;: 7.979999999999918,
+      &quot;change&quot;: -0.011558741634509317
+    },
+    &quot;ellipsoid_height_m&quot;: {
+      &quot;minimum&quot;: 2598.1069738082588,
+      &quot;maximum&quot;: 2600.00072056707,
+      &quot;peak_absolute&quot;: 2600.00072056707,
+      &quot;peak_time_s&quot;: 5.0399999999999805,
+      &quot;change&quot;: -1.006079656071961
+    },
+    &quot;pitch_deg&quot;: {
+      &quot;minimum&quot;: -0.5207877292759633,
+      &quot;maximum&quot;: 2.8941768744303684,
+      &quot;peak_absolute&quot;: 2.8941768744303684,
+      &quot;peak_time_s&quot;: 12.079999999999831,
+      &quot;change&quot;: -0.02058499887210319
+    },
+    &quot;angle_of_attack_deg&quot;: {
+      &quot;minimum&quot;: 1.4729712889652984,
+      &quot;maximum&quot;: 2.092197066887641,
+      &quot;peak_absolute&quot;: 2.092197066887641,
+      &quot;peak_time_s&quot;: 14.599999999999778,
+      &quot;change&quot;: 0.0022326180213942948
+    },
+    &quot;roll_deg&quot;: {
+      &quot;minimum&quot;: 0.0,
+      &quot;maximum&quot;: 0.0,
+      &quot;peak_absolute&quot;: 0.0,
+      &quot;peak_time_s&quot;: 0.0,
+      &quot;change&quot;: 0.0
+    },
+    &quot;sideslip_deg&quot;: {
+      &quot;minimum&quot;: 0.0,
+      &quot;maximum&quot;: 0.0,
+      &quot;peak_absolute&quot;: 0.0,
+      &quot;peak_time_s&quot;: 0.0,
+      &quot;change&quot;: 0.0
+    },
+    &quot;roll_rate_deg_s&quot;: {
+      &quot;minimum&quot;: 0.0,
+      &quot;maximum&quot;: 0.0,
+      &quot;peak_absolute&quot;: 0.0,
+      &quot;peak_time_s&quot;: 0.0,
+      &quot;change&quot;: 0.0
+    },
+    &quot;pitch_rate_deg_s&quot;: {
+      &quot;minimum&quot;: -5.4350556480523515,
+      &quot;maximum&quot;: 0.8201673606511534,
+      &quot;peak_absolute&quot;: 5.4350556480523515,
+      &quot;peak_time_s&quot;: 5.279999999999975,
+      &quot;change&quot;: -0.017246316808627832
+    },
+    &quot;yaw_rate_deg_s&quot;: {
+      &quot;minimum&quot;: 0.0,
+      &quot;maximum&quot;: 0.0,
+      &quot;peak_absolute&quot;: 0.0,
+      &quot;peak_time_s&quot;: 0.0,
+      &quot;change&quot;: 0.0
+    }
+  },
+  &quot;comparison&quot;: null,
+  &quot;coordinated_turn&quot;: null
+}</pre>

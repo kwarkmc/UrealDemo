@@ -1,0 +1,69 @@
+{
+  "metrics": {
+    "speed_mps": {
+      "minimum": 61.64411544053285,
+      "maximum": 73.28236159933925,
+      "peak_absolute": 73.28236159933925,
+      "peak_time_s": 30.000000000000156,
+      "change": 8.28236159933924
+    },
+    "ellipsoid_height_m": {
+      "minimum": 2412.3899799166247,
+      "maximum": 2600.008689923212,
+      "peak_absolute": 2600.008689923212,
+      "peak_time_s": 5.1999999999999975,
+      "change": -187.61002008244395
+    },
+    "pitch_deg": {
+      "minimum": -5.296919916471185,
+      "maximum": 5.672326903403909,
+      "peak_absolute": 5.672326903403909,
+      "peak_time_s": 0.0,
+      "change": -9.650320767612643
+    },
+    "angle_of_attack_deg": {
+      "minimum": 4.685522052736893,
+      "maximum": 5.882963153283036,
+      "peak_absolute": 5.882963153283036,
+      "peak_time_s": 11.799999999999974,
+      "change": -0.9868048506670162
+    },
+    "roll_deg": {
+      "minimum": 0.0,
+      "maximum": 26.180873045960823,
+      "peak_absolute": 26.180873045960823,
+      "peak_time_s": 30.000000000000156,
+      "change": 26.180873045960823
+    },
+    "sideslip_deg": {
+      "minimum": 0.010312712708274364,
+      "maximum": 0.7841466332985851,
+      "peak_absolute": 0.7841466332985851,
+      "peak_time_s": 30.000000000000156,
+      "change": 0.7738339205903108
+    },
+    "roll_rate_deg_s": {
+      "minimum": 0.0,
+      "maximum": 1.316992919700329,
+      "peak_absolute": 1.316992919700329,
+      "peak_time_s": 5.699999999999996,
+      "change": 1.2338061601737687
+    },
+    "pitch_rate_deg_s": {
+      "minimum": -0.6732163951026879,
+      "maximum": 2.0192825314426903,
+      "peak_absolute": 2.0192825314426903,
+      "peak_time_s": 30.000000000000156,
+      "change": 2.0192825314426903
+    },
+    "yaw_rate_deg_s": {
+      "minimum": -1.1802172507952418e-17,
+      "maximum": 3.263079893937885,
+      "peak_absolute": 3.263079893937885,
+      "peak_time_s": 30.000000000000156,
+      "change": 3.263079893937885
+    }
+  },
+  "comparison": null,
+  "coordinated_turn": null
+}

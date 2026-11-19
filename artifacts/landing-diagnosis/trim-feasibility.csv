@@ -1,0 +1,13 @@
+case,height_m,target_tas_mps,actual_flaps_deg,level_trim_available
+high_mission,2600,40,0,0
+high_mission,2600,40,10,0
+high_mission,2600,40,30,1
+mission_800m,800,40,0,0
+mission_800m,800,40,10,1
+mission_800m,800,40,30,1
+mission_500m_away,500,40,0,0
+mission_500m_away,500,40,10,1
+mission_500m_away,500,40,30,1
+low_aligned,60,40,0,1
+low_aligned,60,40,10,1
+low_aligned,60,40,30,1

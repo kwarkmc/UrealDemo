@@ -20,6 +20,50 @@ Aircraft advance(Aircraft a,Controls command,double duration,Environment environ
 
 int main() {
     require(valid_model_parameters(flight_model_parameters),"default configuration is valid");
+    // Synthetic numerical fixture, NOT C208B or any measured airframe.
+    auto large=flight_model_parameters;
+    large.mass_kg=1000; large.wing_area_m2=15; large.span_m=10; large.chord_m=1.5;
+    large.ix=1000; large.iy=1500; large.iz=1800; large.ixz=50;
+    large.reference_speed_mps=65;
+    large.operating={65,2600,55,90,1000,5000,15,15,true,false,false,false};
+    Environment large_env; large_env.model=&large;
+    const auto large_trim=level_trim({0,0,2600},0,65,large_env);
+    require(valid_model_parameters(large) && large_trim.has_value(),"synthetic large model trims above old 45 m/s ceiling");
+    require(!level_trim({0,0,2600},0,19,large_env),"profile speed range rejects old fixed trim");
+    const auto large_loads=air_data(large_trim->aircraft,large_env,large_trim->controls);
+    require(std::abs(large_loads.force_body_n.z/large.mass_kg+gravity_mps2*std::cos(large_trim->aircraft.pitch_rad))<1e-8,
+        "large trim balances normal force independently of mass scale");
+    const auto large_next=step_aircraft(large_trim->aircraft,large_trim->controls,1,large_env);
+    require(large_next && std::abs(airspeed(*large_next,large_env)-65)<1e-7,"large trim sustains declared TAS");
+    auto area_model=large; area_model.wing_area_m2*=2;
+    Environment area_env=large_env; area_env.model=&area_model;
+    require(std::abs(air_data(large_trim->aircraft,area_env).lift_n/air_data(large_trim->aircraft,large_env).lift_n-2)<1e-13,
+        "large fixture force follows independent q*S scaling");
+    auto heavy_model=large; heavy_model.mass_kg*=2;
+    Environment heavy_env=large_env; heavy_env.model=&heavy_model;
+    auto numerical_state=large_trim->aircraft;
+    numerical_state.actual_controls={4,3,0,0};
+    const auto base_derivative=fixed_wing_detail::derivative({numerical_state,fixed_wing_detail::orientation(numerical_state)}, {},large_env);
+    const auto heavy_derivative=fixed_wing_detail::derivative({numerical_state,fixed_wing_detail::orientation(numerical_state)}, {},heavy_env);
+    const auto gravity_body=enu_to_body(numerical_state,{0,0,-gravity_mps2});
+    require(length((base_derivative.a.body_velocity_mps-gravity_body)*.5-(heavy_derivative.a.body_velocity_mps-gravity_body))<1e-12,
+        "same aerodynamic force produces inverse-mass acceleration");
+    auto inertial_model=large; inertial_model.ix*=2; inertial_model.iy*=2; inertial_model.iz*=2; inertial_model.ixz*=2;
+    Environment inertial_env=large_env; inertial_env.model=&inertial_model;
+    const auto inertial_derivative=fixed_wing_detail::derivative({numerical_state,fixed_wing_detail::orientation(numerical_state)}, {},inertial_env);
+    require(length(base_derivative.a.body_rates_rps*.5-inertial_derivative.a.body_rates_rps)<1e-12,
+        "same moment produces inverse-inertia angular acceleration at zero angular rate");
+    auto unsupported=large_trim->aircraft;
+    unsupported.body_velocity_mps={100,0,0};
+    require(!step_aircraft(unsupported,{},.01,large_env),"unsupported TAS rejects without clamping");
+    unsupported=large_trim->aircraft; unsupported.position_enu_m.z=999;
+    require(!step_aircraft(unsupported,{},.01,large_env),"unsupported height rejects");
+    require(!ground_initial_condition({},0,0,{{},{0,0,1},true},large_env),"large fixture cannot use Thor ground initializer");
+    require(!step_aircraft(large_trim->aircraft,{},.01,large_env,{{0,0,2595},{0,0,1},true}),"unsupported contact stops before ground");
+    const auto original_mass=flight_model_parameters.mass_kg;
+    auto invalid_large=large; invalid_large.operating.automation_supported=true;
+    require(!valid_model_parameters(invalid_large) && flight_model_parameters.mass_kg==original_mass,
+        "automation without ground and navigation is rejected and Thor remains independent");
     for (const auto& field:parameter_fields) {
         auto invalid=flight_model_parameters;
         invalid.*(field.member)=std::numeric_limits<double>::quiet_NaN();

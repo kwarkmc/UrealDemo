@@ -1,0 +1,29 @@
+{
+  "baseline": {
+    "samples": 181,
+    "median_beta_deg": 0.7937704029496648,
+    "median_radius_residual_percent": 6.189719817364647,
+    "side_radial_mps2": -0.1790720488945812,
+    "lift_minus_ideal_radial_mps2": -0.1099758258105572,
+    "thrust_drag_radial_mps2": 0.02907042457805176,
+    "force_projection_closure_max_mps2": 1.8596235662471372e-15
+  },
+  "navigation-final": {
+    "samples": 181,
+    "median_beta_deg": -0.000339872733721426,
+    "median_radius_residual_percent": -0.23308881015385863,
+    "side_radial_mps2": 0.03164611321068858,
+    "lift_minus_ideal_radial_mps2": -0.06009229852907172,
+    "thrust_drag_radial_mps2": 0.03847482594408547,
+    "force_projection_closure_max_mps2": 2.9629076969683865e-15
+  },
+  "integrated": {
+    "samples": 181,
+    "median_beta_deg": -0.0005458899099295475,
+    "median_radius_residual_percent": -0.2876504023308968,
+    "side_radial_mps2": 0.03366482088551449,
+    "lift_minus_ideal_radial_mps2": -0.059784759639683216,
+    "thrust_drag_radial_mps2": 0.03836768631027354,
+    "force_projection_closure_max_mps2": 2.824129818890242e-15
+  }
+}

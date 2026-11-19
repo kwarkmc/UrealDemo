@@ -1,0 +1,105 @@
+{
+  "ok": true,
+  "failed_attempts": [
+    {
+      "name": "loiter",
+      "returncode": 1,
+      "ok": false,
+      "samples": 1801,
+      "error": "ValueError: Route did not reach final loiter"
+    }
+  ],
+  "runs": [
+    {
+      "name": "trim",
+      "returncode": 0,
+      "ok": true,
+      "samples": 301,
+      "error": null
+    },
+    {
+      "name": "elevator-negative",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1501,
+      "error": null
+    },
+    {
+      "name": "aileron-pulse",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1501,
+      "error": null
+    },
+    {
+      "name": "rudder-pulse",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1501,
+      "error": null
+    },
+    {
+      "name": "engine-cut",
+      "returncode": 0,
+      "ok": true,
+      "samples": 301,
+      "error": null
+    },
+    {
+      "name": "throttle-cut",
+      "returncode": 0,
+      "ok": true,
+      "samples": 301,
+      "error": null
+    },
+    {
+      "name": "flaps",
+      "returncode": 0,
+      "ok": true,
+      "samples": 301,
+      "error": null
+    },
+    {
+      "name": "loiter-straight",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1801,
+      "error": null
+    },
+    {
+      "name": "elevator-reference-final",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1501,
+      "error": null
+    },
+    {
+      "name": "elevator-repeat-final",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1501,
+      "error": null
+    },
+    {
+      "name": "iy-minus",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1501,
+      "error": null
+    },
+    {
+      "name": "iy-plus",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1501,
+      "error": null
+    },
+    {
+      "name": "thor-elevator",
+      "returncode": 0,
+      "ok": true,
+      "samples": 1501,
+      "error": null
+    }
+  ]
+}

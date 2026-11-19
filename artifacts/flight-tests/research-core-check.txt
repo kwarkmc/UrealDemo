@@ -1,0 +1,16 @@
+Step refinement: pitch(rad) 2.43432e-11 -> 1.51269e-12; speed(m/s) 1.64448e-10 -> 9.79128e-12
+rotate t=16.99 xyz=2.23327e-06,294.919,1.7 wp=0 V=33.8613 pitch=5.25023e-07 crash=0,0 impact=0 flap=0
+climb t=31.26 xyz=3.64468e-06,968.797,1.7704 wp=0 V=57.9179 pitch=0.0981812 crash=0,0 impact=0 flap=0
+hold t=112.49 xyz=-111.16,5296.73,78.0163 wp=0 V=54.8025 pitch=0.129299 crash=0,0 impact=0 flap=0
+hold t=112.49 xyz=-111.16,5296.73,78.0163 wp=0 V=54.8025 pitch=0.129299 crash=0,0 impact=0 flap=0
+final t=619.76 xyz=24.8185,-2089.17,60.6291 wp=0 V=40.3132 pitch=0.138105 crash=0,0 impact=0 flap=30
+flare t=674.01 xyz=-2.97422,91.4094,8.69079 wp=0 V=42.6428 pitch=-0.0147303 crash=0,0 impact=0 flap=30
+rollout t=678.1 xyz=14.3778,255.886,2.03247 wp=0 V=38.2369 pitch=0.108776 crash=0,0 impact=2.23482 flap=30
+complete t=686.92 xyz=0.225288,436.878,1.7 wp=0 V=0.0737834 pitch=-8.93087e-11 crash=0,0 impact=2.23482 flap=30
+complete t=686.92 xyz=0.225288,436.878,1.7 wp=0 V=0.0737834 pitch=-8.93087e-11 crash=0,0 impact=2.23482 flap=30
+go_around t=0.01 xyz=30,-599.6,12 wp=0 V=40 pitch=0.122352 crash=0,0 impact=0 flap=30
+join t=24.01 xyz=21.4348,322.788,65.0272 wp=0 V=40.2444 pitch=0.16549 crash=0,0 impact=0 flap=30
+join t=60 xyz=893.589,196.52,77.0286 wp=0 V=40.5331 pitch=0.176765 crash=0,0 impact=0 flap=30
+aborted t=0.01 xyz=1.05838e-09,30,1.7 wp=0 V=6.44705e-08 pitch=1.56484e-10 crash=0,0 impact=0 flap=0
+aborted t=0.01 xyz=1.05838e-09,30,1.7 wp=0 V=6.44705e-08 pitch=1.56484e-10 crash=0,0 impact=0 flap=0
+Research assumptions checks passed; no real C208B performance validation.

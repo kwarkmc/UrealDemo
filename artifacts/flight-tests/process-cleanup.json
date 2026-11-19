@@ -1,0 +1,15 @@
+{
+  "api_pid_stopped": 18596,
+  "live_coding_helpers_stopped": [],
+  "unreal_pid_stopped": 7876,
+  "unity_processes_present": 0,
+  "remaining_related_processes": [],
+  "visual_studio_pid_closed_normally": 2856,
+  "msbuild_child_nodes_closed": [
+    7216,
+    30196,
+    24364,
+    7560
+  ],
+  "remaining_api_listeners": []
+}

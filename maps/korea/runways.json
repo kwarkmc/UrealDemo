@@ -1,12 +1,12 @@
 {
   "runways": [
     {
-      "name": "Jeju development strip (virtual)",
+      "name": "Jeju 2km research strip (virtual)",
       "latitude_deg": 33.509,
       "longitude_deg": 126.49,
       "heading_deg": 60,
-      "length_m": 1000,
-      "width_m": 40
+      "length_m": 2000,
+      "width_m": 60
     }
   ]
 }

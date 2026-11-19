@@ -1,0 +1,69 @@
+{
+  "metrics": {
+    "speed_mps": {
+      "minimum": 64.99884184434109,
+      "maximum": 65.01278849189985,
+      "peak_absolute": 65.01278849189985,
+      "peak_time_s": 25.099999999999554,
+      "change": 0.01072668801289467
+    },
+    "ellipsoid_height_m": {
+      "minimum": 2599.9999999990687,
+      "maximum": 2600.191956986673,
+      "peak_absolute": 2600.191956986673,
+      "peak_time_s": 29.99999999999945,
+      "change": 0.19195698760449886
+    },
+    "pitch_deg": {
+      "minimum": 5.670790186083179,
+      "maximum": 5.682058508135581,
+      "peak_absolute": 5.682058508135581,
+      "peak_time_s": 7.87999999999992,
+      "change": 0.0011982543266713108
+    },
+    "angle_of_attack_deg": {
+      "minimum": 5.678705696529151,
+      "maximum": 5.684611403875126,
+      "peak_absolute": 5.684611403875126,
+      "peak_time_s": 6.379999999999952,
+      "change": -0.0013249772533141524
+    },
+    "roll_deg": {
+      "minimum": 0.0,
+      "maximum": 1.1461503891426645,
+      "peak_absolute": 1.1461503891426645,
+      "peak_time_s": 7.1999999999999345,
+      "change": 0.927444554496363
+    },
+    "sideslip_deg": {
+      "minimum": -0.5421253724683316,
+      "maximum": 0.26944468675244343,
+      "peak_absolute": 0.5421253724683316,
+      "peak_time_s": 6.159999999999957,
+      "change": 0.03176752969268996
+    },
+    "roll_rate_deg_s": {
+      "minimum": -0.3465274658925512,
+      "maximum": 0.8291051310793535,
+      "peak_absolute": 0.8291051310793535,
+      "peak_time_s": 6.139999999999957,
+      "change": -0.010755723311112486
+    },
+    "pitch_rate_deg_s": {
+      "minimum": -0.005482656415236626,
+      "maximum": 0.0032070477053332204,
+      "peak_absolute": 0.005482656415236626,
+      "peak_time_s": 6.899999999999941,
+      "change": 0.002915536431692905
+    },
+    "yaw_rate_deg_s": {
+      "minimum": -0.4978178383536757,
+      "maximum": 1.0625615467071319,
+      "peak_absolute": 1.0625615467071319,
+      "peak_time_s": 5.619999999999968,
+      "change": 0.13140514378867496
+    }
+  },
+  "comparison": null,
+  "coordinated_turn": null
+}

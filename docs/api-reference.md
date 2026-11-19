@@ -1,12 +1,142 @@
 # UAVSim API 사용 매뉴얼
 
+## 항법·동적 추진·바퀴 상태 추가 — 2026-11-18
+
+제품 경로·Python 메서드는 유지하고 `GET /state`와 각 명령의 전체 상태에 아래 필드를 추가했다. 기본 수납식 연구 프로필에 적용하며 기존 Thor/고정기어 파일은 동적 추진을 켜지 않는다. [수식·가정·실제 API19검사·통합 왕복](navigation-physics.md)을 따른다.
+
+| 필드 | 단위·계약 |
+| --- | --- |
+| `airframe.dynamic_propeller` | bool. true일 때 새 RPM/축동력/토크를 계산한다. false이면 해당 수치는0이며 미적용을 뜻한다 |
+| `actuators.propeller_rpm` | 회/min, 로터 상태에서 계산한 연구 RPM. 실측값 아님 |
+| `actuators.shaft_drive_power_w`, `shaft_load_power_w` | W, 엔진의 축 입력·프로펠러 부하. 차이는 로터 회전 에너지 변화에 연결 |
+| `actuators.shaft_drive_torque_nm`, `propeller_load_torque_nm` | N·m, 양의 축 방향 토크 크기. body 회전 방향은 기체 파일의 spin_direction 사용 |
+| `ground.wheel_surfaces_sampled` | bool, true면 바퀴별 지면을 별도 조회했다. 공중에서는false·CG 평면 근사 |
+| `ground.wheel_normal_force_n` | number[3], 전륜/좌주륜/우주륜의 접촉 충격량/계산 간격 N. 마지막 계산값이며 최대 하중 아님 |
+| `ground.wheel_clearance_m` | number[3], 같은 순서의 바퀴 접촉점과 지면의 부호 있는 법선 간격 m |
+| `ground.wheel_lateral_slip_mps` | number[3], 같은 순서의 바퀴 접촉점 횡미끄럼 m/s. 미접촉은0 |
+| `navigation.reacquiring` | bool, 놓친 중간 항로점의 고정 진입선 재접근 중 |
+
+`PUT /route`/`set_route`의 **마지막 점은 선회 중심**이다. 중심 관통 대신 원주·접선/높이/속도 조건에서 loiter에 진입한다. 중간 점은 순서를 건너뛰지 않는다. 자동 이착륙은 별도 직선 참조를 사용한다. 수동 입력의 항법 취소와 시뮬레이션 시간/배속 계약은 유지한다.
+
+바퀴 간격은 완전 전개 상태의 접촉 기준점을 투영한 값이다. 수납 중 기구/타이어의 실제 간격을 뜻하지 않으며 `gear.down_locked`와 함께 읽는다. 반력은 계산 전 초기화 직후0일 수 있고 시간 진행 후 실제 접촉 계산값으로 갱신된다. 기존 `ground.height_agl_m`은 계속 CG 법선 거리다.
+
+`PUT /failures`의 engine_power_fraction=0은 동적 모델에서 축 구동0이며, 로터 감속 중 잔류 추력이 생긴다. 기존 모델은 즉시 추력0이다. 엔진컷 기록기 판정도 이를 구분한다. 지면/바퀴 지형이 누락되면 명시적 fault·정지이며 높이0 지면을 대입하지 않는다. 새 구성의 수치 범위/타입 오류는 기존 재읽기 거절·이전 모델 보존 계약을 따른다.
+
+```python
+from uavsim_client import UAVSimClient
+sim=UAVSimClient()
+state=sim.get_state()
+print(state['airframe']['dynamic_propeller'])
+print(state['actuators']['propeller_rpm'], state['actuators']['shaft_drive_power_w'])
+print(state['ground']['wheel_normal_force_n'], state['navigation']['reacquiring'])
+```
+
+2026-11-18 현재 기본 선택은 [가상의 수납식 연구 구성](retractable-research.md)이다. `airframe.retractable_gear=true`와 새 id/support_message를 확인한다. 기존 `/gear`·`set_landing_gear`·3초 행정·지상 거절·자동 운항 중 수동 명령 거절 계약을 유지한다. Web UI는 기어 종류를 표시한다. 실제 Unreal22검사·CTest14/14와 전개/중간/수납 화면은 위 안내를 따른다. 기존 고정기어 C208B 기록은 이전 프로필의 결과다.
+
 이 문서는 외부 Python 프레임워크와 Web UI가 함께 사용하는 제품 API의 기준 문서다. 구현은 [serve-api.py](../scripts/serve-api.py), Python 클라이언트는 [uavsim_client.py](../uavsim_client.py)다. Unreal MCP는 에디터 개발용이며 제품 API 호출에 필요하지 않다. 현재는 같은 PC의 기체 한 대를 제어하는 동기식 로컬 HTTP API다.
 
 기본 주소는 `http://127.0.0.1:8765`, 모든 제품 경로의 접두사는 `/api/v1`이다. 아래 표의 경로는 이 접두사를 생략한다. 본문의 수치 범위는 개발 모델의 입력 범위이며 실제 기체 운용 한계나 성능 검증 결과가 아니다. 공력·추진 가정은 [비행 모델](flight-model.md), 기체 파일은 [기체 데이터](aircraft-profile.md)를 따른다.
 
+## 2026-11-17 프로필별 초기화 추가 계약
+
+2026-11-18 지상 상태 추가: `ground.applied_steering_deg`는 실제 전륜각(°), `ground.applied_brake`는 실제 제동 출력(0~1)이다. 기존 `steering_deg`/`brake`는 명령이며 기존 경로·메서드는 유지한다. `GET /state`, `set_ground_controls(...)`, `step(...)`의 전체 상태에서 읽는다. 정지 중에는 명령만 변하고 주차/접촉 계산은 시간 진행 시 적용한다. 기체별 지연·마찰·충돌 기준과 선택 숫자11개는 [기체 파일 안내](aircraft-profile.md)를 따른다.
+
+경로·Python 공개 메서드는 유지한다. 기존 v1은 2600m/19m/s·초기 TAS 5~45m/s와 기존 운용을 유지한다. 새 v2는 **합성 공중 수동 시험 전용**으로 C208B 물리 구현이 아니다. 아래의 고정 초기값 설명은 v1 기준이며 v2는 다음 상태 필드를 따른다.
+
+`GET /state` 및 비행 명령 응답의 `airframe`에 다음 필드를 추가했다. 기존 `id`, `profile`, `fingerprint`, `error`는 유지한다.
+
+| 필드 | 타입·단위·의미 |
+| --- | --- |
+| `schema_version` | int, 적용 파일 판본 1 또는 2 |
+| `initial_speed_mps`, `initial_height_m` | number, 기본 TAS m/s 및 WGS84 타원체고 m |
+| `minimum_speed_mps`, `maximum_speed_mps` | number, 허용 TAS m/s |
+| `minimum_height_m`, `maximum_height_m` | number, 허용 높이 m |
+| `maximum_alpha_deg`, `maximum_beta_deg` | number, 공기각 절댓값 한계 ° |
+| `ground_supported`, `navigation_supported`, `automation_supported` | bool, 적용 기체의 운용 지원 여부. 합성 시험체는 false, C208B 연구 구성은 true |
+| `support_message` | string, 모델/미지원 설명. 성능 검증 합격 표시가 아님 |
+
+`PUT /initial-condition`의 숫자 입력 경계는 1~250m/s로 넓혔지만 실제 초기 TAS는 적용 프로필의 범위도 만족해야 한다. 초기조건과 `PUT /pose`의 높이, 명시적 alpha/beta도 해당 프로필로 검증하며 범위 밖은 HTTP 400·상태 보존이다. `POST /reset`, `POST /aircraft/reload`와 Web UI 지역 이동 기본값은 적용된 초기 속도/높이를 사용한다. 재읽기 성공의 시간·거리·돌풍·고장 초기화와 일정 바람 유지 계약은 동일하다.
+
+지원 bool이 false인 v2의 해당 지상/기어/항로/자동 이착륙 명령은 HTTP 409와 `support_message`를 반환하며 물리를 바꾸지 않는다. v2는 실행 중 TAS·높이·공기각 또는 보수적 미지원 지면 접촉 경계를 벗어나면 시간 진행을 거부하고 fault·정지한다. 이는 실제 기체 실속·접지 성능을 모의한 결과가 아니다. 직접 Unreal 함수 호출도 같은 지원 플래그를 검사한다.
+
+```python
+from uavsim_client import UAVSimClient
+sim = UAVSimClient()
+state = sim.get_state()
+print(state["airframe"]["initial_speed_mps"], state["airframe"]["support_message"])
+# v2 테스트 파일 적용은 aircraft/active.json 선택 후, 정지 중 수행한다.
+# sim.pause(); state = sim.reload_aircraft_profile()
+# 선택 파일을 편집해도 재읽기 전에는 기존 적용 범위가 유지된다.
+```
+
+v2 전체 파일·필드 검증은 [기체 파일 안내](aircraft-profile.md), 실제 30/30 결과는 [검사 기록](../artifacts/airframe-api-check.json)을 따른다. UI는 미지원 버튼을 비활성화하고 적용 범위를 표시하며 Python에서도 위 상태/오류를 읽는다. B에서는 endpoint 추가가 없었으며 C~F의 플랩 경로는 아래 추가 계약을 따른다.
+
+## C208B 연구 모델 API 추가 계약 — 2026-11-17
+
+실제 성능 미검증인 [연구 모델](c208b-research.md)을 추가했다. v1 Thor 경로/메서드는 유지한다. 기본값19/18m/s는 Python의 Thor 호환 기본값이므로 연구 모델 호출에서는 목표 TAS를 명시한다.
+
+| 경로·메서드 | 입력·반환·오류 |
+| --- | --- |
+| `PUT /api/v1/flaps` / `UAVSimClient.set_flaps(degrees)` | JSON `{"degrees":10}`. 유한 숫자0~40 및 적용 airframe.maximum_flap_deg 이하, 초과400. 활성 자동 운항·충돌·fault에서는409. 수동 플랩 입력은 항로 취소. 반환은 전체 state |
+| `GET /api/v1/state` 추가 `flaps` | `command_deg`, `actual_deg`, degree. 정지 중 명령만 변하며 step/재생에 따라 실제각이 움직임. 전개율·CL/CD/Cm 효과는 기체 설정 사용 |
+| `state.airframe` 추가 필드 | `retractable_gear` bool, `maximum_flap_deg` degree, `route_minimum_speed_mps`, `route_maximum_speed_mps`, `landing_minimum_speed_mps`, `landing_maximum_speed_mps` TAS m/s |
+| `PUT /api/v1/gear` | 고정기어의 down=false는409, 상태 보존. Thor의 공중 수납 유지 |
+| `PUT /api/v1/route` | 항로점 높이는 airframe.minimum/maximum_height_m, 속도는 route_minimum/maximum_speed_mps. 위반400. 선회 반경의 30° 뱅크 기반 하한 유지 |
+| `POST /api/v1/automation/takeoff` | speed_mps는 적용 route TAS 범위. C208B 예제55, Thor 기본19 |
+| `POST /api/v1/automation/land` | approach_speed_mps는 적용 landing TAS 범위. C208B 예제40, Thor 기본18 |
+| `POST /api/v1/automation/prepare-landing` | 명시적 시험 위치 초기화. C208B TAS44, Thor18. 무이동 준비 명령과 구별 |
+
+```python
+sim.pause()
+state = sim.reload_aircraft_profile()  # active.json에서 c208b-research.json 선택 후
+sim.set_flaps(10)
+state = sim.step(1)
+assert 0 < state["flaps"]["actual_deg"] <= state["flaps"]["command_deg"]
+sim.reset_on_ground()
+sim.start_automatic_takeoff(speed_mps=55, climb_height_m=50)
+# sim.set_running(True)
+```
+
+HTTP 예: `PUT /api/v1/flaps`, Content-Type application/json, 본문 `{"degrees":20}`. Remote Control 경계는 허용 목록의 `AFlightScene::SetFlaps(Degrees)`만 추가했다. 계산 코어는 네트워크와 독립적이다.
+
+검사: Release CTest10/10·UE5.8.4 Development 빌드, [기존 v1/v2 실제 API30개](../artifacts/airframe-api-check.json), [C208B 연구 API 결과](../artifacts/c208b-api-check.json)·[재현 스크립트](../scripts/check-c208b-api.py). 연구 API는 기체 전환·실패 보존·고정기어·플랩·항로·실제 지형 이륙·별도 시험 접근에서 착륙/주차를 검사한다. 평면 코어의 연속 귀환 왕복과 구별한다. UI는 구문/연결만 검사하며 브라우저 직접 조작을 수행하지 않았다.
+
+## 외부 Python 비행시험 도구
+
+기존 공개 경로만 사용하는 [비행시험 기록·비교 도구](flight-tests.md)를 추가했다. 새 endpoint·상태 필드·클라이언트 메서드·Web UI는 없다. 기록기는 `get_state`, `pause`, `set_wind`, `reload_aircraft_profile`, `set_initial_condition`, `reset`, `set_controls`, `step`, 필요한 경우 `set_flaps`/`set_failures`/`set_route`를 사용한다. 명시적 step의 시간은 벽시계 배속과 무관하다.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/run-flight-test.py --case elevator-pulse --reset-flight
+.\.venv\Scripts\python.exe scripts/report-flight-test.py <saved-run>
+```
+
+시험은 현재 비행을 초기화하며 이전 동역학 상태를 복원하지 않는다. 종료 시 선택 파일·일정 바람을 복구하고 원래 프로필의 공중 트림·정지로 끝낸다. 타임아웃 mutation을 재시도하지 않으며 실패 기록과 복구 오류를 남긴다. CLI 옵션·샘플 주기·산출물·검사 결과는 위 사용법을 따른다.
+
+## 2026-11-18: 귀환·접근 단계와 진단 상태
+
+`POST /api/v1/automation/land`는 현재 위치/시간/재생 상태를 유지한 채 귀환을 준비한다. 고고도/원거리에서는 `returning` → `configuring` → `aligning` → `final` → `flare` → `rollout` → `complete`로 진행한다. `go_around`는 구성 상태를 유지하며 재상승하고 두 번의 복행 뒤에는 접근 궤도 대기로 전환한다. 일반 항로의 포착 로직·러더 협조는 이번 변경 범위 밖이다.
+
+기존 요청 필드 `runway_index`, `approach_speed_mps`는 유지한다. 코어 준비 범위는 활주로 기준 높이10~5000m·거리40km 안이며 실제 Unreal은 원점49km 경계·지형 누락/표본 이격/현재 고도/진입 경로를 추가 검사한다. 40m 간격의 개발용 경로 조사이며 모든 지형/장애물 회피나 실제 항공 운항 절차를 뜻하지 않는다. 경로를 준비할 수 없으면409로 거절하고 이전 운항 상태를 유지한다.
+
+추가 `state.automation` 필드:
+
+| 필드 | 단위·의미 |
+| --- | --- |
+| `rejection` | 마지막 착륙 요청 거절 이유. 현재 운항 진행 message와 별도이며 성공한 착륙 준비에서 지움 |
+| `desired_course_deg`, `desired_bank_deg` | 북 기준 시계방향 목표 코스·우측 양의 목표 뱅크 ° |
+| `desired_speed_mps` | 현재 단계의 TAS 참조 m/s. 요청 접근 속도로 바로 바뀌지 않음 |
+| `desired_height_m` | 현재 위치 부근에서 WGS84로 변환한 높이 참조 m |
+| `desired_climb_mps` | 상승 양수인 수직속도 참조 m/s |
+| `return_radius_m` | 귀환/접근 대기 궤도 기준 반경 m |
+| `path` | 기준 궤도와 접근선의 위경고도/속도 배열. 각 점은 기존 waypoint와 같은 `latitude_deg`, `longitude_deg`, `ellipsoid_height_m`, `speed_mps`. 현재 기체의 전체 실제 궤적이나 내부 강하율 가상 목표점이 아님 |
+
+Python의 `start_automatic_landing()`과 Web UI는 같은 경로를 사용한다. `prepare_landing_approach()`는 명시적인 시험 초기화로1200m 후방·활주로 위70m, Thor18m/s/플랩0°, 연구 모델의 접근 범위 중간 TAS/최대 플랩으로 준비한다. 연속 왕복 검사에는 이 초기화 명령을 중간에 사용하지 않는다.
+
+기록기 형식v2는 `guidance_desired_*` 수치 열을 추가했다. 기존 저장 자료의 오프라인 보고서는 계속 읽을 수 있다. 실제 검사·미검증 범위는 [현재 작업 계획](return-landing-plan.md)의 실행 기록을 따른다.
+
 ## 1. 시작과 연결 확인
 
-프로젝트 PowerShell 7에서 API 서버를 시작한다. 이미 실행 중이면 중복 실행하지 않는다.
+프로젝트 루트의 Windows PowerShell 5.1 또는 PowerShell 7에서 API 서버를 시작한다. 이미 실행 중이면 중복 실행하지 않는다.
 
 ```powershell
 Set-Location C:\src\Projects\UAVSim
@@ -152,7 +282,7 @@ Python 기본 인수는 클라이언트가 채워 보내며 HTTP에서는 전부
 
 이륙·착륙 준비는 현재 위치·재생/정지를 유지한다. 정지 중이면 `step` 또는 재생 명령으로 진행한다. 항로는 해제된다. 자동 이륙은 완전 전개 잠금을 요구하며 지면 법선 높이 10m 이상에서 상승 중이면 수납한다. 자동 착륙은 수락 즉시 전개 목표를 지정하고 시간 진행 중 전개한다. 최종 접근에서 활주로 평면 위 15m 미만인데 전개 잠금이 되지 않으면 복행을 요청한다. `gear` 상태를 운항 단계와 함께 확인한다.
 
-착륙 시험 위치 명령은 예외적으로 활주로 시작점 600m 뒤·평면 위 60m·TAS 18m/s로 **초기 조건을 교체하고 정지**한다. 자동 제어 자체가 아니다. 시간은 일반 공중 초기 조건처럼 유지한다. 자동 운항 해제는 위치·조종 입력·재생/정지를 유지하며 기어 이동도 임의로 초기화하지 않는다.
+착륙 시험 위치 명령은 예외적으로 활주로 시작점1200m 뒤·평면 위70m에서 Thor TAS18m/s/플랩0°, C208B 연구 TAS40m/s/플랩30°로 **초기 조건을 교체하고 정지**한다. 자동 제어 자체가 아니다. 시간은 일반 공중 초기 조건처럼 유지한다. 자동 운항 해제는 위치·조종 입력·재생/정지를 유지하며 기어 이동도 임의로 초기화하지 않는다.
 
 자동 운항은 300m 이상 활주로, 일정 횡풍 5m/s 이하·배풍 3m/s 이하, 엔진 출력 비율 .9 이상·면 고착 없음 등의 준비 조건이 있다. 이륙은 바퀴 접촉·방위 오차 10° 이내·중심선 오차 폭의 1/4 이내·잔여 300m 이상·지상속도 10m/s 이하를 요구한다. 착륙은 공중에서 활주로 기준 높이 10~1000m·거리 5km 이내·현재 TAS 12~35m/s 등을 요구한다. 상세 단계와 개발 한계는 [자동 이착륙 안내](automatic-flight.md)를 따른다.
 
@@ -305,7 +435,7 @@ JSON 상태는 센서 관측이 아닌 시뮬레이터 계산 상태다. JPEG �
 | `navigation.active_waypoint_index`, `navigation.waypoint_count` | 활성 인덱스(0부터, 수동 −1)·항로점 수 |
 | `navigation.distance_to_waypoint_m`, `navigation.loiter_radius_m` | 활성 점까지 수평 거리·최종 선회 반경 m |
 | `automation.kind` | `none`, `takeoff`, `landing` |
-| `automation.phase` | `idle`, `takeoff_roll`, `rotate`, `climb`, `hold`, `join`, `final`, `flare`, `rollout`, `complete`, `rejected_takeoff`, `aborted`, `go_around` |
+| `automation.phase` | `idle`, `takeoff_roll`, `rotate`, `climb`, `hold`, `returning`, `configuring`, `aligning`, `final`, `flare`, `rollout`, `complete`, `rejected_takeoff`, `aborted`, `go_around`. 이전 `join`은 새 착륙에서 사용하지 않음 |
 | `automation.runway_index`, `automation.runway_name` | 선택 활주로 인덱스/이름. 미선택 −1/빈 문자열 |
 | `automation.completed` | 이륙 hold 또는 착륙 complete. hold는 공중 대기 비행을 계속함 |
 | `automation.message` | 현재 운항 설명 |
@@ -474,5 +604,7 @@ STL 외형 추가 후 Unreal Development 빌드·Release CTest **8/8**, 실제 �
 ```
 
 기존 실행 근거는 [개발 계획](development-plan.md)의 자동 운항·지상·실속·항법 기록을 따른다. 영상 품질·외부 연출 시점 변경 후 이 매뉴얼은 소스의 제품 경로 40개·공개 Python 메서드 41개·매핑 필드 이름 118개와 대조하여 누락이 없음을 확인했다. 문서의 실행 예제 자체를 별도로 실행했다고 주장하지 않는다. 위 결과는 개발 검사이며 실기체 성능의 정식 검증이 아니다.
+
+2026-11-18: 경로/메서드 추가 없이 귀환 단계·진단·참고 경로와 실제 지상 출력을 확장했다. endpoint·클라이언트·UI·기록기를 함께 갱신했다. [관련 실제 API173검사](../artifacts/return-contract-check.json)·CCD JPEG·실패 보존·Thor 재읽기와 [최종 연속 왕복](../artifacts/return-flight-final/result.json)이 통과했다. 공개 Python 메서드42개 문서 누락0·변경 문서 로컬 링크 누락0은 [별도 기록](../artifacts/return-doc-check.json)을 따른다. 브라우저 직접 조작·실기체 성능 시험은 수행하지 않았다.
 
 API를 바꿀 때 endpoint, Python 클라이언트, 해당 Web UI, 이 매뉴얼의 예제·상태·범위·부작용·검사 기록을 함께 갱신한다. 공개 메서드나 경로를 추가·삭제할 때 소스와 이 문서의 목록을 대조하고 로컬 문서 링크를 확인한다. 이는 개발 변경과 함께 수행하는 규칙이며 정기 실행 자동화가 아니다.

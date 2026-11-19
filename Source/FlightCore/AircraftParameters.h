@@ -5,7 +5,29 @@
 
 namespace flight_core {
 
+struct OperatingLimits {
+    double initial_speed_mps=19, initial_height_m=2600;
+    double minimum_speed_mps=5, maximum_speed_mps=45;
+    double minimum_height_m=-500, maximum_height_m=20000;
+    double maximum_alpha_deg=180, maximum_beta_deg=89;
+    bool restricted=false; // v1 retains its existing full-angle development behavior.
+    bool ground_supported=true, navigation_supported=true, automation_supported=true;
+};
+
 struct FlightModelParameters {
+    OperatingLimits operating;
+    bool retractable_gear=true;
+    double nose_x_m=.35, main_x_m=-.12, half_track_m=.22, cg_height_m=.18;
+    double body_half_length_m=.425, body_half_height_m=.05;
+    double route_min_mps=16, route_max_mps=24, landing_min_mps=16, landing_max_mps=22;
+    double controller_time_scale=1;
+    double shaft_power_w=0, propeller_efficiency=.8;
+    double wheel_radius_m=.03, propeller_radius_m=.15, thrust_z_m=0;
+    double propeller_nominal_rpm=0, propeller_inertia_kg_m2=1, propeller_spin_direction=1;
+    double tire_cornering_per_rad=0;
+    double rolling_friction=.025, brake_friction=.70, lateral_friction=.80, impact_limit_mps=4;
+    double steering_tau_s=0, steering_rate_deg_s=120, steering_limit_accel_mps2=0, brake_tau_s=0;
+    double maximum_flap_deg=0, flap_rate_deg_s=10, flap_lift_per_rad=0, flap_drag_per_rad2=0, flap_pitch_per_rad=0;
     double reference_speed_mps=19.0, reference_pitch_rad=.021425292448534562;
 
     // Thor Table 1 geometry and inertia. The xz entries in I are -ixz.
@@ -104,13 +126,79 @@ inline constexpr ParameterField parameter_fields[]{
     {"servo_rate_deg_s", &FlightModelParameters::servo_rate_deg_s, 1, 1000},
 };
 
+// Optional v2 configuration; omission preserves the v1 Thor contract.
+inline constexpr ParameterField configuration_fields[]{
+    {"nose_x_m", &FlightModelParameters::nose_x_m, .01, 20},
+    {"main_x_m", &FlightModelParameters::main_x_m, -20, -.01},
+    {"half_track_m", &FlightModelParameters::half_track_m, .01, 20},
+    {"cg_height_m", &FlightModelParameters::cg_height_m, .05, 10},
+    {"body_half_length_m", &FlightModelParameters::body_half_length_m, .1, 40},
+    {"body_half_height_m", &FlightModelParameters::body_half_height_m, .01, 5},
+    {"route_min_mps", &FlightModelParameters::route_min_mps, 5, 200},
+    {"route_max_mps", &FlightModelParameters::route_max_mps, 5, 200},
+    {"landing_min_mps", &FlightModelParameters::landing_min_mps, 5, 200},
+    {"landing_max_mps", &FlightModelParameters::landing_max_mps, 5, 200},
+    {"controller_time_scale", &FlightModelParameters::controller_time_scale, .5, 10},
+    {"shaft_power_w", &FlightModelParameters::shaft_power_w, 0, 5000000},
+    {"propeller_efficiency", &FlightModelParameters::propeller_efficiency, .01, 1},
+    {"maximum_flap_deg", &FlightModelParameters::maximum_flap_deg, 0, 40},
+    {"flap_rate_deg_s", &FlightModelParameters::flap_rate_deg_s, .1, 60},
+    {"flap_lift_per_rad", &FlightModelParameters::flap_lift_per_rad, 0, 5},
+    {"flap_drag_per_rad2", &FlightModelParameters::flap_drag_per_rad2, 0, 5},
+    {"flap_pitch_per_rad", &FlightModelParameters::flap_pitch_per_rad, -2, 2},
+};
+
+inline constexpr ParameterField refinement_fields[]{
+    {"propeller_nominal_rpm", &FlightModelParameters::propeller_nominal_rpm, 0, 10000},
+    {"propeller_inertia_kg_m2", &FlightModelParameters::propeller_inertia_kg_m2, .1, 1000},
+    {"propeller_spin_direction", &FlightModelParameters::propeller_spin_direction, -1, 1},
+    {"tire_cornering_per_rad", &FlightModelParameters::tire_cornering_per_rad, 0, 100},
+    {"wheel_radius_m", &FlightModelParameters::wheel_radius_m, .005, 2},
+    {"propeller_radius_m", &FlightModelParameters::propeller_radius_m, .01, 5},
+    {"thrust_z_m", &FlightModelParameters::thrust_z_m, -5, 5},
+    {"rolling_friction", &FlightModelParameters::rolling_friction, 0, 1},
+    {"brake_friction", &FlightModelParameters::brake_friction, 0, 2},
+    {"lateral_friction", &FlightModelParameters::lateral_friction, .01, 2},
+    {"impact_limit_mps", &FlightModelParameters::impact_limit_mps, .1, 10},
+    {"steering_tau_s", &FlightModelParameters::steering_tau_s, 0, 5},
+    {"steering_rate_deg_s", &FlightModelParameters::steering_rate_deg_s, .1, 360},
+    {"steering_limit_accel_mps2", &FlightModelParameters::steering_limit_accel_mps2, 0, 10},
+    {"brake_tau_s", &FlightModelParameters::brake_tau_s, 0, 5},
+};
+
 inline bool valid_model_parameters(const FlightModelParameters& p) {
+    for (const auto& field:refinement_fields) {
+        const double value=p.*(field.member);
+        if (!std::isfinite(value) || value<field.minimum || value>field.maximum) return false;
+    }
+    if (p.wheel_radius_m>=p.cg_height_m-p.body_half_height_m) return false;
+    if(p.propeller_nominal_rpm>0 && (p.shaft_power_w<=0 || std::abs(p.propeller_spin_direction)!=1)) return false;
+    for (const auto& field:configuration_fields) {
+        const double value=p.*(field.member);
+        if (!std::isfinite(value) || value<field.minimum || value>field.maximum) return false;
+    }
+    if (p.body_half_height_m>=p.cg_height_m || p.route_min_mps>p.route_max_mps
+        || p.landing_min_mps>p.landing_max_mps
+        || (p.operating.automation_supported && (!p.operating.ground_supported || !p.operating.navigation_supported))) return false;
     for (const auto& field:parameter_fields) {
         const double value=p.*(field.member);
         if (!std::isfinite(value) || value<field.minimum || value>field.maximum) return false;
     }
+    if ((p.operating.navigation_supported && (p.route_min_mps<p.operating.minimum_speed_mps || p.route_max_mps>p.operating.maximum_speed_mps))
+        || (p.operating.automation_supported && (p.landing_min_mps<p.route_min_mps || p.landing_max_mps>p.route_max_mps))) return false;
     // Positive inertia alone is insufficient: principal moments must also obey
     // the triangle inequalities. J=trace(I)/2*Identity-I must be semidefinite.
+    const auto& o=p.operating;
+    if (!std::isfinite(o.initial_speed_mps) || !std::isfinite(o.initial_height_m)
+        || !std::isfinite(o.minimum_speed_mps) || !std::isfinite(o.maximum_speed_mps)
+        || !std::isfinite(o.minimum_height_m) || !std::isfinite(o.maximum_height_m)
+        || !std::isfinite(o.maximum_alpha_deg) || !std::isfinite(o.maximum_beta_deg)
+        || o.minimum_speed_mps<0 || o.maximum_speed_mps>250 || o.minimum_speed_mps>=o.maximum_speed_mps
+        || o.initial_speed_mps<o.minimum_speed_mps || o.initial_speed_mps>o.maximum_speed_mps
+        || o.minimum_height_m< -500 || o.maximum_height_m>20000 || o.minimum_height_m>=o.maximum_height_m
+        || o.initial_height_m<o.minimum_height_m || o.initial_height_m>o.maximum_height_m
+        || o.maximum_alpha_deg<=0 || o.maximum_alpha_deg>180
+        || o.maximum_beta_deg<=0 || o.maximum_beta_deg>89) return false;
     const double half_trace=(p.ix+p.iy+p.iz)*.5;
     return p.ix*p.iz-p.ixz*p.ixz>1e-10
         && half_trace>=p.ix && half_trace>=p.iy && half_trace>=p.iz

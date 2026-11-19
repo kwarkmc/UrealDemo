@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-18",
+  "purpose": "Read-only diagnosis and reprioritized implementation plan, not new flight functionality",
+  "source_sha256": {
+    "Source/FlightCore/FlightOperations.h": "b35eeb0148a97fe79c888adead41d5f3c909e666ad8d99a8a806e164fc1251b9",
+    "Source/FlightCore/Navigation.h": "5a253e1c3a89adaccdb71a66601e8b23684373862457f72f1d09357881b19dcd",
+    "Source/FlightCore/FixedWing.h": "4daa10a71f4bd21791a78af00cca9a540e96c1754890fdba259664af610722bb",
+    "Source/FlightCore/GroundContact.h": "be44eb4343a648ca0cdb5c4c4203568016ab0e9f5a45363e3eae72b12411bec1",
+    "aircraft/c208b-research.json": "f55993c2f5515eed550f7c4f44211525ac7a7924de412fa448151393265c7c32"
+  },
+  "conditions": {
+    "wind_enu_mps": [
+      0,
+      0,
+      0
+    ],
+    "ground": "flat plane at runway datum zero",
+    "initial_tas_mps": 65,
+    "approach_target_mps": 40,
+    "controller_dt_s": 0.01,
+    "maximum_duration_s": 180
+  },
+  "limitations": [
+    "Not a reproduction of live user mission terrain/initial condition",
+    "Live status was takeoff rotate at the first observation; no mutations sent",
+    "Aileron reversal threshold 1deg is diagnostic deadband, not flight tolerance",
+    "first_waypoint_height_m is an internal feedforward target in final phase, not the physical flight path"
+  ],
+  "findings": [
+    "2600m runway-relative initial height rejected",
+    "500m and800m cases accepted but first guidance unavailable",
+    "60m aligned65m/s case commanded30deg flaps, went around at8.31s, joined at36.21s; still join at180s; max abs aileron25deg"
+  ],
+  "product_code_changed": false,
+  "live_flight_mutated": false,
+  "diagnostic_source_sha256": {
+    "artifacts\\landing-diagnosis\\probe.cpp": "4cd37eef8ec4908c4b5fcceab2b20215d6da6c21855eeb08f7afe9014fedcfcd",
+    "artifacts\\landing-diagnosis\\CMakeLists.txt": "6c03cd92d422d2b6e6877c606948c56d1ea404d24b0885acab41219e28f367e5"
+  }
+}

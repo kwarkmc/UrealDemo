@@ -1,0 +1,91 @@
+{
+  "probes": {
+    "baseline": {
+      "settled_samples": 181,
+      "median_beta_deg": 0.7937704029496648,
+      "median_radius_residual_percent": 6.189719817364647,
+      "geometric_vs_force_acceleration_max_relative": 0.001684673891393826,
+      "median_side_radial_mps2": -0.1790720488945812,
+      "capture_after_s": {
+        "0": null,
+        "1": null,
+        "2": 67.99999999999788,
+        "3": 43.99999999999982
+      }
+    },
+    "navigation-final": {
+      "settled_samples": 181,
+      "median_beta_deg": -0.000339872733721426,
+      "median_radius_residual_percent": -0.23308881015385863,
+      "geometric_vs_force_acceleration_max_relative": 0.0006295209313862536,
+      "median_side_radial_mps2": 0.03164611321068858,
+      "capture_after_s": {
+        "0": 0.0,
+        "1": 77.00000000000249,
+        "2": 63.99999999999584,
+        "3": 43.99999999999982
+      }
+    },
+    "integrated": {
+      "settled_samples": 181,
+      "median_beta_deg": -0.0005458899099295475,
+      "median_radius_residual_percent": -0.2876504023308968,
+      "geometric_vs_force_acceleration_max_relative": 0.0006393900521004817,
+      "median_side_radial_mps2": 0.03366482088551449,
+      "capture_after_s": {
+        "0": 0.0,
+        "1": 75.00000000000146,
+        "2": 61.99999999999623,
+        "3": 43.99999999999982
+      }
+    }
+  },
+  "roundtrips": {
+    "roundtrip": {
+      "initializations": 1,
+      "return_distance_m": 20040.350641934725,
+      "return_height_wgs84_m": 1044.332450943999,
+      "parked_time_s": 885.6099999999994,
+      "touchdown_normal_speed_mps": 0.9702279928475015,
+      "parked_ground_speed_mps": 0.11826292321204883,
+      "wheel_normal_force_n": [
+        15651.710729868526,
+        10889.414445894015,
+        10832.504889775686
+      ],
+      "wheel_clearance_m": [
+        2.7911399389689257e-09,
+        -1.2930750297560287e-08,
+        1.1375109911256098e-09
+      ],
+      "wind": {
+        "wind_east_mps": 0,
+        "wind_north_mps": 0,
+        "wind_up_mps": 0
+      }
+    },
+    "roundtrip-wind": {
+      "initializations": 1,
+      "return_distance_m": 20047.682703351806,
+      "return_height_wgs84_m": 1044.0474130483344,
+      "parked_time_s": 884.0699999999999,
+      "touchdown_normal_speed_mps": 1.0143927143786318,
+      "parked_ground_speed_mps": 0.10744385577239121,
+      "wheel_normal_force_n": [
+        15654.344890809998,
+        10893.461811862257,
+        10831.809105995342
+      ],
+      "wheel_clearance_m": [
+        3.3753705739750962e-09,
+        -7.74479260076377e-09,
+        1.9937642465605634e-11
+      ],
+      "wind": {
+        "wind_east_mps": 0.5,
+        "wind_north_mps": 0,
+        "wind_up_mps": 0
+      }
+    }
+  }
+}

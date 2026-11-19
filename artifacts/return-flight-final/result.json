@@ -1,0 +1,2041 @@
+{
+  "ok": true,
+  "phases": [
+    {
+      "phase": "departure:takeoff_roll",
+      "time_s": 1,
+      "height_m": 51.659237368032336,
+      "speed_mps": 0.45006443231298904
+    },
+    {
+      "phase": "departure:rotate",
+      "time_s": 17,
+      "height_m": 51.62440225016326,
+      "speed_mps": 33.90984337593576
+    },
+    {
+      "phase": "departure:climb",
+      "time_s": 32,
+      "height_m": 52.39068719185889,
+      "speed_mps": 58.0951073269497
+    },
+    {
+      "phase": "departure:hold",
+      "time_s": 112,
+      "height_m": 129.83476514741778,
+      "speed_mps": 54.79766637171232
+    },
+    {
+      "phase": "mission:idle",
+      "time_s": 113,
+      "height_m": 130.40865971520543,
+      "speed_mps": 55.094111465575196
+    },
+    {
+      "phase": "return:returning",
+      "time_s": 393,
+      "height_m": 520.9639228219166,
+      "speed_mps": 65.31740105278314
+    },
+    {
+      "phase": "return:configuring",
+      "time_s": 795,
+      "height_m": 129.477568003349,
+      "speed_mps": 68.26033435943367
+    },
+    {
+      "phase": "return:aligning",
+      "time_s": 963,
+      "height_m": 129.98539774212986,
+      "speed_mps": 39.79734036016971
+    },
+    {
+      "phase": "return:final",
+      "time_s": 970,
+      "height_m": 130.5162410158664,
+      "speed_mps": 39.97504823622195
+    },
+    {
+      "phase": "return:flare",
+      "time_s": 1001,
+      "height_m": 58.141590220853686,
+      "speed_mps": 38.65684576271911
+    },
+    {
+      "phase": "return:rollout",
+      "time_s": 1006,
+      "height_m": 51.72107187192887,
+      "speed_mps": 36.687077983777755
+    },
+    {
+      "phase": "return:complete",
+      "time_s": 1014.6399999999994,
+      "height_m": 51.62599783949554,
+      "speed_mps": 0.12347784061168557
+    }
+  ],
+  "initializations": 1,
+  "restore_errors": [],
+  "viewport_capture_enabled": false,
+  "initial_airframe": {
+    "id": "c208b-research-assumptions",
+    "profile": "aircraft/c208b-research.json",
+    "fingerprint": "sha1:11da3138f8e2cceb622e6e1e4609e3102f55b58c",
+    "error": "",
+    "schema_version": 2,
+    "initial_speed_mps": 65,
+    "initial_height_m": 2600,
+    "minimum_speed_mps": 0,
+    "maximum_speed_mps": 110,
+    "minimum_height_m": -500,
+    "maximum_height_m": 6000,
+    "maximum_alpha_deg": 180,
+    "maximum_beta_deg": 89,
+    "ground_supported": true,
+    "navigation_supported": true,
+    "automation_supported": true,
+    "support_message": "C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+    "retractable_gear": false,
+    "route_minimum_speed_mps": 36,
+    "route_maximum_speed_mps": 75,
+    "landing_minimum_speed_mps": 36,
+    "landing_maximum_speed_mps": 44,
+    "maximum_flap_deg": 30
+  },
+  "environment": {
+    "wind_east_mps": 0,
+    "wind_north_mps": 0,
+    "wind_up_mps": 0
+  },
+  "case": {
+    "distance_km": 10,
+    "height_above_departure_m": 500
+  },
+  "source_sha256": {
+    "Source\\FlightCore\\Aerodynamics.h": "a974e8cc1d8a6153571eafe0cac6dcdd6f41cbd187258e68db2b9380fc6c5080",
+    "Source\\FlightCore\\AircraftParameters.h": "b33be5f4f29329ddfc611d5bc2e9347119144e9ebbc4b4108b31d250b98e8e00",
+    "Source\\FlightCore\\FixedWing.h": "b5e47cc908cbe824f057d370366621c7c598da009dfbb8aff78c033d279ceff4",
+    "Source\\FlightCore\\FlightCore.h": "b0e8be3da168f8cf9b2ebdd933a451739bf3fd441c489c264935fa1466d7eeaf",
+    "Source\\FlightCore\\FlightOperations.h": "041b9a924ba6652c251c494ce918c7c5412738de02b6ecff72a94cd4fe5c5f35",
+    "Source\\FlightCore\\Gimbal.h": "d0a56b0be552959869c586b0058a7a341f1236e6557282ff123781b43f7804e3",
+    "Source\\FlightCore\\GroundContact.h": "be44eb4343a648ca0cdb5c4c4203568016ab0e9f5a45363e3eae72b12411bec1",
+    "Source\\FlightCore\\Navigation.h": "262efd7d0266309a8a719034d437ff99b02acafed52292bfce80d9b8a6c9b075",
+    "Source\\FlightCore\\StlMesh.h": "745536d0362558ad51f2fbb0231bd80f915242a0c80e876d5e2473e081772126",
+    "Source\\FlightCore\\TerrainSurface.h": "1540150b3d1b81ed4f1238f0ccda68f1528c914e7cc87b0695e40c698f74bb72",
+    "Binaries\\Win64\\UnrealEditor-UAVSim.dll": "82a62cca1620ca88f19adb608a885f06bb59071122bda0c27c4b8ac902305fff"
+  },
+  "mission_waypoint": {
+    "latitude_deg": 33.63986638953159,
+    "longitude_deg": 126.7605678351643,
+    "ellipsoid_height_m": 551.6592576699331,
+    "speed_mps": 65
+  },
+  "return_requested_at": {
+    "distance_m": 22791.960727044105,
+    "aircraft": {
+      "latitude_deg": 33.60762723568108,
+      "longitude_deg": 126.69321114041149,
+      "ellipsoid_height_m": 521.8642198285088,
+      "heading_deg": 60.09655925144807,
+      "pitch_deg": 3.8612075495225935,
+      "roll_deg": -0.005969909548566048,
+      "simulation_time_s": 392,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 64.99223498064784,
+      "vertical_speed_mps": 0.0008089015000214417,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 23177.32694494109,
+      "roll_rate_deg_s": -0.0023647875433467466,
+      "pitch_rate_deg_s": -0.00030968360129612264,
+      "yaw_rate_deg_s": -0.0008863954415274786,
+      "angle_of_attack_deg": 3.860494403258409,
+      "sideslip_deg": -0.0005454659191070815,
+      "ground_speed_mps": 64.99223497561398,
+      "air_density_kg_m3": 1.169408831010863,
+      "dynamic_pressure_pa": 2469.7859594222878,
+      "lift_coefficient": 0.5796173603189265,
+      "drag_coefficient": 0.04879781427353427,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 0.9977229176774673
+    }
+  },
+  "accepted_return": {
+    "phase": "returning",
+    "kind": "landing",
+    "runway_index": 0,
+    "runway_name": "Jeju 2km research strip (virtual)",
+    "completed": false,
+    "message": "Returning at current configuration; descending to approach orbit",
+    "cross_track_m": -59.87743689437976,
+    "along_track_m": 22813.373363233823,
+    "target_height_m": 80,
+    "rejection": "",
+    "desired_course_deg": 60.09655925144805,
+    "desired_bank_deg": -0.005969909548566048,
+    "desired_speed_mps": 65,
+    "desired_height_m": 170.9009523447603,
+    "desired_climb_mps": 0,
+    "return_radius_m": 1492.439245201676,
+    "path": [
+      {
+        "latitude_deg": 33.5157757344426,
+        "longitude_deg": 126.4718860348477,
+        "ellipsoid_height_m": 130.15173835121095,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.514999266231854,
+        "longitude_deg": 126.47238171451822,
+        "ellipsoid_height_m": 130.13016550801694,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.514197303200014,
+        "longitude_deg": 126.47281569809286,
+        "ellipsoid_height_m": 130.11126559227705,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51337328012469,
+        "longitude_deg": 126.47318612856164,
+        "ellipsoid_height_m": 130.09512005746365,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51253072616841,
+        "longitude_deg": 126.47349142125181,
+        "ellipsoid_height_m": 130.08179848827422,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.511673249559806,
+        "longitude_deg": 126.47373027063358,
+        "ellipsoid_height_m": 130.07135831192136,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.510804523116875,
+        "longitude_deg": 126.47390165564751,
+        "ellipsoid_height_m": 130.0638445429504,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50992826634874,
+        "longitude_deg": 126.47400484452699,
+        "ellipsoid_height_m": 130.05928957276046,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.509048232486975,
+        "longitude_deg": 126.47403939735317,
+        "ellipsoid_height_m": 130.05771304294467,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.508168189630204,
+        "longitude_deg": 126.47400516830936,
+        "ellipsoid_height_m": 130.05912174656987,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50729190540537,
+        "longitude_deg": 126.47390230592598,
+        "ellipsoid_height_m": 130.0635096160695,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50642313362326,
+        "longitude_deg": 126.47373125290848,
+        "ellipsoid_height_m": 130.07085771579295,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50556559342063,
+        "longitude_deg": 126.47349274364466,
+        "ellipsoid_height_m": 130.0811343640089,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50472295653507,
+        "longitude_deg": 126.47318780133836,
+        "ellipsoid_height_m": 130.09429525211453,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.503898830047284,
+        "longitude_deg": 126.4728177331673,
+        "ellipsoid_height_m": 130.11028365977108,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50309674464507,
+        "longitude_deg": 126.47238412648542,
+        "ellipsoid_height_m": 130.12903061974794,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50232013141883,
+        "longitude_deg": 126.47188883786274,
+        "ellipsoid_height_m": 130.1504554124549,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50157231738408,
+        "longitude_deg": 126.47133399062805,
+        "ellipsoid_height_m": 130.17446566466242,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50085650330301,
+        "longitude_deg": 126.47072196122181,
+        "ellipsoid_height_m": 130.20095796510577,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.500175753585275,
+        "longitude_deg": 126.47005537111858,
+        "ellipsoid_height_m": 130.22981822211295,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49953298132583,
+        "longitude_deg": 126.46933707381324,
+        "ellipsoid_height_m": 130.26092223636806,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.498930940454656,
+        "longitude_deg": 126.46857014791766,
+        "ellipsoid_height_m": 130.2941360194236,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49837220693672,
+        "longitude_deg": 126.46775787612837,
+        "ellipsoid_height_m": 130.3293167129159,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49785917340053,
+        "longitude_deg": 126.46690373790325,
+        "ellipsoid_height_m": 130.3663129294291,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.4973940332473,
+        "longitude_deg": 126.46601138535554,
+        "ellipsoid_height_m": 130.4049658011645,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49697878017549,
+        "longitude_deg": 126.46508464352229,
+        "ellipsoid_height_m": 130.445108987391,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49661519075367,
+        "longitude_deg": 126.4641274781047,
+        "ellipsoid_height_m": 130.4865700909868,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49630482076264,
+        "longitude_deg": 126.46314398464493,
+        "ellipsoid_height_m": 130.52917112782598,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.496048999815216,
+        "longitude_deg": 126.46213837662697,
+        "ellipsoid_height_m": 130.57272906787694,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49584882259503,
+        "longitude_deg": 126.46111495859414,
+        "ellipsoid_height_m": 130.61705700401217,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49570514518016,
+        "longitude_deg": 126.4600781073828,
+        "ellipsoid_height_m": 130.66196497529745,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49561858295637,
+        "longitude_deg": 126.45903226282337,
+        "ellipsoid_height_m": 130.70726037863642,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.495589506426114,
+        "longitude_deg": 126.45798189942272,
+        "ellipsoid_height_m": 130.752749199979,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49561804025173,
+        "longitude_deg": 126.45693151483111,
+        "ellipsoid_height_m": 130.79823651909828,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49570406188344,
+        "longitude_deg": 126.4558856086875,
+        "ellipsoid_height_m": 130.84352743439376,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49584720375487,
+        "longitude_deg": 126.4548486500749,
+        "ellipsoid_height_m": 130.88842846639454,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49604685214551,
+        "longitude_deg": 126.4538250849687,
+        "ellipsoid_height_m": 130.9327472327277,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.496302153960634,
+        "longitude_deg": 126.4528192871207,
+        "ellipsoid_height_m": 130.97629458084702,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49661201458046,
+        "longitude_deg": 126.45183556908457,
+        "ellipsoid_height_m": 131.01888409722596,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49697510995278,
+        "longitude_deg": 126.4508781345719,
+        "ellipsoid_height_m": 131.06033416930586,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49738988485831,
+        "longitude_deg": 126.44995108572695,
+        "ellipsoid_height_m": 131.10046766139567,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49785456209492,
+        "longitude_deg": 126.44905839435174,
+        "ellipsoid_height_m": 131.1391131421551,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.498367155992376,
+        "longitude_deg": 126.44820387567368,
+        "ellipsoid_height_m": 131.1761060245335,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.4989254686352,
+        "longitude_deg": 126.44739119440811,
+        "ellipsoid_height_m": 131.21128828078508,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.499527114145366,
+        "longitude_deg": 126.44662382426331,
+        "ellipsoid_height_m": 131.2445101821795,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.500169512672116,
+        "longitude_deg": 126.44590505667146,
+        "ellipsoid_height_m": 131.27562990784645,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50084991635098,
+        "longitude_deg": 126.44523796674598,
+        "ellipsoid_height_m": 131.30451501067728,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.501565417778885,
+        "longitude_deg": 126.44462540720215,
+        "ellipsoid_height_m": 131.3310426576063,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.502312943475445,
+        "longitude_deg": 126.44407001069237,
+        "ellipsoid_height_m": 131.35509951692075,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50308930117222,
+        "longitude_deg": 126.44357415005881,
+        "ellipsoid_height_m": 131.37658346258104,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50389116146282,
+        "longitude_deg": 126.4431399534107,
+        "ellipsoid_height_m": 131.3954029129818,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50471509713604,
+        "longitude_deg": 126.44276927826037,
+        "ellipsoid_height_m": 131.41147793177515,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.505557574555894,
+        "longitude_deg": 126.44246371615407,
+        "ellipsoid_height_m": 131.4247400201857,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50641498956292,
+        "longitude_deg": 126.44222457581488,
+        "ellipsoid_height_m": 131.43513283133507,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50728367733301,
+        "longitude_deg": 126.4420528821397,
+        "ellipsoid_height_m": 131.44261221121997,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.508159905652604,
+        "longitude_deg": 126.44194937481856,
+        "ellipsoid_height_m": 131.44714624248445,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50903993206327,
+        "longitude_deg": 126.44191449762918,
+        "ellipsoid_height_m": 131.44871571101248,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50991998182141,
+        "longitude_deg": 126.4419484022554,
+        "ellipsoid_height_m": 131.44731392804533,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51079628958108,
+        "longitude_deg": 126.44205094534229,
+        "ellipsoid_height_m": 131.44294686522335,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51166510585396,
+        "longitude_deg": 126.44222169057834,
+        "ellipsoid_height_m": 131.43563305493444,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.512522703648095,
+        "longitude_deg": 126.44245990754222,
+        "ellipsoid_height_m": 131.42540365085006,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51336541949129,
+        "longitude_deg": 126.44276458098601,
+        "ellipsoid_height_m": 131.41230202652514,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.514189629043514,
+        "longitude_deg": 126.44313440209149,
+        "ellipsoid_height_m": 131.39638415630907,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51499182031751,
+        "longitude_deg": 126.44356779686258,
+        "ellipsoid_height_m": 131.37771740742028,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.515768542851845,
+        "longitude_deg": 126.44406290328025,
+        "ellipsoid_height_m": 131.35638152156025,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.516516475828546,
+        "longitude_deg": 126.4446176053218,
+        "ellipsoid_height_m": 131.33246716391295,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51723242081689,
+        "longitude_deg": 126.44522953326425,
+        "ellipsoid_height_m": 131.3060759268701,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51791330079942,
+        "longitude_deg": 126.44589605850989,
+        "ellipsoid_height_m": 131.2773205526173,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.518556204647034,
+        "longitude_deg": 126.44661433157044,
+        "ellipsoid_height_m": 131.2463233228773,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.519158378498204,
+        "longitude_deg": 126.44738127684298,
+        "ellipsoid_height_m": 131.21321628522128,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51971724681048,
+        "longitude_deg": 126.44819361610591,
+        "ellipsoid_height_m": 131.1781402649358,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.520230407447706,
+        "longitude_deg": 126.4490478585759,
+        "ellipsoid_height_m": 131.1412452980876,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52069566640194,
+        "longitude_deg": 126.44994035135996,
+        "ellipsoid_height_m": 131.10268847551197,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.521111033437165,
+        "longitude_deg": 126.45086727863153,
+        "ellipsoid_height_m": 131.06263399403542,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52147472312738,
+        "longitude_deg": 126.45182465650375,
+        "ellipsoid_height_m": 131.02125338371843,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.521785180664814,
+        "longitude_deg": 126.45280839061309,
+        "ellipsoid_height_m": 130.97872303705662,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.522041076058336,
+        "longitude_deg": 126.4538142669091,
+        "ellipsoid_height_m": 130.93522462714463,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52224131304868,
+        "longitude_deg": 126.45483797635903,
+        "ellipsoid_height_m": 130.89094403479248,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.5223850346505,
+        "longitude_deg": 126.45587514102357,
+        "ellipsoid_height_m": 130.846070243977,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.522471623056134,
+        "longitude_deg": 126.4569213025399,
+        "ellipsoid_height_m": 130.80079584289342,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52250070856816,
+        "longitude_deg": 126.4579719942285,
+        "ellipsoid_height_m": 130.75531391520053,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52247216615666,
+        "longitude_deg": 126.45902269949791,
+        "ellipsoid_height_m": 130.7098198356107,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52238611852042,
+        "longitude_deg": 126.46006892464604,
+        "ellipsoid_height_m": 130.66450812853873,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52224293429359,
+        "longitude_deg": 126.46110618754685,
+        "ellipsoid_height_m": 130.61957295890898,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52204322522697,
+        "longitude_deg": 126.46213005192202,
+        "ellipsoid_height_m": 130.5752066448331,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.52178785185141,
+        "longitude_deg": 126.46313610940419,
+        "ellipsoid_height_m": 130.5316004343331,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.521477900764296,
+        "longitude_deg": 126.46412007942726,
+        "ellipsoid_height_m": 130.48894016537815,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.521114703122635,
+        "longitude_deg": 126.46507773206592,
+        "ellipsoid_height_m": 130.44740961119533,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.520699818064514,
+        "longitude_deg": 126.46600495844892,
+        "ellipsoid_height_m": 130.40718741808087,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.520235020446044,
+        "longitude_deg": 126.46689779398325,
+        "ellipsoid_height_m": 130.36844608653337,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51972230136613,
+        "longitude_deg": 126.46775241450077,
+        "ellipsoid_height_m": 130.33135212399065,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51916385294375,
+        "longitude_deg": 126.46856516548746,
+        "ellipsoid_height_m": 130.29606477357447,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.518562080046195,
+        "longitude_deg": 126.46933254896808,
+        "ellipsoid_height_m": 130.2627365635708,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.5179195429134,
+        "longitude_deg": 126.47005130107132,
+        "ellipsoid_height_m": 130.23150992114097,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.51723900233576,
+        "longitude_deg": 126.47071833257219,
+        "ellipsoid_height_m": 130.2025197520852,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.5165233787027,
+        "longitude_deg": 126.47133078325807,
+        "ellipsoid_height_m": 130.17589105665684,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.515775732405345,
+        "longitude_deg": 126.47188603625247,
+        "ellipsoid_height_m": 130.1517382916063,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.4973940335415,
+        "longitude_deg": 126.46601138596344,
+        "ellipsoid_height_m": 130.40496577415615,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49758051647599,
+        "longitude_deg": 126.46639670460804,
+        "ellipsoid_height_m": 130.3884093305096,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49776699820763,
+        "longitude_deg": 126.46678202490689,
+        "ellipsoid_height_m": 130.37212101649493,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49795347873637,
+        "longitude_deg": 126.46716734685998,
+        "ellipsoid_height_m": 130.35610082838684,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49813995757801,
+        "longitude_deg": 126.46755266947143,
+        "ellipsoid_height_m": 130.05706900544465,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49832643206872,
+        "longitude_deg": 126.46793798726257,
+        "ellipsoid_height_m": 127.87445410527289,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49851290548368,
+        "longitude_deg": 126.46832330696935,
+        "ellipsoid_height_m": 125.69210732355714,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49869937782285,
+        "longitude_deg": 126.46870862859177,
+        "ellipsoid_height_m": 123.5100286565721,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.498885849086214,
+        "longitude_deg": 126.4690939521298,
+        "ellipsoid_height_m": 121.32821810804307,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49907231927373,
+        "longitude_deg": 126.46947927758343,
+        "ellipsoid_height_m": 119.14667567890137,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49925878838536,
+        "longitude_deg": 126.46986460495263,
+        "ellipsoid_height_m": 116.96540136821568,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49944525642108,
+        "longitude_deg": 126.47024993423736,
+        "ellipsoid_height_m": 114.78439517691731,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.499631723380865,
+        "longitude_deg": 126.47063526543765,
+        "ellipsoid_height_m": 112.60365710407495,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.49981818926468,
+        "longitude_deg": 126.47102059855345,
+        "ellipsoid_height_m": 110.4231871496886,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.500004654072484,
+        "longitude_deg": 126.4714059335847,
+        "ellipsoid_height_m": 108.2429853156209,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50019111780425,
+        "longitude_deg": 126.47179127053147,
+        "ellipsoid_height_m": 106.06305160187185,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50037758045995,
+        "longitude_deg": 126.47217660939366,
+        "ellipsoid_height_m": 103.88338600937277,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50056404203955,
+        "longitude_deg": 126.47256195017127,
+        "ellipsoid_height_m": 101.70398853439838,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50075050254303,
+        "longitude_deg": 126.47294729286429,
+        "ellipsoid_height_m": 99.52485917881131,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50093696197033,
+        "longitude_deg": 126.47333263747271,
+        "ellipsoid_height_m": 97.34599794726819,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50112342032144,
+        "longitude_deg": 126.47371798399648,
+        "ellipsoid_height_m": 95.16740483697504,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.501309877596334,
+        "longitude_deg": 126.4741033324356,
+        "ellipsoid_height_m": 92.98907984700054,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50149633379497,
+        "longitude_deg": 126.47448868279005,
+        "ellipsoid_height_m": 90.81102297827601,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50168278891731,
+        "longitude_deg": 126.47487403505981,
+        "ellipsoid_height_m": 88.63323423080146,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50186924296332,
+        "longitude_deg": 126.47525938924483,
+        "ellipsoid_height_m": 86.45571360830218,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50205569593299,
+        "longitude_deg": 126.47564474534512,
+        "ellipsoid_height_m": 84.27846110612154,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50224214782628,
+        "longitude_deg": 126.47603010336067,
+        "ellipsoid_height_m": 82.10147672798485,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50242859864315,
+        "longitude_deg": 126.47641546329145,
+        "ellipsoid_height_m": 79.92476047296077,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50261504838357,
+        "longitude_deg": 126.47680082513739,
+        "ellipsoid_height_m": 77.74831233918667,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.502801497047514,
+        "longitude_deg": 126.47718618889853,
+        "ellipsoid_height_m": 75.57213233038783,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50298794463495,
+        "longitude_deg": 126.47757155457482,
+        "ellipsoid_height_m": 73.39622044656426,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50317439114584,
+        "longitude_deg": 126.47795692216629,
+        "ellipsoid_height_m": 71.22057668399066,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.503360836580164,
+        "longitude_deg": 126.47834229167285,
+        "ellipsoid_height_m": 69.04520104732364,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50354728093787,
+        "longitude_deg": 126.47872766309447,
+        "ellipsoid_height_m": 66.87009353470057,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50373372421896,
+        "longitude_deg": 126.47911303643122,
+        "ellipsoid_height_m": 64.69525414705276,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50392016642336,
+        "longitude_deg": 126.479498411683,
+        "ellipsoid_height_m": 62.52068288717419,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50410660755107,
+        "longitude_deg": 126.47988378884983,
+        "ellipsoid_height_m": 60.34637974947691,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.504293047602054,
+        "longitude_deg": 126.48026916793167,
+        "ellipsoid_height_m": 58.17234473954886,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50447948657628,
+        "longitude_deg": 126.48065454892851,
+        "ellipsoid_height_m": 55.99857785459608,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50466592447369,
+        "longitude_deg": 126.48103993184031,
+        "ellipsoid_height_m": 53.82507909461856,
+        "speed_mps": 40
+      },
+      {
+        "latitude_deg": 33.50485236129429,
+        "longitude_deg": 126.48142531666707,
+        "ellipsoid_height_m": 51.65184846241027,
+        "speed_mps": 40
+      }
+    ]
+  },
+  "final_state": {
+    "aircraft": {
+      "latitude_deg": 33.505759436566976,
+      "longitude_deg": 126.48330038933233,
+      "ellipsoid_height_m": 51.62599783949554,
+      "heading_deg": 59.99825144502921,
+      "pitch_deg": -0.00871489548926429,
+      "roll_deg": -1.8146808358419585e-05,
+      "simulation_time_s": 1014.6399999999994,
+      "running": false,
+      "terrain_loaded": true,
+      "speed_mps": 0.12347784061168557,
+      "vertical_speed_mps": -1.8675778008020255e-05,
+      "time_scale": 1,
+      "effective_time_scale": 0,
+      "distance_travelled_m": 60729.78627132441,
+      "roll_rate_deg_s": 4.170113706232626e-07,
+      "pitch_rate_deg_s": -8.362109439317343e-07,
+      "yaw_rate_deg_s": -0.00016342520949290428,
+      "angle_of_attack_deg": -4.902299944135232e-05,
+      "sideslip_deg": -0.0010530735525364548,
+      "ground_speed_mps": 0.1234778391993484,
+      "air_density_kg_m3": 1.2189407499955498,
+      "dynamic_pressure_pa": 0.009292458970128913,
+      "lift_coefficient": 0.9147715405583278,
+      "drag_coefficient": 0.142379268225468,
+      "flow_separation": 0,
+      "stall_warning": false,
+      "stalled": false,
+      "load_factor": 5.904440228988213e-06
+    },
+    "controls": {
+      "elevator_deg": 0,
+      "aileron_deg": 1.1745384068497937e-05,
+      "rudder_deg": -0.00025357640923679217,
+      "throttle": 0
+    },
+    "ground": {
+      "steering_deg": 0,
+      "brake": 1,
+      "parking_brake": true,
+      "applied_steering_deg": -0.0050298769715771555,
+      "applied_brake": 0.6999999999999944,
+      "on_ground": true,
+      "wheels_on_ground": 3,
+      "height_agl_m": 1.7000000000172453,
+      "terrain_height_m": 49.92599782906473,
+      "normal_force_n": 37373.559522624055,
+      "impact_speed_mps": 0.35514757626692384,
+      "crashed": false,
+      "surface": "Jeju 2km research strip (virtual)",
+      "available": true
+    },
+    "gear": {
+      "command_down": true,
+      "extension": 1,
+      "down_locked": true,
+      "up_locked": false,
+      "moving": false
+    },
+    "automation": {
+      "phase": "complete",
+      "kind": "landing",
+      "runway_index": 0,
+      "runway_name": "Jeju 2km research strip (virtual)",
+      "completed": true,
+      "message": "Landed and parked",
+      "cross_track_m": -0.00036560240080156617,
+      "along_track_m": 281.1891178626167,
+      "target_height_m": 80,
+      "rejection": "",
+      "desired_course_deg": 59.995266436931644,
+      "desired_bank_deg": 0.012438004647422297,
+      "desired_speed_mps": 37.69499999999882,
+      "desired_height_m": 51.71578842122108,
+      "desired_climb_mps": -0.2536504842464637,
+      "return_radius_m": 1492.439245201676,
+      "path": [
+        {
+          "latitude_deg": 33.5157757344426,
+          "longitude_deg": 126.4718860348477,
+          "ellipsoid_height_m": 130.15173835121095,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.514999266231854,
+          "longitude_deg": 126.47238171451822,
+          "ellipsoid_height_m": 130.13016550801694,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.514197303200014,
+          "longitude_deg": 126.47281569809286,
+          "ellipsoid_height_m": 130.11126559227705,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51337328012469,
+          "longitude_deg": 126.47318612856164,
+          "ellipsoid_height_m": 130.09512005746365,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51253072616841,
+          "longitude_deg": 126.47349142125181,
+          "ellipsoid_height_m": 130.08179848827422,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.511673249559806,
+          "longitude_deg": 126.47373027063358,
+          "ellipsoid_height_m": 130.07135831192136,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.510804523116875,
+          "longitude_deg": 126.47390165564751,
+          "ellipsoid_height_m": 130.0638445429504,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50992826634874,
+          "longitude_deg": 126.47400484452699,
+          "ellipsoid_height_m": 130.05928957276046,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.509048232486975,
+          "longitude_deg": 126.47403939735317,
+          "ellipsoid_height_m": 130.05771304294467,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.508168189630204,
+          "longitude_deg": 126.47400516830936,
+          "ellipsoid_height_m": 130.05912174656987,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50729190540537,
+          "longitude_deg": 126.47390230592598,
+          "ellipsoid_height_m": 130.0635096160695,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50642313362326,
+          "longitude_deg": 126.47373125290848,
+          "ellipsoid_height_m": 130.07085771579295,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50556559342063,
+          "longitude_deg": 126.47349274364466,
+          "ellipsoid_height_m": 130.0811343640089,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50472295653507,
+          "longitude_deg": 126.47318780133836,
+          "ellipsoid_height_m": 130.09429525211453,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.503898830047284,
+          "longitude_deg": 126.4728177331673,
+          "ellipsoid_height_m": 130.11028365977108,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50309674464507,
+          "longitude_deg": 126.47238412648542,
+          "ellipsoid_height_m": 130.12903061974794,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50232013141883,
+          "longitude_deg": 126.47188883786274,
+          "ellipsoid_height_m": 130.1504554124549,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50157231738408,
+          "longitude_deg": 126.47133399062805,
+          "ellipsoid_height_m": 130.17446566466242,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50085650330301,
+          "longitude_deg": 126.47072196122181,
+          "ellipsoid_height_m": 130.20095796510577,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.500175753585275,
+          "longitude_deg": 126.47005537111858,
+          "ellipsoid_height_m": 130.22981822211295,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49953298132583,
+          "longitude_deg": 126.46933707381324,
+          "ellipsoid_height_m": 130.26092223636806,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.498930940454656,
+          "longitude_deg": 126.46857014791766,
+          "ellipsoid_height_m": 130.2941360194236,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49837220693672,
+          "longitude_deg": 126.46775787612837,
+          "ellipsoid_height_m": 130.3293167129159,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49785917340053,
+          "longitude_deg": 126.46690373790325,
+          "ellipsoid_height_m": 130.3663129294291,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.4973940332473,
+          "longitude_deg": 126.46601138535554,
+          "ellipsoid_height_m": 130.4049658011645,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49697878017549,
+          "longitude_deg": 126.46508464352229,
+          "ellipsoid_height_m": 130.445108987391,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49661519075367,
+          "longitude_deg": 126.4641274781047,
+          "ellipsoid_height_m": 130.4865700909868,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49630482076264,
+          "longitude_deg": 126.46314398464493,
+          "ellipsoid_height_m": 130.52917112782598,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.496048999815216,
+          "longitude_deg": 126.46213837662697,
+          "ellipsoid_height_m": 130.57272906787694,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49584882259503,
+          "longitude_deg": 126.46111495859414,
+          "ellipsoid_height_m": 130.61705700401217,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49570514518016,
+          "longitude_deg": 126.4600781073828,
+          "ellipsoid_height_m": 130.66196497529745,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49561858295637,
+          "longitude_deg": 126.45903226282337,
+          "ellipsoid_height_m": 130.70726037863642,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.495589506426114,
+          "longitude_deg": 126.45798189942272,
+          "ellipsoid_height_m": 130.752749199979,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49561804025173,
+          "longitude_deg": 126.45693151483111,
+          "ellipsoid_height_m": 130.79823651909828,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49570406188344,
+          "longitude_deg": 126.4558856086875,
+          "ellipsoid_height_m": 130.84352743439376,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49584720375487,
+          "longitude_deg": 126.4548486500749,
+          "ellipsoid_height_m": 130.88842846639454,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49604685214551,
+          "longitude_deg": 126.4538250849687,
+          "ellipsoid_height_m": 130.9327472327277,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.496302153960634,
+          "longitude_deg": 126.4528192871207,
+          "ellipsoid_height_m": 130.97629458084702,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49661201458046,
+          "longitude_deg": 126.45183556908457,
+          "ellipsoid_height_m": 131.01888409722596,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49697510995278,
+          "longitude_deg": 126.4508781345719,
+          "ellipsoid_height_m": 131.06033416930586,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49738988485831,
+          "longitude_deg": 126.44995108572695,
+          "ellipsoid_height_m": 131.10046766139567,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49785456209492,
+          "longitude_deg": 126.44905839435174,
+          "ellipsoid_height_m": 131.1391131421551,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.498367155992376,
+          "longitude_deg": 126.44820387567368,
+          "ellipsoid_height_m": 131.1761060245335,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.4989254686352,
+          "longitude_deg": 126.44739119440811,
+          "ellipsoid_height_m": 131.21128828078508,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.499527114145366,
+          "longitude_deg": 126.44662382426331,
+          "ellipsoid_height_m": 131.2445101821795,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.500169512672116,
+          "longitude_deg": 126.44590505667146,
+          "ellipsoid_height_m": 131.27562990784645,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50084991635098,
+          "longitude_deg": 126.44523796674598,
+          "ellipsoid_height_m": 131.30451501067728,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.501565417778885,
+          "longitude_deg": 126.44462540720215,
+          "ellipsoid_height_m": 131.3310426576063,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.502312943475445,
+          "longitude_deg": 126.44407001069237,
+          "ellipsoid_height_m": 131.35509951692075,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50308930117222,
+          "longitude_deg": 126.44357415005881,
+          "ellipsoid_height_m": 131.37658346258104,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50389116146282,
+          "longitude_deg": 126.4431399534107,
+          "ellipsoid_height_m": 131.3954029129818,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50471509713604,
+          "longitude_deg": 126.44276927826037,
+          "ellipsoid_height_m": 131.41147793177515,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.505557574555894,
+          "longitude_deg": 126.44246371615407,
+          "ellipsoid_height_m": 131.4247400201857,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50641498956292,
+          "longitude_deg": 126.44222457581488,
+          "ellipsoid_height_m": 131.43513283133507,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50728367733301,
+          "longitude_deg": 126.4420528821397,
+          "ellipsoid_height_m": 131.44261221121997,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.508159905652604,
+          "longitude_deg": 126.44194937481856,
+          "ellipsoid_height_m": 131.44714624248445,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50903993206327,
+          "longitude_deg": 126.44191449762918,
+          "ellipsoid_height_m": 131.44871571101248,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50991998182141,
+          "longitude_deg": 126.4419484022554,
+          "ellipsoid_height_m": 131.44731392804533,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51079628958108,
+          "longitude_deg": 126.44205094534229,
+          "ellipsoid_height_m": 131.44294686522335,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51166510585396,
+          "longitude_deg": 126.44222169057834,
+          "ellipsoid_height_m": 131.43563305493444,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.512522703648095,
+          "longitude_deg": 126.44245990754222,
+          "ellipsoid_height_m": 131.42540365085006,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51336541949129,
+          "longitude_deg": 126.44276458098601,
+          "ellipsoid_height_m": 131.41230202652514,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.514189629043514,
+          "longitude_deg": 126.44313440209149,
+          "ellipsoid_height_m": 131.39638415630907,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51499182031751,
+          "longitude_deg": 126.44356779686258,
+          "ellipsoid_height_m": 131.37771740742028,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.515768542851845,
+          "longitude_deg": 126.44406290328025,
+          "ellipsoid_height_m": 131.35638152156025,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.516516475828546,
+          "longitude_deg": 126.4446176053218,
+          "ellipsoid_height_m": 131.33246716391295,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51723242081689,
+          "longitude_deg": 126.44522953326425,
+          "ellipsoid_height_m": 131.3060759268701,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51791330079942,
+          "longitude_deg": 126.44589605850989,
+          "ellipsoid_height_m": 131.2773205526173,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.518556204647034,
+          "longitude_deg": 126.44661433157044,
+          "ellipsoid_height_m": 131.2463233228773,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.519158378498204,
+          "longitude_deg": 126.44738127684298,
+          "ellipsoid_height_m": 131.21321628522128,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51971724681048,
+          "longitude_deg": 126.44819361610591,
+          "ellipsoid_height_m": 131.1781402649358,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.520230407447706,
+          "longitude_deg": 126.4490478585759,
+          "ellipsoid_height_m": 131.1412452980876,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52069566640194,
+          "longitude_deg": 126.44994035135996,
+          "ellipsoid_height_m": 131.10268847551197,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.521111033437165,
+          "longitude_deg": 126.45086727863153,
+          "ellipsoid_height_m": 131.06263399403542,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52147472312738,
+          "longitude_deg": 126.45182465650375,
+          "ellipsoid_height_m": 131.02125338371843,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.521785180664814,
+          "longitude_deg": 126.45280839061309,
+          "ellipsoid_height_m": 130.97872303705662,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.522041076058336,
+          "longitude_deg": 126.4538142669091,
+          "ellipsoid_height_m": 130.93522462714463,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52224131304868,
+          "longitude_deg": 126.45483797635903,
+          "ellipsoid_height_m": 130.89094403479248,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.5223850346505,
+          "longitude_deg": 126.45587514102357,
+          "ellipsoid_height_m": 130.846070243977,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.522471623056134,
+          "longitude_deg": 126.4569213025399,
+          "ellipsoid_height_m": 130.80079584289342,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52250070856816,
+          "longitude_deg": 126.4579719942285,
+          "ellipsoid_height_m": 130.75531391520053,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52247216615666,
+          "longitude_deg": 126.45902269949791,
+          "ellipsoid_height_m": 130.7098198356107,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52238611852042,
+          "longitude_deg": 126.46006892464604,
+          "ellipsoid_height_m": 130.66450812853873,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52224293429359,
+          "longitude_deg": 126.46110618754685,
+          "ellipsoid_height_m": 130.61957295890898,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52204322522697,
+          "longitude_deg": 126.46213005192202,
+          "ellipsoid_height_m": 130.5752066448331,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.52178785185141,
+          "longitude_deg": 126.46313610940419,
+          "ellipsoid_height_m": 130.5316004343331,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.521477900764296,
+          "longitude_deg": 126.46412007942726,
+          "ellipsoid_height_m": 130.48894016537815,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.521114703122635,
+          "longitude_deg": 126.46507773206592,
+          "ellipsoid_height_m": 130.44740961119533,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.520699818064514,
+          "longitude_deg": 126.46600495844892,
+          "ellipsoid_height_m": 130.40718741808087,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.520235020446044,
+          "longitude_deg": 126.46689779398325,
+          "ellipsoid_height_m": 130.36844608653337,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51972230136613,
+          "longitude_deg": 126.46775241450077,
+          "ellipsoid_height_m": 130.33135212399065,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51916385294375,
+          "longitude_deg": 126.46856516548746,
+          "ellipsoid_height_m": 130.29606477357447,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.518562080046195,
+          "longitude_deg": 126.46933254896808,
+          "ellipsoid_height_m": 130.2627365635708,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.5179195429134,
+          "longitude_deg": 126.47005130107132,
+          "ellipsoid_height_m": 130.23150992114097,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.51723900233576,
+          "longitude_deg": 126.47071833257219,
+          "ellipsoid_height_m": 130.2025197520852,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.5165233787027,
+          "longitude_deg": 126.47133078325807,
+          "ellipsoid_height_m": 130.17589105665684,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.515775732405345,
+          "longitude_deg": 126.47188603625247,
+          "ellipsoid_height_m": 130.1517382916063,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.4973940335415,
+          "longitude_deg": 126.46601138596344,
+          "ellipsoid_height_m": 130.40496577415615,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49758051647599,
+          "longitude_deg": 126.46639670460804,
+          "ellipsoid_height_m": 130.3884093305096,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49776699820763,
+          "longitude_deg": 126.46678202490689,
+          "ellipsoid_height_m": 130.37212101649493,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49795347873637,
+          "longitude_deg": 126.46716734685998,
+          "ellipsoid_height_m": 130.35610082838684,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49813995757801,
+          "longitude_deg": 126.46755266947143,
+          "ellipsoid_height_m": 130.05706900544465,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49832643206872,
+          "longitude_deg": 126.46793798726257,
+          "ellipsoid_height_m": 127.87445410527289,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49851290548368,
+          "longitude_deg": 126.46832330696935,
+          "ellipsoid_height_m": 125.69210732355714,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49869937782285,
+          "longitude_deg": 126.46870862859177,
+          "ellipsoid_height_m": 123.5100286565721,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.498885849086214,
+          "longitude_deg": 126.4690939521298,
+          "ellipsoid_height_m": 121.32821810804307,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49907231927373,
+          "longitude_deg": 126.46947927758343,
+          "ellipsoid_height_m": 119.14667567890137,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49925878838536,
+          "longitude_deg": 126.46986460495263,
+          "ellipsoid_height_m": 116.96540136821568,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49944525642108,
+          "longitude_deg": 126.47024993423736,
+          "ellipsoid_height_m": 114.78439517691731,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.499631723380865,
+          "longitude_deg": 126.47063526543765,
+          "ellipsoid_height_m": 112.60365710407495,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.49981818926468,
+          "longitude_deg": 126.47102059855345,
+          "ellipsoid_height_m": 110.4231871496886,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.500004654072484,
+          "longitude_deg": 126.4714059335847,
+          "ellipsoid_height_m": 108.2429853156209,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50019111780425,
+          "longitude_deg": 126.47179127053147,
+          "ellipsoid_height_m": 106.06305160187185,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50037758045995,
+          "longitude_deg": 126.47217660939366,
+          "ellipsoid_height_m": 103.88338600937277,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50056404203955,
+          "longitude_deg": 126.47256195017127,
+          "ellipsoid_height_m": 101.70398853439838,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50075050254303,
+          "longitude_deg": 126.47294729286429,
+          "ellipsoid_height_m": 99.52485917881131,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50093696197033,
+          "longitude_deg": 126.47333263747271,
+          "ellipsoid_height_m": 97.34599794726819,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50112342032144,
+          "longitude_deg": 126.47371798399648,
+          "ellipsoid_height_m": 95.16740483697504,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.501309877596334,
+          "longitude_deg": 126.4741033324356,
+          "ellipsoid_height_m": 92.98907984700054,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50149633379497,
+          "longitude_deg": 126.47448868279005,
+          "ellipsoid_height_m": 90.81102297827601,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50168278891731,
+          "longitude_deg": 126.47487403505981,
+          "ellipsoid_height_m": 88.63323423080146,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50186924296332,
+          "longitude_deg": 126.47525938924483,
+          "ellipsoid_height_m": 86.45571360830218,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50205569593299,
+          "longitude_deg": 126.47564474534512,
+          "ellipsoid_height_m": 84.27846110612154,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50224214782628,
+          "longitude_deg": 126.47603010336067,
+          "ellipsoid_height_m": 82.10147672798485,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50242859864315,
+          "longitude_deg": 126.47641546329145,
+          "ellipsoid_height_m": 79.92476047296077,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50261504838357,
+          "longitude_deg": 126.47680082513739,
+          "ellipsoid_height_m": 77.74831233918667,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.502801497047514,
+          "longitude_deg": 126.47718618889853,
+          "ellipsoid_height_m": 75.57213233038783,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50298794463495,
+          "longitude_deg": 126.47757155457482,
+          "ellipsoid_height_m": 73.39622044656426,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50317439114584,
+          "longitude_deg": 126.47795692216629,
+          "ellipsoid_height_m": 71.22057668399066,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.503360836580164,
+          "longitude_deg": 126.47834229167285,
+          "ellipsoid_height_m": 69.04520104732364,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50354728093787,
+          "longitude_deg": 126.47872766309447,
+          "ellipsoid_height_m": 66.87009353470057,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50373372421896,
+          "longitude_deg": 126.47911303643122,
+          "ellipsoid_height_m": 64.69525414705276,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50392016642336,
+          "longitude_deg": 126.479498411683,
+          "ellipsoid_height_m": 62.52068288717419,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50410660755107,
+          "longitude_deg": 126.47988378884983,
+          "ellipsoid_height_m": 60.34637974947691,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.504293047602054,
+          "longitude_deg": 126.48026916793167,
+          "ellipsoid_height_m": 58.17234473954886,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50447948657628,
+          "longitude_deg": 126.48065454892851,
+          "ellipsoid_height_m": 55.99857785459608,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50466592447369,
+          "longitude_deg": 126.48103993184031,
+          "ellipsoid_height_m": 53.82507909461856,
+          "speed_mps": 40
+        },
+        {
+          "latitude_deg": 33.50485236129429,
+          "longitude_deg": 126.48142531666707,
+          "ellipsoid_height_m": 51.65184846241027,
+          "speed_mps": 40
+        }
+      ]
+    },
+    "actuators": {
+      "elevator_deg": 0.029395288193635072,
+      "aileron_deg": 1.1820566570847863e-05,
+      "rudder_deg": -0.00021744516555280484,
+      "throttle": 0.0006376216466868846,
+      "thrust_n": 6.075074139355097
+    },
+    "airframe": {
+      "id": "c208b-research-assumptions",
+      "profile": "aircraft/c208b-research.json",
+      "fingerprint": "sha1:11da3138f8e2cceb622e6e1e4609e3102f55b58c",
+      "error": "",
+      "schema_version": 2,
+      "initial_speed_mps": 65,
+      "initial_height_m": 2600,
+      "minimum_speed_mps": 0,
+      "maximum_speed_mps": 110,
+      "minimum_height_m": -500,
+      "maximum_height_m": 6000,
+      "maximum_alpha_deg": 180,
+      "maximum_beta_deg": 89,
+      "ground_supported": true,
+      "navigation_supported": true,
+      "automation_supported": true,
+      "support_message": "C208B research model: estimated inertia, propulsion, low-speed aerodynamics, gear and controller. REAL AIRCRAFT PERFORMANCE UNVALIDATED.",
+      "retractable_gear": false,
+      "route_minimum_speed_mps": 36,
+      "route_maximum_speed_mps": 75,
+      "landing_minimum_speed_mps": 36,
+      "landing_maximum_speed_mps": 44,
+      "maximum_flap_deg": 30
+    },
+    "flaps": {
+      "command_deg": 30,
+      "actual_deg": 29.999999999999982
+    },
+    "visual": {
+      "source": "builtin",
+      "config": "aircraft/visual.json",
+      "mesh": "",
+      "triangle_count": 0,
+      "span_m": 15.85,
+      "fingerprint": "sha1:31eec5e362e4e61ee3884fef27312c28760f59b0",
+      "error": "",
+      "show_builtin_gear": true
+    },
+    "eoir": {
+      "enabled": false,
+      "mode": "ccd",
+      "fov_deg": 30,
+      "azimuth_deg": 0,
+      "elevation_deg": -45,
+      "gimbal_mode": "body_fixed",
+      "point_latitude_deg": 0,
+      "point_longitude_deg": 0,
+      "point_ellipsoid_height_m": 0,
+      "target_id": "",
+      "tracking_status": "manual",
+      "limited": false,
+      "target_in_fov": false,
+      "error_deg": 0,
+      "frame_sequence": 1,
+      "error": ""
+    },
+    "targets": [],
+    "wargame": {
+      "time_s": 1230.2700000000057,
+      "error": "",
+      "weapons": [
+        {
+          "id": "training-marker",
+          "label": "Sim projectile",
+          "mesh": "models/example.stl",
+          "animation_duration_s": 5,
+          "triangle_count": 144
+        }
+      ],
+      "shots": []
+    },
+    "disturbance": {
+      "engine_power_fraction": 1,
+      "elevator_jammed": false,
+      "aileron_jammed": false,
+      "rudder_jammed": false,
+      "gust_east_mps": 0,
+      "gust_north_mps": 0,
+      "gust_up_mps": 0,
+      "gust_start_s": 0,
+      "gust_duration_s": 0,
+      "effective_wind_east_mps": 0,
+      "effective_wind_north_mps": 0,
+      "effective_wind_up_mps": 0
+    },
+    "navigation": {
+      "mode": "manual",
+      "stall_recovery": false,
+      "active_waypoint_index": -1,
+      "waypoint_count": 0,
+      "distance_to_waypoint_m": 0,
+      "loiter_radius_m": 0
+    },
+    "environment": {
+      "wind_east_mps": 0,
+      "wind_north_mps": 0,
+      "wind_up_mps": 0
+    },
+    "view_mode": "aircraft",
+    "terrain": {
+      "dataset": "korea",
+      "tile_count": 50,
+      "manifest": "korea/terrain.json",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)\nContains modified Copernicus Sentinel data 2025; Copernicus DEM GLO-30.\nJeju detail: modified Copernicus Sentinel-2 data 2025-04-06.",
+      "error": ""
+    },
+    "object_path": "/Game/Maps/JejuDemo.JejuDemo:PersistentLevel.FlightScene_0",
+    "model": "thor_nonlinear_6dof_v2",
+    "fault": ""
+  },
+  "elapsed_wall_s": 50.449058300000615
+}

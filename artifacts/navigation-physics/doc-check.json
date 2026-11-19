@@ -1,0 +1,9 @@
+{
+  "public_methods": 42,
+  "missing_methods": [],
+  "broken_local_links": [],
+  "python_js_syntax": "passed",
+  "literal_api_paths": 41,
+  "missing_paths": [],
+  "roundtrip_applied_profiles_match_saved_bytes": true
+}

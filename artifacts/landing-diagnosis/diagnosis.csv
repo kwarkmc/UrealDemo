@@ -1,0 +1,5 @@
+case,accepted,first_command_valid,first_phase,first_flap_target_deg,first_waypoint_height_m,first_target_tas_mps,aileron_reversals_over_1deg,max_abs_aileron_deg,end_phase,end_wp,end_height_m,crashed
+high_mission,false,,,,,,,,,,,
+mission_800m,true,false,join,,,,,,,,,
+mission_500m_away,true,false,join,,,,,,,,,
+low_aligned,true,true,final,30,-32.5833,40,11,25,join,1,81.2573,0

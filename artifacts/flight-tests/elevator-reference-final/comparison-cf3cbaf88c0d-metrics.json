@@ -1,0 +1,202 @@
+{
+  "metrics": {
+    "speed_mps": {
+      "minimum": 64.56714444387082,
+      "maximum": 65.55926276290684,
+      "peak_absolute": 65.55926276290684,
+      "peak_time_s": 13.839999999999794,
+      "change": -0.4328555561291836
+    },
+    "ellipsoid_height_m": {
+      "minimum": 2596.051048805006,
+      "maximum": 2602.621036896482,
+      "peak_absolute": 2602.621036896482,
+      "peak_time_s": 29.99999999999945,
+      "change": 2.6210368974134326
+    },
+    "pitch_deg": {
+      "minimum": 4.60193956995494,
+      "maximum": 6.2052763672067055,
+      "peak_absolute": 6.2052763672067055,
+      "peak_time_s": 23.619999999999585,
+      "change": 0.23244853003157218
+    },
+    "angle_of_attack_deg": {
+      "minimum": 4.980042136955833,
+      "maximum": 5.7330477749658355,
+      "peak_absolute": 5.7330477749658355,
+      "peak_time_s": 7.819999999999921,
+      "change": 0.03920544033327644
+    },
+    "roll_deg": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "peak_absolute": 0.0,
+      "peak_time_s": 0.0,
+      "change": 0.0
+    },
+    "sideslip_deg": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "peak_absolute": 0.0,
+      "peak_time_s": 0.0,
+      "change": 0.0
+    },
+    "roll_rate_deg_s": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "peak_absolute": 0.0,
+      "peak_time_s": 0.0,
+      "change": 0.0
+    },
+    "pitch_rate_deg_s": {
+      "minimum": -1.6501877848452242,
+      "maximum": 0.4602365880824268,
+      "peak_absolute": 1.6501877848452242,
+      "peak_time_s": 5.579999999999969,
+      "change": -0.07936659694522143
+    },
+    "yaw_rate_deg_s": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "peak_absolute": 0.0,
+      "peak_time_s": 0.0,
+      "change": 0.0
+    }
+  },
+  "comparison": {
+    "exact_samples": false,
+    "first_difference": {
+      "time_s": 5.019999999999981,
+      "fields": [
+        "latitude_deg",
+        "ellipsoid_height_m",
+        "pitch_deg",
+        "speed_mps",
+        "ground_speed_mps",
+        "vertical_speed_mps",
+        "angle_of_attack_deg",
+        "pitch_rate_deg_s",
+        "load_factor",
+        "thrust_n"
+      ]
+    },
+    "differences": {
+      "latitude_deg": {
+        "maximum_absolute": 1.954789965452619e-07,
+        "rms": 1.0629930693784243e-07
+      },
+      "longitude_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "ellipsoid_height_m": {
+        "maximum_absolute": 0.02600615005940199,
+        "rms": 0.013663520203852938
+      },
+      "heading_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "pitch_deg": {
+        "maximum_absolute": 0.0466540049026003,
+        "rms": 0.008773325155771899
+      },
+      "roll_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "speed_mps": {
+        "maximum_absolute": 0.004396203315479852,
+        "rms": 0.0021009389380534822
+      },
+      "ground_speed_mps": {
+        "maximum_absolute": 0.004227960292993771,
+        "rms": 0.002096112279792671
+      },
+      "vertical_speed_mps": {
+        "maximum_absolute": 0.024252014787468912,
+        "rms": 0.005668705630423284
+      },
+      "angle_of_attack_deg": {
+        "maximum_absolute": 0.03338194377817061,
+        "rms": 0.006849755843567503
+      },
+      "sideslip_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "roll_rate_deg_s": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "pitch_rate_deg_s": {
+        "maximum_absolute": 0.09901721018620258,
+        "rms": 0.018064729035678663
+      },
+      "yaw_rate_deg_s": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "load_factor": {
+        "maximum_absolute": 0.0037306136141219692,
+        "rms": 0.0007880212446233998
+      },
+      "flow_separation": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "command_elevator_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "command_aileron_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "command_rudder_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "command_throttle": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "actual_elevator_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "actual_aileron_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "actual_rudder_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "actual_throttle": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "thrust_n": {
+        "maximum_absolute": 0.19533049694155125,
+        "rms": 0.09236962803482408
+      },
+      "flap_command_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "flap_actual_deg": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      },
+      "gear_extension": {
+        "maximum_absolute": 0.0,
+        "rms": 0.0
+      }
+    },
+    "same_profile": false,
+    "same_configuration": true
+  },
+  "coordinated_turn": null
+}

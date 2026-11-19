@@ -1,0 +1,128 @@
+{
+  "collected_utc": "2026-11-18T04:46:10.145315+00:00",
+  "sdk": "Prepar3D v6 public SDK",
+  "counts": {
+    "simvar_rows": 900,
+    "simvar_unique_names": 897,
+    "settable_rows": 265,
+    "write_only_rows": 2,
+    "global_rows": 42,
+    "global_rows_in_simconnect_sample": 8,
+    "event_rows": 1125,
+    "event_unique_names": 1116,
+    "event_supported_unique_names": 1115,
+    "functions": 208,
+    "types": 111,
+    "system_events": 40,
+    "system_states": 6
+  },
+  "variable_categories": {
+    "Aircraft Engine Variables": 115,
+    "Aircraft Fuel Variables": 48,
+    "Aircraft Lights Variables": 30,
+    "Aircraft Position and Speed Variables": 52,
+    "Aircraft Flight Instrumentation Variables": 46,
+    "Aircraft Avionics Variables": 156,
+    "Aircraft Controls Variables": 51,
+    "Aircraft Autopilot Variables": 39,
+    "Aircraft Landing Gear Variables": 54,
+    "Aircraft Environment Variables": 22,
+    "Helicopter Specific Variables": 34,
+    "Aircraft Miscellaneous Systems Variables": 58,
+    "Miscellaneous Variables": 140,
+    "Aircraft String Variables": 12,
+    "AI Controlled Aircraft": 16,
+    "Carrier Operations": 16,
+    "Racing": 10,
+    "Avatar Mode": 1
+  },
+  "event_categories": {
+    "Aircraft Engine": 247,
+    "Aircraft Flight Controls": 48,
+    "Aircraft Automatic Flight Systems / Autopilot": 128,
+    "Aircraft Fuel System": 49,
+    "Aircraft Avionics": 206,
+    "Aircraft Instruments": 32,
+    "Aircraft Lights": 62,
+    "Aircraft Failures": 12,
+    "Aircraft Miscellaneous Systems": 97,
+    "Helicopter Specific Systems": 14,
+    "Boat Specific Systems": 1,
+    "Aircraft Slew System": 34,
+    "View System": 78,
+    "Miscellaneous Events": 89,
+    "ATC": 11,
+    "Multiplayer": 12,
+    "Avatar Mode": 2,
+    "Distributed Interactive Simulation (DIS) Events": 3
+  },
+  "sources": [
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/references/variables/simulation_variables.html",
+      "bytes": 579671,
+      "sha256": "58f26f327561008bc8232584635a9c49379d820a5256e8cd371cebaf54409923"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/references/variables/event_ids.html",
+      "bytes": 603399,
+      "sha256": "6d9c3f766c8d91bd202e136b81a1eb9dbdb2d7966f1f90a0486f1571fc0e883e"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/simconnect_api/samples/data_harvester.html",
+      "bytes": 60390,
+      "sha256": "209348dca61d82e3522e576609926f762de1afdf9b714732427a1e89d1d87d9a"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/references/variables/environment_variables.html",
+      "bytes": 14733,
+      "sha256": "e5445bd960f975e42ebef7b3ef4069f88e71d406b90873d0bffc0df7e4b8b4d2"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/references/variables/program_variables.html",
+      "bytes": 17562,
+      "sha256": "3919df1b2358949198afac9541ea0e2e5cfa9e2e5e6000b94befef138f989364"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/simconnect_references.html",
+      "bytes": 171939,
+      "sha256": "902d0313936cee84936770c0bcbd5b2f928ff49a5c971b81a3cef7af20e2a5c0"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/analysis_functions.html",
+      "bytes": 31566,
+      "sha256": "9d95260a61bfea049ece65eaa893540009714f2996ea9641ff9071f5f7c8add5"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/general_functions.html",
+      "bytes": 339739,
+      "sha256": "5aa58ad22054cc9e3f06f1aaeeb99d0ec2c68d9f87debd4f7bcf827268facb36"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/scenario_functions.html",
+      "bytes": 87029,
+      "sha256": "b394e2331419260c9bc96834274df5b034c709877cf12af51a259cc75fe2d66b"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/simobject_functions.html",
+      "bytes": 188632,
+      "sha256": "4b90b726b083ac244d4f232156f8da906f84cce064f386c6ce6eb37da08fe761"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/view_functions.html",
+      "bytes": 219183,
+      "sha256": "c1d9ac6efc9f322b5684fd7ccc2d7799861fa8f62a99e134232744cc9fd17269"
+    },
+    {
+      "url": "https://www.prepar3d.com/SDKv6/sdk/simconnect_api/references/world_functions.html",
+      "bytes": 151782,
+      "sha256": "6d94ca8a96834780086f6625d128197e73cb74dd6eedada7331bdf993bec4c6d"
+    }
+  ],
+  "detail_functions_not_in_index": [
+    "SimConnect_CameraSmoothRelative6DofByName"
+  ],
+  "index_functions_without_detail_heading": [
+    "SimConnect_CameraSmoothRelative6DOFByName"
+  ],
+  "validation": "Passed: source table row shape, Y/N domain, known entries, nonempty catalogs. No simulator runtime test."
+}

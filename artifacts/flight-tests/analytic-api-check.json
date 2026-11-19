@@ -1,0 +1,11 @@
+{
+  "throttle_analytic_max_error": 7.771561172376096e-16,
+  "roundoff_bound": 2.1387336346379016e-12,
+  "engine_cut_thrust_after_5s_n": 0,
+  "maximum_flap_rate_deg_s": 10.000000000000044,
+  "trim_max_speed_change_mps": 0.0,
+  "trim_ellipsoid_height_change_m": 0.29906063713133335,
+  "note": "Local ENU level flight and WGS84 ellipsoid height differ over horizontal travel; altitude change is not automatically vertical velocity.",
+  "trim_tangent_plane_expected_height_change_m": 0.29906092680758517,
+  "trim_tangent_plane_approximation_error_m": -2.8967625181897105e-07
+}
