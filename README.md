@@ -4,6 +4,8 @@ Prepar3D/SimConnect를 대체할 Unreal 기반 고정익 무인기 시뮬레이�
 
 외부 프레임워크 연동의 기준 문서는 [전체 API 사용 매뉴얼](docs/api-reference.md)이다. 모든 HTTP 경로·Python 메서드, 필드·단위·상태·오류, 실행 예제를 모았으며 API 변경과 함께 갱신한다.
 
+**클라우드에서 작업을 이어받는 에이전트는 [작업 인계 시작점](docs/handoff/README.md)을 읽는다.** 현재 결정·실행/API·전체 문서 색인·접근 가능한 개발 대화40턴의 기록을 묶었다. TrashCan 안에서는 `UnrealDemo` 폴더에서 이 저장소를 사용한다.
+
 2026-11-19 [추진·지상·비행 영역 확장 및 공식 시험 후속 계획](docs/physics-expansion-plan.md)을 작성했다. 거버너/후류·완충/타이어·비대칭 실속/스핀·연료/CG와 운용/공식 시험의 단계·완료 기준을 정리한 계획이며 아직 구현 착수/완료를 뜻하지 않는다.
 
 2026-11-18 [Prepar3D SimConnect 주입·관측 기능 조사](docs/simconnect-reference.md): v6 공개 SDK의 SimVar900행·별도 전역변수42개·이벤트1125행·함수208개를 CSV와 한국어 분야별 안내로 정리했다. 직접 쓰기·명령 이벤트·전용 API를 구분한 문서 조사이며, DLL/실제 기체의 실행 검증이나 UAVSim 구현 완료를 뜻하지 않는다.

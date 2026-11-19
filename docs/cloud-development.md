@@ -1,5 +1,7 @@
 # 클라우드 개발·새 PC 인계
 
+2026-11-19 후속 사용자 결정: 별도 UrealDemo 환경 생성 대신 기존 **TrashCan의 `UnrealDemo` 폴더**를 사용한다. `kwarkmc/TrashCan`에서 이 저장소를 서브모듈로 연결하고, 루트 작업 안내에서 해당 폴더의 [작업 인계 문서](handoff/README.md)로 이동한다. 아래의 환경 생성/TrashCan 미변경 설명은 앞선 저장소 동기화 당시 기록이다. GitHub 변경 업로드와 게시 환경의 재사용 스냅샷/시작 지침 갱신은 별개이며, 실제 클라우드 적용 전에는 게시 완료로 보고하지 않는다.
+
 2026-11-19 기준 저장소는 `https://github.com/kwarkmc/UrealDemo.git`다. 계산 코어, 기체 프로필, Unreal 코드와 자산, 지도, API/Python 클라이언트/Web UI, 검사 도구, 문서 및 선택한 과거 개발 검사 근거를 함께 관리한다. 최신 선택은 가상 수납식 연구 구성 `aircraft/c208b-retractable-research.json`이며 실제 C208B 사양이나 실기체 성능 검증 모델이 아니다. 다음 구현 후보는 [물리 확장 계획](physics-expansion-plan.md)을 따르며 이번 정리는 새 물리 기능 구현이 아니다.
 
 ## Codex 클라우드 환경

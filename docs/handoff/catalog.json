@@ -1,0 +1,990 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-19",
+  "scope": "All repository development documents, README, AGENTS, notices, public Python methods, literal HTTP routes and developer scripts. The catalog excludes its own hash. Method signatures/paths are a discovery index; api-reference.md remains authoritative.",
+  "documents": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 17726,
+      "sha256": "d3f834ea6cbf36e19940315f130288d24ec484845a0ac67f00c562d6828eda04",
+      "headings": [
+        "UAVSim 작업 규칙\r",
+        "현재 사용자 결정\r"
+      ]
+    },
+    {
+      "path": "docs/aircraft-candidate-research.md",
+      "bytes": 19679,
+      "sha256": "75b581820daae3d8a24d29164e3cdfa6dfbfdc475aca38258c23a563ecbc1f78",
+      "headings": [
+        "200kg 초과 단발 고정익 공개 자료 조사\r",
+        "조사 결론\r",
+        "SIERRA-B에서 실제 쓸 수 있는 것\r",
+        "공력 자료가 풍부하지만 그대로 채택하면 안 되는 자료\r",
+        "Pioneer: 풍동 원문과 단위가 있는 유력 비교 자료\r",
+        "KAIST Shadow 연구: 관성 수치가 있어도 측정된 최신 Shadow가 아니다\r",
+        "TigerShark의 과거 연구 모델\r",
+        "외부 시뮬레이터·동명이기\r",
+        "추진·시험 자료의 실제 확보 수준\r",
+        "선정 판단과 다음 자료 확보\r",
+        "조사 한계\r",
+        "추가 조사: King Air 350과 Cessna 208 계열\r",
+        "2026-11-17 실행 단계 A2 자료 대조\r",
+        "King Air 350: 실측 기반 개발 논문 공개, 전체 모델 데이터는 미확보\r",
+        "Cessna 208/208B: 단발 구조에 맞고 공력 연구를 추적할 수 있음\r"
+      ]
+    },
+    {
+      "path": "docs/aircraft-model.md",
+      "bytes": 10466,
+      "sha256": "933cb7ab876937f94a60ea0598f963c04c57913cc3331c61b4d98e7cbfd4410f",
+      "headings": [
+        "STL 기체 외형 사용\r",
+        "파일 배치와 적용\r",
+        "visual.json의 8개 필드\r",
+        "방향과 CG 맞추기\r",
+        "Python·HTTP API\r",
+        "조종면·기어·접촉의 범위\r",
+        "검사 기록\r",
+        "API·Unreal이 준비된 상태. 표시 설정과 시험 위치를 변경하고 복원한다.\r"
+      ]
+    },
+    {
+      "path": "docs/aircraft-profile.md",
+      "bytes": 18651,
+      "sha256": "87cf1f0382bc0d0a967d4011b0c444c0243e15220f5223ef3c0ed66bb218a995",
+      "headings": [
+        "기체 파일·작동기·돌풍·고장\r",
+        "2026-11-17: 프로필 v2와 C208B 연구 구성\r",
+        "v2 configuration\r",
+        "파일 선택과 적용\r",
+        "매개변수와 단위\r",
+        "작동기와 추진 응답\r",
+        "돌풍\r",
+        "정지 상태에서 .7s 진행하면 돌풍 최고점: .2s 지연 + .5s\r",
+        "고장\r",
+        "고장 해제\r",
+        "검사 상태\r"
+      ]
+    },
+    {
+      "path": "docs/api-reference.md",
+      "bytes": 64817,
+      "sha256": "4232544cc4c6da0865500034869d26a8e1eb5905ec6ee80bde35d6c482a5c796",
+      "headings": [
+        "UAVSim API 사용 매뉴얼\r",
+        "항법·동적 추진·바퀴 상태 추가 — 2026-11-18\r",
+        "2026-11-17 프로필별 초기화 추가 계약\r",
+        "v2 테스트 파일 적용은 aircraft/active.json 선택 후, 정지 중 수행한다.\r",
+        "sim.pause(); state = sim.reload_aircraft_profile()\r",
+        "선택 파일을 편집해도 재읽기 전에는 기존 적용 범위가 유지된다.\r",
+        "C208B 연구 모델 API 추가 계약 — 2026-11-17\r",
+        "sim.set_running(True)\r",
+        "외부 Python 비행시험 도구\r",
+        "2026-11-18: 귀환·접근 단계와 진단 상태\r",
+        "1. 시작과 연결 확인\r",
+        "2. 공통 요청·응답·오류 규칙\r",
+        "3. 좌표·단위·부호\r",
+        "4. Unreal 실행·종료\r",
+        "5. 상태 조회·시간·초기화\r",
+        "6. 공중 초기 조건과 수동 조종\r",
+        "7. 지상 조종과 랜딩기어\r",
+        "8. 항로와 최종 선회\r",
+        "9. 자동 이륙·착륙\r",
+        "10. 환경·돌풍·고장\r",
+        "11. 기체·외형·지도 재읽기와 카메라\r",
+        "EO/IR 카메라와 가상 표적\r",
+        "워게임 발사 연출·수동 판정\r",
+        "12. 전체 비행 상태 읽기\r",
+        "aircraft\r",
+        "controls · actuators · gear\r",
+        "ground\r",
+        "navigation · automation\r",
+        "environment · disturbance · airframe · terrain\r",
+        "visual\r",
+        "eoir · targets\r",
+        "wargame\r",
+        "13. 외부 Python 실행 예\r",
+        "14. curl 예\r",
+        "GET /engine의 ready=true를 확인한 다음 실행한다.\r",
+        "15. 검사 기록과 문서 갱신\r",
+        "실행 중인 기본 Thor·가상 제주 활주로에서 입력과 위치를 변경하는 검사\r"
+      ]
+    },
+    {
+      "path": "docs/automatic-flight.md",
+      "bytes": 13147,
+      "sha256": "7a0d2362d43fd692b6480e7f063ce97f364064c32bfd59e130e37841059e0d9a",
+      "headings": [
+        "자동 이륙·착륙\r",
+        "Web UI 사용\r",
+        "API\r",
+        "벽시계 재생으로 진행하려면 sim.set_running(True)\r",
+        "운항 상태\r",
+        "준비 조건과 개발 한계\r",
+        "실행 하네스\r"
+      ]
+    },
+    {
+      "path": "docs/c208b-research.md",
+      "bytes": 8399,
+      "sha256": "110e7199d0bd2e3d89aab727831f18dc349cbbef94d8bbc8b3a6fb10f53f1ec0",
+      "headings": [
+        "C208B 연구 모델\r",
+        "실행·조작\r",
+        "프로젝트 루트 PowerShell\r",
+        "Thor로 복귀: 위 파일 이름을 thor.json으로 변경한 뒤 다시 읽기\r",
+        "착륙만 시험: pause -> prepare_landing_approach -> start_automatic_landing(approach_speed_mps=40)\r",
+        "개발 검사와 남은 범위\r"
+      ]
+    },
+    {
+      "path": "docs/cloud-development.md",
+      "bytes": 5988,
+      "sha256": "6e69383dc943864ab99ea0cad47b7a304693f70754b7ee816257ac345532e92d",
+      "headings": [
+        "클라우드 개발·새 PC 인계",
+        "Codex 클라우드 환경",
+        "Windows PC에서 Unreal 실행",
+        "이번 정리의 확인 범위"
+      ]
+    },
+    {
+      "path": "docs/development-plan.md",
+      "bytes": 15652,
+      "sha256": "086431c77b899d182c8081da1e69d045e4a1c1ab80b9e3b05586c5ca752dce21",
+      "headings": [
+        "자동 이착륙 및 비행 모델 개발 계획\r",
+        "다음 계획 — 2026-11-19\r",
+        "현재 우선순위 — 2026-11-18\r",
+        "이전 M0~M5 계획·결과\r",
+        "이전 작업 기록\r",
+        "결과\r",
+        "남은 물리 확장\r"
+      ]
+    },
+    {
+      "path": "docs/eoir.md",
+      "bytes": 19363,
+      "sha256": "d7b81efe532f0753f8f98852a1147148c05e04cf83a940bc5f9bc108ded8b681",
+      "headings": [
+        "EO/IR 영상·짐벌·가상 지상 표적",
+        "페이지에서 사용",
+        "API와 범위",
+        "프레임과 메타데이터",
+        "추적의 의미",
+        "상태",
+        "외부 Python 예제",
+        "범위와 검사 기록"
+      ]
+    },
+    {
+      "path": "docs/fixed-wing-expansion.md",
+      "bytes": 32442,
+      "sha256": "07a3c01dd31a929b43520de5050a79901ba8df808c009668e7ea2b7561bcc4e7",
+      "headings": [
+        "Cessna 208B 기준 다기종 비행역학 확장\r",
+        "실제 작업 결과 — 2026-11-17\r",
+        "원래 실기체 자료 기반 계획 — 비교를 위해 보존\r",
+        "작업 범위와 종료선\r",
+        "C208B에 맞춘 작업 묶음과 자료 조건\r",
+        "바로 다음 자료 작업 A2의 산출물\r",
+        "기존 코드에서 재사용할 것과 막히는 곳\r",
+        "기체 데이터와 계산의 연결\r",
+        "구현 순서와 완료 조건\r",
+        "구현된 B의 계약과 범위\r",
+        "단계별 최소 검사와 실행 빈도\r",
+        "허용오차·자료 부족·중단 기준\r",
+        "검사와 남겨둘 경계\r"
+      ]
+    },
+    {
+      "path": "docs/flight-model.md",
+      "bytes": 20926,
+      "sha256": "1b39678a13c2770cdc54ee1e34137f4b1aad5d919da383294e6fe41af5532f69",
+      "headings": [
+        "비선형 비행역학 v2 — 근거와 적용 범위\r",
+        "수치 근거\r",
+        "기체 설정\r",
+        "공력과 실속\r",
+        "대기·추진·수치 적분\r",
+        "돌풍과 고장\r",
+        "지면 접촉\r",
+        "API와 재현\r",
+        "실행 검사\r"
+      ]
+    },
+    {
+      "path": "docs/flight-test-plan.md",
+      "bytes": 17329,
+      "sha256": "af1139d6353a3cd87347ab59a268995789d38f7b74907a9f81a9b639e84805cd",
+      "headings": [
+        "비행시험 기록·비교 구현 계획\r",
+        "현재 있는 것과 재사용할 것\r",
+        "작업 범위\r",
+        "0. 카메라 수정 마감\r",
+        "1. 첫 시험: 엘리베이터 짧은 입력\r",
+        "2. 기록·오류·파일 계약\r",
+        "3. 판정과 첫 기준 기록\r",
+        "4. 시험 종류 확장\r",
+        "5. 연구 가정 민감도 비교\r",
+        "6. 마감·검사 범위\r",
+        "당초 계획한 실행 명령\r"
+      ]
+    },
+    {
+      "path": "docs/flight-tests.md",
+      "bytes": 15740,
+      "sha256": "fe9c0af915bdb60a74f2ea9ed38c2d8d3e107f34dfd9635cccdb536e5ea01d8f",
+      "headings": [
+        "비행시험 실행·기록·비교\r",
+        "준비와 첫 실행\r",
+        "다른 PC 최초 준비\r",
+        "API가 꺼져 있을 때만 실행; 엔진 경로는 해당 PC에 맞춘다.\r",
+        "현재 비행을 시험 조건으로 교체한다. 기존 출력 폴더는 덮어쓰지 않는다.\r",
+        "명시적 이름을 부여하려면 새로운 폴더를 지정\r",
+        "시험 종류\r",
+        "파일과 판정\r",
+        "재현과 연구 가정 비교\r",
+        "같은 case/profile/code/초기 조건으로 다시 기록한 뒤 비교\r",
+        "저장 자료만으로 단일 보고서 재생성(API 불필요)\r",
+        "Iy만 ±10% 바꾼 별도 연구 프로필로 시험\r",
+        "기준과 변형 비교에는 --require-identical을 사용하지 않음\r",
+        "종료·복구와 한계\r",
+        "실제 실행 기록 — 2026-11-17\r",
+        "최종 마감\r"
+      ]
+    },
+    {
+      "path": "docs/ground-operations.md",
+      "bytes": 16286,
+      "sha256": "a6e8b34d8ab68dfaa39aa87e484ef746d3bb9f74681cc80449bfe0e698e6edb1",
+      "headings": [
+        "지상 활주·수동 이착륙\r",
+        "Web UI에서 시작\r",
+        "Python API\r",
+        "이후 받음각·상승·바퀴 접촉 상태를 보면서 elevator_deg를 조절한다.\r",
+        "지상 상태\r",
+        "가상 시험 활주로 설정\r",
+        "계산 가정과 한계\r",
+        "실행 확인 — 2026-09-13\r"
+      ]
+    },
+    {
+      "path": "docs/handoff/conversation-records.json",
+      "bytes": 108482,
+      "sha256": "063a2382af67853fae1212bedaddb5c8fdd0bc192fe2b48bbe267b67ff12039f"
+    },
+    {
+      "path": "docs/handoff/README.md",
+      "bytes": 16248,
+      "sha256": "102cc7126eff42f3963586a7f555131a0575876d86af8f69cc0575f131c71e2f",
+      "headings": [
+        "UAVSim 작업 인계 시작점",
+        "새 작업을 시작할 때",
+        "프로젝트 목표와 사용자 결정",
+        "현재 구현과 다음 작업",
+        "좌표·시간·상태를 읽는 기준",
+        "실행·검사 방법",
+        "Linux 클라우드: 코어·오프라인 도구",
+        "Windows: Unreal·제품 API",
+        "API 사용의 최소 기준",
+        "문서·코드·실행 근거 색인",
+        "대화 기록과 실행 사실의 범위"
+      ]
+    },
+    {
+      "path": "docs/maps.md",
+      "bytes": 11688,
+      "sha256": "db29bc6ec7063fd2bf1fbe725b7fa244577f6721fc25c725d776d07e1dca77eb",
+      "headings": [
+        "지도 파일과 좌표를 바꾸는 방법",
+        "영상 파일만 교체",
+        "새 지도 또는 새 고도 자료 가져오기",
+        "변환·검사만 실행하며 현재 선택 지도는 유지",
+        "변환 성공 후 선택 지도까지 변경",
+        "실행 형식",
+        "전국 생성 결과에 제주 상세 영역을 다시 적용한다. 기존 제주 캐시를 사용하며 다운로드하지 않는다.",
+        "제주 상세 영역과 표시 품질",
+        "현재 대한민국 자료의 출처"
+      ]
+    },
+    {
+      "path": "docs/navigation-physics.md",
+      "bytes": 13115,
+      "sha256": "df28e8304c861a61682135b6e14aa1fdce963bd905bc8ef2baae342b6e2afa0f",
+      "headings": [
+        "항법·물리 통합 개선 — 2026-11-18",
+        "항법 변경",
+        "선회 잔차의 원인·비교",
+        "추진 수식·가정",
+        "바퀴별 지면·타이어",
+        "실제 Unreal 연속 왕복",
+        "재실행·검사 한계",
+        "현재 수납식 연구 기체와 Unreal/API 필요. 비행 상태를 초기화하는 검사들이다."
+      ]
+    },
+    {
+      "path": "docs/physics-expansion-plan.md",
+      "bytes": 17892,
+      "sha256": "26fc3c7265a07e16efe5567d4f6a2978b26416f6a91f34bc3dd8a71acd065e63",
+      "headings": [
+        "추진·지상·비행 영역 확장 및 공식 시험 계획",
+        "1. 목표와 완료의 의미",
+        "2. 진행 순서",
+        "3. P0 — 기준·자료·시험 설계",
+        "자료와 기체 구성",
+        "구현 전에 남길 기준",
+        "4. P1 — 프로펠러·거버너·역동력 상태",
+        "5. P2 — 후류·비대칭 추진 효과",
+        "6. P3 — 착륙장치·타이어·제동",
+        "7. P4 — 비행 영역 확장",
+        "P4a. 좌우 비대칭·고받음각",
+        "P4b. 스핀·버핏",
+        "P4c. 연료·질량·CG·관성",
+        "8. P5 — 운용 범위 확대·통합",
+        "9. P6 — 공식 시험·인수",
+        "정적 시험",
+        "동적 시험",
+        "신뢰성·운용 시험",
+        "시험판 고정·결함 처리",
+        "10. 구현 경계와 작업 원칙"
+      ]
+    },
+    {
+      "path": "docs/propeller-visual.md",
+      "bytes": 4237,
+      "sha256": "b0643df85fb1ff03493277d6015d4ad3df4db2bc13315c31969ba172d5b81442",
+      "headings": [
+        "주기어 연결·프로펠러 표시 수정 — 2026-11-18",
+        "주기어",
+        "프로펠러",
+        "검사·재실행",
+        "C208B 연구 프로필과 관리형 Unreal/API가 실행된 상태. 비행을 초기화한다."
+      ]
+    },
+    {
+      "path": "docs/repository-guide.md",
+      "bytes": 6534,
+      "sha256": "4cdb49971dfb3a9f52faa35e34cfd73796ea1ffff3f09f4fee2e20290d0c16ec",
+      "headings": [
+        "저장소 시작·인수인계 안내\r",
+        "새 PC에서 실행\r",
+        "코드와 기능 위치\r",
+        "지도·검사 자료 관리\r",
+        "계산 코어만 검사: Unreal 프로세스를 실행하지 않음\r",
+        "검증 범위와 남은 제한\r"
+      ]
+    },
+    {
+      "path": "docs/retractable-research.md",
+      "bytes": 4132,
+      "sha256": "de372683fea809edd09c71af70bcd05b5aa4071175b48d465d21b19a92fd84d3",
+      "headings": [
+        "접히는 랜딩기어 연구 구성 — 2026-11-18",
+        "화면에서 보기",
+        "확인 결과",
+        "실행 중인 Unreal과 수납식 연구 프로필 필요. 현재 비행을 초기화한다."
+      ]
+    },
+    {
+      "path": "docs/return-landing-plan.md",
+      "bytes": 20924,
+      "sha256": "85b9c1ebcc1f5ed2f4d72d3041ad2c05ac570cf2523623c57fca2d9ac3906930",
+      "headings": [
+        "연속 귀환·착륙과 기체 동작 개선 계획\r",
+        "1. 이번 확인 결과\r",
+        "코드로 확인된 문제 구조\r",
+        "2. 새 구현 순서와 보이는 완료 결과\r",
+        "3. M0 — 진단과 화면 상태\r",
+        "4. M1 — 자동착륙 전환 수정\r",
+        "귀환과 에너지 처리\r",
+        "접근의 좌우 흔들림\r",
+        "5. M2 — 실제 Unreal 지형의 첫 연속 왕복\r",
+        "6. M3 — 추진·형상 개선\r",
+        "먼저 보이는 형상 정합\r",
+        "단발 추진 수식 보강\r",
+        "7. M4 — 지상 물리 정밀화\r",
+        "8. 검사와 마감\r"
+      ]
+    },
+    {
+      "path": "docs/return-landing-results.md",
+      "bytes": 10035,
+      "sha256": "9125ac879598083c35593b68cf2ea6f060dfc795714d42ff126f70ac68b39adf",
+      "headings": [
+        "연속 귀환·착륙 구현 결과 — 2026-11-18",
+        "원인과 수정",
+        "형상·추진·지상",
+        "실제 Unreal 연속 기록",
+        "재실행",
+        "Web UI의 Unreal 실행, 또는 Python UAVSimClient().start_engine() 후 ready 확인",
+        "개발 검사와 후속 범위"
+      ]
+    },
+    {
+      "path": "docs/simconnect-data/events.csv",
+      "bytes": 172620,
+      "sha256": "ee02e5eb3236fe1f121d29e063f358464049379b33b9f3aa4516f0e91370da2b"
+    },
+    {
+      "path": "docs/simconnect-data/functions.csv",
+      "bytes": 48428,
+      "sha256": "2305a9312026c651c8d73f8b3168e9aea7e17b539cbcd5ee9414deb2c3eaaeec"
+    },
+    {
+      "path": "docs/simconnect-data/globals.csv",
+      "bytes": 8393,
+      "sha256": "0bf5e7ca93f681ee004ca73ce28cb96994c5dcf7d93c57e300e296a2a84dbdcc"
+    },
+    {
+      "path": "docs/simconnect-data/inventory.json",
+      "bytes": 4866,
+      "sha256": "4c6bc271d5660320712661a44e9ef636a022b405c5bc0eed9cb80990b542454b"
+    },
+    {
+      "path": "docs/simconnect-data/simvars.csv",
+      "bytes": 141214,
+      "sha256": "f218ca8e71d3ebf7492ece4f5856e83a5170c3380b163a1faa26b83cc93f7c00"
+    },
+    {
+      "path": "docs/simconnect-data/system-events.csv",
+      "bytes": 5294,
+      "sha256": "569984568c5f71c71e9fb05bcf1dee99252741deb278830833f890d1b6caac42"
+    },
+    {
+      "path": "docs/simconnect-data/system-states.csv",
+      "bytes": 768,
+      "sha256": "4f13ef19f9789b25fcd6f843adce4b1d774b0f231255b77d0c858bb14debcfed"
+    },
+    {
+      "path": "docs/simconnect-data/types.csv",
+      "bytes": 18018,
+      "sha256": "a2822795cbd581f171f37e6e59e8490e4e63999ff7fafacaa3d16938e13122d9"
+    },
+    {
+      "path": "docs/simconnect-reference.md",
+      "bytes": 26487,
+      "sha256": "ac83da7d286c979a141613adfdbd66a0cc9edd7b688aae2a43e78e8f2bd0bdd0",
+      "headings": [
+        "Prepar3D SimConnect 주입·관측 기능 조사",
+        "1. 전체 목록과 집계",
+        "2. 입력과 관측 경로를 구분하는 법",
+        "3. 주 SimVar의 모든 분야",
+        "위치·운동과 조작에서 특히 구분할 값",
+        "4. 전역 시간·프로그램·시점 값 42개",
+        "5. 이벤트로 주입할 수 있는 조작",
+        "6. 변수 표 외의 전용 API — 전체 기능 분야",
+        "객체·외부 비행모델",
+        "기상·지형·시설·효과",
+        "카메라·영상·관측자",
+        "시나리오·기록·UI·통신",
+        "7. 수신 주기와 시스템 알림",
+        "8. 구현 판단에 영향을 주는 제한",
+        "9. 실제 확인과 다음 작업"
+      ]
+    },
+    {
+      "path": "docs/stall-references.md",
+      "bytes": 7799,
+      "sha256": "addde25bb9f00ec8f214b16924db8f39a65f5d4d3dd585e7bf65dd39a2eeb722",
+      "headings": [
+        "받음각·실속 모델의 공개 근거",
+        "1. 동압, 부착류와 실속 후 양력 연결",
+        "2. Ultra Stick 25e 교육 자료의 수치",
+        "3. Thor 측정 범위의 경계",
+        "4. 표준대기 밀도",
+        "5. 밀도와 프로펠러 추력"
+      ]
+    },
+    {
+      "path": "docs/wargame.md",
+      "bytes": 12786,
+      "sha256": "a88de19d48db7cb70e2da4d2f81b7dfcc31b01a928a2c3857845132d12c8b758",
+      "headings": [
+        "워게임 발사 연출·수동 판정",
+        "사용 순서",
+        "모델 파일",
+        "API",
+        "단계·시간·초기화",
+        "상태 필드",
+        "외부 Python 예제",
+        "검사 기록"
+      ]
+    },
+    {
+      "path": "README.md",
+      "bytes": 53959,
+      "sha256": "3411435da663e54d422e9bf2103c45dc8d00888ffcb86551486d16fa1b6a264e",
+      "headings": [
+        "UAVSim\r",
+        "현재 상태 — 2026-09-13\r",
+        "실행\r",
+        "에디터 없이 계산 코어·파일 처리 빌드 + 검사 9개\r",
+        "도구 파일 경로 확인\r",
+        "전국 데이터 재생성 (source 캐시가 있으면 재사용)\r",
+        "생성한 전국 지도에 제주 상세 영역 재적용 (기존 제주 캐시 사용)\r",
+        "기존 제주 상세 데이터 재생성\r",
+        "Unreal 프로젝트 빌드 (실행 확인 완료)\r",
+        "최초 장면 생성 (실행 확인 완료, 완료 후 에디터 종료)\r",
+        "MCP·에디터 개발 작업 (에디터의 Play로 비행 시작)\r",
+        "계산과 표시의 경계\r",
+        "대한민국 지형·영상\r",
+        "기존 제주 범위에 대한 보유 DTED 입력 경로 (실제 DTED 파일로는 아직 미시험)\r",
+        "지도 파일 교체·추가\r",
+        "외부 Python API와 Web UI\r",
+        "재생과 시험용 배속\r",
+        "정지 후 .5초만 정확히 진행: 설정 배속은 곱하지 않는다.\r",
+        "실속과 비선형 비행역학\r",
+        "지상 활주·수동 이착륙\r",
+        "자동 이착륙·기체 파일·고장 시험\r",
+        "항로점 자동항법\r",
+        "단일점은 같은 호출에 waypoints[:1]을 전달한다.\r",
+        "수동 조종으로 전환: 현재 위치·속도는 유지하고 항로만 해제된다.\r",
+        "sim.set_controls(elevator_deg=0, aileron_deg=0, rudder_deg=0, throttle=.5)\r",
+        "Unreal 어댑터와 개발용 MCP\r",
+        "실행 중인 PIE를 대상으로 위치·자세 왕복, 입력 거부, 시간 진행·재현 검사\r",
+        "기준 기체와 다음 작업\r"
+      ]
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 4999,
+      "sha256": "95a02c76a30e65aa5a7594abe70113b9048191dbb282e325d56c8d82b46a7304",
+      "headings": [
+        "지도·지형 자료 출처",
+        "EOxCloudless 2016 전국 기본 영상",
+        "Copernicus DEM GLO-30",
+        "Copernicus Sentinel-2 영상",
+        "NGA EGM2008 / EGM96 지오이드",
+        "개발 데이터 도구"
+      ]
+    }
+  ],
+  "python_client_methods": [
+    {
+      "name": "get_state",
+      "signature": "self",
+      "line": 34
+    },
+    {
+      "name": "set_eoir",
+      "signature": "self, *, enabled, mode='ccd', fov_deg=30",
+      "line": 43
+    },
+    {
+      "name": "set_gimbal",
+      "signature": "self, *, azimuth_deg, elevation_deg",
+      "line": 51
+    },
+    {
+      "name": "track_target",
+      "signature": "self, target_id=''",
+      "line": 58
+    },
+    {
+      "name": "set_gimbal_mode",
+      "signature": "self, mode, *, azimuth_deg=None, elevation_deg=None, target_id=None, latitude_deg=None, longitude_deg=None, ellipsoid_height_m=None",
+      "line": 66
+    },
+    {
+      "name": "create_target",
+      "signature": "self, *, id, kind, latitude_deg, longitude_deg, heading_deg=0",
+      "line": 82
+    },
+    {
+      "name": "move_target",
+      "signature": "self, *, id, latitude_deg, longitude_deg, heading_deg=0",
+      "line": 91
+    },
+    {
+      "name": "remove_target",
+      "signature": "self, id",
+      "line": 96
+    },
+    {
+      "name": "reload_wargame_weapons",
+      "signature": "self",
+      "line": 100
+    },
+    {
+      "name": "play_wargame_shot",
+      "signature": "self, weapon_id, target_id",
+      "line": 104
+    },
+    {
+      "name": "resolve_wargame_shot",
+      "signature": "self, shot_id, outcome",
+      "line": 113
+    },
+    {
+      "name": "reset_wargame",
+      "signature": "self",
+      "line": 120
+    },
+    {
+      "name": "get_eoir_frame",
+      "signature": "self",
+      "line": 124
+    },
+    {
+      "name": "set_view",
+      "signature": "self, mode",
+      "line": 132
+    },
+    {
+      "name": "set_time_scale",
+      "signature": "self, factor",
+      "line": 139
+    },
+    {
+      "name": "reload_terrain",
+      "signature": "self, *, timeout=60",
+      "line": 143
+    },
+    {
+      "name": "get_engine",
+      "signature": "self",
+      "line": 150
+    },
+    {
+      "name": "start_engine",
+      "signature": "self",
+      "line": 153
+    },
+    {
+      "name": "stop_engine",
+      "signature": "self",
+      "line": 157
+    },
+    {
+      "name": "set_controls",
+      "signature": "self, *, elevator_deg, aileron_deg, rudder_deg, throttle",
+      "line": 161
+    },
+    {
+      "name": "set_ground_controls",
+      "signature": "self, *, steering_deg, brake, parking_brake",
+      "line": 171
+    },
+    {
+      "name": "reset_on_ground",
+      "signature": "self",
+      "line": 181
+    },
+    {
+      "name": "set_flaps",
+      "signature": "self, degrees",
+      "line": 185
+    },
+    {
+      "name": "set_landing_gear",
+      "signature": "self, down=True",
+      "line": 192
+    },
+    {
+      "name": "set_ground_initial_condition",
+      "signature": "self, *, latitude_deg, longitude_deg, heading_deg, ground_speed_mps",
+      "line": 203
+    },
+    {
+      "name": "start_automatic_takeoff",
+      "signature": "self, *, runway_index=0, climb_height_m=50, speed_mps=19",
+      "line": 212
+    },
+    {
+      "name": "start_automatic_landing",
+      "signature": "self, *, runway_index=0, approach_speed_mps=18",
+      "line": 221
+    },
+    {
+      "name": "cancel_flight_operation",
+      "signature": "self",
+      "line": 232
+    },
+    {
+      "name": "prepare_landing_approach",
+      "signature": "self, *, runway_index=0",
+      "line": 236
+    },
+    {
+      "name": "reload_aircraft_profile",
+      "signature": "self",
+      "line": 245
+    },
+    {
+      "name": "reload_aircraft_visual",
+      "signature": "self, *, timeout=30",
+      "line": 254
+    },
+    {
+      "name": "set_pose",
+      "signature": "self, *, latitude_deg, longitude_deg, ellipsoid_height_m, heading_deg, pitch_deg, roll_deg",
+      "line": 263
+    },
+    {
+      "name": "set_running",
+      "signature": "self, running",
+      "line": 272
+    },
+    {
+      "name": "set_wind",
+      "signature": "self, *, wind_east_mps, wind_north_mps, wind_up_mps",
+      "line": 275
+    },
+    {
+      "name": "set_gust",
+      "signature": "self, *, east_mps, north_mps, up_mps, delay_s=0, duration_s=5",
+      "line": 283
+    },
+    {
+      "name": "set_failures",
+      "signature": "self, *, engine_power_fraction, elevator_jammed, aileron_jammed, rudder_jammed",
+      "line": 292
+    },
+    {
+      "name": "set_initial_condition",
+      "signature": "self, *, latitude_deg, longitude_deg, ellipsoid_height_m, heading_deg, pitch_deg, roll_deg, speed_mps, angle_of_attack_deg=None, sideslip_deg=None",
+      "line": 301
+    },
+    {
+      "name": "set_route",
+      "signature": "self, waypoints, *, loiter_radius_m, clockwise=True",
+      "line": 318
+    },
+    {
+      "name": "cancel_navigation",
+      "signature": "self",
+      "line": 331
+    },
+    {
+      "name": "pause",
+      "signature": "self",
+      "line": 335
+    },
+    {
+      "name": "step",
+      "signature": "self, dt_s",
+      "line": 338
+    },
+    {
+      "name": "reset",
+      "signature": "self",
+      "line": 342
+    }
+  ],
+  "literal_http_routes": [
+    "/api/v1/aircraft/reload",
+    "/api/v1/aircraft/visual/reload",
+    "/api/v1/automation/cancel",
+    "/api/v1/automation/land",
+    "/api/v1/automation/prepare-landing",
+    "/api/v1/automation/takeoff",
+    "/api/v1/controls",
+    "/api/v1/engine",
+    "/api/v1/engine/start",
+    "/api/v1/engine/stop",
+    "/api/v1/environment",
+    "/api/v1/eoir",
+    "/api/v1/eoir/frame.jpg",
+    "/api/v1/eoir/gimbal",
+    "/api/v1/eoir/gimbal-mode",
+    "/api/v1/eoir/track",
+    "/api/v1/failures",
+    "/api/v1/flaps",
+    "/api/v1/gear",
+    "/api/v1/ground-controls",
+    "/api/v1/ground/initial-condition",
+    "/api/v1/ground/reset",
+    "/api/v1/gust",
+    "/api/v1/initial-condition",
+    "/api/v1/navigation/cancel",
+    "/api/v1/pose",
+    "/api/v1/reset",
+    "/api/v1/route",
+    "/api/v1/simulation",
+    "/api/v1/state",
+    "/api/v1/step",
+    "/api/v1/targets",
+    "/api/v1/targets/pose",
+    "/api/v1/targets/remove",
+    "/api/v1/terrain/reload",
+    "/api/v1/time-scale",
+    "/api/v1/view",
+    "/api/v1/wargame/fire",
+    "/api/v1/wargame/reset",
+    "/api/v1/wargame/resolve",
+    "/api/v1/wargame/weapons/reload"
+  ],
+  "developer_scripts": [
+    {
+      "path": "scripts/check-airframe-api.py",
+      "sha256": "a83d399b0bf9c2b0940dfa5b1c4815c56fc1f87ee44c08f894fbf8fe15d6c80a",
+      "description": "Live v1/v2 airframe contract check. Synthetic fixture is NOT C208B.\n\nRequires an initialized API/Unreal. Temporarily replaces the selector and one\ntest profile; finally restores their bytes and reloads the original paused model.\nFlight time/position are reset by profile reload, not restored to their prior values."
+    },
+    {
+      "path": "scripts/check-automatic-api.py",
+      "sha256": "28de60b67a1d2b427105ec773cb02285a52e3f2708448e3b12e70ece3724ec22",
+      "description": "Live Unreal regression for automatic flight, actuators, gusts and profiles.\n\nRequires the nominal Thor profile, configured first runway, running API and engine.\nUses paused explicit steps; does not start/restart processes or retry writes.\nTemporarily changes aircraft/active.json and aircraft/runtime-check.json, preserving\ntheir bytes in finally. Restores the original profile, calm air, cleared failures,\npaused ground start, parking brake and 1x. Do not edit these files during the run.\nThis is a development check, not aircraft qualification."
+    },
+    {
+      "path": "scripts/check-c208b-api.py",
+      "sha256": "3a626b088e7f5f0032a7acfb0827bbc9d8eabac02ab7c67f629ca9f6f99d51d3",
+      "description": "Live research-model check. Resets flight; restores selector bytes and wind in finally.\n\nNo UI automation. This checks software contracts, not real C208B performance."
+    },
+    {
+      "path": "scripts/check-control-api.py",
+      "sha256": "752a6d306e2aea7787c05b62e67cfbdfe9b2511de8231addc6d1b7868c08e11f",
+      "description": "One integration check of the Python client, HTTP validation and running Unreal actor."
+    },
+    {
+      "path": "scripts/check-engine-api.py",
+      "sha256": "61e868c6924beaac23138a6fc1bcd3c70c4d0119ad3a5df50c16a99855cef90b",
+      "description": "Check one real start/control/stop/restart cycle. API must be running, Unreal stopped."
+    },
+    {
+      "path": "scripts/check-environment.ps1",
+      "sha256": "e301776e7bc4b542d37a7f428352977f41f38276f1e1d44a8af4fc7533511a78"
+    },
+    {
+      "path": "scripts/check-eoir-api.py",
+      "sha256": "d494f7ac94529a3208f07d90f26eedd6d21c6c36f86a8f0bf8eba9c77071e864",
+      "description": "Focused live EO/IR check; requires the running API, Unreal and Korea terrain.\n\nChanges paused aircraft pose and creates non-firing scene props. On success leaves\na paused CCD view tracking its tank; on failure removes its props, disables capture\nand restores a parked start. One explicit 0.5 s flight step checks live pointing;\nall captures are paused. Never starts/restarts processes.\nIR checks concern luminance display filters, not physical thermal measurements."
+    },
+    {
+      "path": "scripts/check-flight-api.py",
+      "sha256": "cb4ea9522aaff36a993f76ca076f40395e9c563862bbf4940c8d70af325db1e1",
+      "description": "Check a running PIE FlightScene through the product HTTP API; resume afterward."
+    },
+    {
+      "path": "scripts/check-gear-api.py",
+      "sha256": "ca657e4968289e5a36e2731479b5464f7cc4b794a1d7dc59476ebb8c7a76062b",
+      "description": "Focused live landing-gear check; requires the running API, Unreal and first runway.\n\nUses paused explicit steps, changes aircraft state, and finally restores calm air,\ncleared failures, gear down, parked ground start and 1x. Does not restart processes.\nOptional --impact adds a low-altitude gear-up body-impact fixture for development.\nNo measured landing-gear performance or qualification claim."
+    },
+    {
+      "path": "scripts/check-gimbal-modes-api.py",
+      "sha256": "8da3ec72e82c9722280993411a8b17651ebc7308d1e563f250b0ed6114b42db7",
+      "description": "Focused live check for body_fixed/auto/geo/protect gimbal modes.\n\nRequires the running API/Unreal and Korea terrain. Uses paused initial conditions,\none temporary marker and no simulation steps or process restarts. Finally restores\nthe starting aircraft pose/speed, control commands, sensor settings/mode and view,\nleaving playback paused. Initial-condition calls reset internal dynamics/navigation;\nthis is not a complete simulator snapshot restore. No image inference or hardware."
+    },
+    {
+      "path": "scripts/check-ground-api.py",
+      "sha256": "4a43e92a494ec76ca6e24e204f52291376e8e58b5655a4fcc3d345e1e256bd9b",
+      "description": "Focused live Unreal ground check; requires an already running API and engine.\n\nChanges simulation state. Always attempts to restore paused ground start,\nparking brake, zero wind and 1x. Development regression, not qualification.\nPrints JSON; --output artifacts/ground-api-check.json also saves the report."
+    },
+    {
+      "path": "scripts/check-korea-api.py",
+      "sha256": "93e45c3c50a0334f835a00d52103d9b124916c6b98969ccd20219e6c222a2279",
+      "description": "Live country-render boundary check; requires the terrain Python environment and running Unreal.\n\nReads native component transforms against independent pyproj ECEF positions/directions.\nLeaves Jeju initialized, paused, in nationwide overview. No desktop/UI automation."
+    },
+    {
+      "path": "scripts/check-map-playback-api.py",
+      "sha256": "b56f27de2ec6cb34f8b78da3ac04f535beaba658d82aa23745386b0a1e6f441b",
+      "description": "Live map replacement and fixed-step playback check. Restores the selected map and pauses.\n\nUses the prepared maps/example and a running Unreal/API. No browser/desktop automation."
+    },
+    {
+      "path": "scripts/check-navigation-api.py",
+      "sha256": "1a36318909c24796ff3bfe62ac7ed2481d0f669def4b571d30b1355d0239073f",
+      "description": "One real Unreal integration run: manual dynamics, route validation, sequential points and final orbit."
+    },
+    {
+      "path": "scripts/check-navigation-physics-api.py",
+      "sha256": "cb4cea8a54b17c541b89ade078a639a7e0d1a0a63a23456cc65e320b0b26395e",
+      "description": "Live integrated navigation/physics contracts. Resets flight; restores files/wind, parks paused."
+    },
+    {
+      "path": "scripts/check-propeller-visual.py",
+      "sha256": "ab258590964a8c41db8c630212138d4229ac4631d0e06702149adf59f58b3230",
+      "description": "Live display-only checks and native Unreal captures; resets flight and leaves ground parked/paused."
+    },
+    {
+      "path": "scripts/check-return-api.py",
+      "sha256": "609c759eed866aa495660b7f99b15c2f57fedc0e6eb933536d87d8104f9a67fd",
+      "description": "Continuous real-terrain departure/mission/return/parking development check.\n\nOnly one ground initialization at the beginning; no pose/reset/prepare command in flight."
+    },
+    {
+      "path": "scripts/check-stall-api.py",
+      "sha256": "232c15f3c59b1467994f8c71d6bf58739a7f5a2b7c784ae9a924c398a4279726",
+      "description": "Focused live Unreal check: nonlinear stall, recovery, wind and explicit time.\n\nChanges flight state. Finally restores still air, 19 m/s trim, 1x and pause.\nDevelopment regression only; no aircraft qualification claim."
+    },
+    {
+      "path": "scripts/check-visual-api.py",
+      "sha256": "3fc11a46c9feb90a9029eff449cc1e72d8f1431a2cf1ec0a0fbd48ab3a6f2e8e",
+      "description": "Live STL display checks; requires Unreal/API. Restores files and parks paused at 1x.\n\nOnly display geometry is tested, not aerodynamic validity. --capture requests a\nnative render after explicitly setting an illustrative pose; no UI automation."
+    },
+    {
+      "path": "scripts/check-wargame-api.py",
+      "sha256": "63675e6ec76d020a524f1918c6c0a9d3e4e0757c2e3f921040c7d36e9abd310d",
+      "description": "Live abstract-game checks; no weapon physics, guidance or automatic hit tests.\n\nRequires Unreal/API and the example catalog/Korea map. Refuses to erase existing\nshots or hit marks. Uses its own targets, restores catalog bytes, starting pose,\ncommands and sensor settings, and leaves playback paused. Dynamics/navigation and\nclocks are not a restorable simulator snapshot. --capture saves two native JPEGs."
+    },
+    {
+      "path": "scripts/collect-simconnect-reference.py",
+      "sha256": "c2d3bc275412cce1dc902590291745c02c9c4d241cd66ccb369c63931569a644",
+      "description": "Collect factual identifiers/units/flags from the public Prepar3D v6 SDK."
+    },
+    {
+      "path": "scripts/dev.ps1",
+      "sha256": "9bff9f78499bb2d84bde4ed9d4a4459fe0af238bd5cde734db4c84979c12548b"
+    },
+    {
+      "path": "scripts/prepare-jeju-detail.py",
+      "sha256": "568022046089d4b1bf1fa0c65238a271733830cf331e6815d45deadc3bf72e46",
+      "description": "Add cached 10 m Jeju imagery to the active Korea map, entirely offline.\n\nOne coarse-cell-aligned hole and one detail tile use the existing runtime format.\nThe outer coarse-cell band joins both the original mesh and its image colors;\nrendering and ground queries use the same vertices. Reload Unreal explicitly."
+    },
+    {
+      "path": "scripts/prepare-korea.py",
+      "sha256": "9105dc06df07c8cbbfcc3d8508fda420eeb08e22b89580c6999560f66ee4de2f",
+      "description": "Prepare the offline South Korea terrain base and one small Dokdo detail tile.\n\nUses existing GIS dependencies; no credentials or runtime map service is needed.\nRe-running reuses source windows after verifying their SHA-256 receipts."
+    },
+    {
+      "path": "scripts/prepare-map.py",
+      "sha256": "3dae1ba32dbd71a765dfea04fa905ff9fa0c6d9d4c215ba59fb0fa1994986c56",
+      "description": "Compile maps/<folder>/map.json and local imagery/elevation into a renderable map.\n\nNo network calls. Pass --activate to select the successfully compiled map."
+    },
+    {
+      "path": "scripts/prepare-propeller-material.py",
+      "sha256": "37065b0a8918342b831b85f52de78a256c07700e8e80d714342368a814db9df2",
+      "description": "Unreal commandlet: generate the project's vertex-colour/opacity propeller material."
+    },
+    {
+      "path": "scripts/prepare-terrain.py",
+      "sha256": "8b73d4946cf7326dffe742cfa9fc7d1271952dceb0c4b873221628b0e3101861",
+      "description": "Prepare one real, offline Jeju terrain patch; GIS tools are not flight dynamics.\n\nRun with .venv/Scripts/python.exe scripts/prepare-terrain.py.\nFor a local DTED cell covering this patch, add --dem file.dt2 --vertical-datum EGM96.\nThe source must cover the whole patch; missing elevations fail instead of becoming sea."
+    },
+    {
+      "path": "scripts/report-flight-test.py",
+      "sha256": "cfcfa55c568f25ffa5dcb661bbfda87f441bffb920bb0b51f3de74608f4111cf",
+      "description": "Offline scientific plots and comparison for UAVSim flight-test records."
+    },
+    {
+      "path": "scripts/report-navigation-physics.py",
+      "sha256": "56cd8de33942ca6ba8efd336badecdded2112d39f2ec0c449989c4092942f7b4",
+      "description": "Offline comparison of preserved navigation/physics probes and live round trips."
+    },
+    {
+      "path": "scripts/report-return-flight.py",
+      "sha256": "a7a3f787e71f95fb587cec72c3f9839a2a30708df9720d4c3bde1f6bc059e91f",
+      "description": "Summarize saved continuous-return development runs; never contacts Unreal."
+    },
+    {
+      "path": "scripts/run-flight-test.py",
+      "sha256": "db6cf59fe48dd0b53767bc1c79beb9375c53143b3b2f19584ecea754ddebb4c5",
+      "description": "Repeatable UAVSim research experiments through the existing public API.\n\nResets flight; restores selector bytes/wind/profile to paused trim, not prior dynamics."
+    },
+    {
+      "path": "scripts/serve-api.py",
+      "sha256": "9394370d5f7f1cdd80903fdd620922c0a64ed3bbd8aafbb11b88643570f9919e",
+      "description": "Local, versioned UAVSim API and web controls. No external Python dependencies."
+    },
+    {
+      "path": "scripts/setup-scene.py",
+      "sha256": "62978542439c19f78eb1e2e6f0f4616ebf413238b81a3107ff8dae213254bae6",
+      "description": "Run once inside Unreal Editor via scripts/dev.ps1 setup-scene."
+    },
+    {
+      "path": "scripts/unreal-mcp.py",
+      "sha256": "4b23e48bbcce4db829b008dfda7f0e8a3f33fee6a2b387248fd367c5953e6d3f",
+      "description": "Small client for the engine's local MCP server, using the Python standard library."
+    }
+  ],
+  "hash_basis": "Git index blob bytes; text files use repository LF, provenance JSON/CSV retain original bytes."
+}
