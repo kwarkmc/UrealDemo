@@ -4,6 +4,8 @@ Prepar3D/SimConnect를 대체할 Unreal 기반 고정익 무인기 시뮬레이�
 
 외부 프레임워크 연동의 기준 문서는 [전체 API 사용 매뉴얼](docs/api-reference.md)이다. 모든 HTTP 경로·Python 메서드, 필드·단위·상태·오류, 실행 예제를 모았으며 API 변경과 함께 갱신한다.
 
+2026-11-19 [IGManager 실사용 범위와 UAVSim API 비교](docs/igmanager-api-comparison.md): 사용자 제공 SimConnect 인벤토리2개 원문과 대응/차이·추가 구현 후보를 보존했다. 다중 객체·초기화 없는 상태 주입·텔레메트리가 주요 차이며, 비교 자료의 인계이지 구현 승인/완료나 DLL 호환성 검증이 아니다.
+
 **클라우드에서 작업을 이어받는 에이전트는 [작업 인계 시작점](docs/handoff/README.md)을 읽는다.** 현재 결정·실행/API·전체 문서 색인·접근 가능한 개발 대화40턴의 기록을 묶었다. TrashCan 안에서는 `UnrealDemo` 폴더에서 이 저장소를 사용한다.
 
 2026-11-19 [추진·지상·비행 영역 확장 및 공식 시험 후속 계획](docs/physics-expansion-plan.md)을 작성했다. 거버너/후류·완충/타이어·비대칭 실속/스핀·연료/CG와 운용/공식 시험의 단계·완료 기준을 정리한 계획이며 아직 구현 착수/완료를 뜻하지 않는다.

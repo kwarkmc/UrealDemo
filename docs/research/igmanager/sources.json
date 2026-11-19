@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-19",
+  "kind": "User-supplied static-analysis inventories, preserved verbatim",
+  "comparison": "docs/igmanager-api-comparison.md",
+  "compared_uavsim_commit": "b34cb16f09b525e17c8d95ea24aa02addfb845e3",
+  "limitations": "IGManager source and DLL not independently inspected; no runtime compatibility test; proposals are not approved implementation.",
+  "sources": [
+    {
+      "attachment_id": "587e4d83-db51-456f-ac6c-4d7b5dbf33c5",
+      "original_name": "붙여넣은 텍스트.txt",
+      "stored_path": "docs/research/igmanager/simconnect-api-surface.md",
+      "bytes": 14615,
+      "sha256": "a2a86586e77ef30e8be8ad6c597148291e4aeab9026981b80997b3b5eb0b48c8"
+    },
+    {
+      "attachment_id": "288bea08-0d88-46ef-8d7a-4356c26bd040",
+      "original_name": "붙여넣은 텍스트.txt",
+      "stored_path": "docs/research/igmanager/simconnect-data-detail.md",
+      "bytes": 18285,
+      "sha256": "7229460ee41a720bfc98dc018451ba2316ebb98469f167733afbc38abadf364c"
+    }
+  ]
+}

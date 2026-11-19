@@ -23,6 +23,8 @@
 
 ## 현재 구현과 다음 작업
 
+2026-11-19 후속 인계: [IGManager 실사용 비교·추가 구현 후보](../igmanager-api-comparison.md), 사용자 제공 [API 표면 원문](../research/igmanager/simconnect-api-surface.md)·[상세 인벤토리 원문](../research/igmanager/simconnect-data-detail.md)·[원본 해시](../research/igmanager/sources.json)를 먼저 확인한다. 별도 프로젝트의P3D v5/managed wrapper 사용 조사이며 UAVSim 구현 완료를 뜻하지 않는다. SimConnect 전체 복제 의도는 없고, 후보 기능의 구현 승인도 아직 없다. 다중 객체·연속 외부 상태·텔레메트리의 의미 차이와 데드코드/매핑 오류를 구분한다.
+
 | 영역 | 현재 상태 | 남은 구분 |
 | --- | --- | --- |
 | 비행 코어 | WGS84/ENU, 자체6DOF·quaternion RK4, 비선형 공력/박리 지연·ISA·바람·작동기·돌풍·고장 | 실측 전 영역·비대칭 실속·스핀·버핏·연료/CG는 미구현 |

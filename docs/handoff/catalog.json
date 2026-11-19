@@ -13,6 +13,54 @@
       ]
     },
     {
+      "path": "README.md",
+      "bytes": 54337,
+      "sha256": "a8b95245e8ffacce6c9827c4780b1a33f80c31f388a17a7793bb9e857e5d87cb",
+      "headings": [
+        "UAVSim",
+        "현재 상태 — 2026-09-13",
+        "실행",
+        "에디터 없이 계산 코어·파일 처리 빌드 + 검사 9개",
+        "도구 파일 경로 확인",
+        "전국 데이터 재생성 (source 캐시가 있으면 재사용)",
+        "생성한 전국 지도에 제주 상세 영역 재적용 (기존 제주 캐시 사용)",
+        "기존 제주 상세 데이터 재생성",
+        "Unreal 프로젝트 빌드 (실행 확인 완료)",
+        "최초 장면 생성 (실행 확인 완료, 완료 후 에디터 종료)",
+        "MCP·에디터 개발 작업 (에디터의 Play로 비행 시작)",
+        "계산과 표시의 경계",
+        "대한민국 지형·영상",
+        "기존 제주 범위에 대한 보유 DTED 입력 경로 (실제 DTED 파일로는 아직 미시험)",
+        "지도 파일 교체·추가",
+        "외부 Python API와 Web UI",
+        "재생과 시험용 배속",
+        "정지 후 .5초만 정확히 진행: 설정 배속은 곱하지 않는다.",
+        "실속과 비선형 비행역학",
+        "지상 활주·수동 이착륙",
+        "자동 이착륙·기체 파일·고장 시험",
+        "항로점 자동항법",
+        "단일점은 같은 호출에 waypoints[:1]을 전달한다.",
+        "수동 조종으로 전환: 현재 위치·속도는 유지하고 항로만 해제된다.",
+        "sim.set_controls(elevator_deg=0, aileron_deg=0, rudder_deg=0, throttle=.5)",
+        "Unreal 어댑터와 개발용 MCP",
+        "실행 중인 PIE를 대상으로 위치·자세 왕복, 입력 거부, 시간 진행·재현 검사",
+        "기준 기체와 다음 작업"
+      ]
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 4999,
+      "sha256": "95a02c76a30e65aa5a7594abe70113b9048191dbb282e325d56c8d82b46a7304",
+      "headings": [
+        "지도·지형 자료 출처",
+        "EOxCloudless 2016 전국 기본 영상",
+        "Copernicus DEM GLO-30",
+        "Copernicus Sentinel-2 영상",
+        "NGA EGM2008 / EGM96 지오이드",
+        "개발 데이터 도구"
+      ]
+    },
+    {
       "path": "docs/aircraft-candidate-research.md",
       "bytes": 19679,
       "sha256": "75b581820daae3d8a24d29164e3cdfa6dfbfdc475aca38258c23a563ecbc1f78",
@@ -271,14 +319,9 @@
       ]
     },
     {
-      "path": "docs/handoff/conversation-records.json",
-      "bytes": 108482,
-      "sha256": "063a2382af67853fae1212bedaddb5c8fdd0bc192fe2b48bbe267b67ff12039f"
-    },
-    {
       "path": "docs/handoff/README.md",
-      "bytes": 16248,
-      "sha256": "102cc7126eff42f3963586a7f555131a0575876d86af8f69cc0575f131c71e2f",
+      "bytes": 16920,
+      "sha256": "4e97d0e230c16e872b71b653e0126ec25688d71e29ab1cf76d1e5f6c2bbee68e",
       "headings": [
         "UAVSim 작업 인계 시작점",
         "새 작업을 시작할 때",
@@ -291,6 +334,29 @@
         "API 사용의 최소 기준",
         "문서·코드·실행 근거 색인",
         "대화 기록과 실행 사실의 범위"
+      ]
+    },
+    {
+      "path": "docs/handoff/conversation-records.json",
+      "bytes": 108482,
+      "sha256": "063a2382af67853fae1212bedaddb5c8fdd0bc192fe2b48bbe267b67ff12039f"
+    },
+    {
+      "path": "docs/igmanager-api-comparison.md",
+      "bytes": 10100,
+      "sha256": "a0186b16f63312f11a70bd933ec6b12427c12895ae532a96ecbfcfdb600f2682",
+      "headings": [
+        "IGManager 사용 범위와 UAVSim API 비교·추가 구현 후보",
+        "근거와 적용 범위",
+        "핵심 차이",
+        "이름만 변환하면 안 되는 의미 차이",
+        "연속 pose와 초기조건",
+        "다중 표시 객체와 다중 물리 기체",
+        "텔레메트리의 시점·종류",
+        "모델과 단위",
+        "권장 구현 순서와 종료선 — 아직 미착수",
+        "그대로 재현하지 않을 항목",
+        "인계·검사 범위"
       ]
     },
     {
@@ -374,6 +440,65 @@
         "지도·검사 자료 관리\r",
         "계산 코어만 검사: Unreal 프로세스를 실행하지 않음\r",
         "검증 범위와 남은 제한\r"
+      ]
+    },
+    {
+      "path": "docs/research/igmanager/simconnect-api-surface.md",
+      "bytes": 14615,
+      "sha256": "a2a86586e77ef30e8be8ad6c597148291e4aeab9026981b80997b3b5eb0b48c8",
+      "headings": [
+        "SimConnect.dll API 노출(Through) 표면 — IGManager 인벤토리",
+        "1. 접근 경로 (중요 전제)",
+        "2. managed `SimConnect` 실제 호출 표면 → native export 매핑",
+        "2.1 라이프사이클 / 메시지 펌프",
+        "2.2 데이터 정의 (RX/TX 공통, 시작 시 1회)",
+        "2.3 데이터 요청 (보고값 = RX)",
+        "2.4 데이터 전송 (값 주입 = TX)",
+        "2.5 클라이언트 이벤트",
+        "2.6 AI 객체 생성/삭제",
+        "2.7 옵저버 / 카메라",
+        "2.8 기상",
+        "3. 수신(RX) 이벤트 구독 (managed event → SIMCONNECT_RECV 블록)",
+        "4. 요청 ID `eREQUEST_ID` (전체, `SimManagerDefinition.cs` — 59종)",
+        "5. 이벤트 그룹 `eGROUP_ID` (전체 — 7종)",
+        "6. 데이터 정의 `eDEFINITION_ID` (38종, enum `SimManagerDefinition.cs` / 매핑 `SimControl_P3DSet.cs:160~934`) — SimConnect 변수 매핑",
+        "7. 클라이언트 이벤트 `eEVENT_ID` (`SimManagerDefinition.cs`, 대형 enum)",
+        "8. 사용된 SimConnect 데이터 구조 (`SIMCONNECT_DATA_*`)",
+        "9. 사용된 SimConnect 열거형 / 상수",
+        "10. 사용 **않는** 주요 export (미노출 — text-search 0건)",
+        "11. 아키텍처 함의 (vendor split)",
+        "12. 데드코드 / 의미 없는 호출 (2026-11-19 재검증)",
+        "부록: 근거 파일/라인"
+      ]
+    },
+    {
+      "path": "docs/research/igmanager/simconnect-data-detail.md",
+      "bytes": 18285,
+      "sha256": "7229460ee41a720bfc98dc018451ba2316ebb98469f167733afbc38abadf364c",
+      "headings": [
+        "SimConnect 데이터·이벤트·객체 상세 인벤토리 — IGManager",
+        "0. 데이터 흐름 (수집/주입 공통)",
+        "1. 수집(RX) 데이터 — \"어떤 데이터를 긁어오는지\"",
+        "1.1 주기 수집 (자기 객체 `SIMCONNECT_OBJECT_ID_USER`, `VISUAL_FRAME`) — `SimControl_P3DSet.cs:279~360`",
+        "1.2 객체별 수집 (생성 시, per-object) — `SimControl.cs`",
+        "1.3 주입(TX) 데이터 — `SetDataOnSimObject` (값을 시뮬에 **쓰는** 쪽)",
+        "2. 객체(struct)별 정보 — 36개 (카테고리별)",
+        "2.1 위치·자세·운동 (가장 풍부한 텔레메트리)",
+        "2.2 엔진",
+        "2.3 연료",
+        "2.4 조명",
+        "2.5 계기",
+        "2.6 조종 입력·제어",
+        "2.7 자동비행(AP)",
+        "2.8 기체 상태",
+        "2.9 표적",
+        "2.10 기상",
+        "3. 이벤트(TX) — `eEVENT_ID` (클라이언트→Sim)",
+        "3.1 이벤트 그룹 (enum region 기준)",
+        "3.2 수신(RX) 이벤트 — `OnRecv*` 핸들러",
+        "4. RX 캐스트 맵 (`OnRecvSimobjectData` switch, `SimControl.cs:2117~2780`)",
+        "5. 주의/특이사항",
+        "6. 근거 (파일:라인)"
       ]
     },
     {
@@ -510,54 +635,6 @@
         "상태 필드",
         "외부 Python 예제",
         "검사 기록"
-      ]
-    },
-    {
-      "path": "README.md",
-      "bytes": 53959,
-      "sha256": "3411435da663e54d422e9bf2103c45dc8d00888ffcb86551486d16fa1b6a264e",
-      "headings": [
-        "UAVSim\r",
-        "현재 상태 — 2026-09-13\r",
-        "실행\r",
-        "에디터 없이 계산 코어·파일 처리 빌드 + 검사 9개\r",
-        "도구 파일 경로 확인\r",
-        "전국 데이터 재생성 (source 캐시가 있으면 재사용)\r",
-        "생성한 전국 지도에 제주 상세 영역 재적용 (기존 제주 캐시 사용)\r",
-        "기존 제주 상세 데이터 재생성\r",
-        "Unreal 프로젝트 빌드 (실행 확인 완료)\r",
-        "최초 장면 생성 (실행 확인 완료, 완료 후 에디터 종료)\r",
-        "MCP·에디터 개발 작업 (에디터의 Play로 비행 시작)\r",
-        "계산과 표시의 경계\r",
-        "대한민국 지형·영상\r",
-        "기존 제주 범위에 대한 보유 DTED 입력 경로 (실제 DTED 파일로는 아직 미시험)\r",
-        "지도 파일 교체·추가\r",
-        "외부 Python API와 Web UI\r",
-        "재생과 시험용 배속\r",
-        "정지 후 .5초만 정확히 진행: 설정 배속은 곱하지 않는다.\r",
-        "실속과 비선형 비행역학\r",
-        "지상 활주·수동 이착륙\r",
-        "자동 이착륙·기체 파일·고장 시험\r",
-        "항로점 자동항법\r",
-        "단일점은 같은 호출에 waypoints[:1]을 전달한다.\r",
-        "수동 조종으로 전환: 현재 위치·속도는 유지하고 항로만 해제된다.\r",
-        "sim.set_controls(elevator_deg=0, aileron_deg=0, rudder_deg=0, throttle=.5)\r",
-        "Unreal 어댑터와 개발용 MCP\r",
-        "실행 중인 PIE를 대상으로 위치·자세 왕복, 입력 거부, 시간 진행·재현 검사\r",
-        "기준 기체와 다음 작업\r"
-      ]
-    },
-    {
-      "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 4999,
-      "sha256": "95a02c76a30e65aa5a7594abe70113b9048191dbb282e325d56c8d82b46a7304",
-      "headings": [
-        "지도·지형 자료 출처",
-        "EOxCloudless 2016 전국 기본 영상",
-        "Copernicus DEM GLO-30",
-        "Copernicus Sentinel-2 영상",
-        "NGA EGM2008 / EGM96 지오이드",
-        "개발 데이터 도구"
       ]
     }
   ],
